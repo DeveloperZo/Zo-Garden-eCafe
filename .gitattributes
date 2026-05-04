@@ -1,0 +1,5 @@
+# Default: let git decide line endings.
+* text=auto
+
+# Shell scripts must stay LF — CRLF breaks the shebang on Linux (CF Pages).
+*.sh text eol=lf
