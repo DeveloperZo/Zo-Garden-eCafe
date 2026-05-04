@@ -1,0 +1,25 @@
+# Dependencies
+**/node_modules/
+
+# Quartz outputs
+garden/public/
+garden/.quartz-cache/
+garden/prof/
+garden/tsconfig.tsbuildinfo
+
+# Build outputs (CRA / generic)
+**/build/
+**/dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+.obsidian/
+
+# zowilliams.github.io is embedded here as its own .git repo until the
+# subsume strategy is decided (see M-001 / ARCH-001). Tracked in its own
+# repo for now; ignored at the monorepo level.
+githubpage/
