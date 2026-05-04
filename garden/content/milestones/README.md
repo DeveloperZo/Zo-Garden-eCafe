@@ -18,7 +18,7 @@ Active and retroactive milestone artifacts. Definition: [`_definitions/milestone
 
 ## Active (`M-*`)
 
-_None yet — file the first one as `M-001-descriptor.md`._
+- [M-001 Quartz site goes live publicly](./M-001-quartz-go-live.md) — stand the docs site up at a real public URL and decide the fate of the existing `zowilliams.github.io` deploy.
 
 ## Retroactive (`RM-*`)
 

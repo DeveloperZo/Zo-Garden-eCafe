@@ -1,0 +1,387 @@
+/* Refined Accomplishments Component CSS */
+
+/* Main layout structure */
+.accomplishment-layout {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main heading styling */
+.page-title, h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin: 15px 0 30px;
+  border-bottom: 2px solid ;
+  border-color: var(--accent-color);
+  padding-bottom: 8px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Filter panel structure */
+.filter-panel {
+  width: 300px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+/* Tab control layout */
+.view-mode-selector {
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.view-mode-btn {
+  flex: 1;
+  padding: 8px 12px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: var(--secondary-color)
+}
+
+.view-mode-btn.active {
+  background-color: #8b0000;
+  color: white;
+  border-color: #8b0000;
+}
+
+/* Roles section title */
+.filter-panel h3 {
+  margin: 15px 0;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Filter buttons styling */
+.accomplishment-filter-button {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 8px !important;
+  padding: 10px 12px !important;
+  text-align: left !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  background-color: white !important;
+  border: 1px solid #ddd !important;
+  color: #333 !important;
+  font-size: 14px !important;
+}
+
+.accomplishment-filter-button:hover {
+  background-color: #f9f9f9 !important;
+}
+
+.accomplishment-filter-button.active {
+  border-color: #8b0000 !important;
+}
+
+/* Role count badge styling */
+.role-count {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 26px !important;
+  height: 26px !important;
+  border-radius: 50% !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  background-color: #8b0000 !important;
+  color: white !important;
+  margin-left: 8px !important;
+}
+
+/* Main content area */
+.accomplishment-detail {
+  flex: 1;
+  border-radius: 5px;
+  padding: 20px;
+  overflow: auto;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+/* Empty state styling with animation */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 40px 20px;
+}
+
+/* Pixel icon and animation */
+.pixel-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #8b0000;
+  opacity: 1;
+  display: block;
+}
+
+.empty-state h2 {
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #8b0000;
+  font-size: 22px;
+}
+
+.empty-state p {
+  color: #666;
+  font-size: 14px;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* Role content styling */
+.role-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Role summary section */
+.role-summary {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.role-summary h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.date-range {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.career-story {
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+}
+
+.career-story p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Journey milestone sections */
+.journey-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.journey-milestone {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+}
+
+.milestone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.milestone-header h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.milestone-date {
+  font-size: 14px;
+  color: #666;
+}
+
+.milestone-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.milestone-accomplishments h4,
+.milestone-skills h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+.accomplishment-list,
+.skills-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.accomplishment-item,
+.skill-item {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Define floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Play theme styling */
+.play .filter-panel {
+  background-color: var(--secondary-background-color);
+  border-color: var(--border-color);
+}
+
+.play .view-mode-btn {
+  border-color: var(--border-color);
+  color: var(--primary-color);
+}
+
+.play .view-mode-btn.active {
+  background-color: var(--accent-color);
+  border-color: var(--border-color);
+}
+
+.play h3 {
+  color: var(--primary-color);
+}
+
+.play .accomplishment-filter-button {
+  background-color: var(--secondary-background-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--primary-color) !important;
+}
+
+.play .accomplishment-filter-button:hover {
+  background-color: var(--accent-color) !important;
+}
+
+.play .accomplishment-filter-button.active {
+  background-color: var(--accent-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.play .role-count {
+  background-color: var(--accent-color) !important;
+  color: var(--primary-color) !important;
+}
+
+.play .accomplishment-detail {
+  background-color: var(--secondary-background-color);
+  border-color: var(--border-color);
+}
+
+/* Apply animation to pixel icon in play mode */
+.play .pixel-icon {
+  color: var(--primary-color);
+  animation: float 2s ease-in-out infinite;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.play .empty-state h2 {
+  color: var(--primary-color);
+}
+
+.play .empty-state p {
+  color: var(--primary-color);
+}
+
+.play .role-summary {
+  border-bottom-color: var(--accent-color);
+}
+
+.play .role-summary h2 {
+  color: var(--primary-color);
+}
+
+.play .date-range {
+  color: var(--primary-color);
+}
+
+.play .career-story {
+  background-color: var(--accent-color);
+  border-color: var(--border-color);
+}
+
+.play .career-story p {
+  color: var(--primary-color);
+}
+
+.play .journey-milestone {
+  background-color: var(--secondary-background-color);
+  border-color: var(--border-color);
+}
+
+.play .milestone-header {
+  border-bottom-color: var(--accent-color);
+}
+
+.play .milestone-header h3 {
+  color: var(--primary-color);
+}
+
+.play .milestone-date {
+  color: var(--primary-color);
+}
+
+.play .milestone-accomplishments h4,
+.play .milestone-skills h4 {
+  color: var(--primary-color);
+}
+
+.play .accomplishment-item,
+.play .skill-item {
+  color: var(--primary-color);
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .accomplishment-layout {
+    flex-direction: column;
+  }
+  
+  .filter-panel {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .milestone-content {
+    grid-template-columns: 1fr;
+  }
+}

@@ -20,13 +20,15 @@ The single planning surface for the Zo Garden monorepo. Definition: [`_definitio
 
 The durable goals the milestones serve. Edit when a goal is reached, retired, or added.
 
-- _TBD — articulate the first 1–3 outcomes once the platform shape is decided._
+- **One canonical Zo doc surface, publicly reachable.** Every Zo project is documented under `garden/content/` and the rendered site is the first thing someone sees when they look up Zo's work.
+- **One roof for Zo's projects.** The monorepo is the single home for current and future Zo-owned projects, with the doc taxonomy giving them a shared shape (`ARCH-###`, `M-###`, `OPER-###`, `TD-###`).
+- **A planning surface that holds.** This roadmap, and the milestones it orders, stay current — review cadence is enforced and stale milestones are closed or retired rather than left to drift.
 
 ## Active milestones (Now)
 
 | ID | Title | Owner | Exit criteria status |
 |---|---|---|---|
-| _none yet_ | | | |
+| [M-001](../milestones/M-001-quartz-go-live.md) | Quartz site goes live publicly | zo | 0 / 7 |
 
 ## Next
 

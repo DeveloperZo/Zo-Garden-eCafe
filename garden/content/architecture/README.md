@@ -18,4 +18,4 @@ System-shape and decision artifacts (`ARCH-###`). Definition: [`_definitions/arc
 
 ## Index
 
-_None yet — file the first one as `ARCH-001-descriptor.md`._
+- [ARCH-001 Platform overview](./ARCH-001-platform-overview.md) — anchor doc: monorepo shape, the docs pipeline, and the relationship between the doc surface and the apps it covers.

@@ -22,10 +22,13 @@ Last updated: 2026-05-04
 ## Recent changes
 
 - 2026-05-04 — Repo seeded; Quartz 4 site scaffolded under `garden/`; doc taxonomy adopted from the Serennovas pattern (core categories: ARCH, M/RM, OPER, TD, ROADMAP).
-- 2026-05-04 — `zowilliams.github.io` cloned into `githubpage/` as reference until subsumed.
+- 2026-05-04 — `zowilliams.github.io` (the `alonzo-axioms` React app) subsumed into `githubpage/`; its standalone `.git` was removed.
+- 2026-05-04 — Monorepo `git init`'d on `main`; first commit captures the Quartz scaffold and content taxonomy.
+- 2026-05-04 — Quartz configured for Zo Garden: `pageTitle = "Zo Garden"`, analytics disabled, footer link pointed at the Zo GitHub. `baseUrl` still TBD (host decision).
+- 2026-05-04 — First canonical artifacts seeded: [`ARCH-001`](./architecture/ARCH-001-platform-overview.md), [`M-001`](./milestones/M-001-quartz-go-live.md), and the first three outcomes on [`ROADMAP`](./roadmap/ROADMAP.md).
 
 ## Up next
 
-- Decide which existing repos to subsume into this monorepo and in what order.
-- Write the first `ARCH-001-platform-overview.md` describing the Zo Garden monorepo shape.
-- Write the first `M-###` artifact for the Quartz site go-live.
+- Pick a host for the Quartz site (GitHub Pages / Cloudflare Pages / Netlify) and add the deploy workflow — see [`M-001`](./milestones/M-001-quartz-go-live.md).
+- Decide the fate of the existing `developerzo.github.io/zowilliams.github.io` deploy: replaced, kept under a sub-route, or merged in.
+- Decide whether to introduce workspace tooling (npm workspaces / pnpm / Turborepo) now or wait until the third project lands.

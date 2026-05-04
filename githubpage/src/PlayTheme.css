@@ -1,0 +1,30 @@
+/* Play theme specific styles */
+body.play {
+    background-color: #222;
+    color: #fff;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.navbar.play {
+    background-color: #333;
+    border-bottom: 1px solid #555;
+}
+
+.navbar.play a {
+    color: #ffcc00;
+}
+
+.navbar.play a:hover {
+    color: #ff9900;
+}
+
+button.play {
+    background-color: #ff6600;
+    color: white;
+}
+
+button.play:hover {
+    background-color: #ff4500;
+}
+
+/* Additional styles specific to the Play theme */

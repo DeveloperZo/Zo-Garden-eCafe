@@ -11,15 +11,14 @@ garden/tsconfig.tsbuildinfo
 **/build/
 **/dist/
 
-# OS / editor
+# OS / editor / local-only tool state
 .DS_Store
 Thumbs.db
 *.log
 .idea/
 .vscode/
 .obsidian/
+.claude/settings.local.json
 
-# zowilliams.github.io is embedded here as its own .git repo until the
-# subsume strategy is decided (see M-001 / ARCH-001). Tracked in its own
-# repo for now; ignored at the monorepo level.
-githubpage/
+# zowilliams.github.io is now subsumed under githubpage/ (its own .git was
+# removed; we're not pushing back to the source repo).
