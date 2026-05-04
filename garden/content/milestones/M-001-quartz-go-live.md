@@ -21,13 +21,16 @@ Publish the Quartz 4 docs site under `garden/content/` to a real public URL so t
 
 ## Exit criteria
 
-- [ ] Host chosen and recorded in this doc (GitHub Pages / Cloudflare Pages / Netlify / other).
-- [ ] `garden/quartz.config.ts` `baseUrl` updated to the chosen host's URL.
-- [ ] `garden/quartz.layout.ts` footer "GitHub" link updated to the canonical Zo Garden monorepo URL.
-- [ ] Deploy workflow committed (CI config or host-side build hook) so a push to `main` rebuilds and republishes the site.
-- [ ] First public deploy succeeds; the live URL serves the current state of `garden/content/` end-to-end (landing, roadmap, ARCH-001, this milestone, all definitions).
-- [ ] The fate of the existing `zowilliams.github.io` deploy is decided and executed: either the React app is retired and its DNS / host pointer moved to the Quartz site, or the React app is kept under a sub-route and the Quartz site takes the apex URL.
-- [ ] `garden/content/roadmap/ROADMAP.md` reflects M-001 as completed, and this file is moved to `garden/content/milestones/completed/`.
+- [x] **Host chosen.** Cloudflare Pages (decided 2026-05-04). Build runs against `bash ./build.sh`; output at `garden/public/`.
+- [x] **Fate of `zowilliams.github.io` decided.** Quartz takes the apex; the `alonzo-axioms` React app is mounted at `/resume`. Implemented by [`build.sh`](https://github.com/DeveloperZo/Zo-Garden-eCafe/blob/main/build.sh), which copies `githubpage/build/` into `garden/public/resume/`. `homepage` in `githubpage/package.json` is `/resume`.
+- [x] **Deploy build is reproducible.** `bash ./build.sh` produces `garden/public/` with the Quartz site at `/` and the React app at `/resume`, end-to-end. Verified locally 2026-05-04.
+- [x] **Runbook exists.** [`OPER-001 Cloudflare Pages deploy`](../operations/OPER-001-cloudflare-pages-deploy.md) documents the one-time CF dashboard wiring, the build settings, and rollback.
+- [ ] **Cloudflare Pages project connected to the GitHub repo.** Per [OPER-001](../operations/OPER-001-cloudflare-pages-deploy.md): build command `bash ./build.sh`, output `garden/public`, `NODE_VERSION=22`. Manual step in the CF dashboard.
+- [ ] **First public deploy succeeds.** Pages URL serves the current state of `garden/content/` and `/resume` loads the React app. Verification checks in OPER-001 run green.
+- [ ] **`baseUrl` updated.** `garden/quartz.config.ts` `baseUrl` set to the chosen Pages URL (e.g. `zo-garden.pages.dev`) or custom domain.
+- [ ] **Footer link updated.** `garden/quartz.layout.ts` GitHub footer points at the canonical monorepo URL.
+- [ ] **DNS / former URL handled.** The previous `developerzo.github.io/zowilliams.github.io` deploy is either retired or redirects to the new home.
+- [ ] **Roadmap reflects closure.** `ROADMAP.md` marks M-001 completed; this file moves to `milestones/completed/`.
 
 ## Dependencies
 
@@ -36,22 +39,24 @@ Publish the Quartz 4 docs site under `garden/content/` to a real public URL so t
 
 ## Evidence
 
-- Local build (pre-deploy): `cd garden && npx quartz build` emits `garden/public/` cleanly. Verified 2026-05-04 — 17 input files, 63 emitted.
-- _Deploy URL: TBD — fill in once exit criterion 5 is met._
-- _Deploy workflow file: TBD — link the committed CI config or host-side hook here._
+- 2026-05-04 — Quartz-only build: `cd garden && npx quartz build` emits `garden/public/` (19 input files → 70 emitted, 0 errors).
+- 2026-05-04 — Combined build: `bash ./build.sh` produces `garden/public/` with Quartz at `/` and the React app at `/resume/`. Total bundle ~8.6 MB. CRA exits with lint warnings only (tracked separately as future cleanup, not blocking deploy).
+- _Deploy URL: TBD — fill in once the CF Pages project is created._
 
 ## Notes
 
-### Host options under consideration
+### Decisions taken (2026-05-04)
 
-| Host | Pros | Cons |
-|---|---|---|
-| **GitHub Pages** | Already used for `zowilliams.github.io`; zero new accounts; free for public repos | Build step needs an Action; static-only; routing under apex requires care |
-| **Cloudflare Pages** | One-click for static sites; fast CDN; generous free tier; preview deploys per PR | New account/integration to set up |
-| **Netlify** | Mature DX; preview deploys; redirects via `_redirects` | Same as CF — new account to manage |
+- **Host**: Cloudflare Pages — preview deploys per branch, fast CDN, simple GitHub integration. Tradeoff vs. GitHub Pages: a new account/integration to manage, but the per-branch preview URLs justify it.
+- **`/resume` mount**: Quartz at the apex; `alonzo-axioms` lives at `/resume`. The React app uses `HashRouter`, so no server-side rewrites are needed — its asset paths are prefixed by setting `"homepage": "/resume"` in its `package.json`.
+- **Custom domain**: not for v1. The default `*.pages.dev` URL is acceptable until a domain is registered.
 
-### Open questions
+### Known minor issue: internal `/resume` route inside the React app
 
-- Does the Quartz site replace `zowilliams.github.io` outright, or does `alonzo-axioms` keep a sub-route?
-- If `alonzo-axioms` stays, where? `/` (apex) with Quartz at `/garden`? Or Quartz at `/` with the React app at `/axioms`?
-- Does the public site need a custom domain, or is `*.github.io` / `*.pages.dev` / `*.netlify.app` fine for v1?
+The React app already has an internal route named `/resume` (see [`AppRoutes.tsx`](https://github.com/DeveloperZo/Zo-Garden-eCafe/blob/main/githubpage/src/AppRoutes.tsx)) that renders the `ResumeView` component. Because the app uses `HashRouter`, that internal route is reachable at `https://<host>/resume/#/resume` — functional but a confusing URL. Not blocking. If the redundancy becomes annoying, options are: rename the mount to `/axioms`, or rename the internal route. File a `TD-###` if it bothers you.
+
+### Open items (post-deploy)
+
+- Pick the v1 `baseUrl` once the Pages URL is live and update `quartz.config.ts`.
+- Update the footer GitHub link in `quartz.layout.ts` from the placeholder profile URL to the canonical repo URL.
+- Decide whether `developerzo.github.io/zowilliams.github.io` should redirect to the new home or be retired.

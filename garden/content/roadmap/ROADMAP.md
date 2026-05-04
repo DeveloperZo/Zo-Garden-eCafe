@@ -28,7 +28,7 @@ The durable goals the milestones serve. Edit when a goal is reached, retired, or
 
 | ID | Title | Owner | Exit criteria status |
 |---|---|---|---|
-| [M-001](../milestones/M-001-quartz-go-live.md) | Quartz site goes live publicly | zo | 0 / 7 |
+| [M-001](../milestones/M-001-quartz-go-live.md) | Quartz site goes live publicly | zo | 4 / 10 — host chosen (Cloudflare Pages), `/resume` mount built, runbook landed; remaining work is the dashboard wiring + first deploy |
 
 ## Next
 

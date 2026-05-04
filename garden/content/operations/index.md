@@ -19,10 +19,9 @@ Single entry point to operational runbooks for the Zo Garden monorepo. Each entr
 
 ## By scenario
 
-_Empty — populate as runbooks are added._
-
 | Scenario | Runbook | Status |
 |---|---|---|
+| Deploy / redeploy / roll back the public site on Cloudflare Pages | [OPER-001 Cloudflare Pages deploy](./OPER-001-cloudflare-pages-deploy.md) | working |
 
 ## See also
 

@@ -1,7 +1,7 @@
 {
   "name": "alonzo-axioms",
   "version": "0.1.0",
-  "homepage": "https://developerzo.github.io/zowilliams.github.io",
+  "homepage": "/resume",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
