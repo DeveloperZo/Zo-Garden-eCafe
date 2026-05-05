@@ -10,12 +10,12 @@ Purpose: How to wire and operate the Cloudflare Pages deploy for the Zo Garden m
 Status: working
 Owner: zo
 Update trigger: when the build script changes, when CF Pages settings change, when a custom domain is added
-Last updated: 2026-05-04
+Last updated: 2026-05-04 (build.sh trimmed to Quartz-only; githubpage/ now untracked, kept locally as porting reference)
 -->
 
 # OPER-001 Cloudflare Pages deploy
 
-The Zo Garden monorepo is deployed via Cloudflare Pages directly from the GitHub repo at [`DeveloperZo/Zo-Garden-eCafe`](https://github.com/DeveloperZo/Zo-Garden-eCafe). Cloudflare watches `main`, runs `build.sh`, and serves the resulting `garden/public/` to the Pages URL. The Quartz docs site lives at `/`; the `alonzo-axioms` React app is mounted at `/resume`.
+The Zo Garden monorepo is deployed via Cloudflare Pages directly from the GitHub repo at [`DeveloperZo/Zo-Garden-eCafe`](https://github.com/DeveloperZo/Zo-Garden-eCafe). Cloudflare watches `main`, runs `build.sh`, and serves the resulting `garden/public/` to the Pages URL. The Quartz docs site lives at `/`.
 
 ## Modes and prerequisites
 
@@ -63,19 +63,15 @@ After a deploy completes:
 
 1. **Pages URL is reachable.** `curl -I https://zo-garden.pages.dev/` returns `200`.
 2. **Quartz site renders.** Visiting the apex URL shows the **Zo Garden** landing page. Title in tab is `Zo Garden`.
-3. **Resume mount works.** `https://<pages-url>/resume/` loads the `alonzo-axioms` React app and redirects (via HashRouter) to `#/main-menu`.
-4. **Static assets resolve.** No 404s in the network tab on either route. CRA assets are served from `/resume/static/...`.
-5. **Sitemap and RSS exist.** `/sitemap.xml` and `/index.xml` (RSS) return XML.
-6. **No analytics ping.** `analytics: null` in `quartz.config.ts` — confirm no requests to `plausible.io`.
+3. **Static assets resolve.** No 404s in the network tab.
+4. **Sitemap and RSS exist.** `/sitemap.xml` and `/index.xml` (RSS) return XML.
+5. **No analytics ping.** `analytics: null` in `quartz.config.ts` — confirm no requests to `plausible.io`.
 
 ## Troubleshooting and fallback
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | Build fails with `Quartz requires Node >=22` | `NODE_VERSION` env var not set on the Pages project | Add `NODE_VERSION=22` under Settings → Environment variables |
-| `npm ci` fails on `githubpage/` | `package-lock.json` out of sync after dep changes | `cd githubpage && npm install && git commit package-lock.json` |
-| `/resume` returns 404 | Build script didn't copy CRA output, or `homepage` in `githubpage/package.json` isn't `/resume` | Re-run `bash ./build.sh` locally; check `garden/public/resume/index.html` exists; verify `homepage` field |
-| `/resume/static/*.js` 404 | `homepage` field doesn't match the mount path | Set `"homepage": "/resume"` in `githubpage/package.json` and rebuild |
 | Quartz pages render but links 404 | `baseUrl` in `quartz.config.ts` doesn't match the live URL | Update `baseUrl` to the actual deployed origin (e.g. `zo-garden.pages.dev` or your custom domain) and push |
 
 ### Rollback

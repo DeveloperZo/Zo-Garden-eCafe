@@ -11,7 +11,11 @@ garden/tsconfig.tsbuildinfo
 **/build/
 **/dist/
 
-# OS / editor / local-only tool state
+# Secrets / local environment
+.env
+.env.*
+
+# OS / editor / local-tool state
 .DS_Store
 Thumbs.db
 *.log
@@ -20,5 +24,6 @@ Thumbs.db
 .obsidian/
 .claude/settings.local.json
 
-# zowilliams.github.io is now subsumed under githubpage/ (its own .git was
-# removed; we're not pushing back to the source repo).
+# githubpage/ is kept locally as a reference for porting the resume into
+# garden/ as Quartz content + components. Not built or deployed.
+githubpage/
