@@ -1,0 +1,809 @@
+/* src/components/Timeline/Timeline.css */
+
+/* Base container */
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+  }
+  
+  /* CAREER SUMMARY SECTION */
+  .career-summary {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  
+  .timeline-container.play .career-summary {
+    background-color: var(--secondary-background-color);
+    border: 6px solid var(--accent-color);
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+    font-family: 'Press Start 2P', monospace;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .timeline-container.play .career-summary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+      to right,
+      var(--accent-color),
+      var(--accent-color) 10px,
+      var(--highlight-color) 10px,
+      var(--highlight-color) 20px
+    );
+  }
+  
+  .timeline-container.work .career-summary {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .career-summary h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-container.play .career-summary h2 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 var(--shadow-color);
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-container.work .career-summary h2 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .timeline-container.work .career-summary h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background-color: var(--accent-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .summary-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Pixel art avatar for retro mode */
+  .pixel-avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect x="0" y="0" width="10" height="10" fill="%23333"/><rect x="2" y="2" width="2" height="2" fill="%23FFF"/><rect x="6" y="2" width="2" height="2" fill="%23FFF"/><rect x="4" y="6" width="2" height="2" fill="%23FFF"/></svg>');
+    background-size: cover;
+    image-rendering: pixelated;
+    border: 3px solid var(--accent-color);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+  }
+  
+  .summary-text {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+  }
+  
+  .timeline-container.play .summary-text {
+    font-size: 0.7rem;
+    line-height: 1.6;
+    padding: 1rem;
+    border: 2px dashed var(--accent-color);
+    background-color: var(--background-color);
+  }
+  
+  .timeline-container.work .summary-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 300;
+    color: var(--primary-color);
+  }
+  
+  /* Stats in the summary */
+  .summary-stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 0.8rem;
+    border: 3px solid var(--accent-color);
+    min-width: 80px;
+  }
+  
+  .stat-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 0.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .exp-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="8,1 10,5 15,6 11.5,9 12,14 8,12 4,14 4.5,9 1,6 6,5" fill="%23FFD700"/></svg>');
+  }
+  
+  .quest-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect x="3" y="2" width="10" height="13" fill="%239C6644"/><rect x="5" y="4" width="6" height="2" fill="%23FFCC66"/><rect x="5" y="7" width="6" height="2" fill="%23FFCC66"/><rect x="5" y="10" width="6" height="2" fill="%23FFCC66"/></svg>');
+  }
+  
+  .skill-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect x="2" y="7" width="12" height="2" fill="%23FF4500"/><rect x="7" y="2" width="2" height="12" fill="%23FF4500"/><circle cx="8" cy="8" r="3" fill="%23FFFFFF" stroke="%23FF4500" stroke-width="1"/></svg>');
+  }
+  
+  /* Professional competencies section */
+  .competencies {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  
+  .competencies h3 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .competency-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .competency-list li {
+    background-color: rgba(107, 15, 26, 0.05);
+    color: var(--primary-color);
+    padding: 0.7rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border-left: 3px solid var(--accent-color);
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 250px;
+  }
+  
+  /* Title styles */
+  .timeline-title {
+    text-align: center;
+    margin: 3rem 0;
+    position: relative;
+    color: var(--primary-color);
+  }
+  
+  /* Theme-specific title styles */
+  .timeline-container.play .timeline-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-shadow: 3px 3px 0 var(--shadow-color);
+    padding-bottom: 1.5rem;
+  }
+  
+  .timeline-container.work .timeline-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+  }
+  
+  .timeline-title::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Main timeline structure */
+  .timeline {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+  }
+  
+  /* Timeline center line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--accent-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  
+  /* Theme-specific timeline line */
+  .timeline-container.play .timeline::before {
+    width: 6px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--accent-color),
+      var(--accent-color) 15px,
+      var(--highlight-color) 15px,
+      var(--highlight-color) 30px
+    );
+  }
+  
+  .timeline-container.work .timeline::before {
+    width: 4px;
+    background-color: var(--accent-color);
+    opacity: 0.6;
+  }
+  
+  /* Timeline items */
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 4rem;
+    z-index: 2;
+  }
+  
+  /* Content styling with proper spacing */
+  .timeline-content {
+    position: relative;
+    width: 70%;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Left side items */
+  .timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 6rem;
+    margin-left: auto;
+  }
+  
+  .timeline-item:nth-child(odd)::before {
+    right: -8px;
+    border-color: var(--timeline-dot-color);
+  }
+  
+  .timeline-item:nth-child(odd)::after {
+    right: 8px;
+    width: 6rem;
+    background: var(--accent-color);
+  }
+  
+  /* Right side items */
+  .timeline-item:nth-child(even) {
+    left: 50%;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 6rem;
+    margin-right: auto;
+  }
+  
+  .timeline-item:nth-child(even)::before {
+    left: -8px;
+    border-color: var(--timeline-dot-color);
+  }
+  
+  .timeline-item:nth-child(even)::after {
+    left: 8px;
+    width: 6rem;
+    background: var(--accent-color);
+  }
+  
+  /* Circle connectors - common styles */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--background-color);
+    border: 3px solid;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+  
+  /* Connector lines */
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  /* Theme-specific circle styles */
+  .timeline-container.play .timeline-item::before {
+    width: 20px;
+    height: 20px;
+    border: 4px solid;
+    border-radius: 0;
+  }
+  
+  .timeline-container.work .timeline-item::before {
+    width: 16px;
+    height: 16px;
+    border: 3px solid;
+    border-radius: 50%;
+  }
+  
+  /* Type pill indicator */
+  .timeline-container.work .timeline-content::before {
+    content: attr(data-type);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-radius: 8px 8px 0 0;
+    color: white;
+  }
+  
+  /* Type-specific pill colors */
+  .timeline-container.work .timeline-item[data-type="career"] .timeline-content::before {
+    background: linear-gradient(to bottom, var(--accent-color), transparent);
+    color: white;
+  }
+  
+  .timeline-container.work .timeline-item[data-type="hobby"] .timeline-content::before {
+    background: linear-gradient(to bottom, #4287f5, transparent);
+    color: white;
+  }
+  
+  .timeline-container.work .timeline-item[data-type="education"] .timeline-content::before {
+    background: linear-gradient(to bottom, #32CD32, transparent);
+    color: white;
+  }
+  
+  .timeline-container.work .timeline-item[data-type="independent"] .timeline-content::before {
+    background: linear-gradient(to bottom, #9C27B0, transparent);
+    color: white;
+  }
+  
+  /* Type-specific colors for dots */
+  .timeline-item[data-type="career"]::before {
+    border-color: var(--accent-color),
+  }
+  
+  .timeline-item[data-type="hobby"]::before {
+    border-color: #4287f5;
+  }
+  
+  .timeline-item[data-type="education"]::before {
+    border-color: #32CD32;
+  }
+  
+  .timeline-item[data-type="independent"]::before {
+    border-color: #9C27B0,;
+  }
+  
+  /* Role icons for retro mode */
+  .timeline-container.play .pixel-icon {
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    z-index: 4;
+  }
+  
+  .role-icon-software-architect {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="8,1 8,5 12,5 12,8 10,8 10,10 8,10 8,12 6,12 6,10 4,10 4,8 2,8 2,5 6,5 6,1" fill="%23CC7722"/><rect x="7" y="12" width="2" height="3" fill="%23CC7722"/></svg>');
+  }
+  
+  .role-icon-senior-consultant {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="4" r="3" fill="%234287f5"/><path d="M2,14 L2,9 C2,9 4,7 8,7 C12,7 14,9 14,9 L14,14 Z" fill="%234287f5"/></svg>');
+  }
+  
+  .role-icon-team-lead {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="4" r="3" fill="%23F5D742"/><circle cx="3" cy="6" r="2" fill="%23F5D742"/><circle cx="13" cy="6" r="2" fill="%23F5D742"/><path d="M4,15 L4,9 C4,9 5,8 8,8 C11,8 12,9 12,9 L12,15 Z" fill="%23F5D742"/><path d="M1,14 L1,10 C1,10 1.5,9 3,9 C4.5,9 5,10 5,10 L5,12 Z" fill="%23F5D742"/><path d="M15,14 L15,10 C15,10 14.5,9 13,9 C11.5,9 11,10 11,10 L11,12 Z" fill="%23F5D742"/></svg>');
+  }
+  
+  .role-icon-developer {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3,12 L7,8 L3,4 L4,3 L9,8 L4,13 Z" fill="%2332CD32"/><path d="M9,13 L9,11 L13,11 L13,13 Z" fill="%2332CD32"/></svg>');
+  }
+  
+  /* Theme-specific content */
+  .timeline-container.play .timeline-content {
+    background-color: var(--secondary-background-color);
+    border: 4px solid var(--accent-color);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+    padding: 1.2rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+  }
+  
+  .timeline-container.play .timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.4);
+  }
+  
+  .timeline-container.work .timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Date display */
+  .timeline-date {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .timeline-container.play .timeline-date {
+    color: var(--highlight-color);
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .timeline-container.work .timeline-date {
+    color: var(--accent-color);
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+  
+  /* Title/heading */
+  .timeline-heading {
+    margin: 0.5rem 0;
+  }
+  
+  .timeline-container.play .timeline-heading {
+    color: var(--accent-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  
+  .timeline-container.work .timeline-heading {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Company name */
+  .timeline-company {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-container.play .timeline-company {
+    color: var(--highlight-color);
+    font-size: 0.7rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .timeline-container.work .timeline-company {
+    color: var(--primary-color);
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  
+  /* Duration */
+  .timeline-duration {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .timeline-container.play .timeline-duration {
+    color: var(--highlight-color);
+    font-size: 0.7rem;
+    font-style: normal;
+    background-color: var(--background-color);
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    border: 2px solid var(--highlight-color);
+    margin: 0.8rem 0;
+  }
+  
+  .timeline-container.work .timeline-duration {
+    color: var(--primary-color);
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+  
+  /* Description */
+  .timeline-description {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .timeline-container.play .timeline-description {
+    font-size: 0.7rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+  
+  .timeline-container.work .timeline-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  
+  /* Role badges */
+  .timeline-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .timeline-role-badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  
+  .timeline-container.play .timeline-role-badge {
+    background-color: var(--background-color);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 0.6rem;
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .timeline-container.work .timeline-role-badge {
+    background-color: rgba(107, 15, 26, 0.1);
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  /* Stats section */
+  .timeline-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .timeline-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .timeline-container.play .timeline-stat {
+    background-color: var(--background-color);
+    border: 2px solid var(--accent-color);
+    padding: 0.5rem;
+    min-width: 60px;
+  }
+  
+  .timeline-container.work .timeline-stat {
+    background-color: transparent;
+    padding: 0.3rem;
+    min-width: 70px;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .timeline-container.play .stat-label {
+    color: var(--accent-color);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+  }
+  
+  .timeline-container.work .stat-label {
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+  
+  .stat-value {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .timeline-container.play .stat-value {
+    color: var(--highlight-color);
+    font-size: 0.9rem;
+  }
+  
+  .timeline-container.work .stat-value {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+  }
+  
+  /* CTA/View more */
+  .timeline-cta {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .timeline-container.play .timeline-cta {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+  }
+  
+  .timeline-container.play .timeline-content:hover .timeline-cta {
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+    transform: translate(1px, 1px);
+  }
+  
+  .timeline-container.work .timeline-cta {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-top: 1px solid var(--border-color);
+    transition: color 0.2s;
+  }
+  
+  .timeline-container.work .timeline-content:hover .timeline-cta {
+    color: #501216;
+  }
+  
+  /* Role specific icons */
+  .timeline-container.play .role-icon-software-architect {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="8,1 8,5 12,5 12,8 10,8 10,10 8,10 8,12 6,12 6,10 4,10 4,8 2,8 2,5 6,5 6,1" fill="%23FF6600"/><rect x="7" y="12" width="2" height="3" fill="%23FF6600"/></svg>');
+  }
+  
+  .timeline-container.play .role-icon-senior-consultant {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="4" r="3" fill="%234287f5"/><path d="M2,14 L2,9 C2,9 4,7 8,7 C12,7 14,9 14,9 L14,14 Z" fill="%234287f5"/></svg>');
+  }
+  
+  .timeline-container.play .role-icon-team-lead {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="4" r="3" fill="%23F5D742"/><circle cx="3" cy="6" r="2" fill="%23F5D742"/><circle cx="13" cy="6" r="2" fill="%23F5D742"/><path d="M4,15 L4,9 C4,9 5,8 8,8 C11,8 12,9 12,9 L12,15 Z" fill="%23F5D742"/><path d="M1,14 L1,10 C1,10 1.5,9 3,9 C4.5,9 5,10 5,10 L5,12 Z" fill="%23F5D742"/><path d="M15,14 L15,10 C15,10 14.5,9 13,9 C11.5,9 11,10 11,10 L11,12 Z" fill="%23F5D742"/></svg>');
+  }
+  
+  .timeline-container.play .role-icon-interim-director-of-engineering {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect x="3" y="2" width="10" height="3" fill="%23A335EE"/><rect x="5" y="5" width="6" height="3" fill="%23A335EE"/><rect x="7" y="8" width="2" height="6" fill="%23A335EE"/><circle cx="8" cy="4" r="2" fill="%23FFD700" stroke="%23A335EE" stroke-width="1"/></svg>');
+  }
+  
+  .timeline-container.play .role-icon-developer {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3,12 L7,8 L3,4 L4,3 L9,8 L4,13 Z" fill="%2332CD32"/><path d="M9,13 L9,11 L13,11 L13,13 Z" fill="%2332CD32"/></svg>');
+  }
+  
+  .timeline-container.play .role-icon-itcfp-participant {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5" fill="%233498DB" stroke="%232980B9" stroke-width="1"/><circle cx="8" cy="8" r="2" fill="%23ECF0F1"/><path d="M8,3 L8,1 M8,15 L8,13 M13,8 L15,8 M1,8 L3,8 M11.5,4.5 L13,3 M3,13 L4.5,11.5 M4.5,4.5 L3,3 M13,13 L11.5,11.5" stroke="%233498DB" stroke-width="1"/></svg>');
+  }
+  
+  .timeline-container.play .role-icon-game-developer {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect x="2" y="5" width="12" height="6" rx="1" fill="%23E91E63"/><circle cx="5" cy="8" r="1" fill="%23FFFFFF"/><circle cx="8" cy="8" r="1" fill="%23FFFFFF"/><circle cx="11" cy="8" r="1" fill="%23FFFFFF"/><rect x="6" y="3" width="4" height="2" fill="%23E91E63"/><rect x="6" y="11" width="4" height="2" fill="%23E91E63"/></svg>');
+  }
+  
+  .timeline-container.play .role-icon-ai-enthusiast {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5" fill="%239C27B0"/><path d="M8,3 L8,5 M8,11 L8,13 M3,8 L5,8 M11,8 L13,8" stroke="%239C27B0" stroke-width="1"/><circle cx="8" cy="8" r="2" fill="%23E1BEE7"/></svg>');
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .competency-list li {
+      flex: 1 1 100%;
+    }
+    
+    .summary-stats-container {
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 20px;
+    }
+    
+    .timeline-item {
+      width: 100%;
+      left: 0 !important;
+    }
+    
+    .timeline-content {
+      width: calc(100% - 7rem);
+      margin-left: 7rem !important;
+      margin-right: 1rem !important;
+    }
+    
+    .timeline-item::before {
+      left: 12px !important;
+      right: auto !important;
+    }
+    
+    .timeline-item::after {
+      left: 28px !important;
+      right: auto !important;
+      width: 5rem !important;
+    }
+    
+    .competency-list {
+      flex-direction: column;
+    }
+    
+    .stat-item {
+      min-width: 70px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .career-summary {
+      padding: 1rem;
+    }
+    
+    .timeline-container.play .career-summary h2,
+    .timeline-container.work .career-summary h2,
+    .timeline-container.play .timeline-title,
+    .timeline-container.work .timeline-title {
+      font-size: 1.3rem;
+    }
+    
+    .timeline-content {
+      padding: 1rem;
+    }
+    
+    .timeline-stats {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .timeline-container.play .timeline-heading {
+      font-size: 0.8rem;
+    }
+    
+    .timeline-container.work .timeline-heading {
+      font-size: 1.1rem;
+    }
+    
+    .timeline-description {
+      font-size: 0.9rem;
+    }
+    
+    .summary-stats-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .stat-item {
+      width: 100%;
+      max-width: 150px;
+    }
+  }

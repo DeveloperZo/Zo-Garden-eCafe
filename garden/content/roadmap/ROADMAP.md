@@ -9,7 +9,7 @@ Purpose: Single canonical planning surface for the Zo Garden monorepo. Roadmap p
 Status: canonical
 Owner: zo
 Update trigger: when a milestone is opened, closed, or re-sequenced; when an outcome is added or retired
-Last updated: 2026-05-04
+Last updated: 2026-05-05
 -->
 
 # Roadmap
@@ -28,7 +28,7 @@ The durable goals the milestones serve. Edit when a goal is reached, retired, or
 
 | ID | Title | Owner | Exit criteria status |
 |---|---|---|---|
-| [M-001](../milestones/M-001-quartz-go-live.md) | Quartz site goes live publicly | zo | 4 / 10 — host chosen (Cloudflare Pages), `/resume` mount built, runbook landed; remaining work is the dashboard wiring + first deploy |
+| _none_ | | | |
 
 ## Next
 
@@ -41,6 +41,12 @@ The durable goals the milestones serve. Edit when a goal is reached, retired, or
 | ID | Title | Notes |
 |---|---|---|
 | _none yet_ | | |
+
+## Completed (`M-*`)
+
+| ID | Title | Closed |
+|---|---|---|
+| [M-001](../milestones/completed/M-001-quartz-go-live.md) | Quartz site goes live publicly | 2026-05-05 |
 
 ## Retroactive milestones (`RM-*`)
 

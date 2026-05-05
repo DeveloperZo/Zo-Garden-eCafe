@@ -1,0 +1,6 @@
+# Cloudflare Pages — tells Wrangler where static assets live after `bash ./build.sh`.
+# Dashboard builds should use the same path (Output directory: garden/public).
+# https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+name = "zo-garden"
+compatibility_date = "2025-05-01"
+pages_build_output_dir = "garden/public"

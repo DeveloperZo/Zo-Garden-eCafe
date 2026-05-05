@@ -23,7 +23,3 @@ Thumbs.db
 .vscode/
 .obsidian/
 .claude/settings.local.json
-
-# githubpage/ is kept locally as a reference for porting the resume into
-# garden/ as Quartz content + components. Not built or deployed.
-githubpage/

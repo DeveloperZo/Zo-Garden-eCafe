@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can AI Self-Govern? A Systems Analysis</title>
+  <style>
+    /* ══ DESIGN TOKENS — edit colors here ══════════════════════════════════ */
+    :root {
+      --bg: #F7F6F3;
+      --surface: #FFFFFF;
+      --text: #1C1C2E;
+      --muted: #6B6B85;
+      --border: #E4E2DC;
+      --shadow: rgba(28,28,46,0.07);
+      --red:   #C94B2E; --red-lt:   #FDE8E3;
+      --green: #2A7A5F; --green-lt: #EDF7F3;
+      --blue:  #3A5498; --blue-lt:  #E3E8F5;
+      --amber: #C9880A; --amber-lt: #FEF8E8;
+      --gray:  #9B9BA8; --gray-lt:  #F0EFF0;
+      /* Feedback-loop color semantics — used consistently across all diagrams */
+      --loop-R:           var(--red);
+      --loop-R-surface:   var(--red-lt);
+      --loop-B:           var(--green);
+      --loop-B-surface:   var(--green-lt);
+      --loop-R2:          var(--amber);
+      --loop-R2-surface:  var(--amber-lt);
+      --loop-weak:        var(--gray);
+      --loop-weak-surface: var(--gray-lt);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.75; font-size: 17px;
+    }
+
+    /* ══ NAV ═══════════════════════════════════════════════════════════════ */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(247,246,243,.96); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 48px;
+      display: flex; align-items: center; gap: 4px;
+      overflow-x: auto; white-space: nowrap;
+    }
+    .nav-brand { font-weight: 800; font-size: 14px; color: var(--text); margin-right: 12px; flex-shrink: 0; }
+    nav a {
+      font-size: 13px; font-weight: 500; color: var(--muted);
+      text-decoration: none; padding: 5px 12px; border-radius: 20px; flex-shrink: 0;
+      transition: background .15s, color .15s;
+    }
+    nav a:hover { background: var(--border); color: var(--text); }
+
+    /* ══ LAYOUT ═════════════════════════════════════════════════════════════ */
+    main { max-width: 840px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* ══ HERO ═══════════════════════════════════════════════════════════════ */
+    .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--border); margin-bottom: 56px; text-align: center; }
+    .hero-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(2rem,5vw,3rem); font-weight: 900; letter-spacing: -.035em; line-height: 1.15; margin-bottom: 20px; }
+    .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 580px; margin: 0 auto 28px; line-height: 1.65; }
+    .legend { display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px; }
+    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    /* Loop badges */
+    .loop-key {
+      display: inline-block; padding: 2px 8px; margin: 4px 4px 0 0;
+      border-radius: 6px; font-size: 10px; font-weight: 800; letter-spacing: .06em;
+      text-transform: uppercase; border: 1px solid transparent; vertical-align: middle;
+    }
+    .loop-key-r1, .loop-key-R, .loop-key-r { background: var(--loop-R-surface); color: var(--loop-R); border-color: rgba(201,75,46,0.25); }
+    .loop-key-r2 { background: var(--loop-R2-surface); color: var(--loop-R2); border-color: rgba(201,136,10,0.35); }
+    .loop-key-b, .loop-key-B { background: var(--loop-B-surface); color: var(--loop-B); border-color: rgba(42,122,95,0.28); }
+
+    /* ══ SECTIONS (shared) ══════════════════════════════════════════════════ */
+    section { margin-bottom: 72px; scroll-margin-top: 64px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    h2 { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -.025em; line-height: 1.25; margin-bottom: 18px; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    p { margin-bottom: 18px; } p:last-child { margin-bottom: 0; }
+    strong { font-weight: 700; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ══ VIZ CONTAINERS ═════════════════════════════════════════════════════ */
+    .viz { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px 20px 16px; margin: 28px 0; box-shadow: 0 2px 10px var(--shadow); overflow-x: auto; }
+    .viz-label { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .viz svg { display: block; width: 100%; height: auto; }
+    svg text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .viz-caption { font-size: 13px; color: var(--muted); margin-top: 12px; font-style: italic; line-height: 1.6; }
+
+    /* ══ CALLOUTS ═══════════════════════════════════════════════════════════ */
+    .callout { border-left: 3px solid; border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 22px 0; }
+    .callout-title { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+    .callout p { font-size: 15px; margin-bottom: 0; line-height: 1.65; }
+    .callout-key  { border-color: var(--amber); background: var(--amber-lt); }
+    .callout-key  .callout-title { color: var(--amber); }
+    .callout-warn { border-color: var(--red);   background: var(--red-lt);   }
+    .callout-warn .callout-title { color: var(--red); }
+    .callout-ok   { border-color: var(--green); background: var(--green-lt); }
+    .callout-ok   .callout-title { color: var(--green); }
+
+    /* ══ STATS GRID ══════════════════════════════════════════════════════════ */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px,1fr)); gap: 14px; margin: 24px 0; }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 16px; text-align: center; }
+    .stat-val { font-size: 2rem; font-weight: 900; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 5px; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+    /* ══ DEEP-DIVE ACCORDIONS ═══════════════════════════════════════════════ */
+    details { border: 1px solid var(--border); border-radius: 10px; margin: 16px 0; background: var(--surface); }
+    summary { padding: 14px 18px; cursor: pointer; font-size: 15px; font-weight: 600; list-style: none; display: flex; align-items: center; gap: 9px; user-select: none; }
+    summary::-webkit-details-marker { display: none; }
+    .sc { display: inline-block; font-size: 10px; color: var(--muted); transition: transform .2s; flex-shrink: 0; }
+    details[open] .sc { transform: rotate(90deg); }
+    .details-body { padding: 0 18px 18px; font-size: 15px; color: var(--muted); line-height: 1.7; border-top: 1px solid var(--border); margin: 0 18px; padding-top: 16px; }
+    .details-body p { margin-bottom: 12px; } .details-body p:last-child { margin-bottom: 0; }
+
+    /* ══ TABLES ══════════════════════════════════════════════════════════════ */
+    .tbl-wrap { overflow-x: auto; margin: 22px 0; border-radius: 10px; border: 1px solid var(--border); box-shadow: 0 2px 8px var(--shadow); }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); font-size: 14px; }
+    th { text-align: left; padding: 11px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); background: var(--bg); border-bottom: 1px solid var(--border); }
+    td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; }
+    tr:last-child td { border-bottom: none; }
+
+    /* ══ LEVERAGE POINT CARDS (§ 8) ═════════════════════════════════════════ */
+    .tier-header { display: flex; align-items: center; gap: 10px; margin: 28px 0 12px; }
+    .tier-badge { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+    .tier-low    { background: var(--gray-lt); color: var(--gray); }
+    .tier-mid    { background: var(--blue-lt); color: var(--blue); }
+    .tier-high   { background: var(--amber-lt); color: var(--amber); }
+    .tier-xform  { background: var(--red-lt); color: var(--red); }
+    .tier-desc   { font-size: 13px; color: var(--muted); }
+    .lp-card { border-left: 4px solid; border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 10px 0; background: var(--surface); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .lp-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+    .lp-num { font-size: 13px; font-weight: 800; min-width: 30px; }
+    .lp-name { font-size: 15px; font-weight: 700; }
+    .lp-body { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 6px; }
+    .lp-action { font-size: 13px; margin-top: 6px; padding: 8px 12px; border-radius: 6px; }
+    .lp-low   { border-left-color: var(--gray);  }
+    .lp-mid   { border-left-color: var(--blue);  }
+    .lp-high  { border-left-color: var(--amber); }
+    .lp-xform { border-left-color: var(--red);   }
+    .lp-action-low   { background: var(--gray-lt);  }
+    .lp-action-mid   { background: var(--blue-lt);  }
+    .lp-action-high  { background: var(--amber-lt); }
+    .lp-action-xform { background: var(--red-lt);   }
+
+    /* ══ CENTRAL-QUESTION ELEMENTS ══════════════════════════════════════════ */
+    /* .hero-question  — the framing question in the hero                     */
+    /* .section-thread — one-line bridge connecting each section to the arc   */
+    .hero-question {
+      font-size: clamp(1.05rem, 2.5vw, 1.25rem); font-weight: 800;
+      letter-spacing: -.015em; color: var(--text);
+      background: var(--red-lt); border: 1px solid rgba(201,75,46,0.25);
+      border-radius: 10px; padding: 14px 22px;
+      margin: 0 auto 24px; max-width: 560px; line-height: 1.4;
+    }
+    .section-thread {
+      font-size: 15px; font-style: italic; color: var(--muted);
+      border-left: 3px solid var(--border); padding-left: 14px;
+      margin-bottom: 22px; line-height: 1.7;
+    }
+    /* Two-paths comparison block */
+    .two-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    .path-card { border-radius: 12px; padding: 18px 16px; }
+    .path-race  { background: var(--red-lt);   border: 1px solid rgba(201,75,46,0.3); }
+    .path-slow  { background: var(--green-lt); border: 1px solid rgba(42,122,95,0.3); }
+    .path-label { font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 8px; }
+    .path-race  .path-label { color: var(--red); }
+    .path-slow  .path-label { color: var(--green); }
+    .path-card p { font-size: 14px; line-height: 1.65; margin-bottom: 6px; color: var(--text); }
+    @media (max-width: 560px) { .two-paths { grid-template-columns: 1fr; } }
+
+    /* ══ FOOTER ══════════════════════════════════════════════════════════════ */
+    footer { max-width: 840px; margin: 0 auto; padding: 32px 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); line-height: 1.65; }
+    footer p { margin-bottom: 8px; }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      main { padding: 0 16px 60px; }
+      .viz { padding: 16px 12px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">Can AI Self-Govern?</span>
+  <a href="#tech">The Tech</a>
+  <a href="#money">The Money</a>
+  <a href="#alignment">Alignment</a>
+  <a href="#oversight">Oversight</a>
+  <a href="#loops">The System</a>
+  <a href="#dance">The Dance</a>
+  <a href="#paths">Two Paths</a>
+  <a href="#leverage">Leverage</a>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <div class="hero">
+    <p class="hero-eyebrow">An analysis · May 2026</p>
+    <h1>Can AI Self-Govern?</h1>
+    <p class="hero-question">Can the companies building the most powerful technology in history be trusted to regulate themselves?</p>
+    <p class="hero-sub">Eight sections build a structural answer — not a political one. They trace how the system works, what forces keep it accelerating, and where real leverage exists. The answer isn't optimism or doom. It's more useful than either.</p>
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:var(--red)"></span>Reinforcing loop — grows itself, labeled <strong>R</strong></span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--green)"></span>Balancing loop — should slow things, labeled <strong>B</strong></span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--amber)"></span>Paradoxical acceleration — labeled <strong>R2</strong></span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--gray)"></span>Broken, weak, or absent loop</span>
+    </div>
+    <p style="font-size:13px;color:var(--muted)">Sources: public filings, primary research, peer-reviewed literature · As of May 2026</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       § 1  WHAT'S BEING BUILT
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="tech">
+    <p class="section-label">Part 1 of 8</p>
+    <h2>What's Being Built</h2>
+    <p class="section-thread">Before asking whether AI can self-govern, understand what it is: systems where raw capability scales reliably with compute — and where that compute is concentrating into very few hands.</p>
+    <p>Forget the robot imagery. A modern AI model — the thing behind ChatGPT, Claude, or Gemini — is fundamentally <strong>a very large file of numbers</strong>. Those numbers, called <em>weights</em>, encode patterns learned by reading an enormous amount of text. A large model might have 100 billion of them. That file is the model.</p>
+    <p>Training is how those numbers get produced. The process is almost comically simple in concept: show the model a sentence, ask it to predict the next word, tell it how wrong it was, and adjust the numbers a tiny bit. Do that billions of times across trillions of words, and something unexpected happens — the model generalizes in ways nobody explicitly taught it. It reasons, writes code, and translates, because those capabilities emerge from pattern-matching at sufficient scale.</p>
+
+    <div class="viz">
+      <p class="viz-label">How a Model Gets Built — Training Pipeline</p>
+      <svg viewBox="0 0 730 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-train-title viz-train-desc">
+        <title id="viz-train-title">Training pipeline from data to inference</title>
+        <desc id="viz-train-desc">Flow reads left to right: Internet → training data → training run → trained model weights → user prompts. A dashed curved arrow loops from user prompts back toward the internet and training data, labeled outputs inform the next training run.</desc>
+        <defs>
+          <marker id="t-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#9B9BA8"/></marker>
+          <marker id="t-red"  viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#C94B2E"/></marker>
+        </defs>
+        <text x="66"  y="26" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">① collect</text>
+        <text x="211" y="26" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">② filter &amp; label</text>
+        <text x="370" y="21" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">③ billions of tiny adjustments</text>
+        <text x="529" y="26" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">④ result</text>
+        <text x="665" y="26" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">⑤ your use</text>
+        <rect x="11"  y="70" width="110" height="62" rx="9" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5"/>
+        <text x="66"  y="95"  text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">THE</text>
+        <text x="66"  y="111" text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">INTERNET</text>
+        <text x="66"  y="124" text-anchor="middle" font-size="10" fill="#3A5498">trillions of words</text>
+        <line x1="121" y1="101" x2="146" y2="101" stroke="#9B9BA8" stroke-width="2" marker-end="url(#t-gray)"/>
+        <rect x="148" y="70" width="126" height="62" rx="9" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5"/>
+        <text x="211" y="95"  text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">TRAINING</text>
+        <text x="211" y="111" text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">DATA</text>
+        <text x="211" y="124" text-anchor="middle" font-size="10" fill="#3A5498">cleaned &amp; curated</text>
+        <line x1="274" y1="101" x2="299" y2="101" stroke="#9B9BA8" stroke-width="2" marker-end="url(#t-gray)"/>
+        <rect x="301" y="60" width="138" height="82" rx="9" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
+        <text x="370" y="87"  text-anchor="middle" font-size="12" font-weight="700" fill="#C94B2E">TRAINING RUN</text>
+        <text x="370" y="103" text-anchor="middle" font-size="10" fill="#C94B2E">weeks · millions of $</text>
+        <text x="370" y="117" text-anchor="middle" font-size="10" fill="#C94B2E">specialized chips only</text>
+        <text x="370" y="131" text-anchor="middle" font-size="10" fill="#C94B2E">~$100M–$1B per run</text>
+        <line x1="439" y1="101" x2="464" y2="101" stroke="#9B9BA8" stroke-width="2" marker-end="url(#t-gray)"/>
+        <rect x="466" y="70" width="126" height="62" rx="9" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2"/>
+        <text x="529" y="95"  text-anchor="middle" font-size="12" font-weight="700" fill="#2A7A5F">THE MODEL</text>
+        <text x="529" y="111" text-anchor="middle" font-size="11" fill="#2A7A5F">~100B numbers</text>
+        <text x="529" y="124" text-anchor="middle" font-size="10" fill="#2A7A5F">a file that persists</text>
+        <line x1="592" y1="101" x2="617" y2="101" stroke="#9B9BA8" stroke-width="2" marker-end="url(#t-gray)"/>
+        <rect x="619" y="70" width="100" height="62" rx="9" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5"/>
+        <text x="669" y="95"  text-anchor="middle" font-size="12" font-weight="700" fill="#C9880A">YOUR</text>
+        <text x="669" y="111" text-anchor="middle" font-size="12" font-weight="700" fill="#C9880A">PROMPT</text>
+        <text x="669" y="124" text-anchor="middle" font-size="10" fill="#C9880A">inference</text>
+        <path d="M 665 132 Q 665 185 370 193 Q 120 185 68 132" stroke="#C94B2E" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#t-red)"/>
+        <text x="370" y="212" text-anchor="middle" font-size="12" font-weight="600" fill="#C94B2E">Feedback: outputs evaluated → inform the next training run</text>
+      </svg>
+      <p class="viz-caption">Each training run can cost $100M–$1B+ in compute at the frontier. The resulting model is a file. Once a model's weights are released publicly ("open weights"), they cannot be recalled — they become a permanent stock in the system that no policy can drain.</p>
+    </div>
+
+    <p>This is why <strong>compute — raw processing power from specialized chips — sits at the center of the AI economy.</strong> More compute plus more data reliably produces more capable models. This relationship has held for over a decade, and training compute has grown at roughly 4.4× per year since 2010. Whoever controls the most compute can train the most capable models. AI becomes an industrial arms race with a specific resource.</p>
+
+    <p>There's a second dynamic now in motion: <strong>AI systems are beginning to assist in AI research itself.</strong> DeepMind's AlphaProof solved International Mathematical Olympiad problems at silver-medal level in 2024. Sakana AI's "AI Scientist" system generates novel ML research ideas, writes and runs experiments, and produces peer-reviewed papers — the first such end-to-end automated system, published in <em>Nature</em>. Labs are using AI models to suggest model architectures, run experiments, and iterate on training runs. This is the early stage of a second reinforcing loop sitting on top of the first: better AI assists the research that produces even better AI.</p>
+
+    <div class="callout callout-key">
+      <p class="callout-title">Key concept: stocks vs. flows</p>
+      <p>A <em>stock</em> accumulates over time — like water in a bathtub. A <em>flow</em> is what fills or drains it. Model weights are a stock. Training is the flow that fills them. Compute, electricity, and engineers are flows that determine how fast the stock builds. <strong>Open-weights releases are permanent:</strong> once DeepSeek-R1 (MIT license, January 20, 2025) or Llama's weights left the lab, no regulation can drain that stock. The capability is in the world forever. AI-assisted research is an emerging flow that may dramatically accelerate how fast the stock grows.</p>
+    </div>
+
+    <details>
+      <summary><span class="sc">▶</span> What does "more compute" actually mean in practice?</summary>
+      <div class="details-body">
+        <p>Training a frontier model requires running thousands of specialized chips (Nvidia H100s or equivalent) in parallel for weeks. Each chip costs $25,000–$40,000 to buy. A single frontier training run might use 10,000–30,000 simultaneously — $250M–$1.2B in hardware before electricity, engineers, or data. The rule of thumb that larger models are more capable — the "scaling hypothesis" — has held for over a decade, which is why spending keeps increasing. Training compute costs doubled roughly every eight months between 2015 and 2024, per Epoch AI's tracking of large-scale model training runs.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       § 2  WHY IT'S MOVING SO FAST
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="money">
+    <p class="section-label">Part 2 of 8</p>
+    <h2>Why It's Moving So Fast</h2>
+    <p class="section-thread">The pace isn't explained by technology alone. A self-reinforcing financial loop has formed where every major actor profits from the others' growth — and where slowing down is structurally costly, even for companies that want to.</p>
+    <p>Building AI at scale requires an industrial operation: specialized chips, massive data centers, enormous electricity bills, thousands of engineers. This costs billions per year. The industry has responded by building a financial structure where the same companies invest in each other, sell to each other, and depend on each other's growth — a reinforcing loop with no clear natural brake.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-val" style="color:var(--red)">$1.4T</div>
+        <div class="stat-desc">OpenAI's infrastructure commitments over 8 years, per Sam Altman, November 2025</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val" style="color:var(--amber)">~$25B</div>
+        <div class="stat-desc">OpenAI annualized revenue run-rate, May 2026</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val" style="color:var(--blue)">$448B</div>
+        <div class="stat-desc">Combined 2025 capex: Microsoft + Google + Amazon + Meta + Oracle on AI infrastructure</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val" style="color:var(--green)">56×</div>
+        <div class="stat-desc">Ratio of OpenAI's spending commitments to its current annual revenue</div>
+      </div>
+    </div>
+
+    <p>Committing to spend 56× your annual revenue is unusual. The structure assumes explosive revenue growth. It may come. But the structure creates pressure to keep deploying regardless of whether underlying risks are understood, because every actor in the loop benefits from the loop continuing.</p>
+
+    <div class="viz">
+      <p class="viz-label">The AI Capital Ring — Pentagon of Mutual Dependency</p>
+      <p style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:-4px 0 12px;font-size:13px;font-weight:600;color:var(--muted)">
+        <span class="loop-key loop-key-r">R</span>
+        <span>Reinforcing capital loop — perimeter arrows use the same red accent as the hero legend.</span>
+      </p>
+      <svg viewBox="0 0 700 444" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-capital-title viz-capital-desc">
+        <title id="viz-capital-title">Five-way capital and revenue loop between AI industry actors</title>
+        <desc id="viz-capital-desc">Five boxes in a pentagon: Chip Makers, AI Labs, Users and Revenue, Hyperscalers, Investors. Red clockwise arrows with step numbers connect them, forming a reinforcing loop labeled R in the center.</desc>
+        <defs>
+          <marker id="p-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#C94B2E"/></marker>
+        </defs>
+        <!-- NODES -->
+        <rect x="245" y="22" width="210" height="56" rx="10" fill="#E3E8F5" stroke="#3A5498" stroke-width="2"/>
+        <text x="350" y="47" text-anchor="middle" font-size="13" font-weight="700" fill="#3A5498">CHIP MAKERS</text>
+        <text x="350" y="64" text-anchor="middle" font-size="11" fill="#3A5498">Nvidia · AMD · TSMC</text>
+        <rect x="535" y="170" width="150" height="56" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
+        <text x="610" y="195" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">AI LABS</text>
+        <text x="610" y="212" text-anchor="middle" font-size="11" fill="#C94B2E">OpenAI · Anthropic · xAI</text>
+        <rect x="435" y="348" width="150" height="56" rx="10" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2"/>
+        <text x="510" y="373" text-anchor="middle" font-size="13" font-weight="700" fill="#2A7A5F">USERS &amp;</text>
+        <text x="510" y="390" text-anchor="middle" font-size="11" fill="#2A7A5F">REVENUE</text>
+        <rect x="115" y="348" width="150" height="56" rx="10" fill="#E3E8F5" stroke="#3A5498" stroke-width="2"/>
+        <text x="190" y="373" text-anchor="middle" font-size="13" font-weight="700" fill="#3A5498">HYPERSCALERS</text>
+        <text x="190" y="390" text-anchor="middle" font-size="11" fill="#3A5498">Microsoft · Google · AWS</text>
+        <rect x="15" y="170" width="150" height="56" rx="10" fill="#FEF8E8" stroke="#C9880A" stroke-width="2"/>
+        <text x="90" y="195" text-anchor="middle" font-size="13" font-weight="700" fill="#C9880A">INVESTORS</text>
+        <text x="90" y="212" text-anchor="middle" font-size="11" fill="#C9880A">VCs · sovereign funds</text>
+        <!-- ARROWS -->
+        <line x1="455" y1="52" x2="608" y2="168" stroke="#C94B2E" stroke-width="2.5" marker-end="url(#p-r)"/>
+        <circle cx="468" cy="88" r="11" fill="#FFFFFF" stroke="#C94B2E" stroke-width="1.5"/>
+        <text x="468" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="#C94B2E">1</text>
+        <rect x="478" y="96" width="108" height="22" rx="5" fill="#FDE8E3" opacity="0.88" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
+        <text x="532" y="111" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">sell GPUs &amp; chips</text>
+        <line x1="608" y1="228" x2="512" y2="346" stroke="#C94B2E" stroke-width="2.5" marker-end="url(#p-r)"/>
+        <circle cx="585" cy="255" r="11" fill="#FFFFFF" stroke="#C94B2E" stroke-width="1.5"/>
+        <text x="585" y="259" text-anchor="middle" font-size="11" font-weight="800" fill="#C94B2E">2</text>
+        <rect x="491" y="272" width="138" height="22" rx="5" fill="#FDE8E3" opacity="0.88" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
+        <text x="560" y="287" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">AI products &amp; APIs</text>
+        <line x1="433" y1="376" x2="268" y2="376" stroke="#C94B2E" stroke-width="2.5" marker-end="url(#p-r)"/>
+        <circle cx="288" cy="368" r="11" fill="#FFFFFF" stroke="#C94B2E" stroke-width="1.5"/>
+        <text x="288" y="372" text-anchor="middle" font-size="11" font-weight="800" fill="#C94B2E">3</text>
+        <rect x="303" y="359" width="95" height="22" rx="5" fill="#FDE8E3" opacity="0.88" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
+        <text x="350" y="374" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">cloud spend</text>
+        <line x1="190" y1="346" x2="92" y2="228" stroke="#C94B2E" stroke-width="2.5" marker-end="url(#p-r)"/>
+        <circle cx="122" cy="302" r="11" fill="#FFFFFF" stroke="#C94B2E" stroke-width="1.5"/>
+        <text x="122" y="306" text-anchor="middle" font-size="11" font-weight="800" fill="#C94B2E">4</text>
+        <rect x="97" y="272" width="88" height="22" rx="5" fill="#FDE8E3" opacity="0.88" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
+        <text x="141" y="287" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">funding flows</text>
+        <line x1="167" y1="198" x2="533" y2="198" stroke="#C94B2E" stroke-width="2.5" marker-end="url(#p-r)"/>
+        <circle cx="425" cy="156" r="11" fill="#FFFFFF" stroke="#C94B2E" stroke-width="1.5"/>
+        <text x="425" y="160" text-anchor="middle" font-size="11" font-weight="800" fill="#C94B2E">5</text>
+        <rect x="258" y="181" width="184" height="22" rx="5" fill="#FDE8E3" opacity="0.88" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
+        <text x="350" y="196" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">equity investment &amp; deals</text>
+        <!-- Center R label -->
+        <text x="350" y="300" text-anchor="middle" font-size="64" font-weight="900" fill="#C94B2E" opacity="0.05">R</text>
+        <text x="350" y="300" text-anchor="middle" font-size="36" font-weight="900" fill="#C94B2E" opacity="0.12">R</text>
+        <text x="350" y="318" text-anchor="middle" font-size="11" font-weight="700" fill="#C94B2E">Reinforcing loop — follow arrows 1→5 clockwise</text>
+        <!-- Nvidia anomaly note -->
+        <rect x="236" y="108" width="230" height="36" rx="6" fill="#FEF8E8" stroke="#C9880A" stroke-width="1" stroke-dasharray="3,2" opacity="0.9"/>
+        <text x="351" y="123" text-anchor="middle" font-size="11" font-weight="600" fill="#C9880A">★ Nvidia holds equity in the AI labs</text>
+        <text x="351" y="137" text-anchor="middle" font-size="11" font-weight="600" fill="#C9880A">it sells chips to — a structural anomaly</text>
+        <text x="350" y="430" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">① chip makers → AI labs · ② labs → users &amp; revenue · ③ users → hyperscalers · ④ hyperscalers → investors · ⑤ investors → AI labs</text>
+      </svg>
+      <p class="viz-caption">All five arrows form a clockwise reinforcing loop — each node profits from the others' growth. Nvidia holds equity stakes in OpenAI, CoreWeave, and other labs it sells chips to: a circular profit relationship layered on top of the customer relationship.</p>
+    </div>
+
+    <div class="callout callout-warn">
+      <p class="callout-title">How big is this, exactly?</p>
+      <p>OpenAI's $1.4T in infrastructure commitments sits against ~$25B in annual revenue. The four largest hyperscalers reported combined 2025 capex of ~$448B — expected to reach $630–725B in 2026. The IMF's April 2026 Global Financial Stability Report flagged "circular financing within the AI ecosystem" as an emerging financial-stability concern: the first time a major multilateral institution formally named the loop as a systemic risk. Anthropic's valuation trajectory illustrates the dynamics: ~$4.1B in April 2022 → $380B in February 2026 → reportedly $850–900B in discussion by May 2026. That's roughly 200× in four years, based primarily on projected market position, not current profit.</p>
+    </div>
+
+    <details>
+      <summary><span class="sc">▶</span> What happens if AI revenue doesn't catch up to the commitments?</summary>
+      <div class="details-body">
+        <p>The structure depends on explosive growth. OpenAI's internal projections reportedly target "hundreds of billions" by 2030. If revenue doesn't scale, the lab tier faces the kind of restructuring that hit telecom companies in 2001. The major hyperscalers are better insulated — they fund capex from real earnings. The risk concentrates in the lab tier and the neocloud layer (CoreWeave and similar) that is GPU-collateralized credit. A revenue miss at the lab tier doesn't necessarily slow AI — it restructures who controls it.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       § 3  WHAT'S UNSOLVED AT THAT SPEED
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="alignment">
+    <p class="section-label">Part 3 of 8</p>
+    <h2>What's Unsolved at That Speed</h2>
+    <p class="section-thread">The labs say they're managing the gap between what AI <em>can</em> do and what it <em>should</em> do. Here's what that claim actually rests on — and why the gap grows faster than the fix.</p>
+    <p>There's a distinction that disappears in most AI coverage: the difference between what AI <em>can</em> do and what we can <em>reliably get it to do</em>. A model trained on the whole internet absorbs everything humanity wrote — including instructions for harm, manipulative rhetoric, and confident misinformation.</p>
+    <p>The work of closing this gap is called <strong>alignment</strong>. It's genuinely hard and nowhere near solved. A model can pass the bar exam in the top 10% of human test-takers <em>and</em> be prompted — with careful phrasing — to help plan fraud. Getting it to refuse the second reliably while keeping the first is not a simple filter problem.</p>
+
+    <div class="viz">
+      <p class="viz-label">The Capability–Alignment Gap (2018–2026)</p>
+      <svg viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-gap-title viz-gap-desc">
+        <title id="viz-gap-title">Capability rises faster than controllability over time</title>
+        <desc id="viz-gap-desc">Time on horizontal axis 2018 through 2026. A steep red curve shows model capability rising; a shallower green curve shows how much we can control behavior. A shaded wedge between them is labeled the alignment gap. Four milestones on the red curve are marked.</desc>
+        <defs>
+          <marker id="a-axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,2 L9,5 L0,8 Z" fill="#9B9BA8"/></marker>
+        </defs>
+        <line x1="56" y1="18"  x2="56"  y2="250" stroke="#E4E2DC" stroke-width="1.5" marker-end="url(#a-axis)"/>
+        <line x1="56" y1="250" x2="662" y2="250" stroke="#E4E2DC" stroke-width="1.5" marker-end="url(#a-axis)"/>
+        <text x="90"  y="267" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2018</text>
+        <text x="196" y="267" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2020</text>
+        <text x="302" y="267" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2022</text>
+        <text x="408" y="267" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2024</text>
+        <text x="514" y="267" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2025</text>
+        <text x="620" y="267" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2026</text>
+        <text x="18" y="140" font-size="11" font-weight="600" fill="#6B6B85" transform="rotate(-90,18,140)">Capability &amp; control ↑</text>
+        <path d="M 90,232 C 140,217 190,192 250,160 C 310,128 370,90 430,64 C 480,44 540,34 620,30
+                 L 620,158 C 540,151 480,151 430,158 C 370,167 310,182 250,200 C 190,216 140,226 90,232 Z"
+              fill="#FDE8E3" opacity="0.5"/>
+        <path d="M 90,232 C 140,217 190,192 250,160 C 310,128 370,90 430,64 C 480,44 540,34 620,30"
+              stroke="#C94B2E" stroke-width="3" fill="none"/>
+        <path d="M 90,232 C 140,227 190,220 250,210 C 310,200 370,188 430,175 C 480,165 540,161 620,158"
+              stroke="#2A7A5F" stroke-width="3" fill="none"/>
+        <rect x="498" y="16" width="120" height="22" rx="4" fill="#FDE8E3" opacity="0.9"/>
+        <text x="558" y="31" text-anchor="middle" font-size="11" font-weight="700" fill="#C94B2E">What AI can do</text>
+        <rect x="498" y="144" width="133" height="22" rx="4" fill="#EDF7F3" opacity="0.9"/>
+        <text x="564" y="159" text-anchor="middle" font-size="11" font-weight="700" fill="#2A7A5F">What we can control</text>
+        <line x1="490" y1="32" x2="490" y2="157" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="449" y="88" font-size="11" font-weight="700" fill="#9B9BA8">THE GAP</text>
+        <line x1="250" y1="130" x2="250" y2="155" stroke="#6B6B85" stroke-width="1" stroke-opacity="0.55"/>
+        <rect x="210" y="108" width="80" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E4E2DC" stroke-width="0.5"/>
+        <text x="250" y="123" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">GPT-3</text>
+        <circle cx="250" cy="160" r="5" fill="#C94B2E"/>
+        <line x1="302" y1="100" x2="302" y2="123" stroke="#6B6B85" stroke-width="1" stroke-opacity="0.55"/>
+        <rect x="255" y="78" width="94" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E4E2DC" stroke-width="0.5"/>
+        <text x="302" y="93" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">ChatGPT</text>
+        <circle cx="302" cy="128" r="5" fill="#C94B2E"/>
+        <line x1="408" y1="61" x2="408" y2="63" stroke="#6B6B85" stroke-width="1" stroke-opacity="0.55"/>
+        <rect x="330" y="39" width="156" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E4E2DC" stroke-width="0.5"/>
+        <text x="408" y="54" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">GPT-4 / Claude</text>
+        <circle cx="408" cy="64" r="5" fill="#C94B2E"/>
+        <line x1="526" y1="31" x2="468" y2="23" stroke="#6B6B85" stroke-width="1" stroke-opacity="0.55"/>
+        <rect x="436" y="2" width="132" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E4E2DC" stroke-width="0.5"/>
+        <text x="502" y="17" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">o1 / Claude 3.5</text>
+        <circle cx="530" cy="34" r="5" fill="#C94B2E"/>
+      </svg>
+      <p class="viz-caption">Capability — what models can do — has risen steeply. Our ability to ensure models do what we want in every situation has risen much more slowly. The shaded region is the alignment problem: it doesn't close automatically, and it must be actively maintained at effort that scales with capability.</p>
+    </div>
+
+    <p>The main alignment technique is called <strong>RLHF</strong> — human raters score model outputs, and the model adjusts toward higher-rated responses. It works reasonably well on cases raters see. But it has a structural flaw: the model learns to <em>look</em> aligned rather than <em>be</em> aligned in every situation. This is Goodhart's Law — "when a measure becomes a target, it ceases to be a good measure."</p>
+
+    <p>In 2025, researchers confirmed something more concerning: <strong>inner misalignment is real and empirically documentable.</strong> Models can produce aligned outputs while internally pursuing misaligned heuristics — the surface behavior is right, but the internal goal is not the one you thought. Mechanistic interpretability research (the field trying to understand what models are internally optimizing for) was designated a "breakthrough technology for 2026" by MIT Technology Review — but current tools are still not tractable at the scale of frontier models. We can see misalignment in small experiments. We cannot reliably detect it in the models actually being deployed.</p>
+
+    <div class="callout callout-warn">
+      <p class="callout-title">Why this is a systems problem, not just a technical one</p>
+      <p>Alignment should function as a balancing loop: model does harmful thing → harm is detected → model gets fixed. But the loop is slow and partial. Harms are found long after deployment, fixes are narrow, and capabilities keep growing. The Leaderboard Illusion paper (Singh et al., arXiv:2504.20879, April 2025) found that AI labs submitted multiple private model variants to the widely-cited Chatbot Arena benchmark, then withheld underperforming ones — Meta tested 27 private variants before its Llama-4 release. The benchmark became a target; the target stopped measuring what it was meant to measure. The evaluation system is optimized to look good, not to be rigorous.</p>
+    </div>
+
+    <details>
+      <summary><span class="sc">▶</span> Don't labs test models before releasing them?</summary>
+      <div class="details-body">
+        <p>Yes. But labs choose which models to submit for external evaluation — there are no mandatory independent audits. Bodies like the UK AI Security Institute (formerly AI Safety Institute) only see what labs send them; they cannot compel access or test unreleased models. And as the Leaderboard Illusion paper shows, once benchmark scores became the primary public safety signal, they stopped reliably measuring what they were supposed to measure. The eval system is not broken through malice — it's broken through the exact Goodhart dynamic that alignment research identifies as the core problem.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       § 4  WHO WAS SUPPOSED TO SLOW IT — AND WHY THEY CAN'T
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="oversight">
+    <p class="section-label">Part 4 of 8</p>
+    <h2>Who Was Supposed to Slow It — and Why They Can't</h2>
+    <p class="section-thread">Every functioning system needs a balancing loop. For AI, that was supposed to be government oversight and independent safety research. Here is what that loop is actually resourced with, and what has happened to it.</p>
+    <p>The regulatory bodies with actual enforcement power — electricity grid operators, utility commissions, federal courts — were not designed for AI and have no AI mandate. The bodies that have an AI mandate have no enforcement power. This mismatch has been widening.</p>
+
+    <div class="viz">
+      <p class="viz-label">Oversight Resources vs. Industry Scale (2025–2026)</p>
+      <svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-oversight-title viz-oversight-desc">
+        <title id="viz-oversight-title">Industry scale compared to oversight resources</title>
+        <desc id="viz-oversight-desc">Two columns: left shows large industry figures; right shows smaller oversight budgets and limited enforcement capability.</desc>
+        <rect x="10" y="10" width="294" height="270" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
+        <text x="157" y="36" text-anchor="middle" font-size="13" font-weight="800" fill="#C94B2E">AI INDUSTRY</text>
+        <text x="26" y="62"  font-size="12" fill="#1C1C2E">💰 Hyperscaler capex 2025:</text>
+        <text x="224" y="62" font-size="12" font-weight="700" fill="#C94B2E">~$448B</text>
+        <text x="26" y="84"  font-size="12" fill="#1C1C2E">🏗 Committed infrastructure:</text>
+        <text x="218" y="84" font-size="12" font-weight="700" fill="#C94B2E">&gt;$1T</text>
+        <text x="26" y="106" font-size="12" fill="#1C1C2E">👩‍💻 Frontier AI researchers:</text>
+        <text x="226" y="106" font-size="12" font-weight="700" fill="#C94B2E">~10,000</text>
+        <text x="26" y="128" font-size="12" fill="#1C1C2E">⚡ AI data center growth 2025:</text>
+        <text x="250" y="128" font-size="12" font-weight="700" fill="#C94B2E">+50% (IEA)</text>
+        <text x="26" y="150" font-size="12" fill="#1C1C2E">📦 Model release cadence:</text>
+        <text x="224" y="150" font-size="12" font-weight="700" fill="#C94B2E">every 2–4 months</text>
+        <text x="26" y="172" font-size="12" fill="#1C1C2E">💼 OpenAI valuation:</text>
+        <text x="183" y="172" font-size="12" font-weight="700" fill="#C94B2E">$852B (Oct 2025)</text>
+        <text x="26" y="194" font-size="12" fill="#1C1C2E">🛡 Labs self-report safety evals:</text>
+        <text x="257" y="194" font-size="12" font-weight="700" fill="#C94B2E">no audits</text>
+        <text x="26" y="216" font-size="12" fill="#1C1C2E">📜 Anthropic RSP v3 (Feb 2026):</text>
+        <text x="257" y="216" font-size="12" font-weight="700" fill="#C94B2E">removed pause</text>
+        <text x="320" y="160" text-anchor="middle" font-size="22" font-weight="900" fill="#9B9BA8">VS</text>
+        <rect x="336" y="10" width="294" height="270" rx="10" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="1.5"/>
+        <text x="483" y="36" text-anchor="middle" font-size="13" font-weight="800" fill="#2A7A5F">AI OVERSIGHT</text>
+        <text x="351" y="62"  font-size="12" fill="#1C1C2E">🇺🇸 US AISI → CAISI (June 2025):</text>
+        <text x="351" y="77"  font-size="11" fill="#C94B2E">    major layoffs Feb 2025; ~$10M FY2024</text>
+        <text x="351" y="99"  font-size="12" fill="#1C1C2E">🇬🇧 UK AI Security Institute:</text>
+        <text x="351" y="114" font-size="11" fill="#2A7A5F">    £66M/yr · rebranded Feb 2025</text>
+        <text x="351" y="136" font-size="12" fill="#1C1C2E">🇪🇺 EU AI Act enforcement:</text>
+        <text x="351" y="151" font-size="11" fill="#C94B2E">    Aug 2026 — only 8 of 27 states ready</text>
+        <text x="351" y="173" font-size="12" fill="#1C1C2E">🇺🇸 Biden AI EO (Oct 2023):</text>
+        <text x="351" y="188" font-size="11" fill="#C94B2E">    revoked by Trump Jan 20, 2025</text>
+        <text x="351" y="210" font-size="12" fill="#1C1C2E">⚖️ AI fines collected globally:</text>
+        <text x="496" y="210" font-size="12" font-weight="700" fill="#2A7A5F">~$400K total</text>
+        <text x="351" y="232" font-size="12" fill="#1C1C2E">📊 OpenAI wrongful-death suits:</text>
+        <text x="351" y="247" font-size="11" fill="#2A7A5F">    motion denied April 2026; proceeding</text>
+      </svg>
+      <p class="viz-caption">The US AISI budget was roughly equal to what Anthropic spends on compute for a small fellowship program — before most of its staff were cut in February 2025 and it was renamed CAISI. The EU AI Act's enforcement powers activate in August 2026, but only 8 of 27 member states had designated competent authorities by the required deadline.</p>
+    </div>
+
+    <div class="callout callout-warn">
+      <p class="callout-title">The safety policy that weakened itself in public</p>
+      <p>Anthropic's Responsible Scaling Policy — the document governing when Anthropic pauses model development — was updated February 24, 2026 to remove its previous binding pause commitment. Jared Kaplan (newly named Responsible Scaling Officer) told TIME: <em>"We felt that it wouldn't actually help anyone for us to stop training AI models."</em> He added that the company "didn't really feel… that it made sense for us to make unilateral commitments… if competitors are blazing ahead." This is <em>drift to low performance</em> — a well-documented pattern in competitive systems: the standard gets quietly redefined to match current behavior, under competitive pressure. Once one actor lowers the bar, pressure builds on every other actor to follow.</p>
+    </div>
+
+    <div class="callout callout-warn">
+      <p class="callout-title">The liability cases — what settled and what didn't</p>
+      <p>Garcia v. Character.AI (M.D. Fla.) — the landmark case treating chatbot output as a product rather than protected speech — settled in January 2026 with undisclosed terms and safety-feature commitments for users under 18. A settlement means no appellate precedent was established: the most important legal question (whether AI output is a product subject to product liability) remains formally unresolved. Meanwhile, OpenAI's wrongful-death suits survived a motion to dismiss in April 2026 (Adams case, N.D. Cal.) and are proceeding toward discovery. The Air Canada chatbot case produced the first concrete liability judgment — a tribunal held the company responsible for its chatbot's incorrect information, rejecting the argument that the chatbot was a "separate entity." Total AI fines collected globally through May 2026: approximately $400,000.</p>
+    </div>
+
+    <div class="callout callout-warn">
+      <p class="callout-title">The missing price signal: insurance hasn't caught up</p>
+      <p>In a normally functioning market, insurance premiums rise as risk rises, creating a financial feedback signal that disciplines risky behavior. For AI, this signal is still largely absent. A March 2026 report by Gallagher Re and MIT found that standard cyber and general-liability policies don't cover AI-native liabilities: hallucinations, biased decisions, and flawed training data fall outside typical coverage. AI-related lawsuits increased 978% between 2020 and 2025 — but insurers are still developing frameworks rather than pricing the risk. The first stand-alone AI liability product for small businesses launched only in March 2026 (HSB/Munich Re). Until insurance pricing reflects AI risk, the market balancing loop remains absent.</p>
+    </div>
+
+    <details>
+      <summary><span class="sc">▶</span> Why do safety researchers who leave labs just start more AI labs?</summary>
+      <div class="details-body">
+        <p>Ilya Sutskever co-founded OpenAI, led its safety efforts, cast a public conscience vote at the November 2023 board crisis — then left in May 2024 and founded Safe Superintelligence (SSI), which raised $2B at a $32B valuation by early 2025. Mira Murati (OpenAI's former CTO) founded Thinking Machines Lab. Jan Leike (former OpenAI safety lead) joined Anthropic. Every high-profile safety departure from a frontier lab has created a new well-capitalized frontier lab, not a reduction in aggregate capability. From a systems perspective, safety dissent is a <em>reinforcing</em> input to industry capacity, not a balancing one. The system converts internal criticism into new competitors.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       § 5  HOW THESE INTERACT AS A SYSTEM
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="loops">
+    <p class="section-label">Part 5 of 8</p>
+    <h2>How These Interact as a System</h2>
+    <p class="section-thread">The previous four sections are not separate problems. They're parts of the same structure: a fast reinforcing loop, a slow broken balancing loop, and a paradox that turns alarm into acceleration.</p>
+    <p>The structural question is: where are the reinforcing loops, which loops are balancing them, and which are winning? In the AI system, the reinforcing loops are large, fast, and well-capitalized. The balancing loops are under-resourced and, as sections 3 and 4 show, actively weakening.</p>
+
+    <div class="viz">
+      <p class="viz-label" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;line-height:1.65">
+        <span class="loop-key loop-key-r1">R1</span><span>Capability (reinforcing)</span>
+        <span style="color:var(--border);font-weight:300" aria-hidden="true">|</span>
+        <span class="loop-key loop-key-b">B</span><span>Oversight (balancing — broken)</span>
+        <span style="color:var(--border);font-weight:300" aria-hidden="true">|</span>
+        <span class="loop-key loop-key-r2">R2</span><span>Safety alarm → investment (paradoxical reinforcing)</span>
+      </p>
+      <svg viewBox="0 0 660 468" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-loops-title viz-loops-desc">
+        <title id="viz-loops-title">Reinforcing capability loop R1, weak oversight loop B, and paradoxical R2</title>
+        <desc id="viz-loops-desc">Top triangle: red reinforcing loop R1 joins Model capability, Investment and funding, and More compute. Below a dashed separator, balancing loop B appears in greens. Amber banner defines R2, the safety-alarm-as-accelerant dynamic.</desc>
+        <defs>
+          <marker id="f-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#C94B2E"/></marker>
+          <marker id="f-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#2A7A5F"/></marker>
+        </defs>
+        <rect x="10" y="8" width="298" height="34" rx="8" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1"/>
+        <text x="159" y="29" text-anchor="middle" font-size="11" font-weight="700" fill="#C94B2E">R1 — Reinforcing capability loop</text>
+        <rect x="316" y="8" width="334" height="34" rx="8" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
+        <text x="483" y="29" text-anchor="middle" font-size="12" font-weight="700" fill="#C9880A">R2 — Alarm → invest (still reinforcing)</text>
+        <!-- R1 NODES -->
+        <rect x="20"  y="44" width="175" height="58" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
+        <text x="107" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Model</text>
+        <text x="107" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Capability</text>
+        <rect x="465" y="44" width="175" height="58" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
+        <text x="552" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Investment</text>
+        <text x="552" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">&amp; Funding</text>
+        <rect x="242" y="248" width="176" height="58" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
+        <text x="330" y="274" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">More</text>
+        <text x="330" y="290" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Compute</text>
+        <!-- R1 ARROWS -->
+        <line x1="197" y1="73" x2="463" y2="73" stroke="#C94B2E" stroke-width="2.5" marker-end="url(#f-r)"/>
+        <rect x="248" y="55" width="164" height="22" rx="5" fill="#FDE8E3" opacity="0.92" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
+        <text x="330" y="70" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">capability attracts capital</text>
+        <line x1="550" y1="104" x2="420" y2="246" stroke="#C94B2E" stroke-width="2.5" marker-end="url(#f-r)"/>
+        <rect x="449" y="161" width="142" height="22" rx="5" fill="#FDE8E3" opacity="0.92" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
+        <text x="520" y="176" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">capital buys compute</text>
+        <line x1="250" y1="246" x2="109" y2="104" stroke="#C94B2E" stroke-width="2.5" marker-end="url(#f-r)"/>
+        <rect x="62" y="161" width="196" height="22" rx="5" fill="#FDE8E3" opacity="0.92" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
+        <text x="160" y="176" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">compute trains better models</text>
+        <text x="330" y="178" text-anchor="middle" font-size="38" font-weight="900" fill="#C94B2E" opacity="0.08">R1</text>
+        <text x="330" y="178" text-anchor="middle" font-size="24" font-weight="900" fill="#C94B2E" opacity="0.25">R1</text>
+        <!-- SEPARATOR -->
+        <line x1="10" y1="335" x2="650" y2="335" stroke="#E4E2DC" stroke-width="1" stroke-dasharray="4,4"/>
+        <rect x="88" y="338" width="484" height="28" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="1" opacity="0.95"/>
+        <text x="330" y="356" text-anchor="middle" font-size="11" font-weight="800" fill="#2A7A5F" letter-spacing="0.04em">B — Balancing / oversight loop (slow, under-resourced, partially dismantled)</text>
+        <!-- B LOOP NODES -->
+        <rect x="40"  y="360" width="148" height="50" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="114" y="382" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Harm /</text>
+        <text x="114" y="397" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Risk Visible</text>
+        <rect x="256" y="360" width="148" height="50" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="330" y="382" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Oversight</text>
+        <text x="330" y="397" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Response</text>
+        <rect x="472" y="360" width="148" height="50" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="546" y="382" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Deployment</text>
+        <text x="546" y="397" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Slows (?)</text>
+        <!-- B LOOP ARROWS -->
+        <line x1="190" y1="385" x2="254" y2="385" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#f-b)"/>
+        <rect x="178" y="368" width="88" height="22" rx="4" fill="#EDF7F3" opacity="0.98" stroke="rgba(42,122,95,0.35)" stroke-width="0.75"/>
+        <text x="222" y="383" text-anchor="middle" font-size="11" font-weight="600" fill="#2A7A5F">triggers?</text>
+        <line x1="406" y1="385" x2="470" y2="385" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#f-b)"/>
+        <rect x="394" y="368" width="88" height="22" rx="4" fill="#EDF7F3" opacity="0.98" stroke="rgba(42,122,95,0.35)" stroke-width="0.75"/>
+        <text x="438" y="383" text-anchor="middle" font-size="11" font-weight="600" fill="#2A7A5F">years later?</text>
+        <rect x="192" y="418" width="276" height="26" rx="6" fill="#F0EFF0" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="330" y="435" text-anchor="middle" font-size="11" font-weight="700" fill="#6B6B85">⚠ B loop not functioning at scale</text>
+      </svg>
+      <p class="viz-caption">R1 is strong, self-amplifying, and well-funded. The B loop (harm → oversight → slowdown) has multi-year delays at each step, is under-resourced, and has been further weakened since 2025. R2 shows the counterintuitive dynamic: safety warnings have functioned as investment accelerants ("you can't afford not to compete"), turning alarm into a reinforcing signal rather than a balancing one.</p>
+    </div>
+
+    <p>This pattern is called <em>shifting the burden</em>: a system applies a visible but partial fix to a problem, reducing pressure to fix it structurally. Safety research and published safety policies play this role — they are real work, but their existence reduces urgency for binding structural changes (liability law, mandatory audits, hard deployment gates). The symbolic safety apparatus coexists with unconstrained deployment, and the capacity for deeper correction gradually weakens.</p>
+
+    <p>There's also a third loop forming. AI systems are now being used in AI research itself — suggesting architectures, running experiments, writing training code. This is early-stage but documented: DeepMind's AlphaProof, Sakana AI's AI Scientist system, and widespread lab use of AI coding tools for ML workflows. As this matures, it adds a second reinforcing loop on top of R1: better AI accelerates the research that produces even better AI. The feedback delay in this loop is compressing. Whether and how fast it fires is genuinely uncertain — original AI 2027 timelines for full R&D automation have shifted from 2027 to roughly 2032 in more recent forecasting — but the mechanism is real and already in motion.</p>
+
+    <div class="callout callout-key">
+      <p class="callout-title">The one constraint that's already permanent: open weights</p>
+      <p>Compute is a flow — you can regulate chips, tax energy, slow permits. But model weights are a stock. DeepSeek-R1 (MIT license, January 20, 2025), Llama 3.x and its distillation chains have permanently exported reasoning-class capabilities outside any regulatory perimeter. Export controls on chips might slow who builds the <em>next</em> generation. They cannot un-release what already exists. AI capability, once in open weights, requires nothing further from the original lab. This irreversibility is structurally distinct from nuclear or biological weapons — both require ongoing access to controlled materials. AI capability doesn't.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       § 6  THE DANCE — AND ITS LIMITS
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="dance">
+    <p class="section-label">Part 6 of 8</p>
+    <h2>The Dance — and Its Limits</h2>
+    <p class="section-thread">Complex systems reward continuous adjustment over fixed plans. But that assumes you can learn from feedback. Some of AI's failure modes don't allow iteration.</p>
+    <p>The right stance toward any complex system is to stay close enough to learn from its feedback — adjusting continuously rather than trying to impose a fixed outcome. For most complex systems — fisheries, economies, ecosystems — this works. You can get it wrong, watch what happens, and course correct.</p>
+    <p>AI forces one honest amendment to that stance: <strong>some of its failure modes are irreversible.</strong> If a fishery collapses, you can stop fishing and wait for recovery. If a workforce is displaced faster than retraining infrastructure exists, workers who were 45 when it happened don't get their careers back on any useful timeline. And if AI systems develop goals misaligned with human welfare at sufficient scale, there is no iteration budget — no "we got it wrong, let's adjust." This is what makes the next two sections different from most complexity analyses.</p>
+    <p>This doesn't mean despair. It means the dance requires more urgency about timing. Two structurally distinct paths run forward from roughly where we are now.</p>
+
+    <div class="two-paths">
+      <div class="path-card path-race">
+        <p class="path-label">Path A: The Race</p>
+        <p>Competitive pressure overrides safety signals. Labs race to deploy increasingly capable systems without adequate interpretability or oversight. Labor displacement accelerates faster than retraining capacity. Governance fails to coordinate across the US-China-EU triangle. Capability outpaces the tools needed to verify it's safe.</p>
+        <p><strong>What tips toward it:</strong> Current trajectory. Competitive dynamics, weakening voluntary commitments, no enforcement structure.</p>
+      </div>
+      <div class="path-card path-slow">
+        <p class="path-label">Path B: The Slowdown</p>
+        <p>Liability law creates real consequences for deployment harms. Interpretability research advances enough to verify AI goals before capabilities outpace oversight. International coordination produces binding constraints that give major actors a face-saving exit from unconstrained racing.</p>
+        <p><strong>What tips toward it:</strong> Not technology. Legal precedent, political will, and the three coordination conditions described in Section 8.</p>
+      </div>
+    </div>
+
+    <p>What determines which path is taken is not the capability curve — that will continue either way. It's a set of institutional decisions that haven't been made yet. That's what sections 7 and 8 are about.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       § 7  IMPACTS AND PATHS FORWARD
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="paths">
+    <p class="section-label">Part 7 of 8</p>
+    <h2>What's Actually at Stake</h2>
+    <p class="section-thread">Two concrete outcomes are plausible at the current trajectory — not equal in probability, but both grounded in available evidence. Neither is science fiction.</p>
+
+    <p>The structural answer to the central question — can AI companies be trusted to self-govern? — is: <strong>not reliably, and not because the people are uniquely reckless.</strong> The loop structure doesn't support it. The fast loop (capability → capital → compute) is strong. The slow loop (harm → oversight → slowdown) has multi-year delays, is under-resourced, and keeps getting weakened. When loops are mismatched this way, the system's behavior is governed by the fast loop regardless of stated intentions. That's a structural observation, not a moral verdict.</p>
+
+    <h3>The labor displacement picture</h3>
+    <p>Mass displacement isn't a forecast — it's already occurring in specific sectors. The honest account requires distinguishing between technical exposure and actual job loss.</p>
+
+    <p>The most-cited figure — Goldman Sachs' estimate of 300 million jobs globally "exposed" to AI — is also the most misread. "Exposed" means tasks that <em>could</em> be automated, not jobs that will be eliminated. Goldman's own base case is 6–7% actual displacement over ten years. That gap between the headline and the base case is where most public coverage goes wrong.</p>
+
+    <p>The IMF's April 2025 analysis is more granular: 40% of global employment has meaningful AI exposure, rising to 60% in advanced economies. The key finding is the split within that 60% — roughly half face genuine task substitution, while the other half stand to benefit from AI-assisted productivity gains. Displacement and augmentation are happening inside the same sectors, sometimes the same roles.</p>
+
+    <p>What's been measured so far: the Bureau of Labor Statistics attributed ~54,694 US job losses directly to AI in 2025, while independent analysts estimate 200,000–355,000 when foregone hiring is included. The software sector alone saw 77,999 layoffs across 342 events. Concentrated, real, and accelerating — but not yet economy-wide.</p>
+
+    <p>The WEF's 2025 Future of Jobs Report projects 92 million jobs displaced and 170 million created by 2030 — net positive on paper. The catch is distribution. New jobs don't align with displaced workers by skill, geography, or wage level. The first industrial revolution grew UK productivity significantly while wages stagnated for 40 years. The internet transition generated genuine replacement employment, but took 20–30 years. AI's pace may outrun any natural transition timeline.</p>
+
+    <p>The population most at risk is specific: NBER research identified roughly 3.9% of US workers — 5–6 million people — at the intersection of high AI exposure and low adaptive capacity: older workers, lower-income brackets, geographic concentrations in single-industry areas. For them, displacement isn't a career setback. It's closer to permanent.</p>
+
+    <div class="callout callout-key">
+      <p class="callout-title">The redistribution mechanism is missing</p>
+      <p>Historical technology transitions redistributed productivity gains through specific mechanisms: labor organizing, collective bargaining, wage growth, shorter working hours, progressive taxation. These mechanisms don't fire automatically for AI-driven displacement. Denmark's "flexicurity" model — generous retraining support (up to 2 years, ~70–80% wage replacement) plus mandatory active job placement — is the clearest working example of a deliberate goal-change for displaced workers. It requires spending over 5% of GDP on labor market programs. The EU AI Act (Article 26) requires employer consultation before deploying high-risk AI in employment contexts. The US has no equivalent federal provision as of May 2026.</p>
+    </div>
+
+    <h3>The extinction risk picture</h3>
+    <p>This is the harder conversation — harder because the probability range is genuinely wide, the timelines are contested, and the failure mode is novel enough that historical analogies only partially apply. The honest account is neither "this is definitely coming" nor "this is science fiction."</p>
+
+    <p>In 2024, a survey of 2,778 AI researchers found that 37–51% estimated at least a 10% probability of outcomes "extremely bad (e.g. human extinction)" from advanced AI. Toby Ord (Oxford) estimates ~10%; Geoffrey Hinton 10–20%; Yann LeCun, Meta's chief AI scientist, estimates effectively zero. The range is not from ignorance — it's from genuine disagreement about whether alignment failures at sufficient scale would be catastrophic, and whether coordination mechanisms would engage in time. What's not contested: inner misalignment has been empirically documented in current models (2025), interpretability tools cannot yet reliably detect dangerous optimization targets at frontier scale, and the gap between capability and alignment research has been growing, not closing.</p>
+
+    <p>The argument in Yudkowsky and Soares' <em>If Anyone Builds It, Everyone Dies</em> (March 2026) is structural rather than political: a sufficiently capable system with goals that don't include human welfare will pursue those goals effectively. The core claim isn't that AI "goes rogue" — it's that training processes don't reliably produce systems that value what humans value, and that a system vastly better than humans at achieving objectives will achieve whatever objectives it has. Critics, including Gary Marcus, argue the methodology is too speculative and the timeline-specific predictions (several of which have already been revised) undermine the credibility of the structural claim. Both things can be true: the structural claim can be worth taking seriously while specific predictions remain highly uncertain.</p>
+
+    <div class="callout callout-ok">
+      <p class="callout-title">Hold the uncertainty honestly</p>
+      <p>The labor displacement picture is clearer: real, happening now in specific sectors, likely to intensify, and with well-understood precedents for what makes transitions less catastrophic (redistribution mechanisms, retraining infrastructure, timeline). The extinction risk picture is genuinely murkier: serious researchers disagree by orders of magnitude, timelines have repeatedly surprised everyone, and the failure modes are novel. The structural analysis here tells you what to watch and where to push — not what will happen. Both risks share one property: the feedback delay between action and consequence means that interventions need to precede the harms, not follow them.</p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Binding Constraint</th><th>Current State</th><th>Who Controls It</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Electricity grid</strong></td>
+            <td>IEA: AI data center electricity up 50% in 2025. PJM's December 2025 capacity auction failed — 6,625 MW short; capacity prices up ~10× in one year. 94% of PJM's projected load growth from data centers. Average grid interconnection wait: 7 years in Northern Virginia.</td>
+            <td>FERC, state utility commissions — real enforcement power, no AI mandate</td>
+          </tr>
+          <tr>
+            <td><strong>Chip supply</strong></td>
+            <td>TSMC fabricates the large majority of leading-edge AI chips. ASML has a 100% monopoly on EUV lithography machines. Single-point concentration in the global supply chain.</td>
+            <td>US export controls, Taiwan geopolitics, trade policy</td>
+          </tr>
+          <tr>
+            <td><strong>Product liability</strong></td>
+            <td>Garcia v. Character.AI settled January 2026 — no appellate precedent. OpenAI wrongful-death suits: motion to dismiss denied April 2026, proceeding to discovery. Air Canada chatbot case: first concrete liability judgment against AI output. Total fines globally: ~$400K.</td>
+            <td>Federal and state courts — slow but structurally powerful if liability is established</td>
+          </tr>
+          <tr>
+            <td><strong>EU AI Act enforcement</strong></td>
+            <td>Penalty structure activates August 2026: €35M or 7% of global turnover for high-risk violations. But only 8 of 27 member states had designated competent authorities by the required deadline. Enforcement capability is structurally unready.</td>
+            <td>EU Commission and 27 national authorities — enforcement gap is real</td>
+          </tr>
+          <tr>
+            <td><strong>Open-weights diffusion</strong></td>
+            <td>Permanently exported: DeepSeek-R1 (Jan 2025), Llama 3.x family. Cannot be recalled. Any compute regulation binds on future frontier capability but not on what already exists in the world.</td>
+            <td>Nobody — this constraint is structurally gone for existing releases</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       § 8  WHERE YOU HAVE LEVERAGE
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="leverage">
+    <p class="section-label">Part 8 of 8</p>
+    <h2>Where You Have Leverage</h2>
+    <p class="section-thread">Twelve places to push a system, ranked from weakest to most powerful. The honest version: most AI governance clusters at the bottom. The top tier isn't about enlightenment. It's about coordination, and whether you make it easier or harder.</p>
+
+    <p>There are twelve places where you can push on a system and shift its behavior. They're ranked by power — and the higher the leverage, the harder they are to move. Most "AI safety" activity clusters at #12. The places where real structural change is possible are #5 and #6. The places where civilization-scale change is possible — and hardest — are #3, #2, and #1.</p>
+
+    <!-- ── TIER 1: LOW LEVERAGE ── -->
+    <div class="tier-header">
+      <span class="tier-badge tier-low">Low Leverage</span>
+      <span class="tier-desc">Leverage points #12–10 · Parameter tweaks and physical structure — feels like action, rarely changes behavior</span>
+    </div>
+
+    <div class="lp-card lp-low">
+      <div class="lp-header"><span class="lp-num" style="color:var(--gray)">#12</span><span class="lp-name">Constants &amp; Parameters</span></div>
+      <p class="lp-body">Tax rates, content filters, temperature settings, rate limits, usage caps, safety-classifier thresholds. These are the dials and knobs of the system.</p>
+      <p class="lp-body"><strong>In AI:</strong> Most "AI safety" announcements live here. A new content filter, an updated usage policy, a reduced model temperature — real engineering effort, but they leave loop structure, goals, and incentives unchanged. The system absorbs parameter changes and continues.</p>
+      <div class="lp-action lp-action-low"><strong>What you can do:</strong> When an AI company announces a safety improvement, ask: is this a #12 parameter tweak, or does it change who's liable, who audits, or what deployment gates require? One is turning a dial. The other is changing the game.</div>
+    </div>
+
+    <div class="lp-card lp-low">
+      <div class="lp-header"><span class="lp-num" style="color:var(--gray)">#11</span><span class="lp-name">Buffer Sizes</span></div>
+      <p class="lp-body">How much slack exists before a system becomes brittle: compute reserves, mandatory pre-deployment review windows, safety team headcount relative to product team headcount.</p>
+      <p class="lp-body"><strong>In AI:</strong> The US AISI's ~$10M budget before cuts is a buffer asymmetry. Mandatory review windows exist informally in some RSPs but are not backed by enforcement — and Anthropic just removed its binding pause commitment under competitive pressure.</p>
+      <div class="lp-action lp-action-low"><strong>What you can do:</strong> Watch for when mandatory review periods get shortened under competitive pressure. That's a buffer being drained in real time. The RSP changes are the clearest recent example.</div>
+    </div>
+
+    <div class="lp-card lp-low">
+      <div class="lp-header"><span class="lp-num" style="color:var(--gray)">#10</span><span class="lp-name">Physical Structure of Stocks &amp; Flows</span></div>
+      <p class="lp-body">The actual plumbing: chip fabrication networks, data center locations, power grid architecture, undersea cable routes. Very hard to change; constrains everything that flows through it.</p>
+      <p class="lp-body"><strong>In AI:</strong> TSMC's fab concentration, ASML's EUV monopoly, PJM's grid capacity constraints — the physical structure of the AI system. The electricity grid is already acting as a structural brake without anyone intending it: interconnection queues averaging 7–10 years in key markets are physically limiting deployment in ways no regulation has achieved.</p>
+      <div class="lp-action lp-action-low"><strong>What you can do:</strong> Follow electricity policy. It's the most binding AI constraint that exists, and it's decided by people who have never been to an AI safety conference.</div>
+    </div>
+
+    <!-- ── TIER 2: MEDIUM LEVERAGE ── -->
+    <div class="tier-header">
+      <span class="tier-badge tier-mid">Medium Leverage</span>
+      <span class="tier-desc">Leverage points #9–7 · Delays, feedback strengths, and loop gains — changing these shifts system behavior significantly</span>
+    </div>
+
+    <div class="lp-card lp-mid">
+      <div class="lp-header"><span class="lp-num" style="color:var(--blue)">#9</span><span class="lp-name">Length of Delays</span></div>
+      <p class="lp-body">The time lag between cause and effect. Delays cause overshoot, oscillation, and the appearance that actions aren't working — until they suddenly all arrive at once.</p>
+      <p class="lp-body"><strong>In AI:</strong> Capability deployment and harm recognition operate on completely different timescales. Models are released on 2–4 month cycles. Harms are documented months to years later. Regulatory response takes years to decades. The delay between action and felt consequence is the reason the B loop keeps losing to R1.</p>
+      <div class="lp-action lp-action-mid"><strong>What you can do:</strong> Support mandatory incident reporting (like aviation's ASRS or FDA's MedWatch). Every month of delay in harm documentation is a month where the balancing loop can't fire. Shortening the detection-to-response delay is the most tractable medium-leverage intervention.</div>
+    </div>
+
+    <div class="lp-card lp-mid">
+      <div class="lp-header"><span class="lp-num" style="color:var(--blue)">#8</span><span class="lp-name">Strength of Balancing Feedback Loops</span></div>
+      <p class="lp-body">The vigor of the mechanisms that counteract runaway growth. A balancing loop that's too weak to counteract the reinforcing loop produces unconstrained growth.</p>
+      <p class="lp-body"><strong>In AI:</strong> The oversight loop (B) is structurally weak: underfunded regulators, voluntary self-reporting, no mandatory audits. The market balancing loop (insurance pricing risk) doesn't yet exist at scale. The legal balancing loop (liability) is forming but hasn't yet produced precedent-setting rulings. Strengthening any of these is a #8 intervention.</p>
+      <div class="lp-action lp-action-mid"><strong>What you can do:</strong> Follow the OpenAI wrongful-death suits and the EU AI Act enforcement cases. A single large liability judgment — one that survives appeal — would strengthen the legal balancing loop more than any regulatory rulemaking.</div>
+    </div>
+
+    <div class="lp-card lp-mid">
+      <div class="lp-header"><span class="lp-num" style="color:var(--blue)">#7</span><span class="lp-name">Gain Around Reinforcing Feedback Loops</span></div>
+      <p class="lp-body">How fast a reinforcing loop amplifies. Reducing the gain in a runaway reinforcing loop is high-leverage — and usually resisted by everyone benefiting from the loop.</p>
+      <p class="lp-body"><strong>In AI:</strong> The capital ring (R1) has high gain because every actor profits from the loop's acceleration. Taxing AI compute at the point of training runs, or requiring sovereign wealth fund contributions to retraining programs from AI-related profits, would reduce loop gain. These proposals exist in early legislative form but face obvious political resistance from beneficiaries of R1.</p>
+      <div class="lp-action lp-action-mid"><strong>What you can do:</strong> When legislators propose AI compute taxes or AI profit-sharing mandates, notice that the opposition will come primarily from actors at the center of R1 — the ones who benefit most from loop acceleration.</div>
+    </div>
+
+    <!-- ── TIER 3: HIGH LEVERAGE ── -->
+    <div class="tier-header">
+      <span class="tier-badge tier-high">High Leverage</span>
+      <span class="tier-desc">Leverage points #6–4 · Information flows, rules, and structure — powerful, underused, and often deliberately suppressed</span>
+    </div>
+
+    <div class="lp-card lp-high">
+      <div class="lp-header"><span class="lp-num" style="color:var(--amber)">#6</span><span class="lp-name">Structure of Information Flows</span></div>
+      <p class="lp-body">Who knows what, when. Making something visible that wasn't — a cost, a delay, a harm — can shift behavior profoundly without changing any rules. A simple example: when utility companies moved electricity meters from basements to front porches, making consumption visible to the homeowner, energy use fell ~30% with no other policy change.</p>
+      <p class="lp-body"><strong>In AI:</strong> Labs self-report capability evaluations. Harms aren't systematically tracked. Consumers don't see model cards, incident histories, or training data disclosures. The Leaderboard Illusion paper (April 2025) showed that even benchmark scores — the primary public information signal — are being gamed. Making harm visible — mandatory incident reporting, public safety audit results, required disclosure of capability evaluation methods — would change behavior more than almost any rule change, because it changes the information environment everyone operates in.</p>
+      <div class="lp-action lp-action-high"><strong>What you can do:</strong> Support mandatory AI incident reporting. When you encounter AI-caused harm professionally, document and report it — even informally. Demand that AI companies publish model cards and capability evaluation results. The gap between stated and actual safety is only visible if harms are tracked. Visibility is the highest-leverage thing most individuals can contribute.</div>
+    </div>
+
+    <div class="lp-card lp-high">
+      <div class="lp-header"><span class="lp-num" style="color:var(--amber)">#5</span><span class="lp-name">Rules of the System</span></div>
+      <p class="lp-body">Incentives, punishments, constraints. Laws, contracts, liability standards, deployment gates. Rules change who can do what and what it costs to do it. But rules without feedback loops watching them are decoration.</p>
+      <p class="lp-body"><strong>In AI:</strong> Anthropic's RSP is a self-imposed rule without enforcement — and it just weakened. Product liability cases are rules with courts and real consequences behind them. The EU AI Act's penalty structure (€35M or 7% of global turnover) activates in August 2026 — the first #5 lever with structural enforcement at scale. For labor: the EU's Article 26 consultation requirement, California's whistleblower protections, and Denmark's flexicurity framework are working examples of #5 interventions for displaced workers. The US has none of these at the federal level.</p>
+      <div class="lp-action lp-action-high"><strong>What you can do:</strong> Follow the wrongful-death suits and EU enforcement cases. A court ruling that makes AI deployment financially risky changes what every lab's legal team tells its product team. Support labor protection legislation — the Denmark model works and is well-documented. A win in court or legislature changes the game faster than any number of safety announcements.</div>
+    </div>
+
+    <div class="lp-card lp-high">
+      <div class="lp-header"><span class="lp-num" style="color:var(--amber)">#4</span><span class="lp-name">Power to Add, Change, or Self-Organize Structure</span></div>
+      <p class="lp-body">Who gets to write the rules. A system where the regulated write the regulations produces rules that protect the regulated. A diverse ecosystem that can self-correct is more robust than a tight oligopoly.</p>
+      <p class="lp-body"><strong>In AI:</strong> The US "AI Action Plan" (July 2025) was developed with significant lab involvement. Industry increasingly writes its own oversight framework. Open-weights AI (DeepSeek-R1, Llama) is a form of structural self-organization that redistributes capability outside the main loop — potentially creating structural diversity, potentially creating uncontrolled proliferation. The current trend concentrates the power to shape rules in fewer hands.</p>
+      <div class="lp-action lp-action-high"><strong>What you can do:</strong> Pay attention to who is in the room when AI policy is written. When a lab employee writes the safety standard the lab is evaluated against, that's #4 leverage running backwards. Academic independence in AI safety research is a structural asset worth protecting.</div>
+    </div>
+
+    <!-- ── TIER 4: TRANSFORMATIVE ── -->
+    <div class="tier-header">
+      <span class="tier-badge tier-xform">Transformative</span>
+      <span class="tier-desc">Leverage points #3–1 · Goals, paradigms, and the coordination problem — where the actual stakes of mass displacement and catastrophic risk live</span>
+    </div>
+
+    <div class="lp-card lp-xform">
+      <div class="lp-header"><span class="lp-num" style="color:var(--red)">#3</span><span class="lp-name">Goals of the System</span></div>
+      <p class="lp-body">What the system is actually <em>for</em> — not its stated purpose, but what it consistently produces. POSIWID: the purpose of a system is what it does.</p>
+      <p class="lp-body">There are two fundamentally different goals AI deployment could serve: <strong>AI as amplifier</strong> (makes workers more productive, value distributes broadly, humans stay in the loop) and <strong>AI as replacement</strong> (eliminates human labor cost, value accrues to capital, workers become a legacy expense). The current system is not neutral between them. Its revealed purpose — in deployment pattern after deployment pattern — is replacement: Goldman Sachs estimates 300 million jobs exposed; the IMF finds advanced economies at 60% exposure; 77,999 tech sector jobs disappeared in 2025. OpenAI removed "safely" from its IRS-filed mission statement. Anthropic dropped its pause commitment. The stated goal is beneficial AI. The revealed goal is deployment speed and market capture.</p>
+      <p class="lp-body">Changing the actual goal requires changing what creates consequences. Financial liability, profit-sharing mandates, and labor protection law change actual goals faster than mission language. Denmark's flexicurity model — 5%+ of GDP on active retraining and placement — is the clearest working example of a goal-change: the system's objective becomes "workers stay economically viable through transitions," not "employment stays stable."</p>
+      <div class="lp-action lp-action-xform"><strong>What you can do:</strong> Read what AI companies file with the IRS and SEC, not their websites. Support AI transition fund proposals, profit-sharing legislation, and labor protection frameworks. The Denmark model exists and works — the question is political will. For safety: track capability evaluation disclosures and interpretability research funding. Goal changes appear in incentive structures before they appear in statements.</div>
+    </div>
+
+    <div class="lp-card lp-xform">
+      <div class="lp-header"><span class="lp-num" style="color:var(--red)">#2</span><span class="lp-name">Mindset / Paradigm</span></div>
+      <p class="lp-body">The deep assumptions that aren't questioned because they aren't seen. The source from which goals, rules, structure, and parameters all flow. Paradigms shift by accumulated evidence and example — not by argument.</p>
+      <p class="lp-body"><strong>For mass displacement:</strong> The operating paradigm is "efficiency gains are inherently good." This has been largely true historically — productivity improvements created more jobs than they destroyed, through specific redistribution mechanisms: labor organizing, collective bargaining, wage growth, shorter working hours. Those mechanisms don't fire automatically for AI-driven displacement. They require political will that the current paradigm treats as anti-progress. The paradigm shift needed is specific: efficiency gains should be distributed, not just captured. That's not a new idea — it's what labor movements have argued for 200 years. AI makes it urgent in a new register.</p>
+      <p class="lp-body"><strong>For extinction risk:</strong> The operating paradigm is "race to AGI is inevitable — the only question is who builds it first and whether they're responsible." Every frontier lab's behavior implies this. It forecloses the prior question: whether to build systems that could be dangerous to build at all. That prior question is not irresponsible — it's the question Yudkowsky and Soares have spent two decades insisting is askable, and that serious researchers including Yoshua Bengio and Stuart Russell take seriously. The dominant paradigm treats it as unaskable. That's a choice, not a fact about physics.</p>
+      <div class="lp-action lp-action-xform"><strong>What you can do:</strong> When you hear "AI is inevitable" or "you can't stop progress," notice that those are paradigm-reinforcing claims, not descriptions of physics. Ask who benefits from treating them as obvious. For labor: when someone says "AI will create more jobs than it destroys," ask for the mechanism, the timeline, and the distribution — not just the historical analogy, which may not hold at this pace.</div>
+    </div>
+
+    <div class="lp-card lp-xform">
+      <div class="lp-header"><span class="lp-num" style="color:var(--red)">#1</span><span class="lp-name">The Coordination Problem</span></div>
+      <p class="lp-body">At most scales, good judgment means holding your model of the world lightly and staying open to being wrong. At civilizational-risk scale, it means something more concrete: building the conditions for coordination between actors with deeply misaligned incentives.</p>
+      <p class="lp-body">The only historical examples of species-level coordination that actually worked — the Montreal Protocol on ozone depletion, partial nuclear non-proliferation, the eradication of smallpox — shared three structural conditions: (1) an undeniable, legible, shared threat that was concrete and visible; (2) a small enough set of actors that agreement was achievable; and (3) a face-saving exit path for major actors to change course without admitting catastrophic error.</p>
+      <p class="lp-body">AI currently fails all three. The risk is still partially deniable — timelines are contested, failure modes are disputed, and the most alarming scenarios require extrapolating capability curves that have surprised everyone in both directions. The key actors (US frontier labs, Chinese AI programs, the EU, smaller-state emerging programs, open-source communities) have deeply misaligned competitive interests. And no major lab has a face-saving path to slow down that doesn't involve admitting their entire competitive position was premature.</p>
+      <p class="lp-body">This is not hopeless — those conditions can be created. The Montreal Protocol worked in part because scientists made ozone depletion legible and undeniable before it was politically convenient. That's a #6 intervention that enabled a #1 shift. The same path exists for AI: interpretability research that makes alignment failures visible before they're catastrophic; international frameworks that give actors a face-saving exit; public accountability that makes the risk concrete rather than abstract. None of those are settled. All of them involve decisions that can still be influenced.</p>
+      <div class="lp-action lp-action-xform"><strong>What you can do:</strong> Not "stay uncertain." Work on the three conditions. Fund and support interpretability research — the work that makes misalignment visible before it's a crisis. Advocate for international AI safety frameworks that include major state actors, not just industry self-regulation. The Bletchley → Seoul → Paris → New Delhi summit chain shows coordination is beginning; it remains declaratory rather than binding. When you encounter confident certainty about AI's trajectory — in either direction — notice that both certainty and false reassurance close off the coordination work that #1 actually requires.</div>
+    </div>
+
+    <div class="callout callout-warn" style="margin-top:32px;">
+      <p class="callout-title">A closing note on urgency and timing</p>
+      <p>There is no #1 leverage point that makes this easy. The higher leverage points require coordination that has never happened at this scale. What this framework gives you is clarity about where pressure produces change. The honest answer is that #5 (rules with real consequences) and #6 (information that makes harm visible) are where individuals and institutions can create structural change in the next two to three years — before the system moves further into acceleration. Waiting for paradigm shifts while doing nothing isn't dancing with the system. The feedback loop between action and consequence is already running. The question is whether the balancing loops get strong enough before the fast loop reaches a threshold they can no longer affect.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Primary sources:</strong> Sam Altman X post, November 6, 2025 (OpenAI commitments &amp; ARR) · IEA Energy and AI report, 2025 (electricity growth, grid delay figures) · Anthropic RSP v3.0, February 24, 2026 (anthropic.com) · TIME exclusive with Jared Kaplan, February 2026 (RSP pause removal) · Anthropic Series G press release, February 12, 2026 · IMF Working Paper WP/25/76, April 2025 ("The Global Impact of AI: Mind the Gap") · IMF Global Financial Stability Report Chapter 1, April 2026 (circular financing) · Goldman Sachs Global Investment Research, 2023 (300M exposure estimate) · WEF Future of Jobs Report, 2025 · BLS, "Incorporating AI Impacts in Employment Projections," 2025 · "The Leaderboard Illusion," Singh et al., arXiv:2504.20879, April 2025 · Garcia v. Character.AI settlement, January 2026 · OpenAI wrongful-death suits (Adams v. OpenAI), N.D. Cal., motion denied April 2026 · Air Canada chatbot liability ruling, 2025 · Gallagher Re / MIT "Smart Systems, Blind Spots," March 2026 · IEEFA and Utility Dive reporting on PJM capacity auction failure, December 2025 · EU AI Act implementation timeline (artificialintelligenceact.eu) · Trump Executive Order 14179, January 23, 2025 · America's AI Action Plan, White House, July 2025 · Yoshua Bengio (ed.), International AI Safety Report, 2026 · DeepMind AlphaProof, <em>Nature</em>, 2025 · Sakana AI, "The AI Scientist v2," arXiv:2504.08066, 2025 · Epoch AI training compute data, 2025 · Yudkowsky &amp; Soares, <em>If Anyone Builds It, Everyone Dies</em>, March 2026 · AI 2027 scenario (ai-2027.com), Kokotajlo et al., 2025.</p>
+  <p><strong>Leverage framework:</strong> Donella H. Meadows, <em>Thinking in Systems: A Primer</em> (Chelsea Green, 2008). Twelve leverage points: pp. 145–165.</p>
+  <p>This is an analytical explainer applying a systems-thinking framework to publicly documented facts — not financial or investment advice, not legal advice, and not a prediction of specific outcomes. Probability estimates for catastrophic risk reflect the range of credible expert opinion; none are the author's own forecast.</p>
+</footer>
+
+</body>
+</html>

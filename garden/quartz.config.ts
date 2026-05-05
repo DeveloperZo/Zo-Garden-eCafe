@@ -15,8 +15,8 @@ const config: QuartzConfig = {
     // No analytics until a host + provider is picked. Set to e.g. { provider: "plausible", host: "..." } when ready.
     analytics: null,
     locale: "en-US",
-    // TBD: replace once host is decided (Pages / CF Pages / Netlify). Used to build absolute links + sitemap.
-    baseUrl: "zowilliams.github.io",
+    // Cloudflare Pages production hostname (project name `zo-garden` per OPER-001). Used for absolute links + sitemap.
+    baseUrl: "zo-garden.pages.dev",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {

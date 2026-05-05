@@ -8,8 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      // TBD: replace with the canonical Zo Garden monorepo URL once it's hosted.
-      GitHub: "https://github.com/zowilliams",
+      GitHub: "https://github.com/DeveloperZo/Zo-Garden-eCafe",
     },
   }),
 }
