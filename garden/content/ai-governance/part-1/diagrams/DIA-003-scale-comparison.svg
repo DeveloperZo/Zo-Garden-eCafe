@@ -1,0 +1,43 @@
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-scale-title">
+  <title id="viz-scale-title">Bar chart comparing AI investment commitments to revenue and fines</title>
+
+  <!-- Header title -->
+  <text x="350" y="22" font-size="13" font-weight="800" fill="#1C1C2E" text-anchor="middle">Scale of AI Investment vs. Accountability</text>
+
+  <!-- Scale axis -->
+  <line x1="130" y1="38" x2="130" y2="228" stroke="#E4E2DC" stroke-width="1"/>
+  <!-- Tick marks at each row center -->
+  <line x1="126" y1="63"  x2="130" y2="63"  stroke="#E4E2DC" stroke-width="1"/>
+  <line x1="126" y1="113" x2="130" y2="113" stroke="#E4E2DC" stroke-width="1"/>
+  <line x1="126" y1="163" x2="130" y2="163" stroke="#E4E2DC" stroke-width="1"/>
+  <line x1="126" y1="213" x2="130" y2="213" stroke="#E4E2DC" stroke-width="1"/>
+
+  <!-- Row labels -->
+  <text x="4" y="63"  font-size="11" font-weight="600" fill="#1C1C2E" dominant-baseline="middle">Hyperscaler capex 2025</text>
+  <text x="4" y="113" font-size="11" font-weight="600" fill="#1C1C2E" dominant-baseline="middle">OpenAI commitments (8 yr)</text>
+  <text x="4" y="163" font-size="11" font-weight="600" fill="#1C1C2E" dominant-baseline="middle">OpenAI revenue (ARR)</text>
+  <text x="4" y="213" font-size="11" font-weight="600" fill="#1C1C2E" dominant-baseline="middle">Global AI fines to date</text>
+
+  <!-- Bars (max width 520 = $1.4T; start x=130) -->
+
+  <!-- Row 1: Hyperscaler capex $448B — red system, 166px -->
+  <rect x="130" y="46" width="166" height="34" rx="4" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
+  <text x="302" y="63" font-size="10.5" font-weight="700" fill="#C94B2E" dominant-baseline="middle"> $448B</text>
+
+  <!-- Row 2: OpenAI commitments $1.4T — red system, 520px (max) -->
+  <rect x="130" y="96" width="520" height="34" rx="4" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
+  <text x="646" y="113" font-size="10.5" font-weight="700" fill="#C94B2E" text-anchor="end" dominant-baseline="middle">$1.4T</text>
+
+  <!-- Row 3: OpenAI revenue ~$25B — blue system, 9px (min visible 6px) -->
+  <rect x="130" y="146" width="9" height="34" rx="2" fill="#E3E8F5" stroke="#3A5498" stroke-width="2"/>
+  <text x="145" y="163" font-size="10.5" font-weight="700" fill="#3A5498" dominant-baseline="middle"> ~$25B</text>
+
+  <!-- Row 4: AI fines ~$400K — gray/neutral, 3px minimum -->
+  <rect x="130" y="196" width="3" height="34" rx="1" fill="#F0EFF0" stroke="#6B6B85" stroke-width="2"/>
+  <!-- Annotation pill for fines value -->
+  <rect x="139" y="202" width="80" height="22" rx="4" fill="#F0EFF0" stroke="#6B6B85" stroke-width="1"/>
+  <text x="179" y="213" font-size="10.5" font-weight="700" fill="#6B6B85" text-anchor="middle" dominant-baseline="middle">~$400K</text>
+
+  <!-- Legend -->
+  <text x="350" y="234" font-size="10" fill="#9B9BA8" text-anchor="middle">&#8592; bars proportional to dollar scale</text>
+</svg>

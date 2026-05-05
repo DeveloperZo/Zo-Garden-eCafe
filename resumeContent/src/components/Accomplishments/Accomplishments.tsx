@@ -3,7 +3,6 @@ import React, { useMemo, useState, useCallback } from 'react';
 import './Accomplishments.css';
 import quests from '../../data/quests.data';
 import { useTheme } from '../../context/ThemeContext';
-import CollapsibleSection from '../CollapsibleSection/CollapsibleSection';
 
 interface Accomplishment {
   description: string;

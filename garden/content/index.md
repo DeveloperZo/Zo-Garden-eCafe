@@ -9,12 +9,18 @@ Purpose: Landing page for the Zo Garden Quartz 4 site. Acts as the doc root.
 Status: canonical
 Owner: zo
 Update trigger: when top-level structure or featured links change
-Last updated: 2026-05-04
+Last updated: 2026-05-05
 -->
 
 # Zo Garden
 
 Welcome. This is the canonical doc surface for the Zo Garden monorepo.
+
+## Featured
+
+**[Resume](/resume)** — Portfolio and work history.
+
+**[Can AI Self-Govern?](ai-governance/)** — A two-part systems analysis of the AI industry using Donella Meadows' leverage points framework. Covers the capital loop, the alignment gap, the oversight failure, what's actually at stake, and where real leverage exists.
 
 ## Quick start
 

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Can I Do About AI? An Action Guide</title>
+  <style>
+    /* ══ DESIGN TOKENS ══════════════════════════════════════════════════════ */
+    :root {
+      --bg: #F7F6F3;
+      --surface: #FFFFFF;
+      --text: #1C1C2E;
+      --muted: #6B6B85;
+      --border: #E4E2DC;
+      --shadow: rgba(28,28,46,0.07);
+      --red:   #C94B2E; --red-lt:   #FDE8E3;
+      --green: #2A7A5F; --green-lt: #EDF7F3;
+      --blue:  #3A5498; --blue-lt:  #E3E8F5;
+      --amber: #C9880A; --amber-lt: #FEF8E8;
+      --gray:  #9B9BA8; --gray-lt:  #F0EFF0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.75; font-size: 17px;
+    }
+
+    /* ══ NAV ═════════════════════════════════════════════════════════════════ */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(247,246,243,.96); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 48px;
+      display: flex; align-items: center; gap: 4px;
+      overflow-x: auto; white-space: nowrap;
+    }
+    .nav-brand { font-weight: 800; font-size: 14px; color: var(--text); margin-right: 12px; flex-shrink: 0; }
+    nav a {
+      font-size: 13px; font-weight: 500; color: var(--muted);
+      text-decoration: none; padding: 5px 12px; border-radius: 20px; flex-shrink: 0;
+      transition: background .15s, color .15s;
+    }
+    nav a:hover { background: var(--border); color: var(--text); }
+    .nav-part1 { background: var(--blue-lt); color: var(--blue); font-weight: 700; }
+    .nav-part1:hover { background: var(--blue-lt); opacity: .85; }
+
+    /* ══ LAYOUT ══════════════════════════════════════════════════════════════ */
+    main { max-width: 840px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* ══ HERO ════════════════════════════════════════════════════════════════ */
+    .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+    .hero-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(2rem,5vw,3rem); font-weight: 900; letter-spacing: -.035em; line-height: 1.15; margin-bottom: 20px; }
+    .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 620px; line-height: 1.65; margin-bottom: 0; }
+
+    /* ══ SECTIONS ════════════════════════════════════════════════════════════ */
+    section { margin-bottom: 72px; scroll-margin-top: 64px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    h2 { font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; letter-spacing: -.025em; line-height: 1.25; margin-bottom: 18px; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    p { margin-bottom: 18px; } p:last-child { margin-bottom: 0; }
+    strong { font-weight: 700; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ══ CALLOUTS ════════════════════════════════════════════════════════════ */
+    .callout { border-left: 3px solid; border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 22px 0; }
+    .callout-title { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+    .callout p { font-size: 15px; margin-bottom: 0; line-height: 1.65; }
+    .callout-key  { border-color: var(--amber); background: var(--amber-lt); }
+    .callout-key  .callout-title { color: var(--amber); }
+    .callout-warn { border-color: var(--red);   background: var(--red-lt);   }
+    .callout-warn .callout-title { color: var(--red); }
+    .callout-ok   { border-color: var(--green); background: var(--green-lt); }
+    .callout-ok   .callout-title { color: var(--green); }
+
+    /* ══ LEVERAGE POINT CARDS ════════════════════════════════════════════════ */
+    .tier-header { display: flex; align-items: center; gap: 10px; margin: 32px 0 14px; }
+    .tier-badge { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+    .tier-low    { background: var(--gray-lt); color: var(--gray); }
+    .tier-mid    { background: var(--blue-lt); color: var(--blue); }
+    .tier-high   { background: var(--amber-lt); color: var(--amber); }
+    .tier-xform  { background: var(--red-lt); color: var(--red); }
+    .tier-desc   { font-size: 13px; color: var(--muted); }
+
+    .lp-card { border-left: 4px solid; border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 10px 0; background: var(--surface); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .lp-low   { border-left-color: var(--gray);  }
+    .lp-mid   { border-left-color: var(--blue);  }
+    .lp-high  { border-left-color: var(--amber); }
+    .lp-xform { border-left-color: var(--red);   }
+
+    .lp-header { margin-bottom: 10px; }
+    .lp-name { font-size: 16px; font-weight: 700; display: block; line-height: 1.3; margin-bottom: 3px; }
+    .lp-subtitle { font-size: 12px; color: var(--muted); line-height: 1.45; font-style: italic; }
+
+    .lp-context { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 10px; }
+
+    .lp-actors { font-size: 12px; color: var(--muted); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); line-height: 1.55; }
+    .lp-actors strong { font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--text); margin-right: 3px; }
+
+    .lp-action { font-size: 13px; padding: 12px 16px; border-radius: 8px; }
+    .lp-action p { font-size: 13px; line-height: 1.65; margin-bottom: 8px; }
+    .lp-action p:last-child { margin-bottom: 0; }
+    .lp-action strong { font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+    .lp-action-low   { background: var(--gray-lt);  }
+    .lp-action-mid   { background: var(--blue-lt);  }
+    .lp-action-high  { background: var(--amber-lt); }
+    .lp-action-xform { background: var(--red-lt);   }
+
+    /* ══ HOW TO READ GRID ════════════════════════════════════════════════════ */
+    .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    .guide-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 16px; }
+    .guide-card-label { font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .guide-card p { font-size: 14px; line-height: 1.65; color: var(--text); }
+    @media (max-width: 560px) { .guide-grid { grid-template-columns: 1fr; } }
+
+    /* ══ PART LINK ═══════════════════════════════════════════════════════════ */
+    .part-link { display: flex; align-items: flex-start; gap: 14px; background: var(--blue-lt); border: 1px solid rgba(58,84,152,0.2); border-radius: 12px; padding: 18px 20px; text-decoration: none; margin: 24px 0; transition: background .15s; }
+    .part-link:hover { background: #d5ddf0; text-decoration: none; }
+    .part-link-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+    .part-link-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .part-link-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .part-link-icon { font-size: 24px; flex-shrink: 0; padding-top: 2px; }
+
+    /* ══ FOOTER ══════════════════════════════════════════════════════════════ */
+    footer { max-width: 840px; margin: 0 auto; padding: 32px 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); line-height: 1.65; }
+    footer p { margin-bottom: 8px; }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      main { padding: 0 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">What Can I Do?</span>
+  <a href="#how-to-read">How to Read</a>
+  <a href="#low">Low Leverage</a>
+  <a href="#medium">Medium</a>
+  <a href="#high">High Leverage</a>
+  <a href="#transformative">Transformative</a>
+  <a href="ai-systems-explainer.html" class="nav-part1">← Part 1: The Analysis</a>
+</nav>
+
+<main>
+
+  <div class="hero">
+    <p class="hero-eyebrow">Part 2 of 2 · Action guide · May 2026</p>
+    <h1>What Can I Do About AI?</h1>
+    <p class="hero-sub">Twelve places to push the system — ranked by power, not visibility. Most "AI safety" activity clusters at the least effective tier. This guide maps where effort actually produces structural change, and who is best positioned to apply it.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HOW TO READ THIS
+  ════════════════════════════════════════════════════════════════════════ -->
+  <section id="how-to-read">
+    <h2>How to Use This Guide</h2>
+
+    <p>This is a companion to <a href="ai-systems-explainer.html">Part 1: Can AI Self-Govern?</a>, which explains why the AI development system behaves as it does. This guide takes the twelve leverage points from that analysis and makes them actionable.</p>
+
+    <p>The leverage points are ranked from weakest to most powerful. Higher-leverage interventions produce more durable structural change — but they also face more resistance, require more coordination, and take longer to move. There is no tier that makes this easy.</p>
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <p class="guide-card-label">The honest starting point</p>
+        <p>Most "AI safety" public activity — petitions, social media pressure, awareness campaigns — clusters in the lowest tier. Real effect requires moving up. But moving up requires standing: institutional access, professional expertise, or coordination with others who have it.</p>
+      </div>
+      <div class="guide-card">
+        <p class="guide-card-label">How to read each card</p>
+        <p>Each card names the lever, explains what it actually is, identifies who can best move it, then describes how you encounter it and what changing it honestly does and doesn't do. Start with the tier that matches your current standing.</p>
+      </div>
+      <div class="guide-card">
+        <p class="guide-card-label">The tier to prioritize</p>
+        <p>High Leverage — Visibility and Enforceable Rules — is where individuals and institutions can create structural change in the next two to three years. It requires access: to journalists, to courts, to regulatory proceedings, or to workplaces deploying AI.</p>
+      </div>
+      <div class="guide-card">
+        <p class="guide-card-label">The highest ceiling</p>
+        <p>Transformative levers have the highest ceiling and the longest timeline. They require coordinating actors who are actively competing with each other. Foundations for this are being laid now — and the decisions being made today about interpretability research and international frameworks will determine whether coordination becomes possible.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-ok">
+      <p class="callout-title">Tiers aren't exclusive</p>
+      <p>Work in multiple tiers simultaneously. Visibility work (High Leverage) builds the evidence base that makes Coordination (Transformative) possible. Liability cases (High/Medium Leverage) change what company legal teams tell product teams without waiting for legislation. These levers interact — progress on one opens space on others.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       LOW LEVERAGE
+  ════════════════════════════════════════════════════════════════════════ -->
+  <section id="low">
+    <div class="tier-header">
+      <span class="tier-badge tier-low">Low Leverage</span>
+      <span class="tier-desc">Adjustable settings and physical infrastructure — real effort, real engineering, rarely shifts what the system actually does</span>
+    </div>
+
+    <p style="font-size:15px; color:var(--muted); margin-bottom:24px;">These levers are the most common targets of "AI safety" activity because they're the most accessible. They address specific problems without changing the underlying incentives, competitive dynamics, or goals. A system absorbs parameter changes and continues.</p>
+
+    <div class="lp-card lp-low">
+      <div class="lp-header">
+        <span class="lp-name">Constants &amp; Parameters</span>
+        <p class="lp-subtitle">The knobs and dials — adjustable settings that can be tweaked without changing the system's structure</p>
+      </div>
+      <p class="lp-context">Content filters, rate limits, safety-classifier thresholds, usage caps — the adjustable settings of any system. Most "AI safety" announcements live here: real engineering work that leaves incentives, goals, and competitive dynamics unchanged.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Product and safety teams at labs; regulators setting technical standards. Anyone who ships AI products can move this lever.</p>
+      <div class="lp-action lp-action-low">
+        <p><strong>How you encounter this:</strong> Every time a lab announces "improved safety" with a new filter or guardrail. Or when a company says a harmful output was a "model behavior issue" that's been patched.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Parameter fixes address the specific problem you already know about. They don't prevent the next category of problem you haven't encountered yet. The useful question when a company announces a safety improvement: does this change who's liable, who audits, or what gates must be cleared before deployment — or does it just adjust a threshold?</p>
+      </div>
+    </div>
+
+    <div class="lp-card lp-low">
+      <div class="lp-header">
+        <span class="lp-name">Buffer Sizes</span>
+        <p class="lp-subtitle">How much slack exists — the breathing room between "something went wrong" and "it cascades"</p>
+      </div>
+      <p class="lp-context">Buffers are the system's shock absorbers: review periods before launch, safety team headcount relative to product team size, the time window between capability development and deployment. They erode under competitive pressure because adding slack looks like giving up ground.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Lab safety team leads, boards of directors, institutional investors, congressional appropriators. External pressure is the main thing that keeps buffers from being quietly eliminated.</p>
+      <div class="lp-action lp-action-low">
+        <p><strong>How you encounter this:</strong> When a lab shortens its pre-deployment review period. When a safety team's headcount shrinks while the product team grows. When a published "pause commitment" gets quietly removed from policy documentation.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Larger buffers give oversight a fighting chance to catch problems before they reach users at scale. They don't fix the underlying incentive dynamics — they extend the runway. Buffer erosion is one of the clearest early-warning signals that competitive pressure is overriding stated safety commitments.</p>
+      </div>
+    </div>
+
+    <div class="lp-card lp-low">
+      <div class="lp-header">
+        <span class="lp-name">Physical Infrastructure</span>
+        <p class="lp-subtitle">What's built and where — the hard constraints that determine what's even possible to run</p>
+      </div>
+      <p class="lp-context">Chip fabrication concentration, electricity grid capacity, data center permitting — physical structures that constrain AI development regardless of policy. The electricity grid is already acting as an unintentional brake: interconnection queues averaging 7–10 years in key markets are physically limiting deployment in ways no regulation achieves.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> FERC commissioners, state utility boards, trade officials, chip export control policymakers. These decisions get made in venues with no "AI" label on the door.</p>
+      <div class="lp-action lp-action-low">
+        <p><strong>How you encounter this:</strong> In electricity rate cases, chip export control debates, and data center siting disputes — decided by utility commissioners and trade officials, not AI researchers.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Infrastructure changes are slow and durable. Reshaping who controls chip manufacturing or grid access shifts the long-run dynamics of who can build what — not whether building happens. The electricity grid may turn out to be a more binding constraint on AI deployment than any regulation specifically designed for AI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       MEDIUM LEVERAGE
+  ════════════════════════════════════════════════════════════════════════ -->
+  <section id="medium">
+    <div class="tier-header">
+      <span class="tier-badge tier-mid">Medium Leverage</span>
+      <span class="tier-desc">Response delays, brake strength, and acceleration rate — changing these meaningfully shifts system behavior</span>
+    </div>
+
+    <p style="font-size:15px; color:var(--muted); margin-bottom:24px;">These levers work on how fast the system moves and how hard it can be stopped. Shorter delays make harm visible faster. Stronger brakes make recklessness financially costly. Slower acceleration gives oversight time to keep pace. All three face significant institutional resistance.</p>
+
+    <div class="lp-card lp-mid">
+      <div class="lp-header">
+        <span class="lp-name">Length of Delays</span>
+        <p class="lp-subtitle">How long before consequences arrive — long delays make problems invisible until they're already large</p>
+      </div>
+      <p class="lp-context">Models deploy on 2–4 month cycles. Documented harms arrive months to years later. Regulatory response takes years. By the time a specific harm is attributed and acted on, the model that caused it has been superseded. This delay is structural — it's a key reason public concern rarely translates into policy change fast enough to matter.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Journalists and researchers who document harm; regulatory staff who can mandate incident reporting; standards bodies that define harm taxonomies. Aviation and pharma already have working models here.</p>
+      <div class="lp-action lp-action-mid">
+        <p><strong>How you encounter this:</strong> When you read about harm from an AI system deployed 18 months ago — and the company has since released two newer models. The accountability gap is the delay made visible.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Shortening the detection-to-response delay — through mandatory incident reporting, standardized harm taxonomies, rapid audit requirements — compresses the accountability cycle. It doesn't prevent harm. It makes harm visible fast enough for the oversight system to respond while it can still matter.</p>
+      </div>
+    </div>
+
+    <div class="lp-card lp-mid">
+      <div class="lp-header">
+        <span class="lp-name">Strength of the Brakes</span>
+        <p class="lp-subtitle">How effectively counterforces work — when brakes are too weak, acceleration goes unchecked</p>
+      </div>
+      <p class="lp-context">The oversight brake (harm → regulatory response → slowdown) is weak: underfunded agencies, voluntary self-reporting, no mandatory independent audits. The insurance brake barely exists at scale. The legal brake is forming but hasn't yet produced the precedent that would change behavior industry-wide.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Plaintiffs' attorneys pursuing product liability, insurance actuaries pricing AI risk, appellate judges, congressional committee staff. One court ruling can strengthen a brake more than years of rulemaking.</p>
+      <div class="lp-action lp-action-mid">
+        <p><strong>How you encounter this:</strong> When a regulatory body issues AI guidance that companies are not required to follow. Or when an insurance policy specifically excludes AI-native liabilities like hallucinations or biased outputs. These are brakes that aren't connected to anything.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Strengthening a brake — making liability attach to specific harms, making audits mandatory, making insurance cover AI risk — doesn't stop development. It makes recklessness financially costly. A single appellate liability ruling holding AI output to product-liability standards would strengthen the legal brake faster than a decade of regulatory rulemaking.</p>
+      </div>
+    </div>
+
+    <div class="lp-card lp-mid">
+      <div class="lp-header">
+        <span class="lp-name">Speed of the Engine</span>
+        <p class="lp-subtitle">How fast the growth loop is running — and what slowing the acceleration (not stopping it) looks like</p>
+      </div>
+      <p class="lp-context">The capital loop (capability → investment → compute → capability) has very high acceleration because every actor in the loop profits from speed. Reducing the rate of acceleration doesn't stop the loop — it gives other parts of the system time to keep pace. These proposals exist in early legislative form and face predictable opposition from everyone who benefits from the current pace.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Finance ministry and tax committee legislators, labor economists advising government, national AI councils. This lever requires political will that almost no actor currently has incentive to supply.</p>
+      <div class="lp-action lp-action-mid">
+        <p><strong>How you encounter this:</strong> In proposals for AI windfall taxes, compute levies, or profit-sharing mandates — and in the industry lobbying that reliably defeats them. The companies most vocal against these measures sit at the center of the capital loop and benefit most from its acceleration.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Slowing the acceleration extends the time available for safety research and governance to keep pace with capability. It doesn't stop development, and it faces the most politically powerful opposition of any lever in this tier. The value isn't stopping the loop — it's buying time for everything else to work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HIGH LEVERAGE
+  ════════════════════════════════════════════════════════════════════════ -->
+  <section id="high">
+    <div class="tier-header">
+      <span class="tier-badge tier-high">High Leverage</span>
+      <span class="tier-desc">Information, enforceable rules, and who writes them — powerful, underused, often actively resisted</span>
+    </div>
+
+    <p style="font-size:15px; color:var(--muted); margin-bottom:24px;">This tier is where individuals and institutions can create structural change in the next two to three years. It requires access — to journalists, to courts, to regulatory proceedings, or to workplaces deploying AI. The access itself is the constraint. These levers are available to more people than usually act on them.</p>
+
+    <div class="lp-card lp-high">
+      <div class="lp-header">
+        <span class="lp-name">Visibility</span>
+        <p class="lp-subtitle">Who can see what — because making harm visible changes behavior more reliably than rules do</p>
+      </div>
+      <p class="lp-context">Labs self-report safety evaluations. Harms aren't systematically tracked. Even benchmark scores — the primary public signal for model safety — were gamed: labs submitted private variants until scores were high, then withheld lower-performing ones. The gap between stated and actual safety is only detectable if harms are measured. Right now, most aren't.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Investigative journalists, academic safety researchers, NGOs, HR and legal professionals inside companies deploying AI. Anyone with standing to demand disclosure can move this lever — this is the most accessible high-leverage point for most people.</p>
+      <div class="lp-action lp-action-high">
+        <p><strong>How you encounter this:</strong> When a company publishes a safety report without disclosing what it tested for, what it found, or what it declined to test. Or when a harmful AI output gets attributed to a "rare edge case" with no data to back the claim.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Mandatory incident reporting and public safety disclosures don't prevent harm. They make it impossible to deny. When harms are visible and documented, they create public, legal, and financial pressure that rules alone don't. Push for disclosure wherever you have standing to ask for it — in vendor contracts, procurement processes, workplace AI policies, and regulatory comment periods.</p>
+      </div>
+    </div>
+
+    <div class="lp-card lp-high">
+      <div class="lp-header">
+        <span class="lp-name">Enforceable Rules</span>
+        <p class="lp-subtitle">Laws and liability standards that carry real consequences — not announcements, but rules with teeth</p>
+      </div>
+      <p class="lp-context">Rules shape behavior only when backed by real consequences: fines that genuinely hurt, liability that attaches to specific decisions, deployment gates that can't be bypassed. The EU AI Act's penalty structure activates August 2026 — the first enforceable rule at meaningful scale. The US has no equivalent federal provision for labor protections during AI transitions.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Trial lawyers and plaintiffs, legislators drafting AI liability bills, EU enforcement officials, labor advocates. Courts and legislatures, not labs, hold the keys to this tier.</p>
+      <div class="lp-action lp-action-high">
+        <p><strong>How you encounter this:</strong> Every time a voluntary commitment is revised downward without consequence. Every time a court case settles before it can establish precedent. The pattern is consistent: where rules have no external enforcement, they bend.</p>
+        <p><strong>What changing it does — and doesn't:</strong> A court ruling that makes AI deployment financially risky changes what every lab's legal team tells its product team — faster than any regulatory rulemaking. Labor protection legislation changes what employers can do when deploying AI in ways that affect jobs. Rules with teeth change behavior at the point of decision. This is where concentrated effort from individuals — in courts, legislatures, and regulatory proceedings — produces structural change.</p>
+      </div>
+    </div>
+
+    <div class="lp-card lp-high">
+      <div class="lp-header">
+        <span class="lp-name">Who Writes the Rules</span>
+        <p class="lp-subtitle">Who designs the oversight — because whoever designs it usually designs it to protect themselves</p>
+      </div>
+      <p class="lp-context">The US AI Action Plan was developed with significant lab participation. Labs increasingly author the safety standards they're evaluated against. A diverse ecosystem that can genuinely self-correct is structurally more robust than a tight oligopoly writing its own standards. The current trend concentrates rule-writing power in fewer hands.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Academic safety researchers, civil society organizations, independent standards bodies (IEEE, NIST). Participation in regulatory comment processes, standards working groups, and government AI task forces is how this gets diversified.</p>
+      <div class="lp-action lp-action-high">
+        <p><strong>How you encounter this:</strong> When an AI safety standard is authored by the company being evaluated against it. When a government AI task force is composed primarily of industry representatives. When the same lab that builds a model also certifies it safe.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Diversifying who writes rules changes whose interests the rules protect. It doesn't guarantee better outcomes. But it makes regulatory capture harder, and preserves the structural diversity that allows genuine self-correction. Regulatory comment submissions, academic participation in standards bodies, and civil society testimony in AI legislation hearings are all underused entry points.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       TRANSFORMATIVE
+  ════════════════════════════════════════════════════════════════════════ -->
+  <section id="transformative">
+    <div class="tier-header">
+      <span class="tier-badge tier-xform">Transformative</span>
+      <span class="tier-desc">What the system is for, the assumptions it runs on, and whether rivals can be made to coordinate</span>
+    </div>
+
+    <p style="font-size:15px; color:var(--muted); margin-bottom:24px;">The hardest levers, and the ones with the highest ceiling. These require changing the actual goals of powerful actors, dislodging assumptions that feel like facts, or coordinating entities in direct competition with each other. None of those are easy. All of them involve decisions that can still be influenced.</p>
+
+    <div class="lp-card lp-xform">
+      <div class="lp-header">
+        <span class="lp-name">What the System Is Actually For</span>
+        <p class="lp-subtitle">The revealed purpose — not the mission statement, but what deployment patterns consistently produce</p>
+      </div>
+      <p class="lp-context">There are two fundamentally different goals AI deployment could serve: AI as amplifier (workers more productive, value distributes broadly) or AI as replacement (eliminates labor cost, value accrues to capital). The current system is not neutral between them. Deployment pattern after deployment pattern points toward replacement. The stated goal is beneficial AI. The revealed goal is deployment speed and market capture.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Labor organizers, employment lawyers, ESG-focused institutional investors, legislators on labor and finance committees. Goal change shows up in incentive structures before it shows up in any press release.</p>
+      <div class="lp-action lp-action-xform">
+        <p><strong>How you encounter this:</strong> In what companies file with the IRS and SEC (the legal statement of purpose, not their websites). In whether AI deployment agreements include labor consultation requirements. In whether "AI dividend" or profit-sharing proposals are treated as serious policy or dismissed as anti-progress.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Changing the system's actual goal requires changing what creates financial consequences. Labor protection law, liability for displacement harms, and profit-sharing mandates can move the goal from "deploy fastest" to "deploy responsibly." This requires sustained pressure over years — Denmark's flexicurity model shows it's achievable at national scale. Goal changes appear in incentive structures before they appear in any press release.</p>
+      </div>
+    </div>
+
+    <div class="lp-card lp-xform">
+      <div class="lp-header">
+        <span class="lp-name">The Unquestioned Assumptions</span>
+        <p class="lp-subtitle">The ideas so embedded they're not seen as choices — the water every participant in the system swims in</p>
+      </div>
+      <p class="lp-context">Two dominant assumptions shape the current system. For labor: "efficiency gains are inherently good and always self-correct" — historically true but only through specific mechanisms (organizing, bargaining, redistribution) that don't fire automatically for AI displacement. For catastrophic risk: "building more capable AI is inevitable — the only question is who and whether they're responsible" — a choice the dominant paradigm treats as a fact of physics.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Academic researchers, science journalists, policy analysts, educators. Paradigm shifts happen when enough specific, documented counterexamples accumulate that the old assumption can no longer explain what's observed.</p>
+      <div class="lp-action lp-action-xform">
+        <p><strong>How you encounter this:</strong> When someone says "you can't stop progress" as a conversation-ending move. Or "AI will create more jobs than it destroys" without specifying the mechanism, timeline, or distribution. These are paradigm-reinforcing claims that feel like facts.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Paradigm shifts don't happen through argument alone. You can contribute by insisting on specificity: for labor claims, ask for the mechanism and the timeline. For safety claims, ask what would count as evidence that the risk is real. Paradigms that survive only through vagueness are closer to shifting than they appear.</p>
+      </div>
+    </div>
+
+    <div class="lp-card lp-xform">
+      <div class="lp-header">
+        <span class="lp-name">The Coordination Problem</span>
+        <p class="lp-subtitle">Getting rivals to act together before it's too late — the hardest thing, and the one with the highest ceiling</p>
+      </div>
+      <p class="lp-context">Civilizational-scale coordination requires three things to be true simultaneously: the threat is undeniable and legible to everyone, the actor set is small enough to negotiate with, and everyone has a face-saving path to change course. AI currently fails all three. But those conditions can be deliberately created — and the decisions being made now about interpretability research, international frameworks, and accountability mechanisms will determine whether coordination becomes possible.</p>
+      <p class="lp-actors"><strong>Most viable actors:</strong> Heads of state and senior diplomats, frontier lab executives with standing to commit publicly, interpretability researchers whose work makes risk legible. The Bletchley → Seoul → Paris → New Delhi summit chain shows coordination is beginning — still declaratory rather than binding.</p>
+      <div class="lp-action lp-action-xform">
+        <p><strong>How you encounter this:</strong> In every international AI summit, treaty negotiation, and export control regime. In whether interpretability research is funded enough to produce verifiable safety claims before capabilities outpace oversight. In whether the dominant framing of AI competition makes cooperation politically possible or impossible.</p>
+        <p><strong>What changing it does — and doesn't:</strong> Work on the three conditions: fund interpretability research (the work that makes risk legible and undeniable), support international frameworks that include all major state actors, and resist framings that make coordination seem naive or unserious. This leverage point has the highest possible ceiling and the longest timeline. It also can't wait for everything else to be tried first.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-warn" style="margin-top:32px;">
+      <p class="callout-title">A note on realistic expectations</p>
+      <p>There is no single leverage point that makes this easy. The higher leverage points require coordination that has never happened at this scale. What this framework gives you is clarity about where pressure produces change. Enforceable Rules and Visibility are where individuals and institutions can create structural change in the next two to three years. The feedback loop between action and consequence is already running. The question is whether the balancing loops get strong enough before the fast loop reaches a threshold they can no longer affect.</p>
+    </div>
+  </section>
+
+  <a href="ai-systems-explainer.html" class="part-link">
+    <span class="part-link-icon">←</span>
+    <div>
+      <p class="part-link-eyebrow">Part 1 of 2</p>
+      <p class="part-link-title">Can AI Self-Govern? A Systems Analysis</p>
+      <p class="part-link-desc">The underlying systems analysis: how the capital and oversight loops work, what makes self-governance structurally difficult, and the labor and extinction risk evidence base.</p>
+    </div>
+  </a>
+
+</main>
+
+<footer>
+  <p><strong>Leverage framework:</strong> Donella H. Meadows, <em>Thinking in Systems: A Primer</em> (Chelsea Green, 2008). Twelve leverage points: pp. 145–165.</p>
+  <p>Sources cited in the analysis are compiled in <a href="ai-systems-explainer.html#sources">Part 1</a>. This guide focuses on action; the evidence base is in the analysis.</p>
+  <p>This is an analytical guide applying a systems-thinking framework to publicly documented facts — not financial or investment advice, not legal advice, and not a prediction of specific outcomes.</p>
+</footer>
+
+</body>
+</html>

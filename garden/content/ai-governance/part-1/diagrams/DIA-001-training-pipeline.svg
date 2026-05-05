@@ -1,0 +1,42 @@
+<svg viewBox="0 0 730 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-train-title viz-train-desc">
+  <title id="viz-train-title">Training pipeline from data to inference</title>
+  <desc id="viz-train-desc">Flow reads left to right: Internet → training data → training run → trained model weights → user prompts. A dashed curved arrow loops from user prompts back toward the internet and training data, labeled outputs inform the next training run.</desc>
+  <defs>
+    <marker id="t-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#9B9BA8"/></marker>
+    <marker id="t-red"  viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#C94B2E"/></marker>
+  </defs>
+  <text x="66"  y="28" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">① collect</text>
+  <text x="211" y="28" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">② filter &amp; label</text>
+  <text x="370" y="28" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">③ billions of tiny adjustments</text>
+  <text x="529" y="28" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">④ result</text>
+  <text x="665" y="28" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">⑤ your use</text>
+  <rect x="11"  y="70" width="110" height="62" rx="9" fill="#E3E8F5" stroke="#3A5498" stroke-width="2"/>
+  <text x="66"  y="95"  text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">THE</text>
+  <text x="66"  y="111" text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">INTERNET</text>
+  <text x="66"  y="124" text-anchor="middle" font-size="10" fill="#3A5498">trillions of words</text>
+  <line x1="121" y1="101" x2="146" y2="101" stroke="#9B9BA8" stroke-width="2" marker-end="url(#t-gray)"/>
+  <rect x="148" y="70" width="126" height="62" rx="9" fill="#E3E8F5" stroke="#3A5498" stroke-width="2"/>
+  <text x="211" y="95"  text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">TRAINING</text>
+  <text x="211" y="111" text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">DATA</text>
+  <text x="211" y="124" text-anchor="middle" font-size="10" fill="#3A5498">cleaned &amp; curated</text>
+  <line x1="274" y1="101" x2="299" y2="101" stroke="#9B9BA8" stroke-width="2" marker-end="url(#t-gray)"/>
+  <rect x="301" y="51" width="138" height="100" rx="9" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
+  <text x="370" y="78"  text-anchor="middle" font-size="12" font-weight="700" fill="#C94B2E">TRAINING RUN</text>
+  <text x="370" y="92"  text-anchor="middle" font-size="10" fill="#C94B2E">weeks · millions of $</text>
+  <text x="370" y="106" text-anchor="middle" font-size="10" fill="#C94B2E">specialized chips only</text>
+  <text x="370" y="120" text-anchor="middle" font-size="10" fill="#C94B2E">~$100M–$1B per run</text>
+  <text x="370" y="134" text-anchor="middle" font-size="9.5" font-style="italic" fill="#C94B2E" opacity="0.85">uses N-1 model to help train N</text>
+  <line x1="439" y1="101" x2="464" y2="101" stroke="#9B9BA8" stroke-width="2" marker-end="url(#t-gray)"/>
+  <rect x="466" y="70" width="126" height="62" rx="9" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2"/>
+  <text x="529" y="95"  text-anchor="middle" font-size="12" font-weight="700" fill="#2A7A5F">THE MODEL</text>
+  <text x="529" y="111" text-anchor="middle" font-size="11" fill="#2A7A5F">~100B numbers</text>
+  <text x="529" y="124" text-anchor="middle" font-size="10" fill="#2A7A5F">a file that persists</text>
+  <text x="529" y="136" text-anchor="middle" font-size="9.5" font-style="italic" fill="#2A7A5F" opacity="0.85">must recoup training cost</text>
+  <line x1="592" y1="101" x2="617" y2="101" stroke="#9B9BA8" stroke-width="2" marker-end="url(#t-gray)"/>
+  <rect x="619" y="70" width="100" height="62" rx="9" fill="#FEF8E8" stroke="#C9880A" stroke-width="2"/>
+  <text x="669" y="95"  text-anchor="middle" font-size="12" font-weight="700" fill="#C9880A">YOUR</text>
+  <text x="669" y="111" text-anchor="middle" font-size="12" font-weight="700" fill="#C9880A">PROMPT</text>
+  <text x="669" y="124" text-anchor="middle" font-size="10" fill="#C9880A">inference</text>
+  <path d="M 665 135 Q 665 198 370 205 Q 120 198 68 135" stroke="#C94B2E" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#t-red)"/>
+  <text x="370" y="222" text-anchor="middle" font-size="12" font-weight="600" fill="#C94B2E">Feedback: outputs evaluated → inform the next training run</text>
+</svg>

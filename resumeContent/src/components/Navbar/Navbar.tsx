@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   faHome,
-  faTasks,
-  faList,
   faMedal,
   faSun,
   faMoon,
@@ -30,7 +28,6 @@ const Navbar: React.FC = () => {
     setOverrideFlag,
   } = useTheme()!;
 
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isCustomizeOpen, setCustomizeOpen] = useState(false);
 
@@ -71,13 +68,11 @@ const Navbar: React.FC = () => {
   const handleSetSeason = (value: number) => {
     setOverrideFlag(true);
     setSeason(value);
-    setDropdownOpen(true);
   };
 
   const handleSetTimeOfDay = (value: number) => {
     setOverrideFlag(true);
     setTimeOfDay(value);
-    setDropdownOpen(true);
   };
   
   return (

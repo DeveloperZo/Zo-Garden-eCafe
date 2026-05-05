@@ -22,7 +22,6 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
   
   // Get ID either from props or URL params
   const id = propId !== undefined ? propId : params.id ? parseInt(params.id, 10) : -1;
-  const MAX_QUEST = quests.length-1;
 
   // Find the quest by ID
   const quest = quests.find((q) => q.id === id);

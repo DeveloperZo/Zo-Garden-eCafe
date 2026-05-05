@@ -1,3 +1,167 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ── Design tokens (matching ai-systems-explainer.html palette) ────────────────
+:root {
+  --z-red:   #C94B2E; --z-red-lt:   #FDE8E3;
+  --z-green: #2A7A5F; --z-green-lt: #EDF7F3;
+  --z-blue:  #3A5498; --z-blue-lt:  #E3E8F5;
+  --z-amber: #C9880A; --z-amber-lt: #FEF8E8;
+  --z-gray:  #9B9BA8; --z-gray-lt:  #F0EFF0;
+  --z-muted: #6B6B85;
+  --z-border: #E4E2DC;
+  --z-shadow: rgba(28,28,46,0.06);
+}
+
+// ── Heading typography ────────────────────────────────────────────────────────
+h1, h2 {
+  font-family: "Fredericka the Great", var(--headerFont), serif;
+  font-weight: 400;
+  color: var(--secondary);
+  letter-spacing: 0.01em;
+}
+
+h3, h4, h5, h6 {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+// Heading anchor link icon — keep it small and unobtrusive
+h1 a svg, h2 a svg, h3 a svg, h4 a svg, h5 a svg, h6 a svg {
+  width: 14px !important;
+  height: 14px !important;
+  opacity: 0.35;
+  vertical-align: middle;
+}
+
+// ── Body rhythm ───────────────────────────────────────────────────────────────
+article p, article li { line-height: 1.8; }
+
+// "Part X of 8" — section label (first paragraph, italic-only)
+article > p:first-child > em:only-child {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--z-muted);
+  margin-bottom: 4px;
+  font-style: normal;
+}
+
+// Section thread — lead-in italic (second paragraph, or after an h2)
+article > p:nth-child(2) > em:only-child,
+h2 + p > em:only-child {
+  display: block;
+  color: var(--z-muted);
+  font-size: 0.97rem;
+  border-left: 3px solid var(--z-border);
+  padding-left: 14px;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+// ── Inline SVG diagrams ───────────────────────────────────────────────────────
+// Quartz renders inline SVG HTML blocks as direct children of article (not in <p>).
+// Heading anchor icons are nested (h1 > a > svg) so they won't match article > svg.
+article > svg,
+article p > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  border: 1px solid var(--z-border);
+  border-radius: 12px;
+  padding: 20px 16px 12px;
+  margin: 24px 0 6px;
+  box-shadow: 0 2px 8px var(--z-shadow);
+  overflow: visible;
+}
+
+// Caption (the *DIA-xxx — …* italic immediately after an inline SVG)
+article > svg + p > em:only-child,
+article p:has(> svg) + p > em:only-child {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--z-muted);
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.55;
+}
+
+// ── Tables ────────────────────────────────────────────────────────────────────
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid var(--z-border);
+  box-shadow: 0 2px 8px var(--z-shadow);
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+article thead th {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--z-muted);
+  background: var(--light);
+  border-bottom: 1px solid var(--z-border);
+}
+
+article tbody td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--z-border);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+article tbody tr:last-child td { border-bottom: none; }
+article tbody tr:hover td { background: rgba(28,28,46,0.02); }
+
+// ── Stat cards ────────────────────────────────────────────────────────────────
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  gap: 14px;
+  margin: 1.5rem 0;
+}
+
+.stat {
+  background: #ffffff;
+  border: 1px solid var(--z-border);
+  border-radius: 12px;
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px var(--z-shadow);
+}
+
+.stat-val {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  font-family: var(--headerFont), serif;
+}
+
+.stat-desc { font-size: 0.78rem; color: var(--z-muted); line-height: 1.45; }
+
+// ── Callout types ─────────────────────────────────────────────────────────────
+.callout[data-callout="key"]     { --color: #C9880A; --border: #C9880A44; --bg: #C9880A10; }
+.callout[data-callout="critique"]{ --color: #6B6B85; --border: #6B6B8544; --bg: #6B6B8510; }
+.callout[data-callout="tip"]     { --color: #2A7A5F; --border: #2A7A5F44; --bg: #2A7A5F10; }
+
+// ── Tier card grid ────────────────────────────────────────────────────────────
+.tier-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 1.5rem 0; }
+.tier-card { border-radius: 8px; padding: 14px 16px; border: 1px solid var(--lightgray); }
+.tier-card p { font-size: 0.875rem; color: var(--darkgray); }
+.tier-low   { border-left: 4px solid #6B6B85; }
+.tier-mid   { border-left: 4px solid #3A5498; }
+.tier-high  { border-left: 4px solid #C9880A; }
+.tier-xform { border-left: 4px solid #C94B2E; }
