@@ -25,9 +25,9 @@ Eight sections build a structural answer rather than a political one. They trace
 
 ![[05-how-these-interact]]
 
-![[06-working-from-inside]]
+![[06-whats-at-stake]]
 
-![[07-whats-at-stake]]
+![[07-binding-constraints]]
 
 ![[08-where-you-have-leverage]]
 
