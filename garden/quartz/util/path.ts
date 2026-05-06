@@ -123,19 +123,46 @@ export function normalizeRelativeURLs(el: Element | Document, destination: strin
   )
 }
 
+/** Stable origin used only when resolving relative `href`/`src` during transclusion; must not be used as a fetch target. */
+const QUARTZ_PAGE_ORIGIN = "https://quartz.local"
+
+/** Where Quartz writes each page (`slug.html`), used to resolve relative URLs the same way a browser does. */
+function slugDocumentHref(slug: FullSlug): string {
+  return `${QUARTZ_PAGE_ORIGIN}/${stripSlashes(slug)}.html`
+}
+
+/** Strip a leading slash from a pathname to match Quartz `FullSlug` segments (same as `/a/b.svg` → `a/b.svg`). */
+function pathnameToSlugPathSegment(pathname: string): FullSlug {
+  const raw = pathname.startsWith("/") ? pathname.slice(1) : pathname
+  return stripSlashes(raw) as FullSlug
+}
+
 const _rebaseHastElement = (
   el: HastElement,
   attr: string,
   curBase: FullSlug,
   newBase: FullSlug,
 ) => {
-  if (el.properties?.[attr]) {
-    if (!isRelativeURL(String(el.properties[attr]))) {
-      return
-    }
+  if (!el.properties?.[attr]) {
+    return
+  }
 
-    const rel = joinSegments(resolveRelative(curBase, newBase), "..", el.properties[attr] as string)
-    el.properties[attr] = rel
+  const raw = String(el.properties[attr])
+  if (isAbsoluteURL(raw)) {
+    return
+  }
+  if (!isRelativeURL(raw)) {
+    return
+  }
+
+  try {
+    const resolved = new URL(raw, slugDocumentHref(newBase))
+    const pathSlug = pathnameToSlugPathSegment(resolved.pathname)
+    let rebased = resolveRelative(curBase, pathSlug)
+    rebased += resolved.search + resolved.hash
+    el.properties[attr] = rebased
+  } catch {
+    // Malformed URL: leave attribute unchanged
   }
 }
 

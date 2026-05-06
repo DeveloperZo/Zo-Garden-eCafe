@@ -1,10 +1,8 @@
 ---
-title: "Tier 1 — Low Leverage"
+title: "Constants, buffers, and infrastructure"
 tags: [ai, governance, systems-thinking, leverage]
 draft: false
 ---
-
-# Tier 1 — Low Leverage
 
 *Adjustable settings and physical infrastructure — real effort, real engineering, rarely shifts what the system actually does*
 
@@ -12,7 +10,7 @@ These levers are the most common targets of "AI safety" activity because they're
 
 ---
 
-## LP #12 — Constants & Parameters
+## Constants & Parameters
 
 *The knobs and dials — adjustable settings that can be tweaked without changing the system's structure*
 
@@ -26,7 +24,7 @@ Content filters, rate limits, safety-classifier thresholds, usage caps — the a
 
 ---
 
-## LP #11 — Buffer Sizes
+## Buffer Sizes
 
 *How much slack exists — the breathing room between "something went wrong" and "it cascades"*
 
@@ -40,7 +38,7 @@ Buffers are the system's shock absorbers: review periods before launch, safety t
 
 ---
 
-## LP #10 — Physical Infrastructure
+## Physical Infrastructure
 
 *What's built and where — the hard constraints that determine what's even possible to run*
 
@@ -51,7 +49,3 @@ Chip fabrication concentration, electricity grid capacity, data center permittin
 **How you encounter this:** In electricity rate cases, chip export control debates, and data center siting disputes — decided by utility commissioners and trade officials, not AI researchers.
 
 **What changing it does — and doesn't:** Infrastructure changes are slow and durable. Reshaping who controls chip manufacturing or grid access shifts the long-run dynamics of who can build what — not whether building happens. The electricity grid may turn out to be a more binding constraint on AI deployment than any regulation specifically designed for AI.
-
----
-
-[[index|← Back to Part 2 Overview]] · [[tier-2-medium|Next: Tier 2 — Medium Leverage →]]

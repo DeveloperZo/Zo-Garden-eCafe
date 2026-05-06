@@ -1,63 +1,110 @@
-<svg viewBox="0 0 660 468" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-loops-title viz-loops-desc">
-  <title id="viz-loops-title">Reinforcing capability loop R1, weak oversight loop B, and paradoxical R2</title>
-  <desc id="viz-loops-desc">Top triangle: red reinforcing loop R1 joins Model capability, Investment and funding, and More compute. Below a dashed separator, balancing loop B appears in greens. Amber banner defines R2, the safety-alarm-as-accelerant dynamic.</desc>
+<svg viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-loops-title viz-loops-desc">
+  <title id="viz-loops-title">Stock-and-flow view of frontier AI capability with broken balancing loop and R2 amplifier</title>
+  <desc id="viz-loops-desc">Frontier AI capability is drawn as a stock on a main pipe between clouds. Training and deployment are T-fittings on that pipe (run along the flow, stub for information). Other information links use small open circles at their sources. Two balancing loops: capability-gap on the left, dashed harm-feedback on the right. Red sweep is R2.</desc>
   <defs>
-    <marker id="f-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#C94B2E"/></marker>
-    <marker id="f-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#2A7A5F"/></marker>
+    <marker id="d6-flow-head" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#9B9382"/>
+    </marker>
+    <marker id="d6-info-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#1f1d18"/>
+    </marker>
+    <marker id="d6-info-head-faded" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#9B9382"/>
+    </marker>
+    <marker id="d6-info-head-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#A04022"/>
+    </marker>
   </defs>
-  <!-- HEADER BANNERS -->
-  <rect x="10" y="8" width="298" height="34" rx="8" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
-  <text x="159" y="29" text-anchor="middle" font-size="12" font-weight="700" fill="#C94B2E">R1 — Reinforcing capability loop</text>
-  <rect x="316" y="8" width="334" height="34" rx="8" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5"/>
-  <text x="483" y="29" text-anchor="middle" font-size="12" font-weight="700" fill="#C9880A">R2 — Alarm → invest (still reinforcing)</text>
-  <!-- R1 NODES -->
-  <rect x="20" y="44" width="175" height="58" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
-  <text x="107" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Model</text>
-  <text x="107" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Capability</text>
-  <rect x="465" y="44" width="175" height="58" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
-  <text x="552" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Investment</text>
-  <text x="552" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">&amp; Funding</text>
-  <rect x="242" y="248" width="176" height="58" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
-  <text x="330" y="274" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">More</text>
-  <text x="330" y="290" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Compute</text>
-  <!-- R1 ARROWS -->
-  <path d="M 197,73 Q 330,45 463,73" stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#f-r)"/>
-  <rect x="248" y="42" width="164" height="22" rx="5" fill="#FDE8E3" opacity="0.92" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
-  <text x="330" y="57" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">capability attracts capital</text>
-  <path d="M 550,104 Q 612,178 420,246" stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#f-r)"/>
-  <rect x="496" y="158" width="142" height="22" rx="5" fill="#FDE8E3" opacity="0.92" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
-  <text x="567" y="173" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">capital buys compute</text>
-  <path d="M 250,246 Q 54,178 109,104" stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#f-r)"/>
-  <rect x="22" y="158" width="196" height="22" rx="5" fill="#FDE8E3" opacity="0.92" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
-  <text x="120" y="173" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">compute trains better models</text>
-  <text x="330" y="178" text-anchor="middle" font-size="38" font-weight="900" fill="#C94B2E" opacity="0.08">R1</text>
-  <text x="330" y="178" text-anchor="middle" font-size="24" font-weight="900" fill="#C94B2E" opacity="0.25">R1</text>
-  <text x="330" y="204" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C94B2E">&#9889; High loop velocity = pressure</text>
-  <text x="330" y="218" text-anchor="middle" font-size="10" fill="#C94B2E">forces deployment before safety is ready</text>
-  <!-- R2 ANNOTATION -->
-  <rect x="240" y="220" width="180" height="28" rx="6" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-  <text x="330" y="238" text-anchor="middle" font-size="10.5" fill="#C9880A">R2: alarm &#x2192; investment &#x2192; speed</text>
-  <!-- SEPARATOR -->
-  <line x1="10" y1="335" x2="650" y2="335" stroke="#E4E2DC" stroke-width="1" stroke-dasharray="4,4"/>
-  <rect x="88" y="338" width="484" height="28" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="1.5" opacity="0.95"/>
-  <text x="330" y="356" text-anchor="middle" font-size="11" font-weight="800" fill="#2A7A5F" letter-spacing="0.04em">B — Balancing / oversight loop (slow, under-resourced, partially dismantled)</text>
-  <!-- B LOOP NODES -->
-  <rect x="38" y="358" width="150" height="54" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="113" y="381" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Harm /</text>
-  <text x="113" y="396" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Risk Visible</text>
-  <rect x="254" y="358" width="150" height="54" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="329" y="381" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Oversight</text>
-  <text x="329" y="396" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Response</text>
-  <rect x="470" y="358" width="150" height="54" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="545" y="381" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Deployment</text>
-  <text x="545" y="396" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Slows (?)</text>
-  <!-- B LOOP ARROWS -->
-  <path d="M 190,390 Q 222,412 254,390" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="5,4" fill="none" marker-end="url(#f-b)"/>
-  <rect x="178" y="406" width="88" height="22" rx="4" fill="#EDF7F3" opacity="0.98" stroke="rgba(42,122,95,0.35)" stroke-width="0.75"/>
-  <text x="222" y="421" text-anchor="middle" font-size="11" font-weight="600" fill="#2A7A5F">triggers?</text>
-  <path d="M 406,390 Q 438,412 470,390" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="5,4" fill="none" marker-end="url(#f-b)"/>
-  <rect x="394" y="406" width="88" height="22" rx="4" fill="#EDF7F3" opacity="0.98" stroke="rgba(42,122,95,0.35)" stroke-width="0.75"/>
-  <text x="438" y="421" text-anchor="middle" font-size="11" font-weight="600" fill="#2A7A5F">years later?</text>
-  <rect x="192" y="434" width="276" height="26" rx="6" fill="#F0EFF0" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="330" y="451" text-anchor="middle" font-size="11" font-weight="700" fill="#6B6B85">! B loop not functioning at scale</text>
+
+  <!-- warm parchment background -->
+  <rect x="0" y="0" width="720" height="500" fill="#FAF6EE"/>
+
+  <!-- LEFT CLOUD (source) -->
+  <path d="M 30 102 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFFFF" stroke="#1f1d18" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- LEFT FLOW LINE (cloud → stock) -->
+  <line x1="105" y1="105" x2="248" y2="105" stroke="#C7BFAE" stroke-width="14" stroke-linecap="butt" marker-end="url(#d6-flow-head)"/>
+
+  <text x="178" y="55" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#1f1d18">training</text>
+
+  <!-- STOCK -->
+  <rect x="258" y="68" width="200" height="74" fill="#FFFFFF" stroke="#1f1d18" stroke-width="1.75"/>
+  <text x="358" y="100" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#1f1d18">frontier AI</text>
+  <text x="358" y="120" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#1f1d18">capability</text>
+
+  <!-- RIGHT FLOW LINE (stock → cloud) -->
+  <line x1="458" y1="105" x2="618" y2="105" stroke="#C7BFAE" stroke-width="14" stroke-linecap="butt" marker-end="url(#d6-flow-head)"/>
+
+  <text x="540" y="55" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#1f1d18">deployment</text>
+
+  <!-- RIGHT CLOUD (sink) -->
+  <path d="M 624 102 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFFFF" stroke="#1f1d18" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- AUXILIARY LABELS (no boxes — just text, like Meadows) -->
+  <text x="108" y="288" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">investment</text>
+  <text x="108" y="304" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">&amp; compute</text>
+
+  <text x="298" y="222" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">capability gap</text>
+
+  <text x="376" y="370" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">frontier target</text>
+
+  <text x="600" y="222" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">visible harm</text>
+
+  <text x="618" y="370" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">oversight</text>
+  <text x="618" y="386" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">response</text>
+
+  <!-- LOOP LETTERS -->
+  <text x="232" y="178" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" fill="#1f1d18">B</text>
+  <text x="486" y="178" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" fill="#9B9382">B</text>
+
+  <!-- Training T — absolute coords (adjust without touching deployment) -->
+  <g id="d6-t-training" stroke="#1f1d18" stroke-linecap="square">
+    <line x1="158" y1="105" x2="198" y2="105" stroke-width="12.5"/>
+    <line x1="171.75" y1="105" x2="171.75" y2="129" stroke-width="12.5"/>
+  </g>
+  <!-- Deployment T — absolute coords (adjust without touching training) -->
+  <g id="d6-t-deployment" stroke="#1f1d18" stroke-linecap="square">
+    <line x1="520" y1="105" x2="560" y2="105" stroke-width="12.5"/>
+    <line x1="533.75" y1="105" x2="533.75" y2="129" stroke-width="12.5"/>
+  </g>
+
+  <!-- INFO LINKS — open circles at sources; training/deployment use T stubs -->
+
+  <!-- 1. stock → capability gap -->
+  <circle cx="320" cy="142" r="3.2" fill="#FAF6EE" stroke="#1f1d18" stroke-width="1.25"/>
+  <path d="M 320 145 Q 308 180 300 210" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 2. frontier target → capability gap -->
+  <circle cx="368" cy="358" r="3.2" fill="#FAF6EE" stroke="#1f1d18" stroke-width="1.25"/>
+  <path d="M 365 355 Q 320 290 304 232" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 3. capability gap → investment & compute -->
+  <circle cx="252" cy="222" r="3.2" fill="#FAF6EE" stroke="#1f1d18" stroke-width="1.25"/>
+  <path d="M 249 224 Q 175 252 122 282" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 4. investment & compute → training T stub -->
+  <circle cx="118" cy="278" r="3.2" fill="#FAF6EE" stroke="#1f1d18" stroke-width="1.25"/>
+  <path d="M 122 274 Q 154 220 178 129" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 5. deployment T stub → visible harm -->
+  <path d="M 540 129 Q 565 175 596 210" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 6. visible harm → oversight response (BROKEN B) -->
+  <circle cx="612" cy="232" r="3.2" fill="#FAF6EE" stroke="#9B9382" stroke-width="1.25"/>
+  <path d="M 614 235 Q 632 295 622 358" stroke="#9B9382" stroke-width="1.25" fill="none" stroke-dasharray="5,4" marker-end="url(#d6-info-head-faded)"/>
+
+  <!-- 7. oversight response → frontier target (BROKEN B) -->
+  <circle cx="582" cy="378" r="3.2" fill="#FAF6EE" stroke="#9B9382" stroke-width="1.25"/>
+  <path d="M 580 378 Q 480 388 412 374" stroke="#9B9382" stroke-width="1.25" fill="none" stroke-dasharray="5,4" marker-end="url(#d6-info-head-faded)"/>
+
+  <!-- 8. visible harm → investment & compute (R2) -->
+  <circle cx="572" cy="232" r="3.2" fill="#FAF6EE" stroke="#A04022" stroke-width="1.5"/>
+  <path d="M 568 235 C 510 470, 220 480, 118 312" stroke="#A04022" stroke-width="1.6" fill="none" marker-end="url(#d6-info-head-r2)"/>
+
+  <!-- R2 label along the red sweep -->
+  <text x="340" y="478" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" font-weight="700" fill="#A04022">R2 &#8201;&#8211;&#8201; alarm becomes accelerant</text>
+
+  <!-- "broken loop" hint near right B -->
+  <text x="503" y="195" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#9B9382">(slow &#183; weak &#183; partially severed)</text>
+
 </svg>

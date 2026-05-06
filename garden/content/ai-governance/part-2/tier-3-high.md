@@ -1,10 +1,8 @@
 ---
-title: "Tier 3 — High Leverage"
+title: "Visibility, rules, and rule-makers"
 tags: [ai, governance, systems-thinking, leverage]
 draft: false
 ---
-
-# Tier 3 — High Leverage
 
 *Information, enforceable rules, and who writes them — powerful, underused, often actively resisted*
 
@@ -12,7 +10,7 @@ This tier is where individuals and institutions can create structural change in 
 
 ---
 
-## LP #6 — Visibility
+## Visibility
 
 *Who can see what — because making harm visible changes behavior more reliably than rules do*
 
@@ -26,7 +24,7 @@ Labs self-report safety evaluations. Harms aren't systematically tracked. Even b
 
 ---
 
-## LP #5 — Enforceable Rules
+## Enforceable Rules
 
 *Laws and liability standards that carry real consequences — not announcements, but rules with teeth*
 
@@ -40,7 +38,7 @@ Rules shape behavior only when backed by real consequences: fines that genuinely
 
 ---
 
-## LP #4 — Who Writes the Rules
+## Who Writes the Rules
 
 *Who designs the oversight — because whoever designs it usually designs it to protect themselves*
 
@@ -51,7 +49,3 @@ The US AI Action Plan was developed with significant lab participation. Labs inc
 **How you encounter this:** When an AI safety standard is authored by the company being evaluated against it. When a government AI task force is composed primarily of industry representatives. When the same lab that builds a model also certifies it safe.
 
 **What changing it does — and doesn't:** Diversifying who writes rules changes whose interests the rules protect. It doesn't guarantee better outcomes. But it makes regulatory capture harder, and preserves the structural diversity that allows genuine self-correction. Regulatory comment submissions, academic participation in standards bodies, and civil society testimony in AI legislation hearings are all underused entry points.
-
----
-
-[[tier-2-medium|← Back: Tier 2 — Medium Leverage]] · [[tier-4-transformative|Next: Tier 4 — Transformative →]]

@@ -1,0 +1,28 @@
+<svg viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-capital-stats-title viz-capital-stats-desc">
+  <title id="viz-capital-stats-title">AI capital loop key figures</title>
+  <desc id="viz-capital-stats-desc">Four cards summarize major financial figures: OpenAI infrastructure commitments, OpenAI annualized revenue run-rate, combined hyperscaler capex, and the commitments-to-revenue ratio.</desc>
+
+  <rect x="10" y="16" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
+  <text x="91" y="62" text-anchor="middle" font-size="34" font-weight="900" fill="#C94B2E">$600B</text>
+  <text x="24" y="95" font-size="12" fill="#6B6B85">OpenAI revised compute</text>
+  <text x="24" y="112" font-size="12" fill="#6B6B85">target through 2030</text>
+  <text x="24" y="129" font-size="11" fill="#6B6B85">(CNBC, Feb 2026)</text>
+
+  <rect x="182" y="16" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
+  <text x="263" y="62" text-anchor="middle" font-size="34" font-weight="900" fill="#C9880A">~$25B</text>
+  <text x="196" y="95" font-size="12" fill="#6B6B85">OpenAI annualized</text>
+  <text x="196" y="112" font-size="12" fill="#6B6B85">revenue run-rate,</text>
+  <text x="196" y="129" font-size="11" fill="#6B6B85">May 2026</text>
+
+  <rect x="354" y="16" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
+  <text x="435" y="62" text-anchor="middle" font-size="34" font-weight="900" fill="#3A5498">$448B</text>
+  <text x="368" y="95" font-size="12" fill="#6B6B85">Combined 2025 capex:</text>
+  <text x="368" y="112" font-size="12" fill="#6B6B85">Microsoft + Google +</text>
+  <text x="368" y="129" font-size="11" fill="#6B6B85">Amazon + Meta + Oracle</text>
+
+  <rect x="526" y="16" width="164" height="156" rx="12" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
+  <text x="608" y="62" text-anchor="middle" font-size="34" font-weight="900" fill="#2A7A5F">~24x</text>
+  <text x="540" y="95" font-size="12" fill="#6B6B85">Ratio of OpenAI's</text>
+  <text x="540" y="112" font-size="12" fill="#6B6B85">revised compute target to</text>
+  <text x="540" y="129" font-size="11" fill="#6B6B85">its annualized revenue</text>
+</svg>

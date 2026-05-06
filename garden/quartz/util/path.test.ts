@@ -2,6 +2,7 @@ import test, { describe } from "node:test"
 import * as path from "./path"
 import assert from "node:assert"
 import { FullSlug, TransformOptions, SimpleSlug } from "./path"
+import type { Element as HastElement } from "hast"
 
 describe("typeguards", () => {
   test("isSimpleSlug", () => {
@@ -312,6 +313,53 @@ describe("link strategies", () => {
       assert.strictEqual(path.transformLink(cur, "e/g/h", opts), "./e/g/h")
       assert.strictEqual(path.transformLink(cur, "a/b/index", opts), "./a/b/")
     })
+  })
+})
+
+describe("normalizeHastElement (transclude URL remapping)", () => {
+  function img(src: string): HastElement {
+    return {
+      type: "element",
+      tagName: "img",
+      properties: { src },
+      children: [],
+    }
+  }
+
+  test("rebases sibling-folder img src from transcluded note to folder index viewer", () => {
+    const transcludeSrc = "ai-governance/part-1/02-why-its-moving" as FullSlug
+    const viewer = "ai-governance/part-1/index" as FullSlug
+    const originalSrc =
+      "../../ai-governance/part-1/diagrams/DIA-002A-capital-stats.svg"
+
+    const out = path.normalizeHastElement(img(originalSrc), viewer, transcludeSrc)
+    assert.strictEqual(out.properties?.src, originalSrc)
+  })
+
+  test("rebases img when viewer is in another folder depth", () => {
+    const transcludeSrc = "ai-governance/part-1/02-why-its-moving" as FullSlug
+    const viewer = "ai-governance/part-2/index" as FullSlug
+    const originalSrc =
+      "../../ai-governance/part-1/diagrams/DIA-002A-capital-stats.svg"
+
+    const out = path.normalizeHastElement(img(originalSrc), viewer, transcludeSrc)
+    assert.strictEqual(
+      out.properties?.src,
+      "../../ai-governance/part-1/diagrams/DIA-002A-capital-stats.svg",
+    )
+  })
+
+  test("preserves hash and query on rebased relative href", () => {
+    const transcludeSrc = "ai-governance/part-1/02-why-its-moving" as FullSlug
+    const viewer = "ai-governance/part-2/index" as FullSlug
+    const a: HastElement = {
+      type: "element",
+      tagName: "a",
+      properties: { href: "../../ai-governance/part-1/02-other#heading" },
+      children: [],
+    }
+    const out = path.normalizeHastElement(a, viewer, transcludeSrc)
+    assert.strictEqual(out.properties?.href, "../../ai-governance/part-1/02-other#heading")
   })
 })
 

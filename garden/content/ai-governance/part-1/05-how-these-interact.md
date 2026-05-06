@@ -10,71 +10,9 @@ draft: false
 
 The structural question is: where are the reinforcing loops, which loops are balancing them, and which are winning? In the AI system, the reinforcing loops are large, fast, and well-capitalized. The balancing loops are under-resourced and, as sections 3 and 4 show, actively weakening.
 
-<svg viewBox="0 0 660 468" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-loops-title viz-loops-desc">
-  <title id="viz-loops-title">Reinforcing capability loop R1, weak oversight loop B, and paradoxical R2</title>
-  <desc id="viz-loops-desc">Top triangle: red reinforcing loop R1 joins Model capability, Investment and funding, and More compute. Below a dashed separator, balancing loop B appears in greens. Amber banner defines R2, the safety-alarm-as-accelerant dynamic.</desc>
-  <defs>
-    <marker id="f-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#C94B2E"/></marker>
-    <marker id="f-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#2A7A5F"/></marker>
-  </defs>
-  <!-- HEADER BANNERS -->
-  <rect x="10" y="8" width="298" height="34" rx="8" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
-  <text x="159" y="29" text-anchor="middle" font-size="12" font-weight="700" fill="#C94B2E">R1 — Reinforcing capability loop</text>
-  <rect x="316" y="8" width="334" height="34" rx="8" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5"/>
-  <text x="483" y="29" text-anchor="middle" font-size="12" font-weight="700" fill="#C9880A">R2 — Alarm → invest (still reinforcing)</text>
-  <!-- R1 NODES -->
-  <rect x="20" y="44" width="175" height="58" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
-  <text x="107" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Model</text>
-  <text x="107" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Capability</text>
-  <rect x="465" y="44" width="175" height="58" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
-  <text x="552" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Investment</text>
-  <text x="552" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">&amp; Funding</text>
-  <rect x="242" y="248" width="176" height="58" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
-  <text x="330" y="274" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">More</text>
-  <text x="330" y="290" text-anchor="middle" font-size="13" font-weight="700" fill="#C94B2E">Compute</text>
-  <!-- R1 ARROWS -->
-  <path d="M 197,73 Q 330,45 463,73" stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#f-r)"/>
-  <rect x="248" y="42" width="164" height="22" rx="5" fill="#FDE8E3" opacity="0.92" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
-  <text x="330" y="57" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">capability attracts capital</text>
-  <path d="M 550,104 Q 612,178 420,246" stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#f-r)"/>
-  <rect x="496" y="158" width="142" height="22" rx="5" fill="#FDE8E3" opacity="0.92" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
-  <text x="567" y="173" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">capital buys compute</text>
-  <path d="M 250,246 Q 54,178 109,104" stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#f-r)"/>
-  <rect x="22" y="158" width="196" height="22" rx="5" fill="#FDE8E3" opacity="0.92" stroke="rgba(201,75,46,0.35)" stroke-width="0.75"/>
-  <text x="120" y="173" text-anchor="middle" font-size="11" font-weight="600" fill="#C94B2E">compute trains better models</text>
-  <text x="330" y="178" text-anchor="middle" font-size="38" font-weight="900" fill="#C94B2E" opacity="0.08">R1</text>
-  <text x="330" y="178" text-anchor="middle" font-size="24" font-weight="900" fill="#C94B2E" opacity="0.25">R1</text>
-  <text x="330" y="204" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C94B2E">&#9889; High loop velocity = pressure</text>
-  <text x="330" y="218" text-anchor="middle" font-size="10" fill="#C94B2E">forces deployment before safety is ready</text>
-  <!-- R2 ANNOTATION -->
-  <rect x="240" y="220" width="180" height="28" rx="6" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-  <text x="330" y="238" text-anchor="middle" font-size="10.5" fill="#C9880A">R2: alarm &#x2192; investment &#x2192; speed</text>
-  <!-- SEPARATOR -->
-  <line x1="10" y1="335" x2="650" y2="335" stroke="#E4E2DC" stroke-width="1" stroke-dasharray="4,4"/>
-  <rect x="88" y="338" width="484" height="28" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="1.5" opacity="0.95"/>
-  <text x="330" y="356" text-anchor="middle" font-size="11" font-weight="800" fill="#2A7A5F" letter-spacing="0.04em">B — Balancing / oversight loop (slow, under-resourced, partially dismantled)</text>
-  <!-- B LOOP NODES -->
-  <rect x="38" y="358" width="150" height="54" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="113" y="381" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Harm /</text>
-  <text x="113" y="396" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Risk Visible</text>
-  <rect x="254" y="358" width="150" height="54" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="329" y="381" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Oversight</text>
-  <text x="329" y="396" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Response</text>
-  <rect x="470" y="358" width="150" height="54" rx="8" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="545" y="381" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Deployment</text>
-  <text x="545" y="396" text-anchor="middle" font-size="12" font-weight="600" fill="#2A7A5F">Slows (?)</text>
-  <!-- B LOOP ARROWS -->
-  <path d="M 190,390 Q 222,412 254,390" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="5,4" fill="none" marker-end="url(#f-b)"/>
-  <rect x="178" y="406" width="88" height="22" rx="4" fill="#EDF7F3" opacity="0.98" stroke="rgba(42,122,95,0.35)" stroke-width="0.75"/>
-  <text x="222" y="421" text-anchor="middle" font-size="11" font-weight="600" fill="#2A7A5F">triggers?</text>
-  <path d="M 406,390 Q 438,412 470,390" stroke="#2A7A5F" stroke-width="2" stroke-dasharray="5,4" fill="none" marker-end="url(#f-b)"/>
-  <rect x="394" y="406" width="88" height="22" rx="4" fill="#EDF7F3" opacity="0.98" stroke="rgba(42,122,95,0.35)" stroke-width="0.75"/>
-  <text x="438" y="421" text-anchor="middle" font-size="11" font-weight="600" fill="#2A7A5F">years later?</text>
-  <rect x="192" y="434" width="276" height="26" rx="6" fill="#F0EFF0" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="330" y="451" text-anchor="middle" font-size="11" font-weight="700" fill="#6B6B85">! B loop not functioning at scale</text>
-</svg>
+![](/ai-governance/part-1/diagrams/DIA-006-loops.svg)
 
-*DIA-006 — R1 is strong, self-amplifying, and well-funded. The B loop (harm → oversight → slowdown) has multi-year delays at each step, is under-resourced, and has been further weakened since 2025. R2 shows the counterintuitive dynamic: safety warnings have functioned as investment accelerants ("you can't afford not to compete"), turning alarm into a reinforcing signal rather than a balancing one.*
+*DIA-006 — Frontier capability accumulates as a stock fed by training. Two balancing loops should regulate it: the capability-gap loop (left) compares current capability against a frontier target, and the harm-feedback loop (right) is supposed to lower that target as deployment-driven harm becomes visible. The right loop is dashed because each step — making harm visible, mounting an oversight response, lowering the target — runs on multi-year delays and has been further weakened since 2025. The red sweep is R2: the same alarm signal that should slow training is also routed back into investment, where it accelerates training instead. (R1, the capability-attracts-capital reinforcer, runs in parallel and was the focus of the prior section.)*
 
 This pattern is called *shifting the burden*: a system applies a visible but partial fix to a problem, reducing pressure to fix it structurally. Safety research and published safety policies play this role — they are real work, but their existence reduces urgency for binding structural changes (liability law, mandatory audits, hard deployment gates). The symbolic safety apparatus coexists with unconstrained deployment, and the capacity for deeper correction gradually weakens.
 
@@ -84,5 +22,3 @@ There's also a third loop forming. AI systems are now being used in AI research 
 > Compute is a flow — you can regulate chips, tax energy, slow permits. But model weights are a stock. DeepSeek-R1 (MIT license, January 20, 2025), Llama 3.x and its distillation chains have permanently exported reasoning-class capabilities outside any regulatory perimeter. Export controls on chips might slow who builds the *next* generation. They cannot un-release what already exists. AI capability, once in open weights, requires nothing further from the original lab. This irreversibility is structurally distinct from nuclear or biological weapons — both require ongoing access to controlled materials. AI capability doesn't.
 
 ---
-
-*Next: [[06-working-from-inside|Part 6 — Working From Inside]]*

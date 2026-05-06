@@ -6,17 +6,12 @@ draft: false
 
 *An analysis · May 2026*
 
-**Can the companies building the most powerful technology in history be trusted to regulate themselves?**
+<div class="hero-question">
+Can the companies building the most powerful technology in history be trusted to regulate themselves?
+</div>
 
-Eight sections build a structural answer — not a political one. They trace how the system works, what forces keep it accelerating, and where real leverage exists. The answer isn't optimism or doom. It's more useful than either.
+Eight sections build a structural answer rather than a political one. They trace how the system works, what forces keep it accelerating, and where real leverage exists.
 
-**Diagram legend:**
-- Red — Reinforcing loop (grows itself, labeled **R**)
-- Green — Balancing loop (should slow things, labeled **B**)
-- Amber — Paradoxical acceleration (labeled **R2**)
-- Gray — Broken, weak, or absent loop
-
-*Sources: public filings, primary research, peer-reviewed literature · As of May 2026*
 
 ---
 

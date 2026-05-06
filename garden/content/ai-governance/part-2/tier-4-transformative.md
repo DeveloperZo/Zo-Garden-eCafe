@@ -1,10 +1,8 @@
 ---
-title: "Tier 4 — Transformative"
+title: "Goals, assumptions, and coordination"
 tags: [ai, governance, systems-thinking, leverage]
 draft: false
 ---
-
-# Tier 4 — Transformative
 
 *What the system is for, the assumptions it runs on, and whether rivals can be made to coordinate*
 
@@ -12,7 +10,7 @@ The hardest levers, and the ones with the highest ceiling. These require changin
 
 ---
 
-## LP #3 — What the System Is Actually For
+## What the System Is Actually For
 
 *The revealed purpose — not the mission statement, but what deployment patterns consistently produce*
 
@@ -26,7 +24,7 @@ There are two fundamentally different goals AI deployment could serve: AI as amp
 
 ---
 
-## LP #2 — The Unquestioned Assumptions
+## The Unquestioned Assumptions
 
 *The ideas so embedded they're not seen as choices — the water every participant in the system swims in*
 
@@ -40,7 +38,7 @@ Two dominant assumptions shape the current system. For labor: "efficiency gains 
 
 ---
 
-## LP #1 — The Coordination Problem
+## The Coordination Problem
 
 *Getting rivals to act together before it's too late — the hardest thing, and the one with the highest ceiling*
 
@@ -56,7 +54,3 @@ Civilizational-scale coordination requires three things to be true simultaneousl
 
 > [!warning] A note on realistic expectations
 > There is no single leverage point that makes this easy. The higher leverage points require coordination that has never happened at this scale. What this framework gives you is clarity about where pressure produces change. Enforceable Rules and Visibility are where individuals and institutions can create structural change in the next two to three years. The feedback loop between action and consequence is already running. The question is whether the balancing loops get strong enough before the fast loop reaches a threshold they can no longer affect.
-
----
-
-[[tier-3-high|← Back: Tier 3 — High Leverage]] · [[../part-1/index|Part 1: Can AI Self-Govern?]]

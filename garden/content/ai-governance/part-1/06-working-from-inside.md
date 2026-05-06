@@ -6,14 +6,16 @@ draft: false
 
 *Part 6 of 8*
 
-*You are already part of this system — as a user, a worker, a voter, a pension-fund beneficiary. The question isn't whether to participate. It's which loops your participation feeds.*
+*The previous five sections describe a system. This one changes the vantage point: every actor in it — user, worker, investor, regulator, researcher — is a node inside it, not an observer above it. That shift matters for what follows.*
 
-Complex systems can't be controlled from outside — only worked with from inside. Meadows' preferred term was "dancing" with systems: moving with the structure rather than fighting it. Fisheries managers who treated the ocean as a production system to be optimized drove stocks to collapse. The ones who stayed close to the feedback signals and adjusted continuously did better. This isn't a metaphor about attitude — it's a description of how intervention actually works inside systems with feedback delays.
+No actor in the AI system sits outside its loops. Users generate revenue that funds compute. Workers in knowledge fields are the flows the capability stock is designed to partially substitute. Investors whose returns depend on AI growth are structurally committed to it continuing. Regulators operate on budgets that are a rounding error compared to the industry they're meant to govern. Even the labs that explicitly want to slow down face a loop structure — investor timelines, competitor dynamics, open-weights irreversibility — that operates independently of what their researchers want. The structural fact of embeddedness is not a moral claim. It's a description of how the system is assembled.
 
-Every complex system has thresholds beyond which the balancing loops can no longer restore what was lost. Overfished stocks, depleted aquifers, eroded topsoil — Meadows discusses all of these directly. The difficulty is that the same delays that make balancing loops slow also make warning signals arrive late. You often can't tell you've crossed a threshold until you're already past it.
+What this means for intervention is that the system consistently converts inputs into outputs the loops already favor. Section 4 documented this in the starkest form: every major safety departure from a frontier lab produced a new well-capitalized frontier lab. Internal criticism — a form of balancing input — became a reinforcing one. This is not unique to AI. It is how strong reinforcing loops behave when the balancing loops opposing them are slow and under-resourced. The intervention gets absorbed and redirected. The loop continues.
 
-For AI, the core structural problem is the mismatch in loop speeds — not something that makes AI categorically different from other complex systems. Fast reinforcing loops outrunning slow balancing loops have produced crises in finance, energy, agriculture, and fisheries through the same mechanism. What changes is which specific stocks and flows are involved. The capability-capital-compute loop runs fast. The oversight, labor adjustment, and alignment verification loops run slow. [[07-whats-at-stake|Section 7]] grounds what that mismatch is already producing. [[08-where-you-have-leverage|Section 8]] maps where the leverage is to change it.
+This dynamic is why sections 1 through 5 matter as groundwork rather than background. Understanding the structure of a system is a precondition for identifying where it actually yields — not where it looks like it yields, which is where most public attention is currently directed. Safety announcements, voluntary commitments, benchmark results: these are the visible surface of the system. The structure beneath them is what sections 7 and 8 examine.
+
+Section 7 grounds what the loop mismatch is already producing in measurable terms — labor displacement that is documented now, safety gaps that are structurally observable now, binding constraints that are narrowing now. Section 8 maps where within that structure the leverage actually lives. Both are structural observations, not prescriptions. The question of what to do with them is the work of Part 2.
+
+One threshold dynamic applies to both: the same delays that make balancing loops slow also make their warning signals arrive late. The evidence visible now is evidence of where the system currently is — not a forecast of where it might go. What follows is an account of what that evidence shows.
 
 ---
-
-*Next: [[07-whats-at-stake|Part 7 — What's Actually at Stake]]*

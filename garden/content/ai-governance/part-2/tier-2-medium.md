@@ -1,10 +1,8 @@
 ---
-title: "Tier 2 — Medium Leverage"
+title: "Delays, brakes, and engine speed"
 tags: [ai, governance, systems-thinking, leverage]
 draft: false
 ---
-
-# Tier 2 — Medium Leverage
 
 *Response delays, brake strength, and acceleration rate — changing these meaningfully shifts system behavior*
 
@@ -12,7 +10,7 @@ These levers work on how fast the system moves and how hard it can be stopped. S
 
 ---
 
-## LP #9 — Length of Delays
+## Length of Delays
 
 *How long before consequences arrive — long delays make problems invisible until they're already large*
 
@@ -26,7 +24,7 @@ Models deploy on 2–4 month cycles. Documented harms arrive months to years lat
 
 ---
 
-## LP #8 — Strength of the Brakes
+## Strength of the Brakes
 
 *How effectively counterforces work — when brakes are too weak, acceleration goes unchecked*
 
@@ -40,7 +38,7 @@ The oversight brake (harm → regulatory response → slowdown) is weak: underfu
 
 ---
 
-## LP #7 — Speed of the Engine
+## Speed of the Engine
 
 *How fast the growth loop is running — and what slowing the acceleration (not stopping it) looks like*
 
@@ -51,7 +49,3 @@ The capital loop (capability → investment → compute → capability) has very
 **How you encounter this:** In proposals for AI windfall taxes, compute levies, or profit-sharing mandates — and in the industry lobbying that reliably defeats them. The companies most vocal against these measures sit at the center of the capital loop and benefit most from its acceleration.
 
 **What changing it does — and doesn't:** Slowing the acceleration extends the time available for safety research and governance to keep pace with capability. It doesn't stop development, and it faces the most politically powerful opposition of any lever in this tier. The value isn't stopping the loop — it's buying time for everything else to work.
-
----
-
-[[tier-1-low|← Back: Tier 1 — Low Leverage]] · [[tier-3-high|Next: Tier 3 — High Leverage →]]

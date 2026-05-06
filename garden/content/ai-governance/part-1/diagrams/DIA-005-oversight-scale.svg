@@ -1,86 +1,124 @@
-<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-oversight-title viz-oversight-desc">
-  <title id="viz-oversight-title">Industry scale compared to oversight resources</title>
-  <desc id="viz-oversight-desc">Two columns: left shows large industry figures; right shows smaller oversight budgets and limited enforcement capability.</desc>
+<svg viewBox="0 0 900 502" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-oversight-title viz-oversight-desc">
+  <title id="viz-oversight-title">Industry dollars vs oversight and enforcement dollars</title>
+  <desc id="viz-oversight-desc">Top chart uses a mirrored horizontal axis in billions of dollars with zero at the centre and a maximum of one point four trillion dollars each direction. Red bars extend left for hyperscaler capital expenditure about four hundred forty eight billion, committed infrastructure about one trillion, and OpenAI valuation about eight hundred fifty two billion. Blue markers on the right show United States AI Safety Institute funding about ten million, United Kingdom institute budget about eighty four million dollars equivalent, and global AI fines about four hundred thousand; small amounts use callouts because they are invisible at the trillion scale. A second chart below uses the same centre-zero layout zoomed to a maximum of one hundred million dollars on each side so United Kingdom and United States institute budgets appear as proportional blue bars and fines as a very small bar.</desc>
 
-  <!-- Left panel: AI Industry -->
-  <rect x="10" y="10" width="294" height="280" rx="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2"/>
-  <text x="157" y="36" text-anchor="middle" font-size="13" font-weight="800" fill="#C94B2E">AI INDUSTRY</text>
+  <defs>
+    <style>text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }</style>
+  </defs>
 
-  <!-- Item 1: y=62 -->
-  <circle cx="22" cy="58" r="3" fill="#C94B2E"/>
-  <text x="26" y="62" font-size="11" fill="#6B6B85">Hyperscaler capex 2025</text>
-  <text x="26" y="77" font-size="12" font-weight="700" fill="#C94B2E">~$448B</text>
+  <!-- ========== PANEL A · $1.4T scale (geometry matches DIA-003) ========== -->
+  <text x="450" y="22" font-size="13" font-weight="800" fill="#1C1C2E" text-anchor="middle">Scale: Industry investment (left) vs oversight / enforcement (right)</text>
+  <text x="450" y="38" font-size="9.5" fill="#6B6B85" text-anchor="middle">Panel A · Same dollar scale both directions · $0 at centre · max bar = $1.4T</text>
 
-  <!-- Item 2: y=90 -->
-  <circle cx="22" cy="86" r="3" fill="#C94B2E"/>
-  <text x="26" y="90" font-size="11" fill="#6B6B85">Committed infrastructure</text>
-  <text x="26" y="105" font-size="12" font-weight="700" fill="#C94B2E">&gt;$1T</text>
+  <line x1="450" y1="48" x2="450" y2="242" stroke="#1C1C2E" stroke-width="2"/>
+  <text x="450" y="46" font-size="10" font-weight="700" fill="#1C1C2E" text-anchor="middle">$0</text>
 
-  <!-- Item 3: y=118 -->
-  <circle cx="22" cy="114" r="3" fill="#C94B2E"/>
-  <text x="26" y="118" font-size="11" fill="#6B6B85">Frontier AI researchers</text>
-  <text x="26" y="133" font-size="12" font-weight="700" fill="#C94B2E">~10,000</text>
+  <rect x="0" y="56" width="900" height="44" fill="#FAFAFA" opacity="0.6"/>
+  <rect x="0" y="104" width="900" height="44" fill="#FFFFFF"/>
+  <rect x="0" y="152" width="900" height="44" fill="#FAFAFA" opacity="0.6"/>
+  <rect x="0" y="200" width="900" height="44" fill="#FFFFFF"/>
 
-  <!-- Item 4: y=146 -->
-  <circle cx="22" cy="142" r="3" fill="#C94B2E"/>
-  <text x="26" y="146" font-size="11" fill="#6B6B85">AI data center growth 2025</text>
-  <text x="26" y="161" font-size="12" font-weight="700" fill="#C94B2E">+50% (IEA)</text>
+  <!--
+    Panel A: 250 px = $1,400B · centre x = 450 · left x = 450 − (B/1400)×250
+    Row centres: 78, 126, 174, 222
+  -->
 
-  <!-- Item 5: y=174 -->
-  <circle cx="22" cy="170" r="3" fill="#C94B2E"/>
-  <text x="26" y="174" font-size="11" fill="#6B6B85">Model release cadence</text>
-  <text x="26" y="189" font-size="12" font-weight="700" fill="#C94B2E">every 2&#x2013;4 months</text>
+  <!-- ROW A1 · $448B | US AISI ~$10M (invisible at this scale) -->
+  <text x="194" y="78" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="end" dominant-baseline="middle">Hyperscaler capex 2025</text>
+  <rect x="370" y="61" width="80" height="34" rx="4" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
+  <text x="364" y="78" font-size="10.5" font-weight="700" fill="#C94B2E" text-anchor="end" dominant-baseline="middle">$448B</text>
+  <line x1="450" y1="78" x2="457" y2="78" stroke="#6B6B85" stroke-width="4" stroke-linecap="round"/>
+  <rect x="464" y="67" width="120" height="22" rx="4" fill="#F0EFF0" stroke="#6B6B85" stroke-width="1"/>
+  <text x="524" y="78" font-size="9.5" font-weight="700" fill="#6B6B85" text-anchor="middle" dominant-baseline="middle">~$10M FY24</text>
+  <text x="682" y="78" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="start" dominant-baseline="middle">US AISI → CAISI</text>
 
-  <!-- Item 6: y=202 -->
-  <circle cx="22" cy="198" r="3" fill="#C94B2E"/>
-  <text x="26" y="202" font-size="11" fill="#6B6B85">OpenAI valuation</text>
-  <text x="26" y="217" font-size="12" font-weight="700" fill="#C94B2E">$852B (Oct 2025)</text>
+  <!-- ROW A2 · $1,000B committed infra | UK AISI £66M ≈ ~$84M USD -->
+  <text x="194" y="126" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="end" dominant-baseline="middle">Committed infrastructure</text>
+  <rect x="271" y="109" width="179" height="34" rx="4" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
+  <text x="279" y="126" font-size="10.5" font-weight="700" fill="#C94B2E" text-anchor="start" dominant-baseline="middle">$1.0T</text>
+  <line x1="450" y1="126" x2="457" y2="126" stroke="#6B6B85" stroke-width="4" stroke-linecap="round"/>
+  <rect x="464" y="115" width="128" height="22" rx="4" fill="#F0EFF0" stroke="#6B6B85" stroke-width="1"/>
+  <text x="528" y="126" font-size="9.5" font-weight="700" fill="#6B6B85" text-anchor="middle" dominant-baseline="middle">~$84M/yr</text>
+  <text x="600" y="126" font-size="8" fill="#9B9BA8" dominant-baseline="middle">(≈£66M)</text>
+  <text x="682" y="126" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="start" dominant-baseline="middle">UK AI Security Institute</text>
 
-  <!-- Item 7: y=230 -->
-  <circle cx="22" cy="226" r="3" fill="#C94B2E"/>
-  <text x="26" y="230" font-size="11" fill="#6B6B85">Labs self-report safety evals</text>
-  <text x="26" y="245" font-size="12" font-weight="700" fill="#C94B2E">no external audits</text>
+  <!-- ROW A3 · $852B valuation | note -->
+  <text x="194" y="174" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="end" dominant-baseline="middle">OpenAI valuation (Oct 2025)</text>
+  <rect x="298" y="157" width="152" height="34" rx="4" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
+  <text x="306" y="174" font-size="10.5" font-weight="700" fill="#C94B2E" text-anchor="start" dominant-baseline="middle">$852B</text>
+  <text x="520" y="174" font-size="9" fill="#9B9BA8" font-style="italic" text-anchor="start" dominant-baseline="middle">Oversight $ not visible →</text>
 
-  <!-- Item 8: y=258 -->
-  <circle cx="22" cy="254" r="3" fill="#C94B2E"/>
-  <text x="26" y="258" font-size="11" fill="#6B6B85">Anthropic RSP v3 (Feb 2026)</text>
-  <text x="26" y="273" font-size="12" font-weight="700" fill="#C94B2E">removed pause commitment</text>
+  <!-- ROW A4 · Global fines ~$400K (DIA-003-style; no left bar) -->
+  <line x1="450" y1="222" x2="457" y2="222" stroke="#6B6B85" stroke-width="4" stroke-linecap="round"/>
+  <rect x="464" y="211" width="84" height="22" rx="4" fill="#F0EFF0" stroke="#6B6B85" stroke-width="1"/>
+  <text x="506" y="222" font-size="10" font-weight="700" fill="#6B6B85" text-anchor="middle" dominant-baseline="middle">~$400K</text>
+  <text x="554" y="222" font-size="8.5" fill="#9B9BA8" dominant-baseline="middle">(not to scale)</text>
+  <text x="682" y="222" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="start" dominant-baseline="middle">Global AI fines (cumulative)</text>
 
-  <!-- VS connector -->
-  <circle cx="320" cy="148" r="22" fill="#F0EFF0" stroke="#9B9BA8" stroke-width="1.5"/>
-  <text x="320" y="155" text-anchor="middle" font-size="14" font-weight="900" fill="#6B6B85">VS</text>
+  <!-- Panel A axis -->
+  <line x1="200" y1="252" x2="450" y2="252" stroke="#C94B2E" stroke-width="1.5" opacity="0.45"/>
+  <line x1="450" y1="252" x2="700" y2="252" stroke="#3A5498" stroke-width="1.5" opacity="0.45"/>
+  <g font-size="8.5" fill="#6B6B85" text-anchor="middle">
+    <line x1="388" y1="248" x2="388" y2="256" stroke="#9B9BA8"/><text x="388" y="268">$350B</text>
+    <line x1="325" y1="248" x2="325" y2="256" stroke="#9B9BA8"/><text x="325" y="268">$700B</text>
+    <line x1="263" y1="248" x2="263" y2="256" stroke="#9B9BA8"/><text x="263" y="268">$1.05T</text>
+    <line x1="200" y1="248" x2="200" y2="256" stroke="#9B9BA8"/><text x="200" y="268">$1.4T</text>
+    <line x1="513" y1="248" x2="513" y2="256" stroke="#9B9BA8"/><text x="513" y="268">$350B</text>
+    <line x1="575" y1="248" x2="575" y2="256" stroke="#9B9BA8"/><text x="575" y="268">$700B</text>
+    <line x1="638" y1="248" x2="638" y2="256" stroke="#9B9BA8"/><text x="638" y="268">$1.05T</text>
+    <line x1="700" y1="248" x2="700" y2="256" stroke="#9B9BA8"/><text x="700" y="268">$1.4T</text>
+  </g>
+  <text x="325" y="282" font-size="9" font-weight="700" fill="#C94B2E" text-anchor="middle">← Industry scale ($)</text>
+  <text x="575" y="282" font-size="9" font-weight="700" fill="#3A5498" text-anchor="middle">Oversight &amp; fines ($) →</text>
+  <text x="450" y="298" font-size="8.5" fill="#9B9BA8" text-anchor="middle">Right-side $10M–$100M marks are callouts: bar length is not proportional at this range</text>
 
-  <!-- Right panel: AI Oversight -->
-  <rect x="336" y="10" width="294" height="280" rx="10" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2"/>
-  <text x="483" y="36" text-anchor="middle" font-size="13" font-weight="800" fill="#2A7A5F">AI OVERSIGHT</text>
+  <!-- ========== PANEL B · Zoomed ±$100M (proportional bars) ========== -->
+  <text x="450" y="322" font-size="12" font-weight="800" fill="#1C1C2E" text-anchor="middle">Zoom: oversight &amp; fines (same layout · linear · max = $100M each way)</text>
+  <text x="450" y="338" font-size="9.5" fill="#6B6B85" text-anchor="middle">Panel B · £66M shown as ≈$84M USD for a single dollar axis · $400K uses a visual minimum width</text>
 
-  <!-- Item 1: y=62 -->
-  <circle cx="348" cy="58" r="3" fill="#C94B2E"/>
-  <text x="352" y="62" font-size="11" fill="#6B6B85">US AISI &#x2192; CAISI (June 2025)</text>
-  <text x="352" y="77" font-size="11.5" font-weight="700" font-style="italic" fill="#C94B2E">layoffs Feb 2025 &#xB7; ~$10M FY2024</text>
+  <line x1="450" y1="348" x2="450" y2="463" stroke="#1C1C2E" stroke-width="2"/>
+  <text x="450" y="346" font-size="10" font-weight="700" fill="#1C1C2E" text-anchor="middle">$0</text>
 
-  <!-- Item 2: y=102 -->
-  <circle cx="348" cy="98" r="3" fill="#2A7A5F"/>
-  <text x="352" y="102" font-size="11" fill="#6B6B85">UK AI Security Institute</text>
-  <text x="352" y="117" font-size="11.5" font-weight="700" font-style="italic" fill="#2A7A5F">&#xA3;66M/yr &#xB7; rebranded Feb 2025</text>
+  <rect x="0" y="356" width="900" height="36" fill="#FAFAFA" opacity="0.6"/>
+  <rect x="0" y="392" width="900" height="36" fill="#FFFFFF"/>
+  <rect x="0" y="428" width="900" height="36" fill="#FAFAFA" opacity="0.6"/>
 
-  <!-- Item 3: y=142 -->
-  <circle cx="348" cy="138" r="3" fill="#C94B2E"/>
-  <text x="352" y="142" font-size="11" fill="#6B6B85">EU AI Act enforcement</text>
-  <text x="352" y="157" font-size="11.5" font-weight="700" font-style="italic" fill="#C94B2E">Aug 2026 &#x2014; 8 of 27 states ready</text>
+  <!-- 250 px = $100M · $84M→210px · $10M→25px · $400K→1px (8px min) -->
+  <!-- ROW B1 · UK ~$84M -->
+  <text x="194" y="374" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="end" dominant-baseline="middle">Reference · $100M</text>
+  <rect x="200" y="359" width="250" height="30" rx="4" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1" opacity="0.35"/>
+  <text x="325" y="374" font-size="9" font-weight="700" fill="#C94B2E" text-anchor="middle" dominant-baseline="middle">full width = $100M</text>
+  <rect x="450" y="359" width="210" height="30" rx="4" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5"/>
+  <text x="460" y="374" font-size="10.5" font-weight="700" fill="#3A5498" text-anchor="start" dominant-baseline="middle">~$84M/yr</text>
+  <text x="682" y="374" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="start" dominant-baseline="middle">UK AI Security Institute (≈£66M)</text>
 
-  <!-- Item 4: y=182 -->
-  <circle cx="348" cy="178" r="3" fill="#C94B2E"/>
-  <text x="352" y="182" font-size="11" fill="#6B6B85">Biden AI EO (Oct 2023)</text>
-  <text x="352" y="197" font-size="11.5" font-weight="700" font-style="italic" fill="#C94B2E">revoked Jan 20, 2025</text>
+  <!-- ROW B2 · US ~$10M (bar from $0 at centre) -->
+  <text x="194" y="410" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="end" dominant-baseline="middle">US AISI → CAISI</text>
+  <text x="430" y="410" font-size="9" fill="#9B9BA8" text-anchor="end" dominant-baseline="middle">FY24 ~$10M</text>
+  <rect x="450" y="395" width="25" height="30" rx="3" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5"/>
+  <text x="480" y="410" font-size="10.5" font-weight="700" fill="#3A5498" text-anchor="start" dominant-baseline="middle">~$10M</text>
 
-  <!-- Item 5: y=214 -->
-  <circle cx="348" cy="210" r="3" fill="#2A7A5F"/>
-  <text x="352" y="214" font-size="11" fill="#6B6B85">AI fines collected globally</text>
-  <text x="352" y="229" font-size="11.5" font-weight="700" fill="#2A7A5F">~$400K total</text>
+  <!-- ROW B3 · Global fines ~$400K -->
+  <text x="194" y="446" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="end" dominant-baseline="middle">Global AI fines</text>
+  <text x="430" y="446" font-size="9" fill="#9B9BA8" text-anchor="end" dominant-baseline="middle">cumulative</text>
+  <rect x="450" y="431" width="8" height="30" rx="2" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5"/>
+  <text x="464" y="446" font-size="10" font-weight="700" fill="#3A5498" text-anchor="start" dominant-baseline="middle">~$400K</text>
+  <text x="548" y="446" font-size="8" fill="#9B9BA8" dominant-baseline="middle">(8px min · true length ≈1px)</text>
 
-  <!-- Item 6: y=246 -->
-  <circle cx="348" cy="242" r="3" fill="#2A7A5F"/>
-  <text x="352" y="246" font-size="11" fill="#6B6B85">OpenAI wrongful-death suits</text>
-  <text x="352" y="261" font-size="11.5" font-weight="700" font-style="italic" fill="#2A7A5F">proceeding as of April 2026</text>
+  <!-- Panel B axis ($100M max) -->
+  <line x1="200" y1="468" x2="450" y2="468" stroke="#C94B2E" stroke-width="1.5" opacity="0.45"/>
+  <line x1="450" y1="468" x2="700" y2="468" stroke="#3A5498" stroke-width="1.5" opacity="0.45"/>
+  <g font-size="8.5" fill="#6B6B85" text-anchor="middle">
+    <line x1="388" y1="464" x2="388" y2="472" stroke="#9B9BA8"/><text x="388" y="484">$25M</text>
+    <line x1="325" y1="464" x2="325" y2="472" stroke="#9B9BA8"/><text x="325" y="484">$50M</text>
+    <line x1="263" y1="464" x2="263" y2="472" stroke="#9B9BA8"/><text x="263" y="484">$75M</text>
+    <line x1="200" y1="464" x2="200" y2="472" stroke="#9B9BA8"/><text x="200" y="484">$100M</text>
+    <line x1="513" y1="464" x2="513" y2="472" stroke="#9B9BA8"/><text x="513" y="484">$25M</text>
+    <line x1="575" y1="464" x2="575" y2="472" stroke="#9B9BA8"/><text x="575" y="484">$50M</text>
+    <line x1="638" y1="464" x2="638" y2="472" stroke="#9B9BA8"/><text x="638" y="484">$75M</text>
+    <line x1="700" y1="464" x2="700" y2="472" stroke="#9B9BA8"/><text x="700" y="484">$100M</text>
+  </g>
+  <text x="325" y="496" font-size="9" font-weight="700" fill="#C94B2E" text-anchor="middle">← Reference band</text>
+  <text x="575" y="496" font-size="9" font-weight="700" fill="#3A5498" text-anchor="middle">Measured oversight $ →</text>
+
 </svg>

@@ -61,6 +61,48 @@ h2 + p > em:only-child {
   font-style: italic;
 }
 
+// ── Series index polish ───────────────────────────────────────────────────────
+.hero-question {
+  margin: 0.9rem 0 1.2rem;
+  padding: 0.95rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #f3d3ce;
+  background: #fdf0ed;
+  color: var(--secondary);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.series-top-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0 1.35rem;
+  padding: 0.1rem 0;
+}
+
+.series-top-links a {
+  display: inline-block;
+  padding: 0.28rem 0.62rem;
+  border-radius: 999px;
+  border: 1px solid var(--z-border);
+  background: #fff;
+  color: var(--z-muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: all 120ms ease;
+}
+
+.series-top-links a:hover {
+  border-color: #d6d1ca;
+  color: var(--secondary);
+  background: #f8f7f5;
+}
+
 // ── Inline SVG diagrams ───────────────────────────────────────────────────────
 // Quartz renders inline SVG HTML blocks as direct children of article (not in <p>).
 // Heading anchor icons are nested (h1 > a > svg) so they won't match article > svg.
@@ -156,12 +198,66 @@ article tbody tr:hover td { background: rgba(28,28,46,0.02); }
 .callout[data-callout="key"]     { --color: #C9880A; --border: #C9880A44; --bg: #C9880A10; }
 .callout[data-callout="critique"]{ --color: #6B6B85; --border: #6B6B8544; --bg: #6B6B8510; }
 .callout[data-callout="tip"]     { --color: #2A7A5F; --border: #2A7A5F44; --bg: #2A7A5F10; }
+.callout.is-collapsible > .callout-title { cursor: pointer; }
 
 // ── Tier card grid ────────────────────────────────────────────────────────────
 .tier-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 1.5rem 0; }
-.tier-card { border-radius: 8px; padding: 14px 16px; border: 1px solid var(--lightgray); }
-.tier-card p { font-size: 0.875rem; color: var(--darkgray); }
-.tier-low   { border-left: 4px solid #6B6B85; }
-.tier-mid   { border-left: 4px solid #3A5498; }
-.tier-high  { border-left: 4px solid #C9880A; }
-.tier-xform { border-left: 4px solid #C94B2E; }
+.tier-card {
+  border-radius: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--z-border);
+  background: #ffffff;
+}
+
+.tier-card p {
+  font-size: 0.875rem;
+  color: var(--darkgray);
+  margin: 0;
+}
+
+.tier-card p + p {
+  margin-top: 8px;
+}
+
+.tier-card .tier-pill {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.tier-card > p:first-child strong {
+  color: var(--secondary);
+}
+
+.tier-low .tier-pill {
+  background: #f1f2f3;
+  border-color: #e1e3e6;
+  color: #6b6b85;
+}
+
+.tier-mid .tier-pill {
+  background: #e9ecf8;
+  border-color: #d8def4;
+  color: #3a5498;
+}
+
+.tier-high .tier-pill {
+  background: #fff4d8;
+  border-color: #f4e6bc;
+  color: #b67806;
+}
+
+.tier-xform .tier-pill {
+  background: #fbe6df;
+  border-color: #f3d1c5;
+  color: #b8482e;
+}
