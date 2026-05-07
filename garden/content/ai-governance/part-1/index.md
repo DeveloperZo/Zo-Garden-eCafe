@@ -1,5 +1,5 @@
 ---
-title: "Can AI Self-Govern? A Systems Analysis"
+title: "Part 1 — Can AI Self-Govern?"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
@@ -39,7 +39,7 @@ Continue to [[../part-2/index|Part 2: What Can I Do About AI?]]
 
 ## Sources
 
-**§1 — What's Being Built**
+**Part 1 — What's Being Built**
 
 [^1]: [source needed — cite lab disclosures or analyst reports for $100M–$1B+ training cost range]
 [^2]: Epoch AI. "Tracking Large-Scale AI Models." epochai.org. [source needed — add direct URL; figure cited: ~4.4× per year compute growth since 2010]
@@ -47,12 +47,12 @@ Continue to [[../part-2/index|Part 2: What Can I Do About AI?]]
 [^4]: [source needed — cite lab disclosures or industry reporting for 10,000–30,000 chip training cluster size]
 [^5]: Epoch AI. "Tracking Large-Scale AI Models." epochai.org. [source needed — add direct URL; figure cited: training cost doubled ~every 8 months, 2015–2024]
 
-**§2 — Why It's Moving**
+**Part 2 — Why It's Moving**
 
 [^6]: CNBC, February 2026.
 [^7]: [source needed]
 
-**§3 — What's Unsolved**
+**Part 3 — What's Unsolved**
 
 [^8]: Nature, January 2026. [source needed — add paper title/DOI]
 [^9]: arXiv:2510.05179, October 2025.
@@ -60,7 +60,7 @@ Continue to [[../part-2/index|Part 2: What Can I Do About AI?]]
 [^11]: Anthropic, March 2025. [source needed — add paper title/URL]
 [^12]: Singh et al., arXiv:2504.20879, April 2025.
 
-**§4 — Who Was Supposed to Slow It**
+**Part 4 — Who Was Supposed to Slow It**
 
 [^13]: TIME, February 2026. [source needed — add article URL for Jared Kaplan quote on RSP update]
 [^14]: [source needed — cite source for 978% increase in AI-related lawsuits 2020–2025]

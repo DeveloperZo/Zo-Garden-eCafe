@@ -1,10 +1,10 @@
 ---
-title: "Who Was Supposed to Slow It — and Why They Can't"
+title: "IV — Who Was Supposed to Slow It — and Why They Can't"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
 
-*Part 4 of 8*
+*Part IV of VIII*
 
 *Every functioning system needs a stabilizing loop. For AI, that was supposed to be government oversight and independent safety research. Here is what that loop is actually resourced with, and what has happened to it.*
 
@@ -26,3 +26,5 @@ The regulatory bodies with actual enforcement power (electricity grid operators,
 *Part 5 explores how these three weaknesses (under-resourced oversight, unresolved liability, and the dissent paradox) interact as a single structure, and which parts of that structure are most vulnerable to change.*
 
 ---
+
+*Part 4 of 8*

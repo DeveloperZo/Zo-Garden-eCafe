@@ -1,10 +1,10 @@
 ---
-title: "Where You Have Leverage"
+title: "VIII — Where You Have Leverage"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
 
-*Part 8 of 8*
+*Part VIII of VIII*
 
 *Meadows identified twelve places in any system where a small push produces a meaningful shift in behavior. They're ranked by power. Most AI governance operates at the bottom. Real structural change lives higher up.*
 
@@ -69,7 +69,8 @@ That's the map. Part 2 is where it gets practical.
 13. OpenAI wrongful-death suits (*Adams v. OpenAI*), N.D. Cal., motion denied April 2026
 14. Air Canada chatbot liability ruling, 2025
 15. Gallagher Re / MIT "Smart Systems, Blind Spots," March 2026
-16. IEEFA and Utility Dive reporting on PJM capacity auction failure, December 2025
-17. EU AI Act implementation timeline (artificialintelligenceact.eu)
-18. Trump Executive Order 14179, January 23, 2025
-19. Ameri
+16. IEEFA and
+
+---
+
+*Part 8 of 8*

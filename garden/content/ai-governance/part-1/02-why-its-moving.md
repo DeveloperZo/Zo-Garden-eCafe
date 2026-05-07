@@ -1,10 +1,10 @@
 ---
-title: "Why It's Moving So Fast"
+title: "II. — Why It's Moving So Fast"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
 
-*Part 2 of 8*
+*Part II of VIII*
 
 *The pace isn't explained by technology alone. A self-amplifying financial loop has formed where every major actor profits from the others' growth, and where slowing down is structurally costly, even where individual actors prefer caution.*
 
@@ -26,3 +26,7 @@ The difficulty here is not moral. It is mechanical. You cannot stop an eighteen-
 ---
 
 *Part 3 asks the obvious question: if every actor in this loop profits from it continuing, who exactly is positioned to slow it down?*
+
+---
+
+*Part 2 of 8*

@@ -1,10 +1,10 @@
 ---
-title: "What's Being Built"
+title: "I. What's Being Built"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
 
-*Part 1 of 8*
+*Part I of VIII*
 
 *Before asking whether AI can self-govern, understand what it is: systems where raw capability scales reliably with compute, and where access to that compute is narrowing.*
 

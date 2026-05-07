@@ -1,10 +1,10 @@
 ---
-title: "What's Actually at Stake"
+title: "VI — What's Actually at Stake"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
 
-*Part 6 of 8*
+*Part VI of VIII*
 
 *The loops described so far produce specific effects on real people. This section grounds those effects in the best available evidence — and is honest about where the evidence gets thin.*
 
@@ -63,13 +63,8 @@ What's been measured so far: Challenger, Gray & Christmas tracked roughly 54,694
 The WEF's 2025 Future of Jobs Report projects 92 million jobs displaced and 170 million created by 2030 — net positive on paper. The catch is distribution. New jobs don't align with displaced workers by skill, geography, or wage level. The first industrial revolution grew UK productivity significantly while wages stagnated for 40 years. The internet transition generated genuine replacement employment, but took 20–30 years to arrive. AI's pace may outrun that window — though how much faster is genuinely contested.
 
 ![](/ai-governance/part-1/diagrams/DIA-006-distribution-problem.svg)
-*DIA-006 — The Distribution Problem: the aggregate net +78M job-creation figure (WEF 2025) is the wrong unit of measurement for assessing harm. Left: the cascade from AI-exposed advanced-economy workers to the 6.1 million at high exposure and low adaptive capacity. Right: historical precedent for how long transitions actually take — the recovery happens; it just doesn't arrive in time.*
-
-The population most at risk is specific: NBER research identified roughly 4.2% of US workers — 6.1 million people — at the intersection of high AI exposure and low adaptive capacity (limited retraining options, few local alternatives). These are primarily clerical and administrative workers, predominantly women, concentrated in smaller metropolitan areas. For them, displacement isn't a career setback. It's closer to permanent.
-
-> [!key]- The redistribution mechanism is missing
-> Historical technology transitions redistributed productivity gains through specific mechanisms: labor organizing, collective bargaining, wage growth, shorter working hours, progressive taxation. These mechanisms don't fire automatically for AI-driven displacement. Denmark's "flexicurity" model — generous retraining support (up to 2 years, ~70–80% wage replacement) plus mandatory active job placement — is the clearest working example of a deliberate policy response for displaced workers. It requires spending over 5% of GDP on labor market programs. The EU AI Act (Article 26) requires employer consultation before deploying high-risk AI in employment contexts. The US has no equivalent federal provision as of May 2026.
-
-Part 7 examines the other concrete effect: safety risk, and the binding constraints — technical, legal, and geopolitical — that currently shape what governance can actually achieve.
+*DIA-006 — The Distribution Problem: the aggregate
 
 ---
+
+*Part 6 of 8*

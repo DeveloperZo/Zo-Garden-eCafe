@@ -1,10 +1,10 @@
 ---
-title: "Safety Risk and Binding Constraints"
+title: "VII — Safety Risk and Binding Constraints"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
 
-*Part 7 of 8*
+*Part VII of VIII*
 
 *The [[06-whats-at-stake|previous section]] examined what the loop mismatch is already producing in measurable terms: displacement that is documented, and objections that the structure answers. This section turns to the less certain safety risk picture and maps the binding constraints that currently shape what governance can actually reach.*
 
@@ -31,3 +31,7 @@ A binding constraint is a structural point where something limits what is *possi
 ---
 
 With those six constraints mapped, the question is where any of this is actually actionable. The [[08-where-you-have-leverage|next section]] applies Meadows' leverage-point hierarchy to AI governance directly: which interventions operate at the level of parameters (weak), which reach feedback structure (stronger), and which change the goals the system pursues (strongest, and most resisted).
+
+---
+
+*Part 7 of 8*

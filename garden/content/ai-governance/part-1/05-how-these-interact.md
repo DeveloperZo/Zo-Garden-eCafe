@@ -1,10 +1,10 @@
 ---
-title: "How These Interact as a System"
+title: "V — How These Interact as a System"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
 
-*Part 5 of 8*
+*Part V of VIII*
 
 *The previous four sections are not separate problems. They're parts of the same structure: a fast self-amplifying loop, a slow broken self-correcting loop, and a paradox that turns alarm into acceleration.*
 
@@ -24,3 +24,7 @@ A third loop is forming. AI systems are now used in AI research itself — sugge
 ---
 
 *Next: [[06-why-not-fix-it|Part 6]] looks at why the stabilizing loops keep losing — and what it would take to strengthen them.*
+
+---
+
+*Part 5 of 8*

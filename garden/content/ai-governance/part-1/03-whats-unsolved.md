@@ -1,10 +1,10 @@
 ---
-title: "What's Unsolved at That Speed"
+title: "III — What's Unsolved at That Speed"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
 
-*Part 3 of 8*
+*Part III of VIII*
 
 *The labs say they're managing the gap between what AI* can *do and what it* should *do. Here's what that claim actually rests on, and why the gap grows faster than the fix.*
 
@@ -33,3 +33,8 @@ Consider what it would take to catch this from the outside. Testing outputs tell
 ---
 
 *Part 4 looks at who actually has authority over these systems right now, and why the answer is more fragmented than it appears. See [[04-who-was-supposed-to-slow-it]].*
+
+
+---
+
+*Part 3 of 8*

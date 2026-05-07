@@ -37,7 +37,13 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      filterFn: (node) => {
+        // Hide numbered section files (01-*, 02-*, ...) — they're part of a parent page
+        if (/^\d{2}-/.test(node.slugSegment)) return false
+        return node.slugSegment !== "tags"
+      },
+    }),
   ],
   right: [
     Component.Graph(),
@@ -65,7 +71,12 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      filterFn: (node) => {
+        if (/^\d{2}-/.test(node.slugSegment)) return false
+        return node.slugSegment !== "tags"
+      },
+    }),
   ],
   right: [],
 }
