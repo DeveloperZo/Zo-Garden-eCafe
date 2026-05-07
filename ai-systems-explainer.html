@@ -92,7 +92,18 @@
 
     /* ══ CALLOUTS ═══════════════════════════════════════════════════════════ */
     .callout { border-left: 3px solid; border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 22px 0; }
-    .callout-title { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+    .callout-title {
+      font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 0; display: flex; align-items: center; gap: 8px;
+      cursor: pointer; user-select: none;
+    }
+    .callout-title:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 3px; }
+    .callout-chevron {
+      font-size: 8px; line-height: 1; flex-shrink: 0;
+      transition: transform .2s ease; display: inline-block;
+    }
+    .callout:not(.is-collapsed) .callout-chevron { transform: rotate(90deg); }
+    .callout-body { margin-top: 10px; }
     .callout p { font-size: 15px; margin-bottom: 0; line-height: 1.65; }
     .callout-key  { border-color: var(--amber); background: var(--amber-lt); }
     .callout-key  .callout-title { color: var(--amber); }
@@ -916,5 +927,48 @@
   <p>This is an analytical explainer applying a systems-thinking framework to publicly documented facts — not financial or investment advice, not legal advice, and not a prediction of specific outcomes. Probability estimates for catastrophic risk reflect the range of credible expert opinion; none are the author's own forecast.</p>
 </footer>
 
+<script>
+  // ── Collapsible callouts ────────────────────────────────────────────────
+  document.querySelectorAll('.callout').forEach(callout => {
+    const title  = callout.querySelector('.callout-title');
+    if (!title) return;
+
+    // Collect body paragraphs (everything that isn't the title)
+    const bodyEls = Array.from(callout.children).filter(el => el !== title);
+
+    // Wrap body content in a collapsible div
+    const body = document.createElement('div');
+    body.className = 'callout-body';
+    bodyEls.forEach(el => body.appendChild(el));
+    callout.appendChild(body);
+
+    // Inject chevron into title
+    const chevron = document.createElement('span');
+    chevron.className = 'callout-chevron';
+    chevron.setAttribute('aria-hidden', 'true');
+    chevron.textContent = '▶';
+    title.prepend(chevron);
+
+    // Accessibility
+    title.setAttribute('role', 'button');
+    title.setAttribute('tabindex', '0');
+    title.setAttribute('aria-expanded', 'false');
+
+    // Start collapsed
+    body.hidden = true;
+    callout.classList.add('is-collapsed');
+
+    const toggle = () => {
+      const nowCollapsed = callout.classList.toggle('is-collapsed');
+      body.hidden = nowCollapsed;
+      title.setAttribute('aria-expanded', String(!nowCollapsed));
+    };
+
+    title.addEventListener('click', toggle);
+    title.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+</script>
 </body>
 </html>

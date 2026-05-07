@@ -1,6 +1,6 @@
 <svg viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-loops-title viz-loops-desc">
-  <title id="viz-loops-title">Stock-and-flow view of frontier AI capability with broken balancing loop and R2 amplifier</title>
-  <desc id="viz-loops-desc">Frontier AI capability is drawn as a stock on a main pipe between clouds. Training and deployment are T-fittings on that pipe (run along the flow, stub for information). Other information links use small open circles at their sources. Two balancing loops: capability-gap on the left, dashed harm-feedback on the right. Red sweep is R2.</desc>
+  <title id="viz-loops-title">Stock-and-flow view of frontier AI capability: two self-correcting loops, one self-amplifying loop, and an alarm arc that inverts</title>
+  <desc id="viz-loops-desc">Frontier AI capability is drawn as a stock on a main pipe between clouds. Training and deployment are T-fittings. Three feedback structures: a solid self-correcting loop (capability gap, left); a dashed broken self-correcting loop (harm-oversight, right); and a red self-amplifying loop (R1) where AI capability feeds directly back into its own training rate. A second red arc sweeps from visible harm to investment — this alarm arc should slow investment but inverts, becoming an accelerant.</desc>
   <defs>
     <marker id="d6-flow-head" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth">
       <path d="M 0 0 L 12 6 L 0 12 z" fill="#9B9382"/>
@@ -14,6 +14,9 @@
     <marker id="d6-info-head-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
       <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#A04022"/>
     </marker>
+    <marker id="d6-info-head-r1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#C94B2E"/>
+    </marker>
   </defs>
 
   <!-- warm parchment background -->
@@ -25,7 +28,7 @@
   <!-- LEFT FLOW LINE (cloud → stock) -->
   <line x1="105" y1="105" x2="248" y2="105" stroke="#C7BFAE" stroke-width="14" stroke-linecap="butt" marker-end="url(#d6-flow-head)"/>
 
-  <text x="178" y="55" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#1f1d18">training</text>
+  <text x="166" y="55" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#1f1d18">training</text>
 
   <!-- STOCK -->
   <rect x="258" y="68" width="200" height="74" fill="#FFFFFF" stroke="#1f1d18" stroke-width="1.75"/>
@@ -53,26 +56,22 @@
   <text x="618" y="370" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">oversight</text>
   <text x="618" y="386" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">response</text>
 
-  <!-- LOOP LETTERS -->
-  <text x="232" y="178" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" fill="#1f1d18">B</text>
-  <text x="486" y="178" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" fill="#9B9382">B</text>
-
   <!-- Training T — absolute coords (adjust without touching deployment) -->
-  <g id="d6-t-training" stroke="#1f1d18" stroke-linecap="square">
-    <line x1="158" y1="105" x2="198" y2="105" stroke-width="12.5"/>
-    <line x1="171.75" y1="105" x2="171.75" y2="129" stroke-width="12.5"/>
+  <g id="d6-t-training" stroke="#1f1d18" stroke-linecap="butt">
+    <line x1="146" y1="105" x2="186" y2="105" stroke-width="12.5"/>
+    <line x1="166" y1="105" x2="166" y2="129" stroke-width="12.5"/>
   </g>
   <!-- Deployment T — absolute coords (adjust without touching training) -->
-  <g id="d6-t-deployment" stroke="#1f1d18" stroke-linecap="square">
+  <g id="d6-t-deployment" stroke="#1f1d18" stroke-linecap="butt">
     <line x1="520" y1="105" x2="560" y2="105" stroke-width="12.5"/>
-    <line x1="533.75" y1="105" x2="533.75" y2="129" stroke-width="12.5"/>
+    <line x1="540" y1="105" x2="540" y2="129" stroke-width="12.5"/>
   </g>
 
   <!-- INFO LINKS — open circles at sources; training/deployment use T stubs -->
 
-  <!-- 1. stock → capability gap -->
-  <circle cx="320" cy="142" r="3.2" fill="#FAF6EE" stroke="#1f1d18" stroke-width="1.25"/>
-  <path d="M 320 145 Q 308 180 300 210" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+  <!-- 1. stock → capability gap (circle at center-bottom of stock; shared origin with R1) -->
+  <circle cx="358" cy="142" r="3.2" fill="#FAF6EE" stroke="#1f1d18" stroke-width="1.25"/>
+  <path d="M 358 145 Q 326 178 300 210" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
 
   <!-- 2. frontier target → capability gap -->
   <circle cx="368" cy="358" r="3.2" fill="#FAF6EE" stroke="#1f1d18" stroke-width="1.25"/>
@@ -82,9 +81,9 @@
   <circle cx="252" cy="222" r="3.2" fill="#FAF6EE" stroke="#1f1d18" stroke-width="1.25"/>
   <path d="M 249 224 Q 175 252 122 282" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
 
-  <!-- 4. investment & compute → training T stub -->
+  <!-- 4. investment & compute → training T stub (arrives left of centre) -->
   <circle cx="118" cy="278" r="3.2" fill="#FAF6EE" stroke="#1f1d18" stroke-width="1.25"/>
-  <path d="M 122 274 Q 154 220 178 129" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+  <path d="M 122 274 Q 147 218 161 129" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
 
   <!-- 5. deployment T stub → visible harm -->
   <path d="M 540 129 Q 565 175 596 210" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
@@ -101,10 +100,23 @@
   <circle cx="572" cy="232" r="3.2" fill="#FAF6EE" stroke="#A04022" stroke-width="1.5"/>
   <path d="M 568 235 C 510 470, 220 480, 118 312" stroke="#A04022" stroke-width="1.6" fill="none" marker-end="url(#d6-info-head-r2)"/>
 
-  <!-- R2 label along the red sweep -->
-  <text x="340" y="478" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" font-weight="700" fill="#A04022">R2 &#8201;&#8211;&#8201; alarm becomes accelerant</text>
+  <!-- Alarm arc note: this arc should slow investment but inverts -->
+  <rect x="268" y="420" width="228" height="60" rx="5" fill="#FEF3EE" stroke="#A04022" stroke-width="1.2"/>
+  <text x="382" y="438" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.5" font-weight="700" font-style="italic" fill="#A04022">Should slow investment. It does not.</text>
+  <text x="382" y="453" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Harm signals competitive urgency.</text>
+  <text x="382" y="468" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Labs raise spend. The corrective loop inverts.</text>
 
-  <!-- "broken loop" hint near right B -->
-  <text x="503" y="195" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#9B9382">(slow &#183; weak &#183; partially severed)</text>
+  <!-- "broken loop" hint — connector from path midpoint to annotation -->
+  <line x1="633" y1="296" x2="647" y2="296" stroke="#9B9382" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="649" y="299" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="10" font-style="italic" fill="#9B9382">slow &#183; weak &#183; partially severed</text>
+
+  <!-- R1: AI capability feeds back into its own training rate (arrives right of centre on T stub) -->
+  <path d="M 356 142 C 260 176, 142 172, 171 129" stroke="#C94B2E" stroke-width="1.6" fill="none" marker-end="url(#d6-info-head-r1)"/>
+
+  <!-- R1 callout (bottom-left, matches alarm arc callout style) -->
+  <rect x="22" y="420" width="222" height="60" rx="5" fill="#FEF3EE" stroke="#C94B2E" stroke-width="1.2"/>
+  <text x="133" y="438" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.5" font-weight="700" font-style="italic" fill="#C94B2E">AI accelerates its own training</text>
+  <text x="133" y="453" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Frontier capability feeds directly into training rate.</text>
+  <text x="133" y="468" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Each model generation helps build the next.</text>
 
 </svg>

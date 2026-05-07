@@ -62,6 +62,7 @@ All canonical docs live under `garden/content/` with consistent prefixes and a h
 - **`RM-###-descriptor.md`** in [`milestones/`](./milestones/) — retroactive milestones for work completed before the canonical roadmap existed. Same structure as `M-*`; never moved.
 - **`OPER-###-descriptor.md`** in [`operations/`](./operations/) — runbooks for runtime validation, cutover, release verification. Definition: [`_definitions/operations.md`](./_definitions/operations.md). Update [`operations/index.md`](./operations/index.md) and [`operations/log.md`](./operations/log.md) when adding one.
 - **`TD-###-descriptor.md`** in [`technical-debt/`](./technical-debt/) — debt items. Definition: [`_definitions/technical-debt.md`](./_definitions/technical-debt.md).
+- **`VID-###-descriptor.md`** in `content/<topic>/video/` — video scripts for short-form and long-form videos hosted externally. Use `format: short` (60–90 sec, Shorts/Reels/TikTok) or `format: long` (YouTube). Scripts live alongside the source content they draw from. Definition: [`_definitions/video.md`](./_definitions/video.md).
 
 ### Frontmatter
 

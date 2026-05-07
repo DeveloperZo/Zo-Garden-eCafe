@@ -22,5 +22,6 @@ Canonical artifact definitions for the Zo Garden doc surface. Each file below is
 - [`operations.md`](./operations.md) — `OPER-###`
 - [`roadmap.md`](./roadmap.md) — single canonical roadmap
 - [`technical-debt.md`](./technical-debt.md) — `TD-###`
+- [`video.md`](./video.md) — `VID-###` (short-form and long-form video scripts)
 
 Use these as the contract whenever you create or update a doc.

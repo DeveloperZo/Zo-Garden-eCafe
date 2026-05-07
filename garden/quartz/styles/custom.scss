@@ -10,6 +10,38 @@
   --z-muted: #6B6B85;
   --z-border: #E4E2DC;
   --z-shadow: rgba(28,28,46,0.06);
+  --card-bg:  #ffffff;
+}
+
+// ── Dark mode overrides ───────────────────────────────────────────────────────
+:root[saved-theme="dark"] {
+  --z-border: #393639;
+  --z-shadow: rgba(0,0,0,0.25);
+  --card-bg:  #232326;
+  --z-muted:  #8888a0;
+
+  .tier-card { border-color: var(--z-border); }
+
+  .tier-low .tier-pill {
+    background: rgba(107,107,133,0.18);
+    border-color: rgba(107,107,133,0.28);
+    color: #b0b0c8;
+  }
+  .tier-mid .tier-pill {
+    background: rgba(58,84,152,0.22);
+    border-color: rgba(58,84,152,0.35);
+    color: #8aaad8;
+  }
+  .tier-high .tier-pill {
+    background: rgba(201,136,10,0.18);
+    border-color: rgba(201,136,10,0.30);
+    color: #e0b050;
+  }
+  .tier-xform .tier-pill {
+    background: rgba(201,75,46,0.18);
+    border-color: rgba(201,75,46,0.30);
+    color: #e08060;
+  }
 }
 
 // ── Heading typography ────────────────────────────────────────────────────────
@@ -66,8 +98,8 @@ h2 + p > em:only-child {
   margin: 0.9rem 0 1.2rem;
   padding: 0.95rem 1rem;
   border-radius: 10px;
-  border: 1px solid #f3d3ce;
-  background: #fdf0ed;
+  border: 1px solid color-mix(in srgb, var(--z-red) 25%, transparent);
+  background: color-mix(in srgb, var(--z-red) 6%, var(--light));
   color: var(--secondary);
   font-weight: 700;
   text-align: center;
@@ -87,7 +119,7 @@ h2 + p > em:only-child {
   padding: 0.28rem 0.62rem;
   border-radius: 999px;
   border: 1px solid var(--z-border);
-  background: #fff;
+  background: var(--light);
   color: var(--z-muted);
   font-size: 0.76rem;
   font-weight: 700;
@@ -98,9 +130,9 @@ h2 + p > em:only-child {
 }
 
 .series-top-links a:hover {
-  border-color: #d6d1ca;
+  border-color: var(--gray);
   color: var(--secondary);
-  background: #f8f7f5;
+  background: var(--lightgray);
 }
 
 // ── Inline SVG diagrams ───────────────────────────────────────────────────────
@@ -111,7 +143,7 @@ article p > svg {
   display: block;
   width: 100%;
   height: auto;
-  background: #ffffff;
+  background: var(--card-bg);
   border: 1px solid var(--z-border);
   border-radius: 12px;
   padding: 20px 16px 12px;
@@ -136,7 +168,7 @@ article table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.88rem;
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 10px;
   border: 1px solid var(--z-border);
   box-shadow: 0 2px 8px var(--z-shadow);
@@ -175,7 +207,7 @@ article tbody tr:hover td { background: rgba(28,28,46,0.02); }
 }
 
 .stat {
-  background: #ffffff;
+  background: var(--card-bg);
   border: 1px solid var(--z-border);
   border-radius: 12px;
   padding: 18px 16px;
@@ -206,7 +238,7 @@ article tbody tr:hover td { background: rgba(28,28,46,0.02); }
   border-radius: 12px;
   padding: 14px 16px;
   border: 1px solid var(--z-border);
-  background: #ffffff;
+  background: var(--card-bg);
 }
 
 .tier-card p {
@@ -224,7 +256,7 @@ article tbody tr:hover td { background: rgba(28,28,46,0.02); }
   margin-right: 10px;
   padding: 4px 12px;
   border-radius: 999px;
-  border: 1px solid transparent;
+  border: 1px solid var(--z-border);
   font-size: 0.72rem;
   line-height: 1.2;
   font-weight: 800;
@@ -232,6 +264,9 @@ article tbody tr:hover td { background: rgba(28,28,46,0.02); }
   text-transform: uppercase;
   white-space: nowrap;
   vertical-align: baseline;
+  // Default (no variant class): neutral gray using theme variables
+  background: var(--lightgray);
+  color: var(--darkgray);
 }
 
 .tier-card > p:first-child strong {

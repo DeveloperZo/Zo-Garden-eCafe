@@ -1,6 +1,6 @@
-<svg viewBox="0 0 700 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-capital-title viz-capital-desc">
+<svg viewBox="0 0 700 582" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-capital-title viz-capital-desc">
   <title id="viz-capital-title">Five-way capital and revenue loop between AI industry actors</title>
-  <desc id="viz-capital-desc">Five identical boxes at regular pentagon vertices (center 350,225 r=175) connected by clockwise arcs of consistent curvature. A dashed interior arc shows Investors funding AI Labs directly.</desc>
+  <desc id="viz-capital-desc">Five identical boxes at regular pentagon vertices (center 350,225 r=175) connected by smooth clockwise circular arcs with uniform radius. A dashed interior line shows Investors funding AI Labs directly.</desc>
   <defs>
     <marker id="p-r"  viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#C94B2E"/></marker>
     <marker id="p-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto" markerUnits="strokeWidth"><path d="M0,1 L9,5 L0,9 Z" fill="#C94B2E" opacity="0.55"/></marker>
@@ -11,21 +11,14 @@
     C=(350,225) R=175.  Vertices (centers):
       V0 top          (350,  50)   box x=260 y=20
       V1 upper-right  (516, 171)   box x=426 y=141
-      V2 lower-right  (453, 367)   box x=363 y=337
-      V3 lower-left   (247, 367)   box x=157 y=337
+      V2 lower-right  (440, 360)   box x=350 y=330
+      V3 lower-left   (260, 360)   box x=170 y=330
       V4 upper-left   (184, 171)   box x=94  y=141
 
     Arrow routing:
-      1  V0→V1  exit right of V0 (440,50)   → enter top of V1 (516,141)
-      2  V1→V2  exit bottom of V1 (516,201) → enter top of V2 (453,337)
-      3  V2→V3  exit BOTTOM of V2 (453,397) → enter BOTTOM of V3 (247,397)
-                ↑ wide 206px chord; bows below both boxes. No "bump" problem.
-      4  V3→V4  exit top of V3 (247,337)    → enter bottom of V4 (184,201)
-      5  V4→V0  exit top of V4 (184,141)    → enter left of V0 (260,50)
-
-    CP = midpoint(exit, entry) + 80px outward from C.
-    Arrows 1↔5 and 2↔4 are exact mirrors about x=350.
-    Arrow 3 symmetric about x=350 by construction.
+      All five directed flows use SVG arc segments with shared curvature:
+      A 250 250 0 0 1
+      This keeps the ring visually uniform and smooth between each stock.
   -->
 
   <!-- ── STRAIGHT DASHED LINE: Investors → AI Labs direct shortcut ────────
@@ -37,30 +30,24 @@
 
   <!-- ── ARROWS ─────────────────────────────────────────────────────────── -->
 
-  <!-- 1  V0→V1  exit right(440,50) enter top(516,141)
-       M=(478,95.5)  unit=(0.703,−0.711)  CP=(534,39)               -->
-  <path d="M 440,50 Q 534,39 516,141"
+  <!-- 1  V0→V1  smooth circular segment -->
+  <path d="M 440,50 A 250 250 0 0 1 516,141"
         stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#p-r)"/>
 
-  <!-- 2  V1→V2  exit bottom(516,201) enter top(453,337)
-       M=(484.5,269)  unit=(0.950,0.311)  CP=(561,294)              -->
-  <path d="M 516,201 Q 561,294 453,337"
+  <!-- 2  V1→V2  smooth circular segment -->
+  <path d="M 516,201 A 250 250 0 0 1 440,330"
         stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#p-r)"/>
 
-  <!-- 3  V2→V3  exit bottom(453,397) enter bottom(247,397)
-       chord=206px  M=(350,397)  unit=(0,1)  CP=(350,477)
-       wide arc below both boxes — same visual weight as other arrows  -->
-  <path d="M 453,397 Q 350,477 247,397"
+  <!-- 3  V2→V3  smooth circular segment -->
+  <path d="M 440,390 A 220 220 0 0 1 260,390"
         stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#p-r)"/>
 
-  <!-- 4  V3→V4  exit top(247,337) enter bottom(184,201)  [mirror of 2]
-       M=(215.5,269)  unit=(−0.950,0.311)  CP=(140,294)             -->
-  <path d="M 247,337 Q 140,294 184,201"
+  <!-- 4  V3→V4  smooth circular segment -->
+  <path d="M 260,330 A 250 250 0 0 1 184,201"
         stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#p-r)"/>
 
-  <!-- 5  V4→V0  exit top(184,141) enter left(260,50)  [mirror of 1]
-       M=(222,95.5)  unit=(−0.703,−0.711)  CP=(166,39)              -->
-  <path d="M 184,141 Q 166,39 260,50"
+  <!-- 5  V4→V0  smooth circular segment -->
+  <path d="M 184,141 A 250 250 0 0 1 260,50"
         stroke="#C94B2E" stroke-width="2.5" fill="none" marker-end="url(#p-r)"/>
 
   <!-- ── ARROW LABELS: borderless pills — soft fill only, no stroke ─────── -->
@@ -73,9 +60,9 @@
   <rect x="476" y="272" width="94" height="20" rx="4" fill="#FDE8E3" opacity="0.82"/>
   <text x="523" y="286" text-anchor="middle" font-size="10.5" font-weight="600" fill="#C94B2E">AI products</text>
 
-  <!-- 3 midpoint ≈ (350,437) below bottom nodes -->
-  <rect x="302" y="438" width="96" height="20" rx="4" fill="#FDE8E3" opacity="0.82"/>
-  <text x="350" y="452" text-anchor="middle" font-size="10.5" font-weight="600" fill="#C94B2E">cloud spend</text>
+  <!-- 3 midpoint ≈ (350,424) below bottom nodes -->
+  <rect x="302" y="424" width="96" height="20" rx="4" fill="#FDE8E3" opacity="0.82"/>
+  <text x="350" y="438" text-anchor="middle" font-size="10.5" font-weight="600" fill="#C94B2E">cloud spend</text>
 
   <!-- 4 midpoint ≈ (178,282) left  [mirror of 2] -->
   <rect x="130" y="272" width="96" height="20" rx="4" fill="#FDE8E3" opacity="0.82"/>
@@ -100,15 +87,15 @@
   <text x="516" y="183" text-anchor="middle" font-size="11" fill="#C94B2E">OpenAI · Anthropic · xAI</text>
 
   <!-- V2 · USERS & REVENUE · lower-right · green · single-line primary -->
-  <rect x="363" y="337" width="180" height="60" rx="10"
+  <rect x="350" y="330" width="180" height="60" rx="10"
         fill="#EDF7F3" stroke="#2A7A5F" stroke-width="2"/>
-  <text x="453" y="372" text-anchor="middle" font-size="13" font-weight="700" fill="#2A7A5F">USERS &amp; REVENUE</text>
+  <text x="440" y="365" text-anchor="middle" font-size="13" font-weight="700" fill="#2A7A5F">USERS &amp; REVENUE</text>
 
   <!-- V3 · HYPERSCALERS · lower-left · blue -->
-  <rect x="157" y="337" width="180" height="60" rx="10"
+  <rect x="170" y="330" width="180" height="60" rx="10"
         fill="#E3E8F5" stroke="#3A5498" stroke-width="2"/>
-  <text x="247" y="362" text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">HYPERSCALERS</text>
-  <text x="247" y="379" text-anchor="middle" font-size="11" fill="#3A5498">Microsoft · Google · AWS</text>
+  <text x="260" y="355" text-anchor="middle" font-size="12" font-weight="700" fill="#3A5498">HYPERSCALERS</text>
+  <text x="260" y="372" text-anchor="middle" font-size="11" fill="#3A5498">Microsoft · Google · AWS</text>
 
   <!-- V4 · INVESTORS · upper-left · amber -->
   <rect x="94" y="141" width="180" height="60" rx="10"
@@ -121,4 +108,9 @@
   <text x="64" y="476" font-size="10.5" fill="#6B6B85">solid = capital &amp; product flow (reinforcing loop, clockwise)</text>
   <line x1="28" y1="488" x2="58" y2="488" stroke="#C94B2E" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.55"/>
   <text x="64" y="492" font-size="10.5" fill="#6B6B85">dashed = direct equity shortcut (Investors &#x2192; AI Labs)</text>
+
+  <text x="350" y="514" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-002B — The AI Capital Ring: all five curved arrows form a clockwise self-amplifying loop,</text>
+  <text x="350" y="528" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">each node profits from the others' growth. The dashed arc shows direct equity investment from investors</text>
+  <text x="350" y="542" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">into labs, bypassing the circular path. Nvidia holds equity stakes in OpenAI, CoreWeave, and other</text>
+  <text x="350" y="556" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">labs it sells chips to: a circular profit relationship layered on top of the customer relationship.</text>
 </svg>

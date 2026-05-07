@@ -36,3 +36,4 @@ Every artifact has a prefix. See [Definitions](_definitions/) for the authoring 
 | `RM-###` | `milestones/` (never moves) | retroactive milestones |
 | `OPER-###` | `operations/` | runbooks |
 | `TD-###` | `technical-debt/` → `completed/` when fixed | debt items |
+| `VID-###` | `content/<topic>/video/` | video scripts (short-form and long-form) |

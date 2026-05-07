@@ -1,4 +1,4 @@
-<svg viewBox="0 -10 680 325" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-gap-title viz-gap-desc">
+<svg viewBox="0 -10 680 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-gap-title viz-gap-desc">
   <title id="viz-gap-title">Capability rises faster than controllability over time</title>
   <desc id="viz-gap-desc">Time on horizontal axis 2018 through 2026. A steep red curve shows model capability rising; a shallower green curve shows how much we can control behavior. A shaded wedge between them is labeled the alignment gap. Four milestones on the red curve are marked.</desc>
   <defs>
@@ -56,4 +56,8 @@
   <rect x="464" y="-8" width="132" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E4E2DC" stroke-width="0.75"/>
   <text x="530" y="3" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="600" fill="#6B6B85">o1 / Claude 3.5</text>
   <circle cx="530" cy="48" r="5" fill="#C94B2E"/>
+  <text x="340" y="298" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-003 — The Capability–Alignment Gap (2018–2026): capability (what models can do) has risen steeply.</text>
+  <text x="340" y="312" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">Our ability to ensure models do what we want in every situation has risen much more slowly.</text>
+  <text x="340" y="326" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">The shaded region is the alignment problem: it doesn't close automatically, and it must be</text>
+  <text x="340" y="340" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">actively maintained at effort that scales with capability.</text>
 </svg>

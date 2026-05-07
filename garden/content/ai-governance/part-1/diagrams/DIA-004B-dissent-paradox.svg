@@ -1,0 +1,72 @@
+<svg viewBox="0 0 860 405" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d5b-t d5b-d">
+  <title id="d5b-t">DIA-004B — The Dissent Paradox</title>
+  <desc id="d5b-d">Two-path flow diagram showing that safety dissent, which was expected to slow AI development as a self-correcting input, actually creates new well-capitalized frontier labs and increases aggregate capability — converting a self-correcting input into a self-amplifying one.</desc>
+
+  <defs>
+    <marker id="d5b-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#C94B2E"/>
+    </marker>
+    <marker id="d5b-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#9B9BA8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="340" fill="#FAFAF8" rx="8"/>
+
+  <!-- ── INPUT NODE ── -->
+  <rect x="20" y="120" width="165" height="60" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5" rx="6"/>
+  <text x="102" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#C94B2E">SAFETY CONCERN</text>
+  <text x="102" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#C94B2E">raised inside a lab</text>
+
+  <!-- Arrow: input → junction -->
+  <line x1="185" y1="150" x2="222" y2="150" stroke="#C94B2E" stroke-width="2" marker-end="url(#d5b-red)"/>
+
+  <!-- Junction dot -->
+  <circle cx="228" cy="150" r="5" fill="#C94B2E"/>
+
+  <!-- ── TOP BRANCH: expected (dashed gray, upward) ── -->
+  <line x1="228" y1="145" x2="228" y2="72" stroke="#9B9BA8" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="228" y1="72" x2="308" y2="72" stroke="#9B9BA8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#d5b-gray)"/>
+
+  <!-- "not what happens" label -->
+  <text x="473" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-style="italic" fill="#9B9BA8">— expected, does not happen —</text>
+
+  <!-- Top box: expected outcome -->
+  <rect x="313" y="38" width="330" height="68" fill="#F7F6F3" stroke="#9B9BA8" stroke-width="1.5" stroke-dasharray="6,3" rx="6"/>
+  <text x="478" y="59" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#9B9BA8">EXPECTED  ·  self-correcting</text>
+  <text x="478" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#9B9BA8">Safety concern → lab slows · self-correcting loop activates</text>
+  <text x="478" y="92" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#9B9BA8">Aggregate AI capability: ↓ reduced</text>
+
+  <!-- ── BOTTOM BRANCH: actual (solid red, downward) ── -->
+  <line x1="228" y1="155" x2="228" y2="228" stroke="#C94B2E" stroke-width="2"/>
+  <line x1="228" y1="228" x2="308" y2="228" stroke="#C94B2E" stroke-width="2" marker-end="url(#d5b-red)"/>
+
+  <!-- "what actually happens" label -->
+  <text x="478" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#C94B2E">— what actually happens —</text>
+
+  <!-- Bottom box: actual outcome -->
+  <rect x="313" y="224" width="330" height="82" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2" rx="6"/>
+  <text x="478" y="246" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#C94B2E">ACTUAL  ·  self-amplifying</text>
+  <text x="478" y="263" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#C94B2E">Safety concern → researcher departs → new lab founded</text>
+  <text x="478" y="279" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#C94B2E">→ new capital raised → aggregate capability: ↑ increased</text>
+  <text x="478" y="297" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">System converts a self-correcting input into a self-amplifying one.</text>
+
+  <!-- Arrow from bottom box to examples -->
+  <line x1="643" y1="265" x2="656" y2="265" stroke="#C94B2E" stroke-width="1.5" marker-end="url(#d5b-red)"/>
+
+  <!-- Examples column -->
+  <text x="660" y="230" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#C94B2E">Examples:</text>
+  <text x="660" y="248" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Anthropic (2021), ex-OpenAI safety team</text>
+  <text x="660" y="264" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">SSI / Sutskever (2024), $32B valuation</text>
+  <text x="660" y="280" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Thinking Machines / Murati (2024)</text>
+  <text x="660" y="296" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Jan Leike → Anthropic (2024)</text>
+
+  <!-- Caption -->
+  <text x="430" y="328" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-style="italic" fill="#9B9BA8">Every major safety departure from a frontier lab has created a new well-capitalized frontier lab, not a reduction in aggregate capability.</text>
+
+  <text x="430" y="348" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-004B — The Dissent Paradox: a safety concern raised inside a lab was expected to activate a stabilizing loop (top, dashed). What actually</text>
+  <text x="430" y="361" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">happens is the opposite: each departure produces a new well-capitalized frontier lab, converting a stabilizing input into a self-amplifying one.</text>
+  <text x="430" y="374" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">Ilya Sutskever → SSI ($32B valuation); Mira Murati → Thinking Machines; Jan Leike → Anthropic.</text>
+  <text x="430" y="387" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">The system converts internal criticism into new competitors.</text>
+</svg>
