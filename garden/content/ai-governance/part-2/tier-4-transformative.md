@@ -52,5 +52,5 @@ Civilizational-scale coordination requires three things to be true simultaneousl
 
 ---
 
-> [!warning] A note on realistic expectations
+> [!warning]- A note on realistic expectations
 > There is no single leverage point that makes this easy. The higher leverage points require coordination that has never happened at this scale. What this framework gives you is clarity about where pressure produces change. Enforceable Rules and Visibility are where individuals and institutions can create structural change in the next two to three years. The feedback loop between action and consequence is already running. The question is whether the balancing loops get strong enough before the fast loop reaches a threshold they can no longer affect.

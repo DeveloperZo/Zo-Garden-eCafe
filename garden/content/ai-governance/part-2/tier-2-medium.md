@@ -49,3 +49,5 @@ The capital loop (capability → investment → compute → capability) has very
 **How you encounter this:** In proposals for AI windfall taxes, compute levies, or profit-sharing mandates — and in the industry lobbying that reliably defeats them. The companies most vocal against these measures sit at the center of the capital loop and benefit most from its acceleration.
 
 **What changing it does — and doesn't:** Slowing the acceleration extends the time available for safety research and governance to keep pace with capability. It doesn't stop development, and it faces the most politically powerful opposition of any lever in this tier. The value isn't stopping the loop — it's buying time for everything else to work.
+
+---

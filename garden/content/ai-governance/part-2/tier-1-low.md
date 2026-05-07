@@ -49,3 +49,5 @@ Chip fabrication concentration, electricity grid capacity, data center permittin
 **How you encounter this:** In electricity rate cases, chip export control debates, and data center siting disputes — decided by utility commissioners and trade officials, not AI researchers.
 
 **What changing it does — and doesn't:** Infrastructure changes are slow and durable. Reshaping who controls chip manufacturing or grid access shifts the long-run dynamics of who can build what — not whether building happens. The electricity grid may turn out to be a more binding constraint on AI deployment than any regulation specifically designed for AI.
+
+---

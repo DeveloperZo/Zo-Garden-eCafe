@@ -23,6 +23,8 @@ This guide takes the twelve leverage points from [[../part-1/index|Part 1's]] st
 
 ![[04-reading-your-leverage]]
 
+![[06-working-from-inside]]
+
 ---
 
 ![[tier-1-low]]

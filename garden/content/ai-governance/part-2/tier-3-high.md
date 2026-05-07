@@ -49,3 +49,5 @@ The US AI Action Plan was developed with significant lab participation. Labs inc
 **How you encounter this:** When an AI safety standard is authored by the company being evaluated against it. When a government AI task force is composed primarily of industry representatives. When the same lab that builds a model also certifies it safe.
 
 **What changing it does — and doesn't:** Diversifying who writes rules changes whose interests the rules protect. It doesn't guarantee better outcomes. But it makes regulatory capture harder, and preserves the structural diversity that allows genuine self-correction. Regulatory comment submissions, academic participation in standards bodies, and civil society testimony in AI legislation hearings are all underused entry points.
+
+---

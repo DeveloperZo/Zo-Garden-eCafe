@@ -39,5 +39,7 @@ Across cases, the structural sequence is consistent:
 
 None of these transitions were fast. Tobacco took forty years from documented harm to the MSA. Aviation took thirty years from systematic accidents to a functioning reporting system. Nuclear coordination required US–Soviet agreement during the Cold War and still has significant gaps.
 
-> [!warning] The pace problem
+> [!warning]- The pace problem
 > AI capability is compressing the timeline available for the same structural transitions. The question isn't whether the playbook works — it does, across sufficiently different domains that the structural logic appears robust. The question is whether the sequenced steps can happen fast enough. Some of the windows are narrowing specifically because the fast loop (R1) is running much faster than the fast loops in any of these predecessor cases. The timing dimension is mapped in section 4.
+
+---

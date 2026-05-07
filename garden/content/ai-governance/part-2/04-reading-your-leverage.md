@@ -36,5 +36,7 @@ The most underused entry points:
 
 Changing the system's goals, dislodging its operating assumptions, and coordinating competing actors are not individual actions. They are outcomes of many actors working in the same direction over years. Individual contributions at this tier: funding interpretability research that makes AI risk legible and verifiable, publishing or amplifying work that shifts the operating assumptions of policymakers, building or participating in international frameworks, and consistently resisting framings that treat coordination as naive or premature. These are real contributions to conditions that haven't yet been created — and creating them is the work of the decade, not the quarter.
 
-> [!warning] On timing
+> [!warning]- On timing
 > Leverage points don't stay equally accessible over time. The legal loop is most accessible while courts are still setting precedent — before one appellate standard gets entrenched. The information loop is most accessible before opacity gets institutionalized in vendor contracts and regulatory carve-outs. The coordination window is most accessible before capability is far enough ahead of oversight that major actors have no face-saving path back. These windows are not closed. Some are narrowing. The tier cards that follow note where timing is particularly acute.
+
+---

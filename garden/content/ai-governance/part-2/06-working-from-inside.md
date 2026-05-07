@@ -4,7 +4,7 @@ tags: [ai, governance, systems-thinking]
 draft: false
 ---
 
-*Part 6 of 8*
+*Bridge — From analysis to action*
 
 *The previous five sections describe a system. This one changes the vantage point: every actor in it — user, worker, investor, regulator, researcher — is a node inside it, not an observer above it. That shift matters for what follows.*
 

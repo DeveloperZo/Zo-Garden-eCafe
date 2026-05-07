@@ -18,7 +18,11 @@ There are three positions most people occupy simultaneously.
 
 **As a voter and civic participant,** you're one of the inputs to the slow balancing loop (B) that determines whether oversight catches up to capability. Political conditions aren't natural facts — they're feedback signals from elections, public discourse, and where organized attention is directed. The EU AI Act exists because that attention was applied. The US federal equivalent doesn't because it hasn't been, not because the problem is structurally different. Your position in this loop is real, operates on a longer timeline than R1, and is the entry point for the highest-leverage structural changes — the ones that require legislative or judicial action.
 
-> [!note] Your professional position shifts your leverage tier
+> [!note]- Your professional position shifts your leverage tier
 > A software engineer at an AI lab can influence buffer sizes — the slack that determines whether pre-deployment review periods shrink under shipping pressure. A lawyer handling AI liability cases is directly working strength of the brakes. A labor organizer in a sector being automated is working on what the system is actually for. These aren't career recommendations — they're structural observations about where professional standing gives you access most people don't have. The section on reading your leverage maps this more specifically.
 
 None of these positions require that you view AI with alarm or enthusiasm. They're structural facts about where you sit, which is the starting point for choosing which levers to engage.
+
+Section 2 maps what different kinds of action actually move — and why most public AI safety activity operates at the weakest tier.
+
+---
