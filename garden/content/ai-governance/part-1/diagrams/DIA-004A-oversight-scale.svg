@@ -1,22 +1,22 @@
 <svg viewBox="0 0 860 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d5-t d5-d">
   <title id="d5-t">DIA-004A — Industry Capital vs. Oversight Budget, Same Scale</title>
-  <desc id="d5-d">Horizontal bar chart on a single scale of $1.4 trillion. Industry bars — hyperscaler capex $448B, committed infrastructure $1T, OpenAI valuation $852B — extend hundreds of pixels. The oversight rows show less than one pixel at this scale. A circle marks the oversight region and expanding connector lines lead to a zoomed inset panel showing UK AISI $84M, US CAISI $10M, and global AI fines ~$400K at their own proportional scale.</desc>
+  <desc id="d5-d">Horizontal bar chart on a single scale of $1.4 trillion. Industry bars — hyperscaler capex $448B, OpenAI commitments (8 year) $1.4T, OpenAI valuation $852B — extend hundreds of pixels. The oversight rows show less than one pixel at this scale. A circle marks the oversight region and expanding connector lines lead to a zoomed inset panel showing UK AISI $84M, US CAISI $10M, and global AI fines ~$400K at their own proportional scale.</desc>
   <defs>
     <style>
       :root {
         --bg: #FAFAF8; --bg-alt: #FFF8F7; --surface-a: #F0F3FA; --surface-b: #F5F7FD; --surface-c: #EEF2FA;
-        --text: #3A3A4A; --muted: #6B6B85; --muted2: #9B9BA8; --line: #E4E2DC;
+        --panel: #FFFFFF; --text-main: #1C1C2E; --text: #3A3A4A; --muted: #6B6B85; --muted2: #9B9BA8; --line: #E4E2DC;
         --red: #C94B2E; --red-soft: #FDE8E3; --blue: #3A5498; --blue-soft: #E3E8F5;
       }
       @media (prefers-color-scheme: dark) {
         :root {
           --bg: #1B1D23; --bg-alt: #241E22; --surface-a: #232A3A; --surface-b: #202A3D; --surface-c: #26324A;
-          --text: #D6DEEE; --muted: #C2C9D9; --muted2: #A8B3C7; --line: #404756;
+          --panel: #1C2029; --text-main: #E8ECF5; --text: #D6DEEE; --muted: #C2C9D9; --muted2: #A8B3C7; --line: #404756;
           --red: #FF8C73; --red-soft: #4A2A28; --blue: #8EACFF; --blue-soft: #2A3554;
         }
       }
       text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#FFF8F7"] { fill: var(--bg-alt); } [fill="#F0F3FA"] { fill: var(--surface-a); } [fill="#F5F7FD"] { fill: var(--surface-b); } [fill="#EEF2FA"] { fill: var(--surface-c); }
+      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#FFF8F7"] { fill: var(--bg-alt); } [fill="#F0F3FA"] { fill: var(--surface-a); } [fill="#F5F7FD"] { fill: var(--surface-b); } [fill="#EEF2FA"] { fill: var(--surface-c); } [fill="#FFFFFF"] { fill: var(--panel); } [fill="#1C1C2E"] { fill: var(--text-main); }
       [fill="#3A3A4A"] { fill: var(--text); } [fill="#6B6B85"] { fill: var(--muted); } [fill="#9B9BA8"] { fill: var(--muted2); }
       [stroke="#9B9BA8"] { stroke: var(--muted2); } [stroke="#E4E2DC"] { stroke: var(--line); }
       [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); }
@@ -27,8 +27,8 @@
   <rect width="860" height="468" fill="#FAFAF8" rx="8"/>
 
   <!-- ── Header ── -->
-  <text x="430" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#3A3A4A">Industry Capital vs. Oversight Budget — Same Scale</text>
-  <text x="430" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#6B6B85">All bars start at $0 · scale: $1.4T = full width · bars not visible = less than 1 pixel at this scale</text>
+  <text x="430" y="22" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#1C1C2E">Scale: Industry Capital vs. Oversight Capacity</text>
+  <text x="430" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6B85">Same dollar scale · all bars start at $0 · max bar = $1.4T</text>
 
   <!-- ── INDUSTRY section ── -->
   <text x="185" y="58" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#C94B2E" letter-spacing="1.5">INDUSTRY</text>
@@ -41,7 +41,7 @@
 
   <!-- Row 2: OpenAI commitments (8 yr) $1.4T → 660px -->
   <rect x="0"   y="103" width="860" height="36" fill="#FAFAF8"/>
-  <text x="178" y="121" text-anchor="end" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#3A3A4A">OpenAI commitments (8 yr)</text>
+  <text x="178" y="121" text-anchor="end" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#3A3A4A">OpenAI commitments (8-year)</text>
   <rect x="185" y="107" width="660" height="28" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5" rx="3"/>
   <text x="849" y="121" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#C94B2E">$1.4T</text>
 
@@ -101,52 +101,53 @@
   <!-- Connector lines — drawn before zoom panel so they sit behind it -->
   <!-- Left:  bottom-left of circle → top-left corner of zoom panel  -->
   <!-- Right: right side of circle  → top-right corner of zoom panel -->
-  <line x1="181" y1="297" x2="115" y2="360" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="5,3" opacity="0.6"/>
-  <line x1="260" y1="260" x2="745" y2="360" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="5,3" opacity="0.6"/>
+  <line x1="172" y1="286" x2="115" y2="360" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="5,3" opacity="0.6"/>
+  <line x1="258" y1="268" x2="745" y2="360" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="5,3" opacity="0.6"/>
 
   <!-- ── Zoom inset panel ── -->
   <!-- Scale: $100M = 560px, bars from x=185 to x=745 -->
-  <rect x="115" y="360" width="630" height="100" fill="#F5F7FD" stroke="#3A5498" stroke-width="1.5" rx="6"/>
+  <rect x="50" y="360" width="720" height="110" fill="#FFFFFF" stroke="#3A5498" stroke-width="1.5" rx="6"/>
+  <text x="122" y="372" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700" fill="#3A5498" letter-spacing="0.8">ZOOMED OVERSIGHT SCALE ($100M max)</text>
 
   <!-- UK $84M: 84 × 5.6 = 470px, end x=655 -->
-  <rect x="115" y="365" width="630" height="21" fill="#EEF2FA"/>
-  <text x="108" y="376" text-anchor="end" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#3A3A4A">UK AISI</text>
-  <rect x="185" y="368" width="470" height="15" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5" rx="3"/>
-  <text x="659" y="376" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3A5498">  $84M / yr</text>
+  <rect x="115" y="377" width="630" height="21" fill="#F5F7FD"/>
+  <text x="108" y="388" text-anchor="end" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#3A3A4A">UK AISI</text>
+  <rect x="185" y="380" width="470" height="15" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5" rx="3"/>
+  <text x="659" y="388" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3A5498">  $84M / yr</text>
 
   <!-- US $10M: 10 × 5.6 = 56px, end x=241 -->
-  <rect x="115" y="389" width="630" height="21" fill="#F5F7FD"/>
-  <text x="108" y="400" text-anchor="end" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#3A3A4A">US CAISI</text>
-  <rect x="185" y="392" width="56"  height="15" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5" rx="3"/>
-  <text x="245" y="400" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3A5498">  $10M</text>
+  <rect x="115" y="401" width="630" height="21" fill="#FFFFFF"/>
+  <text x="108" y="412" text-anchor="end" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#3A3A4A">US CAISI</text>
+  <rect x="185" y="404" width="56"  height="15" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5" rx="3"/>
+  <text x="245" y="412" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3A5498">  $10M</text>
 
   <!-- Fines $0.4M: 4px forced min -->
-  <rect x="115" y="413" width="630" height="21" fill="#EEF2FA"/>
-  <text x="108" y="424" text-anchor="end" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#3A3A4A">Global fines</text>
-  <rect x="185" y="416" width="4"   height="15" fill="#3A5498" rx="1"/>
-  <text x="194" y="424" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3A5498">~$400K</text>
-  <text x="252" y="424" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic" fill="#9B9BA8">(4px min · true width 0.02px at $100M scale)</text>
+  <rect x="115" y="425" width="630" height="21" fill="#F5F7FD"/>
+  <text x="108" y="436" text-anchor="end" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#3A3A4A">Global fines</text>
+  <rect x="185" y="428" width="4"   height="15" fill="#3A5498" rx="1"/>
+  <text x="194" y="436" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3A5498">~$400K</text>
+  <text x="252" y="436" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic" fill="#9B9BA8">(4px min · true width 0.02px at $100M scale)</text>
 
   <!-- Zoom axis -->
-  <line x1="185" y1="443" x2="745" y2="443" stroke="#9B9BA8" stroke-width="1"/>
+  <line x1="185" y1="449" x2="745" y2="449" stroke="#9B9BA8" stroke-width="1"/>
   <g font-family="system-ui,sans-serif" font-size="8.5" fill="#9B9BA8" text-anchor="middle">
-    <line x1="185" y1="439" x2="185" y2="447" stroke="#9B9BA8"/>
-    <text x="185" y="457">$0</text>
-    <line x1="325" y1="439" x2="325" y2="447" stroke="#9B9BA8"/>
-    <text x="325" y="457">$25M</text>
-    <line x1="465" y1="439" x2="465" y2="447" stroke="#9B9BA8"/>
-    <text x="465" y="457">$50M</text>
-    <line x1="605" y1="439" x2="605" y2="447" stroke="#9B9BA8"/>
-    <text x="605" y="457">$75M</text>
-    <line x1="745" y1="439" x2="745" y2="447" stroke="#9B9BA8"/>
-    <text x="745" y="457">$100M</text>
+    <line x1="185" y1="445" x2="185" y2="453" stroke="#9B9BA8"/>
+    <text x="185" y="464">$0</text>
+    <line x1="325" y1="445" x2="325" y2="453" stroke="#9B9BA8"/>
+    <text x="325" y="464">$25M</text>
+    <line x1="465" y1="445" x2="465" y2="453" stroke="#9B9BA8"/>
+    <text x="465" y="464">$50M</text>
+    <line x1="605" y1="445" x2="605" y2="453" stroke="#9B9BA8"/>
+    <text x="605" y="464">$75M</text>
+    <line x1="745" y1="445" x2="745" y2="453" stroke="#9B9BA8"/>
+    <text x="745" y="464">$100M</text>
   </g>
 
   <!-- ── Circle — drawn last, sits on top of main chart ── -->
   <!-- Encompasses all three oversight rows (y=207–299) -->
-  <circle cx="215" cy="253" r="46" fill="#E3E8F5" fill-opacity="0.18" stroke="#3A5498" stroke-width="1.5"/>
+  <circle cx="215" cy="253" r="46" fill="#E3E8F5" fill-opacity="0.25" stroke="#3A5498" stroke-width="1.75"/>
 
-  <text x="430" y="478" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-004A — Oversight Resources vs. Industry Scale (2025–2026): the US AISI budget was roughly equal to what Anthropic spends on compute</text>
-  <text x="430" y="491" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">for a small fellowship program, before most of its staff were cut in February 2025 and it was renamed CAISI. The EU AI Act's enforcement</text>
-  <text x="430" y="504" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">powers activate in August 2026, but only 8 of 27 member states had designated competent authorities by the required deadline.</text>
+  <rect x="24" y="467" width="812" height="39" rx="6" fill="#FFFFFF" opacity="0.68"/>
+  <text x="36" y="483" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-004A — On the same $1.4T axis, oversight resources are effectively invisible while industry deployment capital extends across hundreds of pixels.</text>
+  <text x="36" y="497" font-size="10.5" font-style="italic" fill="#6B6B85">The inset is required just to compare US CAISI ($10M), UK AISI ($84M), and cumulative global AI fines (~$400K) at human-readable width.</text>
 </svg>
