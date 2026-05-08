@@ -64,3 +64,5 @@ The WEF's 2025 Future of Jobs Report projects 92 million jobs displaced and 170 
 
 ![](/ai-governance/part-1/diagrams/DIA-006-distribution-problem.svg)
 
+*Part 7 turns to the less certain risk: not the workers displaced now, but what happens if the verification gap between capability and oversight isn't closed before it matters.*
+

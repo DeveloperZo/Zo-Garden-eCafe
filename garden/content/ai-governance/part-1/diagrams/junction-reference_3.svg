@@ -1,0 +1,115 @@
+<svg viewBox="0 0 820 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Junction style reference</title>
+  <desc id="desc">An off-center anchor connects via curved paths to four satellites. Squares hold factual or rule-based content (Structure, Argument). Circles hold subjective content (Voice, Visual). Small icon-bearing junction circles sit on each connector and remain circular regardless of what they connect, since they name operators not propositions.</desc>
+
+  <defs>
+    <radialGradient id="g-anchor" cx="38%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#F2F2F4"/>
+      <stop offset="100%" stop-color="#A8A8B0"/>
+    </radialGradient>
+    <linearGradient id="g1" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#5B3A8C"/>
+      <stop offset="100%" stop-color="#1F8B8B"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="15%" x2="100%" y2="85%">
+      <stop offset="0%" stop-color="#1F8B8B"/>
+      <stop offset="100%" stop-color="#5A8060"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="10%" x2="100%" y2="90%">
+      <stop offset="0%" stop-color="#D4A53B"/>
+      <stop offset="100%" stop-color="#D87738"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="100%" y1="10%" x2="0%" y2="90%">
+      <stop offset="0%" stop-color="#D87738"/>
+      <stop offset="100%" stop-color="#7A2E5C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- CONNECTORS: curved Q-paths, varied stroke widths, rounded caps -->
+  <!-- A → J1 → P1 (Structure, violet, square) -->
+  <path d="M 255 250 Q 295 215 322 207" stroke="#5B3A8C" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 358 195 Q 395 170 426 152" stroke="#5B3A8C" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- A → J2 → P2 (Voice, teal, circle) -->
+  <path d="M 270 285 Q 345 268 405 252" stroke="#1F8B8B" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 446 248 Q 500 240 547 235" stroke="#1F8B8B" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- A → J3 → P3 (Argument, amber, square) -->
+  <path d="M 267 322 Q 340 348 405 358" stroke="#7A8042" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 446 363 Q 495 385 538 405" stroke="#A8862C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- A → J4 → P4 (Visual, plum, circle) -->
+  <path d="M 218 358 Q 248 392 270 405" stroke="#7A2E5C" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 311 412 Q 332 425 354 425" stroke="#7A2E5C" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ANCHOR -->
+  <circle cx="200" cy="290" r="70" fill="url(#g-anchor)" stroke="#9090A0" stroke-width="1.5"/>
+  <text x="200" y="285" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#3A3A48" text-anchor="middle" letter-spacing="0.6">INFORMATION</text>
+  <text x="200" y="304" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#3A3A48" text-anchor="middle" letter-spacing="0.6">PRESENTATION</text>
+
+  <!-- JUNCTION CIRCLES (drawn after main connectors so they sit on top; junctions stay circles regardless of what they connect) -->
+  <!-- J1: AUDIT (between A and P1) — three lines icon -->
+  <circle cx="340" cy="201" r="20" fill="white" stroke="#5B3A8C" stroke-width="2.5" transform="rotate(2 340 201)"/>
+  <line x1="330" y1="195" x2="350" y2="195" stroke="#5B3A8C" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="330" y1="201" x2="350" y2="201" stroke="#5B3A8C" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="330" y1="207" x2="346" y2="207" stroke="#5B3A8C" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- J2: TUNE (between A and P2) — wave icon -->
+  <circle cx="425" cy="250" r="20" fill="white" stroke="#1F8B8B" stroke-width="2.5" transform="rotate(-1 425 250)"/>
+  <path d="M 414 250 Q 419 242 425 250 T 436 250" stroke="#1F8B8B" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- J3: WEIGH (between A and P3) — balance icon -->
+  <circle cx="425" cy="360" r="20" fill="white" stroke="#A8862C" stroke-width="2.5" transform="rotate(2 425 360)"/>
+  <line x1="415" y1="354" x2="435" y2="354" stroke="#A8862C" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="425" y1="352" x2="425" y2="368" stroke="#A8862C" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="419" y1="368" x2="431" y2="368" stroke="#A8862C" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- J4: RECOLOR (between A and P4) — three palette dots -->
+  <circle cx="290" cy="408" r="20" fill="white" stroke="#7A2E5C" stroke-width="2.5" transform="rotate(-2 290 408)"/>
+  <circle cx="283" cy="404" r="3.2" fill="#5B3A8C"/>
+  <circle cx="290" cy="412" r="3.2" fill="#1F8B8B"/>
+  <circle cx="297" cy="404" r="3.2" fill="#D4A53B"/>
+
+  <!-- SATELLITE NODES (drawn last, sit on top of connectors) -->
+
+  <!-- P1: STRUCTURE — square (factual register: rules, headers, references) -->
+  <rect x="426" y="71" width="128" height="128" rx="4" fill="url(#g1)"/>
+  <line x1="450" y1="118" x2="530" y2="118" stroke="white" stroke-width="1.4" opacity="0.7"/>
+  <text x="490" y="113" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="0.6">STRUCTURE</text>
+  <text x="490" y="138" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9.5" fill="white" text-anchor="middle" opacity="0.92">
+    <tspan x="490" dy="0">headers, references,</tspan>
+    <tspan x="490" dy="11">series handoff</tspan>
+  </text>
+
+  <!-- P2: VOICE — circle (subjective register: cadence, aesthetic) -->
+  <circle cx="615" cy="235" r="68" fill="url(#g2)"/>
+  <line x1="582" y1="219" x2="648" y2="219" stroke="white" stroke-width="1.4" opacity="0.7"/>
+  <text x="615" y="214" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="0.6">VOICE</text>
+  <text x="615" y="239" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9.5" fill="white" text-anchor="middle" opacity="0.92">
+    <tspan x="615" dy="0">cadence, abstraction,</tspan>
+    <tspan x="615" dy="11">embodied specificity</tspan>
+  </text>
+
+  <!-- P3: ARGUMENT — square (factual register: grounded mechanism, timeline, distribution) -->
+  <rect x="538" y="368" width="124" height="124" rx="4" fill="url(#g3)"/>
+  <line x1="566" y1="413" x2="634" y2="413" stroke="white" stroke-width="1.4" opacity="0.7"/>
+  <text x="600" y="408" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="0.6">ARGUMENT</text>
+  <text x="600" y="433" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9.5" fill="white" text-anchor="middle" opacity="0.92">
+    <tspan x="600" dy="0">grounded stakes,</tspan>
+    <tspan x="600" dy="11">no false dichotomies</tspan>
+  </text>
+
+  <!-- P4: VISUAL — circle (subjective register: aesthetic identity) -->
+  <circle cx="395" cy="450" r="65" fill="url(#g4)"/>
+  <line x1="362" y1="435" x2="428" y2="435" stroke="white" stroke-width="1.4" opacity="0.7"/>
+  <text x="395" y="430" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="0.6">VISUAL</text>
+  <text x="395" y="455" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9.5" fill="white" text-anchor="middle" opacity="0.92">
+    <tspan x="395" dy="0">junctions, palette,</tspan>
+    <tspan x="395" dy="11">mark quality</tspan>
+  </text>
+
+  <!-- Annotation strip -->
+  <text x="40" y="558" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" fill="#6B6B85" font-style="italic">Junction reference  ·  squares = facts/logic  ·  circles = opinions/subjective  ·  junctions stay circular (operators, not propositions)</text>
+  <text x="40" y="574" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" fill="#6B6B85" font-style="italic">curved Q-paths  ·  varied stroke widths  ·  asymmetric composition  ·  identity palette</text>
+  <text x="40" y="590" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9.5" fill="#9B9BA8">palette: violet #5B3A8C  ·  teal #1F8B8B  ·  sage #5A8060  ·  amber #D4A53B  ·  burnt orange #D87738  ·  plum #7A2E5C</text>
+</svg>

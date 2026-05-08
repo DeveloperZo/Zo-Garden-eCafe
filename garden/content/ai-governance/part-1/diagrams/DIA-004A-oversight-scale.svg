@@ -1,6 +1,28 @@
 <svg viewBox="0 0 860 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d5-t d5-d">
   <title id="d5-t">DIA-004A — Industry Capital vs. Oversight Budget, Same Scale</title>
   <desc id="d5-d">Horizontal bar chart on a single scale of $1.4 trillion. Industry bars — hyperscaler capex $448B, committed infrastructure $1T, OpenAI valuation $852B — extend hundreds of pixels. The oversight rows show less than one pixel at this scale. A circle marks the oversight region and expanding connector lines lead to a zoomed inset panel showing UK AISI $84M, US CAISI $10M, and global AI fines ~$400K at their own proportional scale.</desc>
+  <defs>
+    <style>
+      :root {
+        --bg: #FAFAF8; --bg-alt: #FFF8F7; --surface-a: #F0F3FA; --surface-b: #F5F7FD; --surface-c: #EEF2FA;
+        --text: #3A3A4A; --muted: #6B6B85; --muted2: #9B9BA8; --line: #E4E2DC;
+        --red: #C94B2E; --red-soft: #FDE8E3; --blue: #3A5498; --blue-soft: #E3E8F5;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23; --bg-alt: #241E22; --surface-a: #232A3A; --surface-b: #202A3D; --surface-c: #26324A;
+          --text: #D6DEEE; --muted: #C2C9D9; --muted2: #A8B3C7; --line: #404756;
+          --red: #FF8C73; --red-soft: #4A2A28; --blue: #8EACFF; --blue-soft: #2A3554;
+        }
+      }
+      text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#FFF8F7"] { fill: var(--bg-alt); } [fill="#F0F3FA"] { fill: var(--surface-a); } [fill="#F5F7FD"] { fill: var(--surface-b); } [fill="#EEF2FA"] { fill: var(--surface-c); }
+      [fill="#3A3A4A"] { fill: var(--text); } [fill="#6B6B85"] { fill: var(--muted); } [fill="#9B9BA8"] { fill: var(--muted2); }
+      [stroke="#9B9BA8"] { stroke: var(--muted2); } [stroke="#E4E2DC"] { stroke: var(--line); }
+      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); }
+      [fill="#3A5498"] { fill: var(--blue); } [stroke="#3A5498"] { stroke: var(--blue); } [fill="#E3E8F5"] { fill: var(--blue-soft); }
+    </style>
+  </defs>
 
   <rect width="860" height="468" fill="#FAFAF8" rx="8"/>
 

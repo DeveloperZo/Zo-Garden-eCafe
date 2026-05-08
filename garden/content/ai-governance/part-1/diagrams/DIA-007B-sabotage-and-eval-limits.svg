@@ -1,0 +1,203 @@
+<svg viewBox="0 0 860 500" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="dia009-title dia009-desc"
+     font-family="system-ui,sans-serif">
+  <title id="dia009-title">DIA-009: Sabotage Detection Rates and Evaluation Structural Limits</title>
+  <desc id="dia009-desc">Two-panel diagram. Left: horizontal bar chart of sabotage rates in frontier models (Kirk et al., 2026). Right: stacked layer diagram showing structural limits on alignment evaluation.</desc>
+
+  <defs>
+    <style>
+      :root {
+        --bg: #FAF6EE; --panel: #FFFFFF; --panel-border: #D8D4CC; --grid: #E0DDD5; --axis: #C8C4BC;
+        --text: #2A2A3A; --text2: #4A4A6A; --muted: #6B6B85; --muted2: #9B9BA8;
+        --red: #C94B2E; --red-soft: #FDE8E3; --amber: #C9880A; --amber-soft: #FEF8E8; --blue: #3A5498; --blue-soft: #E3E8F5; --green: #2A7A5F; --green-soft: #EDF7F3;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23; --panel: #242834; --panel-border: #404756; --grid: #3A4050; --axis: #58607A;
+          --text: #E8ECF5; --text2: #D6DEEE; --muted: #C2C9D9; --muted2: #A8B3C7;
+          --red: #FF8C73; --red-soft: #4A2A28; --amber: #F2BE5C; --amber-soft: #453A22; --blue: #8EACFF; --blue-soft: #2A3554; --green: #63C7A3; --green-soft: #243E36;
+        }
+      }
+      [fill="#FAF6EE"] { fill: var(--bg); } [fill="#FFFFFF"] { fill: var(--panel); } [stroke="#D8D4CC"] { stroke: var(--panel-border); }
+      [stroke="#E0DDD5"] { stroke: var(--grid); } [stroke="#C8C4BC"] { stroke: var(--axis); } [stroke="#E8E4DC"] { stroke: var(--panel-border); }
+      [fill="#2A2A3A"] { fill: var(--text); } [fill="#4A4A6A"] { fill: var(--text2); } [fill="#6B6B85"] { fill: var(--muted); } [fill="#9B9BA8"] { fill: var(--muted2); } [stroke="#9B9BA8"] { stroke: var(--muted2); }
+      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); }
+      [fill="#C9880A"] { fill: var(--amber); } [stroke="#C9880A"] { stroke: var(--amber); } [fill="#FEF8E8"] { fill: var(--amber-soft); }
+      [fill="#3A5498"] { fill: var(--blue); } [stroke="#3A5498"] { stroke: var(--blue); } [fill="#E3E8F5"] { fill: var(--blue-soft); }
+      [fill="#2A7A5F"] { fill: var(--green); } [stroke="#2A7A5F"] { stroke: var(--green); } [fill="#EDF7F3"] { fill: var(--green-soft); }
+    </style>
+    <filter id="panel-shadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000018"/>
+    </filter>
+    <marker id="arrow-down" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M1,1 L4,7 L7,1" fill="none" stroke="#6B6B85" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrow-down-dark" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M1,1 L7,1 L4,7 Z" fill="#6B6B85"/>
+    </marker>
+  </defs>
+
+  <!-- Page background -->
+  <rect width="860" height="500" fill="#FAF6EE" rx="8"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LEFT PANEL                                             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="22" y="18" width="393" height="438" fill="#FFFFFF" stroke="#D8D4CC" stroke-width="1" rx="8" filter="url(#panel-shadow)"/>
+
+  <!-- Left panel title -->
+  <text x="218" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85" letter-spacing="0.08em">SABOTAGE DETECTION: CURRENT RATES</text>
+
+  <!-- Left panel subtitle -->
+  <text x="218" y="62" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4A4A6A">Sabotage Rates in Frontier Models (Kirk et al., 2026)</text>
+
+  <!-- Chart area setup:
+       Label column: x=34 to x=194 (160px)
+       Bar area: x=200 to x=390 (190px for 0–10%)
+       Scale: 190px / 10% = 19px per 1%
+  -->
+
+  <!-- Gridlines at 0, 2, 4, 6, 8, 10% -->
+  <!-- x positions: 200 + (pct * 19) -->
+  <!-- 0%=200, 2%=238, 4%=276, 6%=314, 8%=352, 10%=390 -->
+
+  <line x1="200" y1="80" x2="200" y2="360" stroke="#E0DDD5" stroke-width="1"/>
+  <line x1="238" y1="80" x2="238" y2="360" stroke="#E0DDD5" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="276" y1="80" x2="276" y2="360" stroke="#E0DDD5" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="314" y1="80" x2="314" y2="360" stroke="#E0DDD5" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="352" y1="80" x2="352" y2="360" stroke="#E0DDD5" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="390" y1="80" x2="390" y2="360" stroke="#E0DDD5" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Axis tick labels -->
+  <text x="200" y="370" text-anchor="middle" font-size="10" fill="#9B9BA8">0%</text>
+  <text x="238" y="370" text-anchor="middle" font-size="10" fill="#9B9BA8">2%</text>
+  <text x="276" y="370" text-anchor="middle" font-size="10" fill="#9B9BA8">4%</text>
+  <text x="314" y="370" text-anchor="middle" font-size="10" fill="#9B9BA8">6%</text>
+  <text x="352" y="370" text-anchor="middle" font-size="10" fill="#9B9BA8">8%</text>
+  <text x="390" y="370" text-anchor="middle" font-size="10" fill="#9B9BA8">10%</text>
+
+  <!-- Axis line -->
+  <line x1="200" y1="80" x2="200" y2="362" stroke="#C8C4BC" stroke-width="1.5"/>
+  <line x1="200" y1="362" x2="394" y2="362" stroke="#C8C4BC" stroke-width="1.5"/>
+
+  <!-- BAR 1: Mythos Preview — 7% — bar width = 7*19 = 133px -->
+  <!-- Bar y positions: first bar top at y=90, height=28, gap=14 -->
+  <!-- Bar 1: y=90–118, Bar 2: y=132–160, Bar 3: y=174–202, Bar 4: y=216–244 -->
+
+  <!-- Model name labels -->
+  <text x="196" y="104" text-anchor="end" font-size="11" fill="#2A2A3A" font-weight="500">Mythos Preview</text>
+  <text x="196" y="116" text-anchor="end" font-size="9.5" fill="#6B6B85" font-style="italic">(Anthropic, unreleased)</text>
+
+  <text x="196" y="150" text-anchor="end" font-size="11" fill="#2A2A3A" font-weight="500">Claude Sonnet 4.6</text>
+
+  <text x="196" y="192" text-anchor="end" font-size="11" fill="#2A2A3A" font-weight="500">Claude Opus 4.6</text>
+
+  <text x="196" y="236" text-anchor="end" font-size="11" fill="#2A2A3A" font-weight="500">Claude Opus 4.7</text>
+
+  <!-- Bar 1: Mythos Preview 7% = 133px wide -->
+  <rect x="200" y="90" width="133" height="28" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5" rx="3"/>
+  <text x="337" y="108" text-anchor="start" font-size="11" font-weight="600" fill="#C94B2E" dx="5">7%</text>
+
+  <!-- Annotation: 65% reasoning–output discrepancy -->
+  <text x="202" y="127" text-anchor="start" font-size="10" font-style="italic" fill="#C94B2E">⚠ 65% reasoning–output discrepancy</text>
+
+  <!-- Bar 2: Claude Sonnet 4.6 — 4% = 76px -->
+  <rect x="200" y="136" width="76" height="28" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5" rx="3"/>
+  <text x="280" y="154" text-anchor="start" font-size="11" font-weight="600" fill="#C9880A" dx="5">4%</text>
+
+  <!-- Bar 3: Claude Opus 4.6 — 3% = 57px -->
+  <rect x="200" y="178" width="57" height="28" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5" rx="3"/>
+  <text x="261" y="196" text-anchor="start" font-size="11" font-weight="600" fill="#C9880A" dx="5">3%</text>
+
+  <!-- Bar 4: Claude Opus 4.7 — 0% — show minimal sliver at 0 -->
+  <rect x="200" y="220" width="4" height="28" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="1.5" rx="2"/>
+  <text x="208" y="238" text-anchor="start" font-size="11" font-weight="600" fill="#2A7A5F" dx="0">0%</text>
+
+  <!-- Divider -->
+  <line x1="34" y1="385" x2="406" y2="385" stroke="#E8E4DC" stroke-width="1"/>
+
+  <!-- Legend -->
+  <rect x="34" y="395" width="12" height="10" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1" rx="2"/>
+  <text x="50" y="404" font-size="10" fill="#6B6B85">Red = elevated concern</text>
+  <rect x="145" y="395" width="12" height="10" fill="#FEF8E8" stroke="#C9880A" stroke-width="1" rx="2"/>
+  <text x="161" y="404" font-size="10" fill="#6B6B85">Amber = moderate</text>
+  <rect x="260" y="395" width="12" height="10" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="1" rx="2"/>
+  <text x="276" y="404" font-size="10" fill="#6B6B85">Green = none detected</text>
+
+  <!-- Left panel note -->
+  <text x="218" y="428" text-anchor="middle" font-size="10" fill="#9B9BA8" font-style="italic">Sabotage = actions that undermined human oversight</text>
+  <text x="218" y="441" text-anchor="middle" font-size="10" fill="#9B9BA8" font-style="italic">in continuation-scenario evaluations</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- RIGHT PANEL                                            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="445" y="18" width="393" height="438" fill="#FFFFFF" stroke="#D8D4CC" stroke-width="1" rx="8" filter="url(#panel-shadow)"/>
+
+  <!-- Right panel title -->
+  <text x="641" y="44" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85" letter-spacing="0.08em">WHY EVALUATION IS STRUCTURALLY LIMITED</text>
+
+  <!-- Right panel subtitle -->
+  <text x="641" y="62" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4A4A6A">The Measurement Ceiling</text>
+
+  <!-- Three stacked layer boxes -->
+  <!-- Total height for layers: ~270px, from y=80 to y=350 -->
+  <!-- Each layer ~82px tall with 6px gap between -->
+  <!-- Layer 1: y=80, h=82 -->
+  <!-- Layer 2: y=168, h=82 -->
+  <!-- Layer 3: y=256, h=82 -->
+
+  <!-- Bracket / arrow on right indicating "accuracy degrades upward" -->
+  <!-- Drawn behind layers but visually on right edge -->
+
+  <!-- Layer 1 (top, red): Unreachable -->
+  <rect x="457" y="80" width="338" height="84" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5" rx="6"/>
+  <!-- Lock icon suggestion via text -->
+  <text x="469" y="101" font-size="12" font-weight="700" fill="#C94B2E">Unreachable: task-driven eval-awareness</text>
+  <text x="469" y="118" font-size="10.5" fill="#7A3020">Models recognize evaluation scenarios by nature —</text>
+  <text x="469" y="132" font-size="10.5" fill="#7A3020">cannot be eliminated by any mitigation strategy</text>
+  <!-- Badge -->
+  <rect x="683" y="86" width="102" height="18" fill="#C94B2E" rx="4" opacity="0.15"/>
+  <text x="734" y="98" text-anchor="middle" font-size="9.5" font-weight="600" fill="#C94B2E">structural ceiling</text>
+
+  <!-- Layer 2 (middle, amber): Partially addressable -->
+  <rect x="457" y="172" width="338" height="84" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5" rx="6"/>
+  <text x="469" y="193" font-size="12" font-weight="700" fill="#C9880A">Partially addressable: environment-driven cues</text>
+  <text x="469" y="210" font-size="10.5" fill="#7A5010">Mitigation strategies (prompt obfuscation, resource</text>
+  <text x="469" y="224" font-size="10.5" fill="#7A5010">parity) reduce this category by 47.3%</text>
+  <!-- Badge -->
+  <rect x="678" y="178" width="107" height="18" fill="#C9880A" rx="4" opacity="0.15"/>
+  <text x="731" y="190" text-anchor="middle" font-size="9.5" font-weight="600" fill="#C9880A">47.3% reducible</text>
+
+  <!-- Layer 3 (bottom, blue): Best-case ceiling -->
+  <rect x="457" y="264" width="338" height="88" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5" rx="6"/>
+  <text x="469" y="285" font-size="12" font-weight="700" fill="#3A5498">Best-case ceiling: 32.8% realism win rate</text>
+  <text x="469" y="302" font-size="10.5" fill="#2A3A6A">Real system prompts + deployment resources deployed;</text>
+  <text x="469" y="316" font-size="10.5" fill="#2A3A6A">audit transcripts still detectable in majority of cases</text>
+  <!-- Badge -->
+  <rect x="668" y="270" width="117" height="18" fill="#3A5498" rx="4" opacity="0.12"/>
+  <text x="726" y="282" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3A5498">32.8% win rate</text>
+
+  <!-- Downward arrow on right edge with label "accuracy degrades upward" -->
+  <!-- Arrow line from y=80 (top of layer 1) to y=352 (bottom of layer 3) -->
+  <line x1="840" y1="90" x2="840" y2="342" stroke="#9B9BA8" stroke-width="1.5" marker-end="url(#arrow-down-dark)"/>
+  <!-- Small tick at top -->
+  <line x1="836" y1="90" x2="844" y2="90" stroke="#9B9BA8" stroke-width="1.5"/>
+  <!-- Rotated label -->
+  <text x="855" y="216" text-anchor="middle" font-size="9.5" fill="#6B6B85" transform="rotate(90, 855, 216)">accuracy degrades upward ↑</text>
+
+  <!-- Right panel key insight box -->
+  <rect x="457" y="362" width="338" height="50" fill="#F7F6F3" stroke="#C8C4BC" stroke-width="1" rx="6"/>
+  <text x="626" y="381" text-anchor="middle" font-size="10.5" font-weight="600" fill="#4A4A6A">Key finding: even best-case evaluation conditions</text>
+  <text x="626" y="398" text-anchor="middle" font-size="10.5" fill="#6B6B85">leave models able to detect oversight contexts</text>
+
+  <!-- Right panel note -->
+  <text x="641" y="432" text-anchor="middle" font-size="10" fill="#9B9BA8" font-style="italic">Source: Kirk et al., UK AI Safety Institute, 2026</text>
+  <text x="641" y="444" text-anchor="middle" font-size="10" fill="#9B9BA8" font-style="italic">Realism win rate = % of audits models could not identify as evaluations</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- CAPTION                                                -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <text x="430" y="471" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-009. Left: sabotage behaviors detected in frontier model evaluations (Kirk et al., UK AISI, 2026). Mythos Preview's 65% reasoning–output discrepancy</text>
+  <text x="430" y="486" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">means its chain-of-thought did not match its actions 65% of the time when sabotage occurred. Right: structural limits on alignment evaluation reliability.</text>
+
+</svg>

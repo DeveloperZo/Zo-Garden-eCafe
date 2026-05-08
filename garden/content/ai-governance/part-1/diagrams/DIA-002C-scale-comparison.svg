@@ -3,14 +3,65 @@
   <desc id="d3-d">Mirrored bar chart on a shared $1.4T scale. Left side (red): hyperscaler capex $448B and OpenAI commitments $1.4T. Right side (blue): OpenAI revenue $25B and global AI fines $400K — both too small to appear at this scale. A circle marks the right-side region; expanding connector lines lead to a zoom inset panel showing both amounts at a $30B scale.</desc>
 
   <defs>
-    <style>text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }</style>
+    <style>
+      :root {
+        --bg: #FAFAF8;
+        --surface-a: #FAFAFA;
+        --surface-b: #FFFFFF;
+        --surface-blue: #F5F7FD;
+        --surface-blue-alt: #EEF2FA;
+        --text: #1C1C2E;
+        --text-strong: #3A3A4A;
+        --muted: #6B6B85;
+        --muted-2: #9B9BA8;
+        --red: #C94B2E;
+        --red-soft: #FDE8E3;
+        --blue: #3A5498;
+        --blue-soft: #E3E8F5;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23;
+          --surface-a: #21252F;
+          --surface-b: #1C2029;
+          --surface-blue: #202A3D;
+          --surface-blue-alt: #26324A;
+          --text: #E8ECF5;
+          --text-strong: #D6DEEE;
+          --muted: #C2C9D9;
+          --muted-2: #A8B3C7;
+          --red: #FF8C73;
+          --red-soft: #4A2A28;
+          --blue: #8EACFF;
+          --blue-soft: #2A3554;
+        }
+      }
+      text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+      [fill="#FAFAF8"] { fill: var(--bg); }
+      [fill="#FAFAFA"] { fill: var(--surface-a); }
+      [fill="#FFFFFF"] { fill: var(--surface-b); }
+      [fill="#F5F7FD"] { fill: var(--surface-blue); }
+      [fill="#EEF2FA"] { fill: var(--surface-blue-alt); }
+      [fill="#1C1C2E"] { fill: var(--text); }
+      [stroke="#1C1C2E"] { stroke: var(--text); }
+      [fill="#3A3A4A"] { fill: var(--text-strong); }
+      [fill="#6B6B85"] { fill: var(--muted); }
+      [fill="#9B9BA8"] { fill: var(--muted-2); }
+      [stroke="#9B9BA8"] { stroke: var(--muted-2); }
+      [fill="#C94B2E"] { fill: var(--red); }
+      [stroke="#C94B2E"] { stroke: var(--red); }
+      [fill="#FDE8E3"] { fill: var(--red-soft); }
+      [fill="#3A5498"] { fill: var(--blue); }
+      [stroke="#3A5498"] { stroke: var(--blue); }
+      [fill="#E3E8F5"] { fill: var(--blue-soft); }
+    </style>
   </defs>
 
-  <rect width="900" height="456" fill="#FAFAF8" rx="8"/>
+  <rect width="900" height="530" fill="#FAFAF8" rx="8"/>
 
   <!-- ── Title ── -->
   <text x="450" y="22" font-size="13" font-weight="800" fill="#1C1C2E" text-anchor="middle">Scale: Investment (left) vs. Accountability / Revenue (right)</text>
-  <text x="450" y="38" font-size="9.5" fill="#6B6B85" text-anchor="middle">Same dollar scale both directions · $0 at centre · max bar = $1.4T</text>
+  <text x="450" y="38" font-size="9.5" fill="#6B6B85" text-anchor="middle">Same dollar scale both directions · $0 at center · max bar = $1.4T</text>
 
   <!-- Centre axis -->
   <line x1="450" y1="48" x2="450" y2="242" stroke="#1C1C2E" stroke-width="2"/>
@@ -36,16 +87,16 @@
 
   <!-- ── ROW 3 RIGHT · OpenAI revenue · ~$25B ── -->
   <!-- bar_px = 25/1400 × 250 = 4.5 → 8px forced min -->
-  <text x="682" y="174" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="start" dominant-baseline="middle">OpenAI revenue (ARR)</text>
-  <rect x="450" y="157" width="8" height="34" rx="2" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5"/>
+  <text x="648" y="174" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="start" dominant-baseline="middle">OpenAI revenue (ARR)</text>
+  <rect x="450" y="157" width="8" height="34" rx="2" fill="#FFFFFF" stroke="#3A5498" stroke-width="1.5"/>
   <text x="463" y="174" font-size="10.5" font-weight="700" fill="#3A5498" text-anchor="start" dominant-baseline="middle">~$25B</text>
-  <text x="510" y="174" font-size="9.5" fill="#9B9BA8" font-style="italic" dominant-baseline="middle">— less than 1px at this scale</text>
+  <text x="498" y="174" font-size="9.5" fill="#9B9BA8" font-style="italic" dominant-baseline="middle">— less than 1px at this scale</text>
 
   <!-- ── ROW 4 RIGHT · Global AI fines · ~$400K ── -->
-  <text x="682" y="222" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="start" dominant-baseline="middle">Global AI fines to date</text>
+  <text x="648" y="222" font-size="11" font-weight="600" fill="#1C1C2E" text-anchor="start" dominant-baseline="middle">Global AI fines to date</text>
   <rect x="450" y="205" width="5" height="34" rx="2" fill="#3A5498" stroke="#3A5498" stroke-width="1"/>
   <text x="460" y="222" font-size="10.5" font-weight="700" fill="#3A5498" text-anchor="start" dominant-baseline="middle">~$400K</text>
-  <text x="514" y="222" font-size="9.5" fill="#9B9BA8" font-style="italic" dominant-baseline="middle">— less than 1px at this scale</text>
+  <text x="502" y="222" font-size="9.5" fill="#9B9BA8" font-style="italic" dominant-baseline="middle">— less than 1px at this scale</text>
 
   <!-- ── Axis ── -->
   <line x1="200" y1="252" x2="450" y2="252" stroke="#C94B2E" stroke-width="1.5" opacity="0.45"/>
@@ -72,21 +123,21 @@
   <!-- Connector lines — drawn before zoom panel -->
   <!-- Left:  bottom-left of circle → top-left corner of zoom panel  -->
   <!-- Right: bottom-right of circle → top-right corner of zoom panel -->
-  <line x1="428" y1="218" x2="135" y2="358" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="5,3" opacity="0.6"/>
-  <line x1="512" y1="220" x2="765" y2="358" stroke="#9B9BA8" stroke-width="1" stroke-dasharray="5,3" opacity="0.6"/>
+  <line x1="428" y1="218" x2="135" y2="358" stroke="#9B9BA8" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.65"/>
+  <line x1="512" y1="220" x2="765" y2="358" stroke="#9B9BA8" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.65"/>
 
   <!-- ── Zoom inset panel ── -->
   <!-- Scale: $30B = 580px · bars from x=185 to x=765 -->
-  <rect x="135" y="358" width="630" height="88" fill="#F5F7FD" stroke="#3A5498" stroke-width="1.5" rx="6"/>
+  <rect x="105" y="358" width="675" height="100" fill="#FFFFFF" stroke="#3A5498" stroke-width="1.5" rx="6"/>
 
   <!-- Revenue $25B: 25/30 × 580 = 483px, end x=668 -->
-  <rect x="135" y="363" width="630" height="21" fill="#EEF2FA"/>
+  <rect x="135" y="363" width="630" height="21" fill="#FAFAFA"/>
   <text x="178" y="374" text-anchor="end" dominant-baseline="middle" font-size="9.5" font-weight="600" fill="#3A3A4A">Revenue (ARR)</text>
   <rect x="185" y="366" width="483" height="15" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5" rx="3"/>
   <text x="672" y="374" dominant-baseline="middle" font-size="9.5" font-weight="700" fill="#3A5498">  ~$25B</text>
 
   <!-- Fines $400K: still not visible even at $30B scale → 5px forced min -->
-  <rect x="135" y="387" width="630" height="21" fill="#F5F7FD"/>
+  <rect x="135" y="387" width="630" height="21" fill="#FFFFFF"/>
   <text x="178" y="398" text-anchor="end" dominant-baseline="middle" font-size="9.5" font-weight="600" fill="#3A3A4A">Global fines</text>
   <rect x="185" y="390" width="5"   height="15" fill="#3A5498" rx="1"/>
   <text x="194" y="398" dominant-baseline="middle" font-size="9.5" font-weight="700" fill="#3A5498">~$400K</text>
@@ -103,11 +154,10 @@
 
   <!-- ── Circle — drawn last, on top of main chart ── -->
   <!-- Encompasses both right-side near-invisible rows (y=152–244) -->
-  <circle cx="470" cy="196" r="48" fill="#E3E8F5" fill-opacity="0.18" stroke="#3A5498" stroke-width="1.5"/>
+  <circle cx="470" cy="196" r="48" fill="#E3E8F5" fill-opacity="0.25" stroke="#3A5498" stroke-width="1.75"/>
 
-  <text x="450" y="470" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-002C — Mirrored scale from $0 at center: commitments and hyperscaler capex extend left;</text>
-  <text x="450" y="484" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">realized revenue and cumulative global AI fines extend right on the same dollar axis. Revenue is a thin</text>
-  <text x="450" y="498" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">bar; fines are labeled but not drawn to width at this range. The IMF's April 2026 Global Financial</text>
-  <text x="450" y="512" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">Stability Report flagged "circular financing within the AI ecosystem" as an emerging systemic risk —</text>
-  <text x="450" y="526" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">the first time a major multilateral institution formally named the loop structure as a financial concern.</text>
+  <rect x="28" y="458" width="844" height="66" rx="6" fill="#FFFFFF" opacity="0.68"/>
+  <text x="40" y="476" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-002C — Mirrored scale from $0 at center: commitments and hyperscaler capex extend left, while realized revenue and cumulative global AI fines extend right on the same axis.</text>
+  <text x="40" y="490" font-size="10.5" font-style="italic" fill="#6B6B85">Revenue is a thin bar; fines are labeled but not drawn to width at this range. IMF April 2026: "circular financing within the AI ecosystem" was flagged as an emerging systemic risk.</text>
+  <text x="40" y="504" font-size="10.5" font-style="italic" fill="#6B6B85">That was the first time a major multilateral institution formally named the loop structure as a financial concern.</text>
 </svg>

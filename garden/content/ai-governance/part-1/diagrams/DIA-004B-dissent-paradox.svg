@@ -3,6 +3,21 @@
   <desc id="d5b-d">Two-path flow diagram showing that safety dissent, which was expected to slow AI development as a self-correcting input, actually creates new well-capitalized frontier labs and increases aggregate capability — converting a self-correcting input into a self-amplifying one.</desc>
 
   <defs>
+    <style>
+      :root {
+        --bg: #FAFAF8; --panel: #FFFFFF; --muted: #6B6B85; --muted2: #9B9BA8;
+        --red: #C94B2E; --red-soft: #FDE8E3; --gray-soft: #F7F6F3;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23; --panel: #242834; --muted: #C2C9D9; --muted2: #A8B3C7;
+          --red: #FF8C73; --red-soft: #4A2A28; --gray-soft: #2A2F3A;
+        }
+      }
+      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#FFFFFF"] { fill: var(--panel); }
+      [fill="#6B6B85"] { fill: var(--muted); } [fill="#9B9BA8"] { fill: var(--muted2); } [stroke="#9B9BA8"] { stroke: var(--muted2); }
+      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); } [fill="#F7F6F3"] { fill: var(--gray-soft); }
+    </style>
     <marker id="d5b-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0,8 3,0 6" fill="#C94B2E"/>
     </marker>

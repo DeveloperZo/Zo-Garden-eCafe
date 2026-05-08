@@ -8,7 +8,7 @@ draft: false
 
 *Every functioning system needs a stabilizing loop. For AI, that was supposed to be government oversight and independent safety research. Here is what that loop is actually resourced with, and what has happened to it.*
 
-The regulatory bodies with actual enforcement power (electricity grid operators, utility commissions, federal courts) were not designed for AI and have no AI mandate. The bodies that do have an AI mandate have no enforcement power. No actor with authority over both sides has stepped in to close that gap.
+The regulatory bodies with actual enforcement power (electricity grid operators, utility commissions, federal courts) were not designed for AI and have no AI mandate. The bodies that do have an AI mandate have no enforcement power. No actor with authority over both sides has stepped in to close that gap. Five government AI safety institutes (UK, US, EU, Japan, and Korea) now share a common evaluation platform for independent model testing.<sup><a href="index#part1-ref-37" id="part1-fnref-37">37</a></sup> They can run evaluations. They cannot compel access to unreleased models, cannot delay deployment based on their findings, and their results carry no binding enforcement authority. The infrastructure of oversight exists in rudimentary form. The structural power to act on it does not.
 
 ![](/ai-governance/part-1/diagrams/DIA-004A-oversight-scale.svg)
 

@@ -44,4 +44,3 @@ Now map that framework to where AI governance actually sits today.
 > Leverage points don't stay equally accessible over time. The legal loop is most accessible while courts are still setting precedent. The information loop is most accessible before opacity gets institutionalized. The coordination window is most accessible before capability is far enough ahead of oversight that major actors have no graceful path back. None of those windows are closed. Some are narrowing.
 
 That's the map.
-

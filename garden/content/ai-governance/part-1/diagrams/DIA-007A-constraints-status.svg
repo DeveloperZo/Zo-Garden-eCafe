@@ -1,6 +1,27 @@
 <svg viewBox="0 0 860 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d8-t d8-d">
   <title id="d8-t">DIA-007 — Binding Constraints Status Map</title>
   <desc id="d8-d">Six structural constraints on AI governance, color-coded by current status as of May 2026: amber = bypassed or weakening, blue = forming but incomplete, red = permanently outside governance reach, gray = structurally absent.</desc>
+  <defs>
+    <style>
+      :root {
+        --bg: #FAF6EE; --text: #3A3A4A; --muted: #6B6B85;
+        --red: #C94B2E; --red-soft: #FDE8E3; --amber: #C9880A; --amber-soft: #FEF8E8;
+        --blue: #3A5498; --blue-soft: #E3E8F5; --gray-soft: #F7F6F3;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23; --text: #D6DEEE; --muted: #C2C9D9;
+          --red: #FF8C73; --red-soft: #4A2A28; --amber: #F2BE5C; --amber-soft: #453A22;
+          --blue: #8EACFF; --blue-soft: #2A3554; --gray-soft: #2A2F3A;
+        }
+      }
+      [fill="#FAF6EE"] { fill: var(--bg); } [fill="#3A3A4A"] { fill: var(--text); } [fill="#6B6B85"] { fill: var(--muted); } [stroke="#6B6B85"] { stroke: var(--muted); }
+      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); }
+      [fill="#C9880A"] { fill: var(--amber); } [stroke="#C9880A"] { stroke: var(--amber); } [fill="#FEF8E8"] { fill: var(--amber-soft); }
+      [fill="#3A5498"] { fill: var(--blue); } [stroke="#3A5498"] { stroke: var(--blue); } [fill="#E3E8F5"] { fill: var(--blue-soft); }
+      [fill="#F7F6F3"] { fill: var(--gray-soft); }
+    </style>
+  </defs>
 
   <rect width="860" height="510" fill="#FAF6EE" rx="8"/>
 

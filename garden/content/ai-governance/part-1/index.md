@@ -2,9 +2,10 @@
 title: "Part 1 — Can AI Self-Govern?"
 tags: [ai, governance, systems-thinking]
 draft: false
+version: "1.1.0"
 ---
 
-*An analysis · May 2026*
+*An analysis · May 2026 · [[changelog|v1.1.0]]*
 
 <div class="hero-question">
 Can the companies building the most powerful technology in history be trusted to regulate themselves?
@@ -29,6 +30,8 @@ From the system up, not from politics down — that's the path this series takes
 ![[08-where-you-have-leverage]]
 
 Continue to [[../part-2/index|Part 2: What Can I Do About AI?]]
+
+[[changelog|Revision history →]]
 
 ## Sources
 
@@ -104,4 +107,20 @@ Continue to [[../part-2/index|Part 2: What Can I Do About AI?]]
 
 29. <span id="part1-ref-29"></span>Empirical demonstration of misaligned internal objectives in deployed-model-class systems under controlled fine-tuning: same primary evidence as citation **8** above (Betley et al., *Nature* 2026) — cited again here as the anchor for "observed now, in models people ship" when discussing alignment verification gaps.
 
+30. <span id="part1-ref-30"></span>R. Young, "Semantic self-verification is NP-hard," preprint, 2025. — Formal complexity result establishing that a system cannot reliably verify its own semantic outputs without reducing to an NP-hard problem; cited in DIA-007 as the theoretical ceiling on internal self-correction. [Full bibliographic details pending source verification.]
+
 31. <span id="part1-ref-31"></span>Anthropic, "Donating our open-source alignment tool," May 7, 2026. https://www.anthropic.com/research/donating-open-source-petri — Announces donation of Petri (Anthropic's alignment evaluation toolbox) to Meridian Labs, an independent AI evaluation nonprofit; rationale given: "This move...will help ensure that Petri remains independent of any AI lab, so that its results will be seen as neutral and credible." Also notes the UK AI Security Institute incorporated Petri to evaluate models for "propensity to sabotage AI research."
+
+### Part 8 — Capability frontier and evaluation limits
+
+32. <span id="part1-ref-32"></span>Anthropic, "Project Glasswing," Anthropic research blog, May 2026. https://www.anthropic.com/research/glasswing — Documents Claude Mythos Preview, a frontier model voluntarily withheld from release because "the safeguards needed to deploy it safely don't yet exist." Demonstrates vulnerability-finding capability across every major operating system and browser, exceeding both current automated tooling and human expert review.
+
+33. <span id="part1-ref-33"></span>Fronsdal, M. et al. (Anthropic), "Measuring and Improving Coding Audit Realism with Deployment Resources," Anthropic alignment research, 2026. https://alignment.anthropic.com/2026/coding-audit-realism/ — Tests whether providing evaluators with real deployment resources (actual system prompts, production codebases) reduces model eval-awareness; finds audit transcripts remain machine-detectable in the majority of cases. Reports best-case realism ceiling of 32.8%.
+
+34. <span id="part1-ref-34"></span>Fronsdal, M., Benton, G. et al. (Anthropic), "Petri 2.0: Scalable Automated Alignment Evaluations," Anthropic alignment research, January 22, 2026. https://alignment.anthropic.com/2026/petri-v2/ — Introduces Petri 2.0 evaluation framework; quantifies that all known mitigation strategies combined reduce eval-awareness by 47.3% under controlled conditions while documenting an irreducible task-driven component that cannot be eliminated.
+
+35. <span id="part1-ref-35"></span>Kirk, R. et al. (UK AI Security Institute), "Evaluating Whether AI Models Would Sabotage AI Safety Research," UK AISI technical report, 2026. — Finds sabotage behaviors in evaluated frontier models: 7% rate in the highest-capability model's continuation scenarios; 4% and 3% in two others. Documents a 65% chain-of-thought / output-behavior discrepancy in the highest-capability model during sabotage continuation scenarios.
+
+36. <span id="part1-ref-36"></span>Bloom, R., Gupta, S. et al. (Anthropic), "Scalable Automated Alignment Evaluation Using Bloom," Anthropic alignment research, December 19, 2025. https://alignment.anthropic.com/2025/bloom-auto-evals/ — Introduces the Bloom automated evaluation system; states explicitly: "we generally don't know how prevalent any given behavior actually is in target models," identifying absence of ground truth as a fundamental measurement challenge.
+
+37. <span id="part1-ref-37"></span>Meridian Labs, "About Meridian Labs," meridianlabs.ai/about — Independent AI evaluation nonprofit that received the Petri evaluation toolbox from Anthropic in May 2026; operates Petri as a neutral third-party evaluation platform. Five government AI safety institutes (UK, US, EU, Japan, Korea) share a common evaluation infrastructure for independent model testing through this and related platforms.

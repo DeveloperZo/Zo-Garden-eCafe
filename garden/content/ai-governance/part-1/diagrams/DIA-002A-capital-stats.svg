@@ -1,6 +1,43 @@
 <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-capital-stats-title viz-capital-stats-desc">
   <title id="viz-capital-stats-title">AI capital loop key figures</title>
   <desc id="viz-capital-stats-desc">Four cards summarize major financial figures: OpenAI infrastructure commitments, OpenAI annualized revenue run-rate, combined hyperscaler capex, and the commitments-to-revenue ratio.</desc>
+  <defs>
+    <style>
+      :root {
+        --bg: #FAFAF8;
+        --card: #FFFFFF;
+        --border: #E4E2DC;
+        --muted: #6B6B85;
+        --red: #C94B2E;
+        --amber: #C9880A;
+        --blue: #3A5498;
+        --green: #2A7A5F;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23;
+          --card: #242834;
+          --border: #404756;
+          --muted: #C2C9D9;
+          --red: #FF8C73;
+          --amber: #F2BE5C;
+          --blue: #8EACFF;
+          --green: #63C7A3;
+        }
+      }
+      text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+      [fill="#FAFAF8"] { fill: var(--bg); }
+      [fill="#FFFFFF"] { fill: var(--card); }
+      [stroke="#E4E2DC"] { stroke: var(--border); }
+      [fill="#6B6B85"] { fill: var(--muted); }
+      [fill="#C94B2E"] { fill: var(--red); }
+      [fill="#C9880A"] { fill: var(--amber); }
+      [fill="#3A5498"] { fill: var(--blue); }
+      [fill="#2A7A5F"] { fill: var(--green); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="700" height="220" rx="8" fill="#FAFAF8"/>
 
   <rect x="10" y="16" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
   <text x="91" y="62" text-anchor="middle" font-size="34" font-weight="900" fill="#C94B2E">$600B</text>

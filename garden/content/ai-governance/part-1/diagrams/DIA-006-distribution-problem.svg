@@ -3,6 +3,26 @@
   <desc id="d7desc">Left panel: cascade from AI-exposed advanced-economy workforce down to 6.1 million workers at high exposure and low adaptive capacity. Right panel: historical transition recovery timelines — Industrial Revolution 40 years, Internet Era 20–30 years, AI pace unknown — showing why aggregate net job creation does not arrive in time for the at-risk population.</desc>
 
   <defs>
+    <style>
+      :root {
+        --bg: #FAF6EE; --line: #E4E2DC; --text: #3A3A4A; --muted: #6B6B85; --muted2: #9B9BA8;
+        --red: #C94B2E; --red-soft: #FDE8E3; --amber: #C9880A; --amber-soft: #FEF8E8;
+        --blue: #3A5498; --blue-soft: #E3E8F5; --green: #2A7A5F; --green-soft: #EDF7F3;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23; --line: #404756; --text: #D6DEEE; --muted: #C2C9D9; --muted2: #A8B3C7;
+          --red: #FF8C73; --red-soft: #4A2A28; --amber: #F2BE5C; --amber-soft: #453A22;
+          --blue: #8EACFF; --blue-soft: #2A3554; --green: #63C7A3; --green-soft: #243E36;
+        }
+      }
+      [fill="#FAF6EE"] { fill: var(--bg); } [stroke="#E4E2DC"] { stroke: var(--line); }
+      [fill="#3A3A4A"] { fill: var(--text); } [fill="#6B6B85"] { fill: var(--muted); } [fill="#9B9BA8"] { fill: var(--muted2); } [stroke="#9B9BA8"] { stroke: var(--muted2); }
+      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); }
+      [fill="#C9880A"] { fill: var(--amber); } [stroke="#C9880A"] { stroke: var(--amber); } [fill="#FEF8E8"] { fill: var(--amber-soft); }
+      [fill="#3A5498"] { fill: var(--blue); } [stroke="#3A5498"] { stroke: var(--blue); } [fill="#E3E8F5"] { fill: var(--blue-soft); }
+      [fill="#2A7A5F"] { fill: var(--green); } [stroke="#2A7A5F"] { stroke: var(--green); } [fill="#EDF7F3"] { fill: var(--green-soft); }
+    </style>
     <marker id="arh-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0,8 3,0 6" fill="#C94B2E"/>
     </marker>

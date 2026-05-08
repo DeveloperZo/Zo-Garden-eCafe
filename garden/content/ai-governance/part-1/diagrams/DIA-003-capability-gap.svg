@@ -2,8 +2,26 @@
   <title id="viz-gap-title">Capability rises faster than controllability over time</title>
   <desc id="viz-gap-desc">Time on horizontal axis 2018 through 2026. A steep red curve shows model capability rising; a shallower green curve shows how much we can control behavior. A shaded wedge between them is labeled the alignment gap. Four milestones on the red curve are marked.</desc>
   <defs>
+    <style>
+      :root {
+        --bg: #FAFAF8; --text: #1C1C2E; --muted: #6B6B85; --muted2: #9B9BA8; --line: #E4E2DC; --panel: #F7F6F3;
+        --red: #C94B2E; --red-soft: #FDE8E3; --green: #2A7A5F;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23; --text: #E8ECF5; --muted: #C2C9D9; --muted2: #A8B3C7; --line: #404756; --panel: #242834;
+          --red: #FF8C73; --red-soft: #4A2A28; --green: #63C7A3;
+        }
+      }
+      text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#6B6B85"] { fill: var(--muted); } [fill="#9B9BA8"] { fill: var(--muted2); }
+      [stroke="#E4E2DC"] { stroke: var(--line); } [fill="#F7F6F3"] { fill: var(--panel); } [stroke="#9B9BA8"] { stroke: var(--muted2); }
+      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); }
+      [fill="#2A7A5F"] { fill: var(--green); } [stroke="#2A7A5F"] { stroke: var(--green); }
+    </style>
     <marker id="a-axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,2 L9,5 L0,8 Z" fill="#9B9BA8"/></marker>
   </defs>
+  <rect x="0" y="-10" width="680" height="360" fill="#FAFAF8" rx="8"/>
   <!-- Axes -->
   <line x1="56" y1="32" x2="56" y2="264" stroke="#E4E2DC" stroke-width="1.5" marker-end="url(#a-axis)"/>
   <line x1="56" y1="264" x2="662" y2="264" stroke="#E4E2DC" stroke-width="1.5" marker-end="url(#a-axis)"/>

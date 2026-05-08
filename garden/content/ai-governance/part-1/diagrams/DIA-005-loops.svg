@@ -2,6 +2,23 @@
   <title id="viz-loops-title">Stock-and-flow view of frontier AI capability: two self-correcting loops, one self-amplifying loop, and an alarm arc that inverts</title>
   <desc id="viz-loops-desc">Frontier AI capability is drawn as a stock on a main pipe between clouds. Training and deployment are T-fittings. Three feedback structures: a solid self-correcting loop (capability gap, left); a dashed broken self-correcting loop (harm-oversight, right); and a red self-amplifying loop (R1) where AI capability feeds directly back into its own training rate. A second red arc sweeps from visible harm to investment — this alarm arc should slow investment but inverts, becoming an accelerant.</desc>
   <defs>
+    <style>
+      :root {
+        --bg: #F5EFE3; --cloud: #FFFDF8; --cloud-shadow: #E9E2D3; --text: #1f1d18; --faded: #9B9382; --flow: #B8AD95;
+        --red: #C94B2E; --red-2: #A04022; --panel-red: #FFF0E9; --panel-gray: #F3EFE7; --green: #2A7A5F;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1C1A17; --cloud: #2B2722; --cloud-shadow: #3A342C; --text: #E9E2D8; --faded: #B2AA9B; --flow: #8E846F;
+          --red: #FF8C73; --red-2: #E37C62; --panel-red: #452821; --panel-gray: #2D2924; --green: #63C7A3;
+        }
+      }
+      [fill="#F5EFE3"] { fill: var(--bg); } [fill="#FFFDF8"] { fill: var(--cloud); } [fill="#E9E2D3"] { fill: var(--cloud-shadow); }
+      [fill="#1f1d18"] { fill: var(--text); } [stroke="#1f1d18"] { stroke: var(--text); } [fill="#9B9382"] { fill: var(--faded); } [stroke="#9B9382"] { stroke: var(--faded); }
+      [fill="#B8AD95"] { fill: var(--flow); } [stroke="#B8AD95"] { stroke: var(--flow); }
+      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#A04022"] { fill: var(--red-2); } [stroke="#A04022"] { stroke: var(--red-2); }
+      [fill="#FFF0E9"] { fill: var(--panel-red); } [fill="#F3EFE7"] { fill: var(--panel-gray); } [fill="#2A7A5F"] { fill: var(--green); } [stroke="#2A7A5F"] { stroke: var(--green); }
+    </style>
     <marker id="d6-flow-head" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto" markerUnits="strokeWidth">
       <path d="M 0 0 L 12 6 L 0 12 z" fill="#8E846F"/>
     </marker>
