@@ -12,7 +12,7 @@ Building AI at scale isn't primarily a software problem. It's an industrial one:
 
 ![](/ai-governance/part-1/diagrams/DIA-002A-capital-stats.svg)
 
-Consider what it means to commit more than twenty times your annual revenue to infrastructure. The Stargate Project, OpenAI's joint venture with SoftBank, Oracle, and MGX, announced roughly **\$500 billion** for AI infrastructure, later revised to **\$600 billion** through 2030.[^6] No tech company has committed at a ratio like this. Against OpenAI revenue of about **\$6 billion** in 2024, that original commitment ran to **80×** one year's sales. Even at an annualized revenue run-rate of about **\$25 billion** by mid-2026,[^7] the revised commitment still stands at roughly **24×**, closer in scale to national infrastructure projects than to ordinary software spending. This isn't a bet on a product. It's a bet on explosive, sustained growth. That growth may come. Either way, the structure commits every actor in the loop: each profits from the loop continuing, and restructuring costs fall hardest on whoever stops first.
+Consider what it means to commit more than twenty times your annual revenue to infrastructure. The Stargate Project, OpenAI's joint venture with SoftBank, Oracle, and MGX, announced roughly **\$500 billion** for US AI infrastructure in January 2025.<sup><a href="index#part1-ref-6" id="part1-fnref-6">6</a></sup> A separate figure — OpenAI's total compute spending target of **\$600 billion** through 2030, reported by CNBC in February 2026 — is not an upward revision of that number; it is actually a downward reset from the \$1.4 trillion in infrastructure commitments Altman had touted in late 2025. No tech company has committed at a ratio like this. Against OpenAI revenue of about **\$6 billion** in 2024, the original Stargate commitment ran to **80×** one year's sales. Even at an annualized revenue run-rate of about **\$25 billion** by mid-2026,<sup><a href="index#part1-ref-7" id="part1-fnref-7">7</a></sup> the \$600 billion compute target still stands at roughly **24×**, closer in scale to national infrastructure projects than to ordinary software spending. This isn't a bet on a product. It's a bet on explosive, sustained growth. That growth may come. Either way, the structure commits every actor in the loop: each profits from the loop continuing, and restructuring costs fall hardest on whoever stops first.
 
 ![](/ai-governance/part-1/diagrams/DIA-002B-capital-ring.svg)
 
@@ -23,10 +23,4 @@ The difficulty here is not moral. It is mechanical. You cannot stop an eighteen-
 > [!note]- What happens if AI revenue doesn't catch up to the commitments?
 > OpenAI's internal projections reportedly target "hundreds of billions" by 2030. If revenue doesn't scale to meet that, the lab tier faces the kind of restructuring that hit telecom companies in 2001. The major hyperscalers are better insulated; they fund capital spending from real earnings. The risk concentrates in the lab tier and the neocloud layer (CoreWeave and similar firms) that runs on GPU-backed credit. A revenue miss at the lab tier doesn't necessarily slow AI. It restructures who controls it.
 
----
-
 *Part 3 asks the obvious question: if every actor in this loop profits from it continuing, who exactly is positioned to slow it down?*
-
----
-
-*Part 2 of 8*

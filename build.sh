@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Monorepo build for Cloudflare Pages.
-# Output: garden/public/  (Quartz site at /, resumeContent CRA app at /resume).
+# Output: garden/public/  (Quartz site at /, interactive résumé at /resume via StageResumeSpa emitter).
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
@@ -14,11 +14,6 @@ fi
 
 echo "==> Building Quartz docs site (garden/)"
 (cd "$REPO_ROOT/garden" && npm ci && npx quartz build)
-
-if [ -f "$REPO_ROOT/resumeContent/package.json" ] && [ -d "$REPO_ROOT/resumeContent/build" ]; then
-  echo "==> Staging React app at garden/public/resume/"
-  mkdir -p "$REPO_ROOT/garden/public/resume"
-  cp -R "$REPO_ROOT/resumeContent/build/." "$REPO_ROOT/garden/public/resume/"
-fi
+# /resume is staged inside Quartz via StageResumeSpa (copies ../resumeContent/build when present).
 
 echo "==> Done. Deploy garden/public/"

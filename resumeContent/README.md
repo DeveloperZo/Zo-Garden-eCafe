@@ -17,6 +17,8 @@ npm start
 
 For a path-accurate preview of the mounted app, use `npm run build` plus a static server rooted at `garden/public` after a full `build.sh`, or serve `build/` with a base path of `/resume`.
 
+**Quartz-only local preview:** After `npm run build` in this folder at least once, `npx quartz build` or `npx quartz build --serve` from `garden/` copies `resumeContent/build/` into `garden/public/resume/` automatically (via the `StageResumeSpa` emitter). You do not need to run `build.sh` for `/resume` to exist locally.
+
 ## CRA defaults
 
 Bootstrapped with [Create React App](https://github.com/facebook/create-react-app). See CRA docs for `npm test`, `npm run build`, and `npm run eject`.

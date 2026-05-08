@@ -9,7 +9,7 @@ date: 2026-05-05
 draft: false
 ---
 
-The twelve leverage points from Meadows' *Thinking in Systems*, applied to AI governance. Ranked from weakest (#12) to most powerful (#1). Full treatment in [[what-can-i-do|Part 2: What Can I Do About AI?]]
+The twelve leverage points from Meadows' *Thinking in Systems*, applied to AI governance. Ranked from weakest (#12) to most powerful (#1). Full treatment in [[part-2/index|Part 2: What Can I Do About AI?]]
 
 ---
 

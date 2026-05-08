@@ -1,8 +1,8 @@
-<svg viewBox="0 0 860 475" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d8-t d8-d">
+<svg viewBox="0 0 860 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d8-t d8-d">
   <title id="d8-t">DIA-007 — Binding Constraints Status Map</title>
   <desc id="d8-d">Six structural constraints on AI governance, color-coded by current status as of May 2026: amber = bypassed or weakening, blue = forming but incomplete, red = permanently outside governance reach, gray = structurally absent.</desc>
 
-  <rect width="860" height="475" fill="#FAFAF8" rx="8"/>
+  <rect width="860" height="510" fill="#FAF6EE" rx="8"/>
 
   <!-- Header -->
   <text x="430" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#3A3A4A">Binding Constraints — Status as of May 2026</text>
@@ -82,8 +82,12 @@
   <text x="778" y="356" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#F7F6F3">Absent ceiling</text>
   <line x1="455" y1="363" x2="830" y2="363" stroke="#6B6B85" stroke-width="0.5" opacity="0.35"/>
   <text x="459" y="379" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">~25% of Anthropic prompts are mechanistically traceable; 75% opaque.</text>
-  <text x="459" y="393" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Core questions proven NP-hard (2025 research). Capability scales with</text>
-  <text x="459" y="407" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">capital; interpretability with talent. The gap between them is widening.</text>
+  <text x="459" y="393" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Semantic self-verification shown NP-hard (Young, 2025). Capability</text>
+  <text x="459" y="407" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">scales with capital; interpretability with talent. Gap is widening.</text>
   <text x="459" y="427" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" fill="#6B6B85">Should function as a deployment ceiling — does not in practice.</text>
+
+  <!-- Caption -->
+  <text x="430" y="474" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-007. Six structural constraints on AI governance, color-coded by status as of May 2026: amber (bypassed or weakening), blue (forming, enforcement gap),</text>
+  <text x="430" y="490" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">red (permanently outside governance reach), gray (absent in practice). Each card shows what the constraint is actually doing right now.</text>
 
 </svg>

@@ -1,5 +1,42 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import type { Options } from "./quartz/components/Explorer"
+import { FileTrieNode } from "./quartz/util/fileTrie"
+
+/** Sidebar Explorer: hide noisy leaves; pin Home + résumé gateway first. */
+const explorerOpts: Pick<Options, "filterFn" | "sortFn"> = {
+  filterFn: (node) => {
+    const s = node.slugSegment
+    if (s === "tags") return false
+    if (/^\d{2}-/.test(s)) return false
+    if (/^tier-/.test(s)) return false
+    if (s === "diagrams") return false
+    return true
+  },
+  sortFn: (a, b) => {
+    const priority = (n: FileTrieNode) => {
+      const slug = n.data?.slug ?? ""
+      if (slug === "index") return 0
+      if (slug === "interactive-resume") return 1
+      return 2
+    }
+    const pa = priority(a)
+    const pb = priority(b)
+    if (pa !== pb) return pa - pb
+
+    if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+      return a.displayName.localeCompare(b.displayName, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      })
+    }
+
+    if (!a.isFolder && b.isFolder) {
+      return 1
+    }
+    return -1
+  },
+}
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -37,13 +74,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({
-      filterFn: (node) => {
-        // Hide numbered section files (01-*, 02-*, ...) — they're part of a parent page
-        if (/^\d{2}-/.test(node.slugSegment)) return false
-        return node.slugSegment !== "tags"
-      },
-    }),
+    Component.Explorer(explorerOpts),
   ],
   right: [
     Component.Graph(),
@@ -71,12 +102,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer({
-      filterFn: (node) => {
-        if (/^\d{2}-/.test(node.slugSegment)) return false
-        return node.slugSegment !== "tags"
-      },
-    }),
+    Component.Explorer(explorerOpts),
   ],
   right: [],
 }
