@@ -1,5 +1,5 @@
 ---
-title: "VIII — Where You Have Leverage"
+title: "VIII: Where You Have Leverage"
 tags: [ai, governance, systems-thinking]
 draft: false
 ---
@@ -21,17 +21,17 @@ Meadows grouped the twelve points into a rough hierarchy, clustered into four ti
 
 <div class="tier-card tier-mid">
 <p><span class="tier-pill">Medium Leverage</span> <strong>Delays, feedback strength, loop gain (points 9–7).</strong></p>
-<p>Shortening the time between when a harm occurs and when oversight can respond is a point-9 intervention — and the most workable change in this tier. Aviation's near-miss reporting system (ASRS) is the model: mandatory anonymous reporting that makes the self-correcting loop faster without requiring anyone to admit fault first. An AI equivalent doesn't exist. Building one would.</p>
+<p>Shortening the time between when a harm occurs and when oversight can respond is a point-9 intervention, and the most workable change in this tier. Aviation's near-miss reporting system (ASRS) is the model: voluntary, de-identified reporting backed by limited immunity from FAA sanction, accelerating the self-correcting loop without requiring anyone to admit fault first.<sup><a href="index#part1-ref-38" id="part1-fnref-38">38</a></sup> An AI equivalent doesn't exist. Building one would.</p>
 </div>
 
 <div class="tier-card tier-high">
 <p><span class="tier-pill">High Leverage</span> <strong>Information flows, rules, who writes the rules (points 6–4).</strong></p>
-<p>A single product liability ruling that holds an AI company responsible for provable harm changes what every legal team in the industry tells its product team — no new legislation required. That's point 5 operating through existing structure. Making harm visible through mandatory disclosure is point 6: when utility companies moved electricity meters from basements to front porches, consumption fell 30% with no other policy change. The AI equivalent would be public capability evaluation results and mandatory incident reporting.</p>
+<p>A single product liability ruling that holds an AI company responsible for provable harm changes what every legal team in the industry tells its product team. No new legislation required. That's point 5 operating through existing structure. Making harm visible through mandatory disclosure is point 6. When Princeton researchers gave Twin Rivers households a simple in-home display showing daily electricity use against a predicted baseline, consumption fell about 10% over a month; meta-analyses since put typical savings from feedback at 4-12%, higher when paired with explicit reduction goals.<sup><a href="index#part1-ref-39" id="part1-fnref-39">39</a></sup> The AI equivalent would be public capability evaluation results and mandatory incident reporting.</p>
 </div>
 
 <div class="tier-card tier-xform">
 <p><span class="tier-pill">Transformative</span> <strong>Goals, paradigm, coordination (points 3–1).</strong></p>
-<p>Denmark's flexicurity model (a hybrid of flexible labor markets and strong worker safety nets) shifted the system's goal from "employment stays stable" to "workers stay economically viable through transitions." A point-3 change. It required 5%+ of GDP and sustained political will. At point 1, the coordination problem: the Montreal Protocol worked because scientists made the threat legible before it was politically convenient, giving actors a graceful way out. That path exists for AI. Building the conditions for it is the longest-horizon work here.</p>
+<p>Denmark's flexicurity model (a hybrid of flexible labor markets and strong worker safety nets) shifted the system's goal from "employment stays stable" to "workers stay economically viable through transitions." A point-3 change. It required around 5% of GDP in combined active and passive labor market spending, and sustained political will.<sup><a href="index#part1-ref-40" id="part1-fnref-40">40</a></sup> At point 1, the coordination problem: the Montreal Protocol worked because scientists made the threat legible before it was politically convenient, giving actors a graceful way out.<sup><a href="index#part1-ref-41" id="part1-fnref-41">41</a></sup> That path exists for AI. Building the conditions for it is the longest-horizon work here.</p>
 </div>
 
 </div>

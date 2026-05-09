@@ -40,7 +40,7 @@
 
   <!-- HEADER -->
   <text x="410" y="34" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-004B · MISALIGNED FORCES, EMPTIED RESPONSE</text>
-  <text x="410" y="54" text-anchor="middle" font-size="12" fill="#6B6873">forces pushing the buildout forward · forces that could slow it · the gap between them is response capacity that's been spent</text>
+  <text x="410" y="54" text-anchor="middle" font-size="12" fill="#6B6873">forces pushing the AI race forward · forces that could slow it · the gap between them is response capacity that's been spent</text>
 
   <!-- ═════════════════════════════════════════════════════════
        SECTION 1 — FORCES IN TENSION (concrete framing)
@@ -79,10 +79,10 @@
   <!-- THE STRUCTURE -->
   <rect x="320" y="110" width="180" height="210" rx="6" fill="#FFFDF8" stroke="#4F627F" stroke-width="2"/>
   <text x="410" y="200" text-anchor="middle" font-size="14" font-weight="700" fill="#4F627F" class="serif">THE</text>
-  <text x="410" y="218" text-anchor="middle" font-size="14" font-weight="700" fill="#4F627F" class="serif">BUILDOUT</text>
+  <text x="410" y="218" text-anchor="middle" font-size="14" font-weight="700" fill="#4F627F" class="serif">AI RACE</text>
   <line x1="340" y1="232" x2="480" y2="232" stroke="#DEE3EC" stroke-width="1"/>
   <text x="410" y="252" text-anchor="middle" font-size="10" fill="#4F627F">chips · data centers</text>
-  <text x="410" y="266" text-anchor="middle" font-size="10" fill="#4F627F">power · payroll</text>
+  <text x="410" y="266" text-anchor="middle" font-size="10" fill="#4F627F">talent · capital</text>
   <text x="410" y="284" text-anchor="middle" font-size="10" font-style="italic" fill="#6B6873">$1.4T+ in motion</text>
 
   <!-- ═════════════════════════════════════════════════════════
@@ -91,7 +91,7 @@
 
   <line x1="40" y1="350" x2="780" y2="350" stroke="#E2DFD6" stroke-width="1"/>
 
-  <text x="410" y="376" text-anchor="middle" font-size="13" font-weight="700" fill="#823F30" letter-spacing="0.06em">IF THE BUILDOUT EVER NEEDED TO SLOW · WHAT'S AVAILABLE TO STOP IT</text>
+  <text x="410" y="376" text-anchor="middle" font-size="13" font-weight="700" fill="#823F30" letter-spacing="0.06em">IF THE AI RACE EVER NEEDED TO SLOW · WHAT'S AVAILABLE TO STOP IT</text>
 
   <!-- Forward bar: $1.4T (full visible width) -->
   <text x="80" y="408" font-size="10.5" font-weight="700" fill="#A85B49" letter-spacing="0.05em">MONEY ALREADY COMMITTED</text>

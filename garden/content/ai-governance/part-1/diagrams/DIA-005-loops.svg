@@ -1,156 +1,209 @@
-<svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-loops-title viz-loops-desc">
-  <title id="viz-loops-title">Stock-and-flow view of frontier AI capability: each auxiliary is a node-circle with adjacent label; arrows attach to the circle, not to the text</title>
-  <desc id="viz-loops-desc">Frontier AI capability is drawn as a stock on a main pipe between clouds. Training and deployment are T-fittings. Auxiliaries — capability gap, investment and compute, frontier target, visible harm, oversight response — are each a small open circle (the node) with their label adjacent on the right. Three feedback structures: a solid balancing loop (capability gap, left); a dashed broken balancing loop (harm-oversight, right); and a red reinforcing loop (R1) where AI capability feeds back into its own training rate. A second red arc sweeps from visible harm to investment — the alarm arc that should slow investment but inverts.</desc>
+<svg viewBox="0 0 720 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d5-t d5-d">
+  <title id="d5-t">DIA-005 · When the loops meet</title>
+  <desc id="d5-d">Stock-and-flow view of frontier AI capability with feedback loops. Main pipe runs left to right: source cloud through training T-fitting into the FRONTIER AI CAPABILITY stock, out through the deployment T-fitting to a sink cloud. Auxiliaries below the pipe connect to form four loops. R1 reinforcing: capability feeds back to training rate. R3 reinforcing (forming): AI accelerates AI R&amp;D, shrinking the feedback delay on R1. R2 inverted: visible harm raises investment instead of reducing it. B1 balancing, drawn literally broken: visible harm should drive oversight which should slow frontier targets, but the loop runs slower than the system it tries to brake. Annotation names this as the shifting-the-burden archetype.</desc>
   <defs>
     <style>
       :root {
-        --bg: #F5EFE3; --cloud: #FFFDF8; --cloud-shadow: #E9E2D3; --text: #1f1d18; --faded: #9B9382; --flow: #B8AD95;
-        --red: #C94B2E; --red-2: #A04022; --panel-red: #FFF0E9; --panel-gray: #F3EFE7; --green: #2A7A5F;
+        --bg: #FAFAF8; --paper: #F2EEE3; --cloud: #FFFDF8; --cloud-shadow: #E2DFD6;
+        --text: #2A2A35; --muted: #6B6873; --muted2: #9D9A95; --line: #E2DFD6;
+        --flow: #B8AD95; --flow-dark: #8E846F;
+        --rust: #A85B49; --rust-soft: #EDD8CE; --rust-deep: #823F30;
+        --sage: #5A8270; --sage-soft: #DEE8E1;
+        --broken: #B83A2A;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #1C1A17; --cloud: #2B2722; --cloud-shadow: #3A342C; --text: #E9E2D8; --faded: #B2AA9B; --flow: #8E846F;
-          --red: #FF8C73; --red-2: #E37C62; --panel-red: #452821; --panel-gray: #2D2924; --green: #63C7A3;
+          --bg: #1B1D23; --paper: #1E2128; --cloud: #2B2722; --cloud-shadow: #3A342C;
+          --text: #E8E5DC; --muted: #B8B5AD; --muted2: #908D87; --line: #3E3D38;
+          --flow: #8E846F; --flow-dark: #B8AD95;
+          --rust: #D29183; --rust-soft: #3D2925; --rust-deep: #E3A292;
+          --sage: #92BAA6; --sage-soft: #233029;
+          --broken: #FF8C73;
         }
       }
-      [fill="#F5EFE3"] { fill: var(--bg); } [fill="#FFFDF8"] { fill: var(--cloud); } [fill="#E9E2D3"] { fill: var(--cloud-shadow); }
-      [fill="#1f1d18"] { fill: var(--text); } [stroke="#1f1d18"] { stroke: var(--text); } [fill="#9B9382"] { fill: var(--faded); } [stroke="#9B9382"] { stroke: var(--faded); }
+      text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+      .serif { font-family: Georgia, "Times New Roman", serif; }
+      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#F2EEE3"] { fill: var(--paper); }
+      [fill="#FFFDF8"] { fill: var(--cloud); } [fill="#E2DFD6"] { fill: var(--cloud-shadow); }
+      [fill="#2A2A35"] { fill: var(--text); } [stroke="#2A2A35"] { stroke: var(--text); }
+      [fill="#6B6873"] { fill: var(--muted); }
+      [fill="#9D9A95"] { fill: var(--muted2); } [stroke="#9D9A95"] { stroke: var(--muted2); }
       [fill="#B8AD95"] { fill: var(--flow); } [stroke="#B8AD95"] { stroke: var(--flow); }
-      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#A04022"] { fill: var(--red-2); } [stroke="#A04022"] { stroke: var(--red-2); }
-      [fill="#FFF0E9"] { fill: var(--panel-red); } [fill="#F3EFE7"] { fill: var(--panel-gray); } [fill="#2A7A5F"] { fill: var(--green); } [stroke="#2A7A5F"] { stroke: var(--green); }
+      [fill="#8E846F"] { fill: var(--flow-dark); }
+      [fill="#A85B49"] { fill: var(--rust); } [stroke="#A85B49"] { stroke: var(--rust); }
+      [fill="#EDD8CE"] { fill: var(--rust-soft); }
+      [fill="#823F30"] { fill: var(--rust-deep); } [stroke="#823F30"] { stroke: var(--rust-deep); }
+      [fill="#5A8270"] { fill: var(--sage); } [stroke="#5A8270"] { stroke: var(--sage); }
+      [fill="#DEE8E1"] { fill: var(--sage-soft); }
+      [stroke="#B83A2A"] { stroke: var(--broken); } [fill="#B83A2A"] { fill: var(--broken); }
     </style>
-    <marker id="d6-flow-head" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto" markerUnits="strokeWidth">
+    <marker id="d5-flow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto" markerUnits="strokeWidth">
       <path d="M 0 0 L 12 6 L 0 12 z" fill="#8E846F"/>
     </marker>
-    <marker id="d6-info-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
-      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#1f1d18"/>
+    <marker id="d5-info" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#2A2A35"/>
     </marker>
-    <marker id="d6-info-head-faded" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
-      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#9B9382"/>
+    <marker id="d5-info-faded" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#9D9A95"/>
     </marker>
-    <marker id="d6-info-head-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
-      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#A04022"/>
+    <marker id="d5-info-r1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#A85B49"/>
     </marker>
-    <marker id="d6-info-head-r1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
-      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#C94B2E"/>
+    <marker id="d5-info-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#823F30"/>
     </marker>
   </defs>
 
-  <!-- warm parchment background -->
-  <rect x="0" y="0" width="720" height="520" fill="#F5EFE3"/>
+  <rect x="0" y="0" width="720" height="580" fill="#F2EEE3"/>
+
+  <!-- ── STANDARD HEADER ── -->
+  <text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-005 · WHEN THE LOOPS MEET</text>
+  <text x="360" y="48" text-anchor="middle" font-size="12" fill="#6B6873">two reinforcing loops climbing · the would-be brakes inverted, broken, or absorbed</text>
+
+  <!-- ─────────────────────────────────────────────────────
+       MAIN PIPE — original geometry preserved, shifted y by +50 for header
+       ───────────────────────────────────────────────────── -->
 
   <!-- LEFT CLOUD (source) -->
-  <path d="M 34 106 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#E9E2D3" opacity="0.65"/>
-  <path d="M 30 102 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFDF8" stroke="#1f1d18" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M 34 156 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#E2DFD6" opacity="0.65"/>
+  <path d="M 30 152 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFDF8" stroke="#2A2A35" stroke-width="1.5" stroke-linejoin="round"/>
 
   <!-- LEFT FLOW LINE (cloud → stock) -->
-  <line x1="105" y1="105" x2="248" y2="105" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt" marker-end="url(#d6-flow-head)"/>
+  <line x1="105" y1="155" x2="248" y2="155" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt" marker-end="url(#d5-flow)"/>
 
-  <text x="166" y="55" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#1f1d18">training</text>
+  <text x="166" y="105" text-anchor="middle" font-size="14" font-style="italic" fill="#2A2A35" class="serif">training</text>
 
   <!-- STOCK -->
-  <rect x="258" y="68" width="200" height="74" fill="#FFFFFF" stroke="#1f1d18" stroke-width="1.75"/>
-  <text x="358" y="100" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#1f1d18">frontier AI</text>
-  <text x="358" y="120" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#1f1d18">capability</text>
+  <rect x="258" y="118" width="200" height="74" fill="#FFFDF8" stroke="#2A2A35" stroke-width="1.75"/>
+  <text x="358" y="150" text-anchor="middle" font-size="14.5" fill="#2A2A35" class="serif">frontier AI</text>
+  <text x="358" y="170" text-anchor="middle" font-size="14.5" fill="#2A2A35" class="serif">capability</text>
 
   <!-- RIGHT FLOW LINE (stock → cloud) -->
-  <line x1="458" y1="105" x2="618" y2="105" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt" marker-end="url(#d6-flow-head)"/>
+  <line x1="458" y1="155" x2="618" y2="155" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt" marker-end="url(#d5-flow)"/>
 
-  <text x="540" y="55" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#1f1d18">deployment</text>
+  <text x="540" y="105" text-anchor="middle" font-size="14" font-style="italic" fill="#2A2A35" class="serif">deployment</text>
 
   <!-- RIGHT CLOUD (sink) -->
-  <path d="M 628 106 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#E9E2D3" opacity="0.65"/>
-  <path d="M 624 102 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFDF8" stroke="#1f1d18" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M 628 156 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#E2DFD6" opacity="0.65"/>
+  <path d="M 624 152 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFDF8" stroke="#2A2A35" stroke-width="1.5" stroke-linejoin="round"/>
 
-  <!-- Training T -->
-  <g id="d6-t-training" stroke="#1f1d18" stroke-linecap="butt">
-    <line x1="146" y1="105" x2="186" y2="105" stroke-width="12.5"/>
-    <line x1="166" y1="105" x2="166" y2="129" stroke-width="12.5"/>
+  <!-- Training T-fitting (original style: bar across pipe + perpendicular stem) -->
+  <g stroke="#2A2A35" stroke-linecap="butt">
+    <line x1="146" y1="155" x2="186" y2="155" stroke-width="12.5"/>
+    <line x1="166" y1="155" x2="166" y2="179" stroke-width="12.5"/>
   </g>
-  <!-- Deployment T -->
-  <g id="d6-t-deployment" stroke="#1f1d18" stroke-linecap="butt">
-    <line x1="520" y1="105" x2="560" y2="105" stroke-width="12.5"/>
-    <line x1="540" y1="105" x2="540" y2="129" stroke-width="12.5"/>
+  <!-- Deployment T-fitting -->
+  <g stroke="#2A2A35" stroke-linecap="butt">
+    <line x1="520" y1="155" x2="560" y2="155" stroke-width="12.5"/>
+    <line x1="540" y1="155" x2="540" y2="179" stroke-width="12.5"/>
   </g>
 
-  <!-- Stock info-link source (origin of stock → cap gap, and R1) -->
-  <circle cx="358" cy="142" r="3.2" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.25"/>
+  <!-- Stock and T info-link source ports -->
+  <circle cx="358" cy="192" r="3.2" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.25"/>
+  <circle cx="544" cy="182" r="3.2" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.25"/>
 
-  <!-- Deployment T info-link source (origin of deployment → visible harm) -->
-  <circle cx="544" cy="132" r="3.2" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.25"/>
+  <!-- ─────────────────────────────────────────────────────
+       AUXILIARY NODES — original positions, all in clear space
+       ───────────────────────────────────────────────────── -->
 
-  <!-- ─────────── AUXILIARY NODES (each: open circle + adjacent label on right) ─────────── -->
+  <circle cx="258" cy="276" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
+  <text x="266" y="280" font-size="13" fill="#2A2A35" class="serif">capability gap</text>
 
-  <!-- capability gap node -->
-  <circle cx="258" cy="226" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
-  <text x="266" y="230" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">capability gap</text>
+  <circle cx="370" cy="390" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
+  <text x="378" y="394" font-size="13" fill="#2A2A35" class="serif">frontier target</text>
 
-  <!-- frontier target node (moved up so R2 passes below it) -->
-  <circle cx="370" cy="340" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
-  <text x="378" y="344" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">frontier target</text>
+  <circle cx="118" cy="336" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
+  <text x="126" y="332" font-size="13" fill="#2A2A35" class="serif">investment</text>
+  <text x="126" y="348" font-size="13" fill="#2A2A35" class="serif">&amp; compute</text>
 
-  <!-- investment & compute node -->
-  <circle cx="118" cy="286" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
-  <text x="126" y="282" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">investment</text>
-  <text x="126" y="298" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">&amp; compute</text>
+  <circle cx="594" cy="282" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
+  <text x="602" y="285" font-size="13" fill="#2A2A35" class="serif">visible harm</text>
 
-  <!-- visible harm node (already converted) -->
-  <circle cx="594" cy="232" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
-  <text x="602" y="235" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">visible harm</text>
+  <circle cx="200" cy="370" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
+  <text x="208" y="366" font-size="13" fill="#2A2A35" class="serif">oversight</text>
+  <text x="208" y="382" font-size="13" fill="#2A2A35" class="serif">response</text>
 
-  <!-- oversight response node (moved left of R2's sweep) -->
-  <circle cx="200" cy="320" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
-  <text x="208" y="316" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">oversight</text>
-  <text x="208" y="332" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">response</text>
+  <!-- ─────────────────────────────────────────────────────
+       INFO LINKS — match original routing exactly (y shifted +50)
+       ───────────────────────────────────────────────────── -->
 
-  <!-- ─────────── INFO LINKS — paths attach to node circles ─────────── -->
+  <!-- 1. stock → capability gap -->
+  <path d="M 358 195 Q 308 228 261 274" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
+  <!-- 2. frontier target → capability gap -->
+  <path d="M 367 388 Q 320 335 260 279" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
+  <!-- 3. capability gap → investment & compute -->
+  <path d="M 256 278 Q 185 300 121 334" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
+  <!-- 4. investment & compute → training T -->
+  <path d="M 115 334 Q 142 270 161 179" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
+  <!-- 5. deployment T → visible harm -->
+  <path d="M 548 186 Q 575 250 591 279" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
 
-  <!-- 1. stock → capability gap (lands at upper-right edge of cap-gap circle) -->
-  <path d="M 358 145 Q 308 178 261 224" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+  <!-- 6. B1 visible harm → oversight (drawn LITERALLY broken at midpoint with hash marks) -->
+  <!-- first half (sage) -->
+  <path d="M 594 284 Q 460 320 360 350" stroke="#5A8270" stroke-width="1.5" fill="none"/>
+  <!-- hash marks at break -->
+  <line x1="335" y1="350" x2="355" y2="368" stroke="#B83A2A" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="355" y1="350" x2="335" y2="368" stroke="#B83A2A" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="345" y="338" text-anchor="middle" font-size="9" font-style="italic" font-weight="700" fill="#B83A2A">brake breaks</text>
+  <!-- continuation faded -->
+  <path d="M 358 366 Q 280 374 203 369" stroke="#5A8270" stroke-width="1.3" fill="none" stroke-dasharray="3,4" opacity="0.5" marker-end="url(#d5-info-faded)"/>
 
-  <!-- 2. frontier target → capability gap (from upper-left of frontier circle, to lower-right of cap-gap circle) -->
-  <path d="M 367 338 Q 320 285 260 229" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+  <!-- 7. oversight → frontier target (faded — would-be brake effect) -->
+  <path d="M 203 372 Q 280 382 367 390" stroke="#5A8270" stroke-width="1.3" fill="none" stroke-dasharray="3,4" opacity="0.5" marker-end="url(#d5-info-faded)"/>
 
-  <!-- 3. capability gap → investment & compute (from lower-left of cap-gap circle, to upper-right of investment circle) -->
-  <path d="M 256 228 Q 185 250 121 284" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+  <!-- 8. R2 (inverted): visible harm → investment & compute (deeper rust) -->
+  <path d="M 594 285 C 510 460, 220 480, 118 340" stroke="#823F30" stroke-width="1.7" fill="none" marker-end="url(#d5-info-r2)"/>
 
-  <!-- 4. investment & compute → training T stub (from upper-left of investment circle) -->
-  <path d="M 115 284 Q 142 220 161 129" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+  <!-- 9. R1: stock → training rate (rust) -->
+  <path d="M 356 192 C 262 228, 146 226, 171 179" stroke="#A85B49" stroke-width="1.7" fill="none" marker-end="url(#d5-info-r1)"/>
 
-  <!-- 5. deployment T stub → visible harm node (lands on northwest edge of harm circle) -->
-  <path d="M 548 136 Q 575 200 591 229" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+  <!-- ─────────────────────────────────────────────────────
+       LOOP LABELS — placed in clear margins, no overlap with paths or nodes
+       Per Section 13: small badge + label below
+       ───────────────────────────────────────────────────── -->
 
-  <!-- 6. visible harm → oversight response (BROKEN B; lifted to clear the path 2 crossing) -->
-  <path d="M 594 234 Q 400 250 203 318" stroke="#9B9382" stroke-width="1.25" fill="none" stroke-dasharray="5,4" marker-end="url(#d6-info-head-faded)"/>
+  <!-- R1 label — left margin -->
+  <g transform="translate(50, 232)">
+    <circle r="11" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.4"/>
+    <text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#A85B49">R1</text>
+    <text y="26" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">capability →</text>
+    <text y="38" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">training rate</text>
+  </g>
 
-  <!-- 7. oversight response → frontier target (BROKEN B; short curve to the new frontier position above R2) -->
-  <path d="M 203 320 Q 280 330 367 340" stroke="#9B9382" stroke-width="1.25" fill="none" stroke-dasharray="5,4" marker-end="url(#d6-info-head-faded)"/>
+  <!-- R2 label — bottom margin, well clear of all paths -->
+  <g transform="translate(360, 478)">
+    <circle r="11" fill="#EDD8CE" stroke="#823F30" stroke-width="1.4"/>
+    <text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#823F30">R2</text>
+    <text y="-18" text-anchor="middle" font-size="9" font-style="italic" fill="#823F30">harm raises spending</text>
+    <text y="-7" text-anchor="middle" font-size="9" font-style="italic" fill="#823F30">— the corrective inverts</text>
+  </g>
 
-  <!-- 8. visible harm → investment & compute (R2; from south of harm circle, dipping to peak ~y=382, ending at south of investment circle) -->
-  <path d="M 594 235 C 510 410, 220 430, 118 290" stroke="#A04022" stroke-width="1.6" fill="none" marker-end="url(#d6-info-head-r2)"/>
+  <!-- B1 label — placed in lower-right margin, well clear of any path -->
+  <g transform="translate(660, 410)">
+    <circle r="11" fill="#DEE8E1" stroke="#5A8270" stroke-width="1.4"/>
+    <text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#5A8270">B1</text>
+    <text y="-22" text-anchor="middle" font-size="9" font-style="italic" fill="#5A8270">harm → oversight</text>
+    <text y="-10" text-anchor="middle" font-size="9" font-style="italic" fill="#5A8270">→ frontier target</text>
+    <text y="26" text-anchor="middle" font-size="9" font-style="italic" fill="#5A8270">brake too slow</text>
+  </g>
 
-  <!-- ─────────── R1 reinforcing loop: capability → training rate ─────────── -->
-  <path d="M 356 142 C 262 178, 146 176, 171 129" stroke="#C94B2E" stroke-width="1.6" fill="none" marker-end="url(#d6-info-head-r1)"/>
+  <!-- R3 forming — placed RIGHT of R1 badge so they read as paired R-loops
+       Clear of investment & compute node which is at (126, 336) -->
+  <g transform="translate(50, 410)">
+    <circle r="11" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.4" stroke-dasharray="3,2"/>
+    <text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#A85B49">R3</text>
+    <text y="-22" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">forming (2025–26):</text>
+    <text y="-10" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">AI accelerates AI R&amp;D</text>
+    <text y="26" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">→ shrinks R1 cycle</text>
+  </g>
 
-  <!-- ─────────── CALLOUTS ─────────── -->
+  <!-- ─────────────────────────────────────────────────────
+       SHIFTING-THE-BURDEN ANNOTATION + footer
+       ───────────────────────────────────────────────────── -->
+  <line x1="40" y1="510" x2="680" y2="510" stroke="#E2DFD6" stroke-width="1"/>
 
-  <!-- R1 callout -->
-  <rect x="20" y="408" width="236" height="86" rx="5" fill="#FFF0E9" stroke="#C94B2E" stroke-width="1.2"/>
-  <text x="138" y="428" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="9.9" font-weight="700" font-style="italic" fill="#C94B2E">AI accelerates its own training</text>
-  <text x="138" y="446" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="9.7" fill="#1f1d18">Capability feeds back into training rate.</text>
-  <text x="138" y="462" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="9.7" fill="#1f1d18">Each generation helps build the next.</text>
-  <text x="138" y="478" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="9.7" fill="#1f1d18">The reinforcing loop speeds accumulation.</text>
-
-  <!-- R2 alarm callout -->
-  <rect x="268" y="432" width="228" height="62" rx="5" fill="#FFF0E9" stroke="#A04022" stroke-width="1.2"/>
-  <text x="382" y="450" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.5" font-weight="700" font-style="italic" fill="#A04022">Should slow investment. It does not.</text>
-  <text x="382" y="465" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.2" fill="#1f1d18">Harm signals competitive urgency.</text>
-  <text x="382" y="480" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.2" fill="#1f1d18">Labs raise spend. The corrective loop inverts.</text>
-
-  <!-- B (broken) callout -->
-  <rect x="500" y="415" width="194" height="68" rx="5" fill="#F3EFE7" stroke="#9B9382" stroke-width="1.1"/>
-  <text x="597" y="433" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.3" font-style="italic" font-weight="700" fill="#6F685C">Corrective loop is partially broken</text>
-  <text x="597" y="449" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Oversight responds slower than capability shifts.</text>
-  <text x="597" y="465" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Feedback weakens before it can stabilize deployment.</text>
-
+  <text x="360" y="530" text-anchor="middle" font-size="11" font-weight="700" fill="#6B6873" letter-spacing="0.06em">SHIFTING THE BURDEN</text>
+  <text x="360" y="546" text-anchor="middle" font-size="11" fill="#6B6873">Safety research and policy announcements absorb the reform pressure</text>
+  <text x="360" y="560" text-anchor="middle" font-size="11" fill="#6B6873">that would otherwise push toward liability law, audits, hard deployment gates.</text>
+  <text x="360" y="576" text-anchor="middle" font-size="11" font-weight="700" fill="#A85B49">Symptomatic fix works just well enough to prevent the fundamental fix.</text>
 </svg>

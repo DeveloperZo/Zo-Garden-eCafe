@@ -4,24 +4,25 @@
   <defs>
     <style>
       :root {
-        --bg: #FAFAF8; --text: #1C1C2E; --muted: #6B6873; --muted2: #9D9A95; --line: #E2DFD6; --panel: #F7F6F3;
-        --red: #A85B49; --red-soft: #EDD8CE; --green: #5A8270;
+        --bg: #FAFAF8; --paper: #F2EEE3; --text: #2A2A35; --muted: #6B6873; --muted2: #9D9A95; --line: #E2DFD6; --panel: #F7F6F3;
+        --red: #A85B49; --red-soft: #EDD8CE; --green: #5A8270; --green-soft: #DEE8E1;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #1B1D23; --text: #E8ECF5; --muted: #C2C9D9; --muted2: #A8B3C7; --line: #404756; --panel: #242834;
-          --red: #FF8C73; --red-soft: #4A2A28; --green: #63C7A3;
+          --bg: #1B1D23; --paper: #1E2128; --text: #E8E5DC; --muted: #B8B5AD; --muted2: #908D87; --line: #3E3D38; --panel: #2A2F3A;
+          --red: #D29183; --red-soft: #3D2925; --green: #92BAA6; --green-soft: #233029;
         }
       }
       text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#6B6873"] { fill: var(--muted); } [fill="#9D9A95"] { fill: var(--muted2); }
+      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#F2EEE3"] { fill: var(--paper); }
+      [fill="#6B6873"] { fill: var(--muted); } [fill="#9D9A95"] { fill: var(--muted2); }
       [stroke="#E2DFD6"] { stroke: var(--line); } [fill="#F7F6F3"] { fill: var(--panel); } [stroke="#9D9A95"] { stroke: var(--muted2); }
       [fill="#A85B49"] { fill: var(--red); } [stroke="#A85B49"] { stroke: var(--red); } [fill="#EDD8CE"] { fill: var(--red-soft); }
-      [fill="#5A8270"] { fill: var(--green); } [stroke="#5A8270"] { stroke: var(--green); }
+      [fill="#5A8270"] { fill: var(--green); } [stroke="#5A8270"] { stroke: var(--green); } [fill="#DEE8E1"] { fill: var(--green-soft); }
     </style>
-    <marker id="a-axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,52 L9,55 L0,58 Z" fill="#9D9A95"/></marker>
+    <marker id="a-axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,2 L9,5 L0,8 Z" fill="#9D9A95"/></marker>
   </defs>
-  <rect x="0" y="50" width="680" height="400" fill="#F2EEE3" rx="8"/>
+  <rect x="0" y="0" width="680" height="400" fill="#F2EEE3" rx="8"/>
   <!-- ── STANDARD HEADER ── -->
   <text x="340" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-003 · THE CAPABILITY–CONTROLLABILITY GAP</text>
   <text x="340" y="48" text-anchor="middle" font-size="12" fill="#6B6873">capability (what AI can do) has risen steeply · controllability (what we can ensure) has not</text>

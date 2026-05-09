@@ -16,7 +16,7 @@ Consider what it means to commit more than twenty times your annual revenue to i
 
 ![](/ai-governance/part-1/diagrams/DIA-002B-capital-ring.svg)
 
-The difficulty here is not moral. It is mechanical. You cannot stop an eighteen-wheeler with the brakes of a sedan. The industry built this structure out of necessity first. How that necessity hardened into design is what section 4 takes up.
+The difficulty here is not moral. It is mechanical. You cannot stop an eighteen-wheeler with the brakes of a sedan. The industry built this structure out of necessity first.
 
 > [!note]- What happens if AI revenue doesn't catch up to the commitments?
 > OpenAI's internal projections reportedly target "hundreds of billions" by 2030. If revenue doesn't scale to meet that, the lab tier faces the kind of restructuring that hit telecom companies in 2001. The major hyperscalers are better insulated; they fund capital spending from cash flow generated outside this loop. The risk concentrates in the lab tier and the neocloud layer (CoreWeave and similar firms) that runs on GPU-backed credit. A revenue miss at the lab tier doesn't necessarily slow AI. It restructures who controls it.
