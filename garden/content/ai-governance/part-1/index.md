@@ -2,10 +2,10 @@
 title: "Part 1 — Can AI Self-Govern?"
 tags: [ai, governance, systems-thinking]
 draft: false
-version: "1.1.0"
+version: "1.0"
 ---
 
-*An analysis · May 2026 · [[changelog|v1.1.0]]*
+*An analysis · May 2026 · [[changelog|v1.0]]*
 
 <div class="hero-question">
 Can the companies building the most powerful technology in history be trusted to regulate themselves?

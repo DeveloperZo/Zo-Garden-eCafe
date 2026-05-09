@@ -1,6 +1,6 @@
 <svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-loops-title viz-loops-desc">
-  <title id="viz-loops-title">Stock-and-flow view of frontier AI capability: two self-correcting loops, one self-amplifying loop, and an alarm arc that inverts</title>
-  <desc id="viz-loops-desc">Frontier AI capability is drawn as a stock on a main pipe between clouds. Training and deployment are T-fittings. Three feedback structures: a solid self-correcting loop (capability gap, left); a dashed broken self-correcting loop (harm-oversight, right); and a red self-amplifying loop (R1) where AI capability feeds directly back into its own training rate. A second red arc sweeps from visible harm to investment — this alarm arc should slow investment but inverts, becoming an accelerant.</desc>
+  <title id="viz-loops-title">Stock-and-flow view of frontier AI capability: each auxiliary is a node-circle with adjacent label; arrows attach to the circle, not to the text</title>
+  <desc id="viz-loops-desc">Frontier AI capability is drawn as a stock on a main pipe between clouds. Training and deployment are T-fittings. Auxiliaries — capability gap, investment and compute, frontier target, visible harm, oversight response — are each a small open circle (the node) with their label adjacent on the right. Three feedback structures: a solid balancing loop (capability gap, left); a dashed broken balancing loop (harm-oversight, right); and a red reinforcing loop (R1) where AI capability feeds back into its own training rate. A second red arc sweeps from visible harm to investment — the alarm arc that should slow investment but inverts.</desc>
   <defs>
     <style>
       :root {
@@ -62,88 +62,95 @@
   <path d="M 628 106 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#E9E2D3" opacity="0.65"/>
   <path d="M 624 102 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFDF8" stroke="#1f1d18" stroke-width="1.5" stroke-linejoin="round"/>
 
-  <!-- AUXILIARY LABELS (no boxes — just text, like Meadows) -->
-  <text x="102" y="296" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">investment</text>
-  <text x="102" y="312" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">&amp; compute</text>
-
-  <text x="304" y="214" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">capability gap</text>
-
-  <text x="376" y="392" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">frontier target</text>
-
-  <text x="610" y="206" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">visible harm</text>
-
-  <text x="624" y="392" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">oversight</text>
-  <text x="624" y="408" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">response</text>
-
-  <!-- Training T — absolute coords (adjust without touching deployment) -->
+  <!-- Training T -->
   <g id="d6-t-training" stroke="#1f1d18" stroke-linecap="butt">
     <line x1="146" y1="105" x2="186" y2="105" stroke-width="12.5"/>
     <line x1="166" y1="105" x2="166" y2="129" stroke-width="12.5"/>
   </g>
-  <!-- Deployment T — absolute coords (adjust without touching training) -->
+  <!-- Deployment T -->
   <g id="d6-t-deployment" stroke="#1f1d18" stroke-linecap="butt">
     <line x1="520" y1="105" x2="560" y2="105" stroke-width="12.5"/>
     <line x1="540" y1="105" x2="540" y2="129" stroke-width="12.5"/>
   </g>
 
-  <!-- INFO LINKS — open circles at sources; training/deployment use T stubs -->
-
-  <!-- 1. stock → capability gap (circle at center-bottom of stock; shared origin with R1) -->
+  <!-- Stock info-link source (origin of stock → cap gap, and R1) -->
   <circle cx="358" cy="142" r="3.2" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.25"/>
-  <path d="M 358 145 Q 326 178 300 210" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
 
-  <!-- 2. frontier target → capability gap -->
-  <circle cx="370" cy="374" r="3.2" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.25"/>
-  <path d="M 367 371 Q 322 304 306 232" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
-
-  <!-- 3. capability gap → investment & compute -->
-  <circle cx="258" cy="226" r="3.2" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.25"/>
-  <path d="M 254 228 Q 182 258 122 286" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
-
-  <!-- 4. investment & compute → training T stub (arrives left of centre) -->
-  <circle cx="118" cy="286" r="3.2" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.25"/>
-  <path d="M 122 282 Q 148 224 161 129" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
-
-  <!-- 5. deployment T stub → visible harm -->
+  <!-- Deployment T info-link source (origin of deployment → visible harm) -->
   <circle cx="544" cy="132" r="3.2" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.25"/>
-  <path d="M 548 136 Q 572 178 596 210" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
 
-  <!-- 6. visible harm → oversight response (BROKEN B) -->
-  <circle cx="626" cy="236" r="3.2" fill="#F5EFE3" stroke="#9B9382" stroke-width="1.25"/>
-  <path d="M 628 239 Q 642 296 626 358" stroke="#9B9382" stroke-width="1.25" fill="none" stroke-dasharray="5,4" marker-end="url(#d6-info-head-faded)"/>
+  <!-- ─────────── AUXILIARY NODES (each: open circle + adjacent label on right) ─────────── -->
 
-  <!-- 7. oversight response → frontier target (BROKEN B) -->
-  <circle cx="586" cy="382" r="3.2" fill="#F5EFE3" stroke="#9B9382" stroke-width="1.25"/>
-  <path d="M 584 382 Q 486 396 412 378" stroke="#9B9382" stroke-width="1.25" fill="none" stroke-dasharray="5,4" marker-end="url(#d6-info-head-faded)"/>
+  <!-- capability gap node -->
+  <circle cx="258" cy="226" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
+  <text x="266" y="230" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">capability gap</text>
 
-  <!-- 8. visible harm → investment & compute (R2) -->
-  <circle cx="576" cy="222" r="3.2" fill="#F5EFE3" stroke="#A04022" stroke-width="1.5"/>
-  <path d="M 572 225 C 510 470, 220 490, 116 320" stroke="#A04022" stroke-width="1.6" fill="none" marker-end="url(#d6-info-head-r2)"/>
-  <text x="586" y="220" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="9.5" font-style="italic" fill="#A04022">R2</text>
-  <text x="636" y="246" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="9.5" font-style="italic" fill="#9B9382">B</text>
+  <!-- frontier target node (moved up so R2 passes below it) -->
+  <circle cx="370" cy="340" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
+  <text x="378" y="344" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">frontier target</text>
 
-  <!-- Alarm arc note: this arc should slow investment but inverts -->
-  <rect x="268" y="432" width="228" height="62" rx="5" fill="#FFF0E9" stroke="#A04022" stroke-width="1.2"/>
-  <text x="382" y="450" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.5" font-weight="700" font-style="italic" fill="#A04022">Should slow investment. It does not.</text>
-  <text x="382" y="465" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.2" fill="#1f1d18">Harm signals competitive urgency.</text>
-  <text x="382" y="480" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.2" fill="#1f1d18">Labs raise spend. The corrective loop inverts.</text>
+  <!-- investment & compute node -->
+  <circle cx="118" cy="286" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
+  <text x="126" y="282" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">investment</text>
+  <text x="126" y="298" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">&amp; compute</text>
 
-  <!-- "broken loop" hint — connector from path midpoint to annotation -->
-  <rect x="492" y="318" width="202" height="68" rx="5" fill="#F3EFE7" stroke="#9B9382" stroke-width="1.1"/>
-  <line x1="626" y1="324" x2="616" y2="318" stroke="#9B9382" stroke-width="0.9" stroke-dasharray="3,2"/>
-  <text x="593" y="336" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.3" font-style="italic" font-weight="700" fill="#6F685C">Corrective loop is partially broken</text>
-  <text x="593" y="352" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Oversight responds slower than capability shifts.</text>
-  <text x="593" y="368" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Feedback weakens before it can stabilize deployment.</text>
+  <!-- visible harm node (already converted) -->
+  <circle cx="594" cy="232" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
+  <text x="602" y="235" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">visible harm</text>
 
-  <!-- R1: AI capability feeds back into its own training rate (arrives right of centre on T stub) -->
+  <!-- oversight response node (moved left of R2's sweep) -->
+  <circle cx="200" cy="320" r="3.5" fill="#F5EFE3" stroke="#1f1d18" stroke-width="1.5"/>
+  <text x="208" y="316" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">oversight</text>
+  <text x="208" y="332" text-anchor="start" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#1f1d18">response</text>
+
+  <!-- ─────────── INFO LINKS — paths attach to node circles ─────────── -->
+
+  <!-- 1. stock → capability gap (lands at upper-right edge of cap-gap circle) -->
+  <path d="M 358 145 Q 308 178 261 224" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 2. frontier target → capability gap (from upper-left of frontier circle, to lower-right of cap-gap circle) -->
+  <path d="M 367 338 Q 320 285 260 229" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 3. capability gap → investment & compute (from lower-left of cap-gap circle, to upper-right of investment circle) -->
+  <path d="M 256 228 Q 185 250 121 284" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 4. investment & compute → training T stub (from upper-left of investment circle) -->
+  <path d="M 115 284 Q 142 220 161 129" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 5. deployment T stub → visible harm node (lands on northwest edge of harm circle) -->
+  <path d="M 548 136 Q 575 200 591 229" stroke="#1f1d18" stroke-width="1.25" fill="none" marker-end="url(#d6-info-head)"/>
+
+  <!-- 6. visible harm → oversight response (BROKEN B; lifted to clear the path 2 crossing) -->
+  <path d="M 594 234 Q 400 250 203 318" stroke="#9B9382" stroke-width="1.25" fill="none" stroke-dasharray="5,4" marker-end="url(#d6-info-head-faded)"/>
+
+  <!-- 7. oversight response → frontier target (BROKEN B; short curve to the new frontier position above R2) -->
+  <path d="M 203 320 Q 280 330 367 340" stroke="#9B9382" stroke-width="1.25" fill="none" stroke-dasharray="5,4" marker-end="url(#d6-info-head-faded)"/>
+
+  <!-- 8. visible harm → investment & compute (R2; from south of harm circle, dipping to peak ~y=382, ending at south of investment circle) -->
+  <path d="M 594 235 C 510 410, 220 430, 118 290" stroke="#A04022" stroke-width="1.6" fill="none" marker-end="url(#d6-info-head-r2)"/>
+
+  <!-- ─────────── R1 reinforcing loop: capability → training rate ─────────── -->
   <path d="M 356 142 C 262 178, 146 176, 171 129" stroke="#C94B2E" stroke-width="1.6" fill="none" marker-end="url(#d6-info-head-r1)"/>
 
-  <!-- R1 callout near loop but clear of labels/paths -->
-  <line x1="224" y1="182" x2="162" y2="408" stroke="#C94B2E" stroke-width="0.95"/>
+  <!-- ─────────── CALLOUTS ─────────── -->
+
+  <!-- R1 callout -->
   <rect x="20" y="408" width="236" height="86" rx="5" fill="#FFF0E9" stroke="#C94B2E" stroke-width="1.2"/>
   <text x="138" y="428" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="9.9" font-weight="700" font-style="italic" fill="#C94B2E">AI accelerates its own training</text>
   <text x="138" y="446" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="9.7" fill="#1f1d18">Capability feeds back into training rate.</text>
   <text x="138" y="462" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="9.7" fill="#1f1d18">Each generation helps build the next.</text>
   <text x="138" y="478" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="9.7" fill="#1f1d18">The reinforcing loop speeds accumulation.</text>
+
+  <!-- R2 alarm callout -->
+  <rect x="268" y="432" width="228" height="62" rx="5" fill="#FFF0E9" stroke="#A04022" stroke-width="1.2"/>
+  <text x="382" y="450" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.5" font-weight="700" font-style="italic" fill="#A04022">Should slow investment. It does not.</text>
+  <text x="382" y="465" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.2" fill="#1f1d18">Harm signals competitive urgency.</text>
+  <text x="382" y="480" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.2" fill="#1f1d18">Labs raise spend. The corrective loop inverts.</text>
+
+  <!-- B (broken) callout -->
+  <rect x="500" y="415" width="194" height="68" rx="5" fill="#F3EFE7" stroke="#9B9382" stroke-width="1.1"/>
+  <text x="597" y="433" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.3" font-style="italic" font-weight="700" fill="#6F685C">Corrective loop is partially broken</text>
+  <text x="597" y="449" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Oversight responds slower than capability shifts.</text>
+  <text x="597" y="465" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10" fill="#1f1d18">Feedback weakens before it can stabilize deployment.</text>
 
 </svg>
