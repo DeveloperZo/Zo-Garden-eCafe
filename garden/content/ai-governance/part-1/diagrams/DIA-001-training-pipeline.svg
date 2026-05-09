@@ -1,6 +1,6 @@
-<svg viewBox="0 0 730 252" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-train-title viz-train-desc">
-  <title id="viz-train-title">Training pipeline from data to inference</title>
-  <desc id="viz-train-desc">Flow reads left to right: Internet → training data → training run → trained model weights → user prompts. A dashed curved arrow loops from user prompts back toward the internet and training data — a reinforcing loop labeled R1: outputs inform the next training run.</desc>
+<svg viewBox="0 0 730 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-train-title viz-train-desc">
+  <title id="viz-train-title">DIA-001 · Training pipeline from data to inference</title>
+  <desc id="viz-train-desc">Flow reads left to right: Internet → training data → training run → trained model weights → user prompts. A dashed curved arrow loops from user prompts back toward the internet and training data — outputs inform the next training run.</desc>
   <defs>
     <style>
       :root {
@@ -32,58 +32,63 @@
     <marker id="t-red"  viewBox="0 0 10 10" refX="5" refY="9" markerWidth="7" markerHeight="7" orient="0" markerUnits="strokeWidth"><path d="M5,1 L9,9 L1,9 Z" fill="#A85B49"/></marker>
   </defs>
 
-  <!-- Step label pills -->
-  <rect x="11"  y="12" width="120" height="28" rx="4" fill="#E2DFD6"/>
-  <rect x="156" y="12" width="120" height="28" rx="4" fill="#E2DFD6"/>
-  <rect x="301" y="12" width="120" height="28" rx="4" fill="#E2DFD6"/>
-  <rect x="446" y="12" width="120" height="28" rx="4" fill="#E2DFD6"/>
-  <rect x="591" y="12" width="120" height="28" rx="4" fill="#E2DFD6"/>
+  <rect width="730" height="300" fill="#F2EEE3"/>
 
-  <text x="71"  y="30" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">① collect</text>
-  <text x="216" y="30" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">② filter &amp; label</text>
-  <text x="361" y="23" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">③ billions of</text>
-  <text x="361" y="35" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">tiny adjustments</text>
-  <text x="506" y="30" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">④ result</text>
-  <text x="651" y="30" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">⑤ your use</text>
+  <!-- ── STANDARD HEADER ── -->
+  <text x="365" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-001 · TRAINING PIPELINE</text>
+  <text x="365" y="48" text-anchor="middle" font-size="12" fill="#6B6873">data collection → training run → model weights → inference · with feedback loop</text>
 
-  <!-- Arrows -->
-  <line x1="131" y1="101" x2="153" y2="101" stroke="#9D9A95" stroke-width="2" marker-end="url(#t-gray)"/>
-  <line x1="276" y1="101" x2="298" y2="101" stroke="#9D9A95" stroke-width="2" marker-end="url(#t-gray)"/>
-  <line x1="421" y1="101" x2="443" y2="101" stroke="#9D9A95" stroke-width="2" marker-end="url(#t-gray)"/>
-  <line x1="566" y1="101" x2="588" y2="101" stroke="#9D9A95" stroke-width="2" marker-end="url(#t-gray)"/>
+  <!-- Step label pills (shifted down by 50) -->
+  <rect x="11"  y="62" width="120" height="28" rx="4" fill="#E2DFD6"/>
+  <rect x="156" y="62" width="120" height="28" rx="4" fill="#E2DFD6"/>
+  <rect x="301" y="62" width="120" height="28" rx="4" fill="#E2DFD6"/>
+  <rect x="446" y="62" width="120" height="28" rx="4" fill="#E2DFD6"/>
+  <rect x="591" y="62" width="120" height="28" rx="4" fill="#E2DFD6"/>
 
-  <!-- Feedback arc (R1 reinforcing loop) -->
-  <path d="M 651 143 C 651 212 438 220 300 214 S 71 212 71 150" stroke="#A85B49" stroke-width="1.5" stroke-dasharray="8,9" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#t-red)"/>
+  <text x="71"  y="80" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">① collect</text>
+  <text x="216" y="80" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">② filter &amp; label</text>
+  <text x="361" y="73" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">③ billions of</text>
+  <text x="361" y="85" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">tiny adjustments</text>
+  <text x="506" y="80" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">④ result</text>
+  <text x="651" y="80" text-anchor="middle" font-size="10" font-weight="600" fill="#6B6873">⑤ your use</text>
 
-  <!-- Nodes -->
-  <rect x="11"  y="61" width="120" height="80" rx="9" fill="#DEE3EC" stroke="#4F627F" stroke-width="2"/>
-  <text x="71"  y="89"  text-anchor="middle" font-size="13" font-weight="700" fill="#4F627F">THE</text>
-  <text x="71"  y="105" text-anchor="middle" font-size="13" font-weight="700" fill="#4F627F">INTERNET</text>
-  <text x="71"  y="121" text-anchor="middle" font-size="10" fill="#4F627F">trillions of words</text>
+  <!-- Arrows (shifted down by 50) -->
+  <line x1="131" y1="151" x2="153" y2="151" stroke="#9D9A95" stroke-width="2" marker-end="url(#t-gray)"/>
+  <line x1="276" y1="151" x2="298" y2="151" stroke="#9D9A95" stroke-width="2" marker-end="url(#t-gray)"/>
+  <line x1="421" y1="151" x2="443" y2="151" stroke="#9D9A95" stroke-width="2" marker-end="url(#t-gray)"/>
+  <line x1="566" y1="151" x2="588" y2="151" stroke="#9D9A95" stroke-width="2" marker-end="url(#t-gray)"/>
 
-  <rect x="156" y="61" width="120" height="80" rx="9" fill="#DEE3EC" stroke="#4F627F" stroke-width="2"/>
-  <text x="216" y="89"  text-anchor="middle" font-size="13" font-weight="700" fill="#4F627F">TRAINING</text>
-  <text x="216" y="105" text-anchor="middle" font-size="13" font-weight="700" fill="#4F627F">DATA</text>
-  <text x="216" y="121" text-anchor="middle" font-size="10" fill="#4F627F">cleaned &amp; curated</text>
+  <!-- Feedback arc (shifted down by 50) -->
+  <path d="M 651 193 C 651 262 438 270 300 264 S 71 262 71 200" stroke="#A85B49" stroke-width="1.5" stroke-dasharray="8,9" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#t-red)"/>
 
-  <rect x="301" y="61" width="120" height="80" rx="9" fill="#EDD8CE" stroke="#A85B49" stroke-width="2"/>
-  <text x="361" y="78"  text-anchor="middle" font-size="13" font-weight="700" fill="#A85B49">TRAINING RUN</text>
-  <text x="361" y="92"  text-anchor="middle" font-size="9.5" fill="#A85B49">weeks · millions of $</text>
-  <text x="361" y="106" text-anchor="middle" font-size="9.5" fill="#A85B49">specialized chips only</text>
-  <text x="361" y="120" text-anchor="middle" font-size="9.5" fill="#A85B49">~$100M–$1B per run</text>
-  <text x="361" y="134" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49" opacity="0.85">N-1 model → trains N</text>
+  <!-- Nodes (shifted down by 50) -->
+  <rect x="11"  y="111" width="120" height="80" rx="9" fill="#DEE3EC" stroke="#4F627F" stroke-width="2"/>
+  <text x="71"  y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#4F627F">THE</text>
+  <text x="71"  y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#4F627F">INTERNET</text>
+  <text x="71"  y="171" text-anchor="middle" font-size="10" fill="#4F627F">trillions of words</text>
 
-  <rect x="446" y="61" width="120" height="80" rx="9" fill="#DEE8E1" stroke="#5A8270" stroke-width="2"/>
-  <text x="506" y="83"  text-anchor="middle" font-size="13" font-weight="700" fill="#5A8270">THE MODEL</text>
-  <text x="506" y="99"  text-anchor="middle" font-size="11" fill="#5A8270">~100B numbers</text>
-  <text x="506" y="113" text-anchor="middle" font-size="10" fill="#5A8270">a file that persists</text>
-  <text x="506" y="127" text-anchor="middle" font-size="9" font-style="italic" fill="#5A8270" opacity="0.85">recoups training cost</text>
+  <rect x="156" y="111" width="120" height="80" rx="9" fill="#DEE3EC" stroke="#4F627F" stroke-width="2"/>
+  <text x="216" y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#4F627F">TRAINING</text>
+  <text x="216" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#4F627F">DATA</text>
+  <text x="216" y="171" text-anchor="middle" font-size="10" fill="#4F627F">cleaned &amp; curated</text>
 
-  <rect x="591" y="61" width="120" height="80" rx="9" fill="#F0E5CD" stroke="#A28438" stroke-width="2"/>
-  <text x="651" y="93"  text-anchor="middle" font-size="13" font-weight="700" fill="#A28438">YOUR</text>
-  <text x="651" y="109" text-anchor="middle" font-size="13" font-weight="700" fill="#A28438">PROMPT</text>
-  <text x="651" y="125" text-anchor="middle" font-size="10" fill="#A28438">inference</text>
+  <rect x="301" y="111" width="120" height="80" rx="9" fill="#EDD8CE" stroke="#A85B49" stroke-width="2"/>
+  <text x="361" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#A85B49">TRAINING RUN</text>
+  <text x="361" y="142" text-anchor="middle" font-size="9.5" fill="#A85B49">weeks · millions of $</text>
+  <text x="361" y="156" text-anchor="middle" font-size="9.5" fill="#A85B49">specialized chips only</text>
+  <text x="361" y="170" text-anchor="middle" font-size="9.5" fill="#A85B49">~$100M–$1B per run</text>
+  <text x="361" y="184" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49" opacity="0.85">N-1 model → trains N</text>
 
-  <text x="361" y="232" text-anchor="middle" font-size="12" font-weight="600" fill="#A85B49">Feedback: outputs evaluated → inform the next training run</text>
-  <text x="361" y="249" text-anchor="middle" font-size="11" font-style="italic" fill="#6B6873">DIA-001 — Training pipeline: from data collection through training run to inference, with feedback loop.</text>
+  <rect x="446" y="111" width="120" height="80" rx="9" fill="#DEE8E1" stroke="#5A8270" stroke-width="2"/>
+  <text x="506" y="133" text-anchor="middle" font-size="13" font-weight="700" fill="#5A8270">THE MODEL</text>
+  <text x="506" y="149" text-anchor="middle" font-size="11" fill="#5A8270">~100B numbers</text>
+  <text x="506" y="163" text-anchor="middle" font-size="10" fill="#5A8270">a file that persists</text>
+  <text x="506" y="177" text-anchor="middle" font-size="9" font-style="italic" fill="#5A8270" opacity="0.85">recoups training cost</text>
+
+  <rect x="591" y="111" width="120" height="80" rx="9" fill="#F0E5CD" stroke="#A28438" stroke-width="2"/>
+  <text x="651" y="143" text-anchor="middle" font-size="13" font-weight="700" fill="#A28438">YOUR</text>
+  <text x="651" y="159" text-anchor="middle" font-size="13" font-weight="700" fill="#A28438">PROMPT</text>
+  <text x="651" y="175" text-anchor="middle" font-size="10" fill="#A28438">inference</text>
+
+  <text x="365" y="290" text-anchor="middle" font-size="12" font-weight="600" fill="#A85B49">Feedback: outputs evaluated → inform the next training run</text>
 </svg>

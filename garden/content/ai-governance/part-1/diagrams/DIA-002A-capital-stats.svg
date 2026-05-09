@@ -1,6 +1,6 @@
-<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-capital-stats-title viz-capital-stats-desc">
-  <title id="viz-capital-stats-title">AI capital structure — key figures</title>
-  <desc id="viz-capital-stats-desc">Four cards summarize the gap between AI capital commitments and revenue. Card 1: OpenAI revised compute target $600B through 2030. Card 2: OpenAI annualized revenue ~$25B. Card 3: combined 2025 hyperscaler capex $448B. Card 4 (visually distinct as the punchline): ~24x ratio of commitment to revenue.</desc>
+<svg viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-capital-stats-title viz-capital-stats-desc">
+  <title id="viz-capital-stats-title">DIA-002A · Key capital figures</title>
+  <desc id="viz-capital-stats-desc">Four cards summarize the gap between AI capital commitments and revenue. Card 1: OpenAI revised compute target $600B through 2030. Card 2: OpenAI annualized revenue ~$25B. Card 3: combined 2025 hyperscaler capex $448B. Card 4: ~24x ratio of commitment to revenue.</desc>
   <defs>
     <style>
       :root {
@@ -25,6 +25,7 @@
       [fill="#FFFFFF"] { fill: var(--card); }
       [stroke="#E2DFD6"] { stroke: var(--border); }
       [fill="#6B6873"] { fill: var(--muted); }
+      [fill="#9D9A95"] { fill: var(--muted2); }
       [fill="#A85B49"] { fill: var(--rust); } [stroke="#A85B49"] { stroke: var(--rust); }
       [fill="#EDD8CE"] { fill: var(--rust-soft); }
       [fill="#A28438"] { fill: var(--gold); } [stroke="#A28438"] { stroke: var(--gold); }
@@ -32,42 +33,45 @@
     </style>
   </defs>
 
-  <rect x="0" y="0" width="700" height="220" rx="8" fill="#F2EEE3"/>
+  <rect x="0" y="0" width="700" height="270" rx="8" fill="#F2EEE3"/>
+
+  <!-- ── STANDARD HEADER ── -->
+  <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-002A · KEY CAPITAL FIGURES</text>
+  <text x="350" y="48" text-anchor="middle" font-size="12" fill="#6B6873">commitments, backing, sector capex, and the ratio that defines the bet</text>
 
   <!-- Card 1: OpenAI commitment ($600B) — rust, the EXPOSURE -->
-  <rect x="10" y="16" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1.5"/>
-  <text x="91" y="62" text-anchor="middle" font-size="34" font-weight="900" fill="#A85B49">$600B</text>
-  <line x1="34" y1="78" x2="148" y2="78" stroke="#A85B49" stroke-width="1.5" opacity="0.4"/>
-  <text x="91" y="100" text-anchor="middle" font-size="11" fill="#6B6873">OpenAI revised compute</text>
-  <text x="91" y="115" text-anchor="middle" font-size="11" fill="#6B6873">target through 2030</text>
-  <text x="91" y="138" text-anchor="middle" font-size="10" font-style="italic" fill="#9D9A95">CNBC, Feb 2026</text>
+  <rect x="10" y="66" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1.5"/>
+  <text x="91" y="112" text-anchor="middle" font-size="34" font-weight="900" fill="#A85B49">$600B</text>
+  <line x1="34" y1="128" x2="148" y2="128" stroke="#A85B49" stroke-width="1.5" opacity="0.4"/>
+  <text x="91" y="150" text-anchor="middle" font-size="11" fill="#6B6873">OpenAI revised compute</text>
+  <text x="91" y="165" text-anchor="middle" font-size="11" fill="#6B6873">target through 2030</text>
+  <text x="91" y="188" text-anchor="middle" font-size="10" font-style="italic" fill="#9D9A95">CNBC, Feb 2026</text>
 
   <!-- Card 2: OpenAI revenue ($25B) — gold, the BACKING -->
-  <rect x="182" y="16" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1.5"/>
-  <text x="263" y="62" text-anchor="middle" font-size="34" font-weight="900" fill="#A28438">~$25B</text>
-  <line x1="206" y1="78" x2="320" y2="78" stroke="#A28438" stroke-width="1.5" opacity="0.4"/>
-  <text x="263" y="100" text-anchor="middle" font-size="11" fill="#6B6873">OpenAI annualized</text>
-  <text x="263" y="115" text-anchor="middle" font-size="11" fill="#6B6873">revenue run-rate</text>
-  <text x="263" y="138" text-anchor="middle" font-size="10" font-style="italic" fill="#9D9A95">May 2026</text>
+  <rect x="182" y="66" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1.5"/>
+  <text x="263" y="112" text-anchor="middle" font-size="34" font-weight="900" fill="#A28438">~$25B</text>
+  <line x1="206" y1="128" x2="320" y2="128" stroke="#A28438" stroke-width="1.5" opacity="0.4"/>
+  <text x="263" y="150" text-anchor="middle" font-size="11" fill="#6B6873">OpenAI annualized</text>
+  <text x="263" y="165" text-anchor="middle" font-size="11" fill="#6B6873">revenue run-rate</text>
+  <text x="263" y="188" text-anchor="middle" font-size="10" font-style="italic" fill="#9D9A95">May 2026</text>
 
   <!-- Card 3: Hyperscaler capex ($448B) — slate, the SECTOR CONTEXT -->
-  <rect x="354" y="16" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1.5"/>
-  <text x="435" y="62" text-anchor="middle" font-size="34" font-weight="900" fill="#4F627F">$448B</text>
-  <line x1="378" y1="78" x2="492" y2="78" stroke="#4F627F" stroke-width="1.5" opacity="0.4"/>
-  <text x="435" y="100" text-anchor="middle" font-size="11" fill="#6B6873">Combined 2025 capex</text>
-  <text x="435" y="115" text-anchor="middle" font-size="11" fill="#6B6873">MSFT + GOOGL + AMZN</text>
-  <text x="435" y="138" text-anchor="middle" font-size="10" font-style="italic" fill="#9D9A95">+ META + ORCL</text>
+  <rect x="354" y="66" width="162" height="156" rx="12" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1.5"/>
+  <text x="435" y="112" text-anchor="middle" font-size="34" font-weight="900" fill="#4F627F">$448B</text>
+  <line x1="378" y1="128" x2="492" y2="128" stroke="#4F627F" stroke-width="1.5" opacity="0.4"/>
+  <text x="435" y="150" text-anchor="middle" font-size="11" fill="#6B6873">Combined 2025 capex</text>
+  <text x="435" y="165" text-anchor="middle" font-size="11" fill="#6B6873">MSFT + GOOGL + AMZN</text>
+  <text x="435" y="188" text-anchor="middle" font-size="10" font-style="italic" fill="#9D9A95">+ META + ORCL</text>
 
-  <!-- Card 4: Ratio (~24x) — rust filled, the PUNCHLINE (derived from cards 1+2) -->
-  <rect x="526" y="16" width="164" height="156" rx="12" fill="#A85B49" stroke="#A85B49" stroke-width="1.5"/>
-  <text x="608" y="42" text-anchor="middle" font-size="9.5" font-weight="700" fill="#EDD8CE" letter-spacing="0.12em">COMMITMENT ÷ REVENUE</text>
-  <text x="608" y="86" text-anchor="middle" font-size="42" font-weight="900" fill="#FFFFFF">~24×</text>
-  <line x1="552" y1="100" x2="664" y2="100" stroke="#EDD8CE" stroke-width="1.5" opacity="0.6"/>
-  <text x="608" y="122" text-anchor="middle" font-size="11" fill="#EDD8CE">commitment outruns</text>
-  <text x="608" y="137" text-anchor="middle" font-size="11" fill="#EDD8CE">backing by 24-fold</text>
-  <text x="608" y="158" text-anchor="middle" font-size="10" font-style="italic" fill="#EDD8CE" opacity="0.85">$600B ÷ $25B</text>
+  <!-- Card 4: Ratio (~24x) — rust filled, the PUNCHLINE -->
+  <rect x="526" y="66" width="164" height="156" rx="12" fill="#A85B49" stroke="#A85B49" stroke-width="1.5"/>
+  <text x="608" y="92" text-anchor="middle" font-size="9.5" font-weight="700" fill="#EDD8CE" letter-spacing="0.12em">COMMITMENT ÷ REVENUE</text>
+  <text x="608" y="136" text-anchor="middle" font-size="42" font-weight="900" fill="#FFFFFF">~24×</text>
+  <line x1="552" y1="150" x2="664" y2="150" stroke="#EDD8CE" stroke-width="1.5" opacity="0.6"/>
+  <text x="608" y="172" text-anchor="middle" font-size="11" fill="#EDD8CE">commitment outruns</text>
+  <text x="608" y="187" text-anchor="middle" font-size="11" fill="#EDD8CE">backing by 24-fold</text>
+  <text x="608" y="208" text-anchor="middle" font-size="10" font-style="italic" fill="#EDD8CE" opacity="0.85">$600B ÷ $25B</text>
 
-  <!-- Footer -->
-  <text x="350" y="206" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6873">DIA-002A — capital commitments, revenue backing, sector capex, and the ratio that defines</text>
-  <text x="350" y="218" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6873">the structure of the bet.</text>
+  <!-- Footer (no DIA prefix — already in header) -->
+  <text x="350" y="252" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6873">commitments, revenue backing, sector capex, and the ratio that defines the structure of the bet</text>
 </svg>

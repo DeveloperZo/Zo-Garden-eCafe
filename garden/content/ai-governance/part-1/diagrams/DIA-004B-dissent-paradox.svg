@@ -1,80 +1,125 @@
-<svg viewBox="0 0 860 405" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d5b-t d5b-d">
-  <title id="d5b-t">DIA-004B — The Dissent Paradox</title>
-  <desc id="d5b-d">Two-path flow diagram showing that safety dissent, expected to slow frontier development as a self-correcting input, often creates new well-capitalized frontier labs and increases aggregate capability, converting a stabilizing signal into an amplifying one.</desc>
-
+<svg viewBox="0 0 820 625" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-cap-title viz-cap-desc">
+  <title id="viz-cap-title">AI capital — concrete forces, concrete brakes, and the response capacity that has been emptied</title>
+  <desc id="viz-cap-desc">A free-body force diagram. Three large rust-colored arrows on the left represent forces pushing the AI buildout forward, named in concrete terms: 300 billion dollars per year in AI revenue paying salaries; 1.4 trillion dollars already committed by 2030; 100,000 plus AI jobs concentrated at frontier labs. Three small sage-colored arrows on the right represent brake forces, also named concretely: zero dollars in enforced US federal AI law; 400 thousand dollars in cumulative AI fines globally; a 5 to 7 year lag before markets can verify whether the bet pays off. Below the force diagram, a response capacity panel shows the dollar-scale ratio: 1.4 trillion in commitments versus 400 thousand in cumulative brake response — a ratio of roughly 3.5 million to one. The bottom caption reframes the diagnosis: misaligned forces do not predict a crash, they remove the ability to respond to one if it comes.</desc>
   <defs>
     <style>
       :root {
-        --bg: #FAFAF8; --panel: #FFFFFF; --muted: #6B6B85; --muted2: #9B9BA8;
-        --red: #C94B2E; --red-soft: #FDE8E3; --gray-soft: #F7F6F3;
+        --bg: #FAFAF8; --paper: #F2EEE3; --muted: #6B6873; --muted2: #9D9A95; --line: #E2DFD6;
+        --rust: #A85B49;  --rust-soft: #EDD8CE; --rust-deep: #823F30;
+        --slate: #4F627F; --slate-soft: #DEE3EC;
+        --sage: #5A8270;  --sage-soft: #DEE8E1;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #1B1D23; --panel: #242834; --muted: #C2C9D9; --muted2: #A8B3C7;
-          --red: #FF8C73; --red-soft: #4A2A28; --gray-soft: #2A2F3A;
+          --bg: #1B1D23; --paper: #1E2128; --muted: #B8B5AD; --muted2: #908D87; --line: #3E3D38;
+          --rust: #D29183;  --rust-soft: #3D2925; --rust-deep: #E3A292;
+          --slate: #94A6C4; --slate-soft: #2A323F;
+          --sage: #92BAA6;  --sage-soft: #233029;
         }
       }
-      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#FFFFFF"] { fill: var(--panel); }
-      [fill="#6B6B85"] { fill: var(--muted); } [fill="#9B9BA8"] { fill: var(--muted2); } [stroke="#9B9BA8"] { stroke: var(--muted2); }
-      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); } [fill="#F7F6F3"] { fill: var(--gray-soft); }
+      text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+      .serif { font-family: Georgia, "Times New Roman", serif; }
+      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#F2EEE3"] { fill: var(--paper); }
+      [fill="#6B6873"] { fill: var(--muted); }
+      [fill="#9D9A95"] { fill: var(--muted2); } [stroke="#9D9A95"] { stroke: var(--muted2); }
+      [fill="#E2DFD6"] { fill: var(--line); } [stroke="#E2DFD6"] { stroke: var(--line); }
+      [fill="#A85B49"] { fill: var(--rust); } [stroke="#A85B49"] { stroke: var(--rust); } [fill="#EDD8CE"] { fill: var(--rust-soft); }
+      [stroke="#823F30"] { stroke: var(--rust-deep); } [fill="#823F30"] { fill: var(--rust-deep); }
+      [fill="#5A8270"] { fill: var(--sage); } [stroke="#5A8270"] { stroke: var(--sage); } [fill="#DEE8E1"] { fill: var(--sage-soft); }
+      [fill="#4F627F"] { fill: var(--slate); } [stroke="#4F627F"] { stroke: var(--slate); } [fill="#DEE3EC"] { fill: var(--slate-soft); }
     </style>
-    <marker id="d5b-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0,8 3,0 6" fill="#C94B2E"/>
+    <marker id="fwd-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#A85B49"/>
     </marker>
-    <marker id="d5b-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0,8 3,0 6" fill="#9B9BA8"/>
+    <marker id="bck-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5A8270"/>
     </marker>
   </defs>
 
-  <!-- Background -->
-  <rect width="860" height="340" fill="#FAFAF8" rx="8"/>
-  <text x="430" y="20" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#6B6B85">The Dissent Paradox</text>
-  <text x="430" y="36" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#9B9BA8">Expected loop: internal criticism slows capability growth. Observed loop: departures seed new frontier labs.</text>
+  <rect x="0" y="0" width="820" height="625" fill="#F2EEE3"/>
 
-  <!-- ── INPUT NODE ── -->
-  <rect x="20" y="120" width="165" height="60" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5" rx="6"/>
-  <text x="102" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#C94B2E">SAFETY CONCERN</text>
-  <text x="102" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#C94B2E">raised inside a lab</text>
+  <!-- HEADER -->
+  <text x="410" y="34" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-004B · MISALIGNED FORCES, EMPTIED RESPONSE</text>
+  <text x="410" y="54" text-anchor="middle" font-size="12" fill="#6B6873">forces pushing the buildout forward · forces that could slow it · the gap between them is response capacity that's been spent</text>
 
-  <!-- Arrow: input → junction -->
-  <line x1="185" y1="150" x2="222" y2="150" stroke="#C94B2E" stroke-width="2" marker-end="url(#d5b-red)"/>
+  <!-- ═════════════════════════════════════════════════════════
+       SECTION 1 — FORCES IN TENSION (concrete framing)
+       ═════════════════════════════════════════════════════════ -->
 
-  <!-- Junction dot -->
-  <circle cx="228" cy="150" r="5" fill="#C94B2E"/>
+  <text x="195" y="92" text-anchor="middle" font-size="10.5" font-weight="700" fill="#A85B49" letter-spacing="0.06em">FORCES PUSHING FORWARD</text>
+  <text x="660" y="92" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5A8270" letter-spacing="0.06em">FORCES THAT COULD SLOW IT</text>
 
-  <!-- ── TOP BRANCH: expected (dashed gray, upward) ── -->
-  <line x1="228" y1="145" x2="228" y2="96" stroke="#9B9BA8" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <line x1="228" y1="96" x2="290" y2="96" stroke="#9B9BA8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#d5b-gray)"/>
+  <!-- Pair 1: revenue & salaries vs federal law -->
+  <text x="195" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#A85B49" class="serif">$300B+ revenue / yr · pays salaries</text>
+  <text x="195" y="131" text-anchor="middle" font-size="9.5" fill="#6B6873" class="serif" font-style="italic">subscriptions, API, enterprise contracts — funds payroll &amp; chips</text>
+  <line x1="70" y1="146" x2="320" y2="146" stroke="#A85B49" stroke-width="9" stroke-linecap="butt" marker-end="url(#fwd-arr)"/>
 
-  <!-- Top box: expected outcome -->
-  <rect x="290" y="62" width="320" height="68" fill="#F7F6F3" stroke="#9B9BA8" stroke-width="1.5" stroke-dasharray="6,3" rx="6"/>
-  <text x="450" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#9B9BA8">EXPECTED  ·  self-correcting</text>
-  <text x="450" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#9B9BA8">Safety concern → lab slows · internal correction activates</text>
-  <text x="450" y="116" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#9B9BA8">Aggregate frontier capability: ↓ reduced</text>
+  <text x="660" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#5A8270" class="serif">$0 enforced US federal AI law</text>
+  <text x="660" y="131" text-anchor="middle" font-size="9.5" fill="#6B6873" class="serif" font-style="italic">agencies still drafting · no binding rules</text>
+  <line x1="630" y1="146" x2="500" y2="146" stroke="#5A8270" stroke-width="4" stroke-linecap="butt" marker-end="url(#bck-arr)"/>
 
-  <!-- ── BOTTOM BRANCH: actual (solid red, downward) ── -->
-  <line x1="228" y1="155" x2="228" y2="265" stroke="#C94B2E" stroke-width="2"/>
-  <line x1="228" y1="265" x2="290" y2="265" stroke="#C94B2E" stroke-width="2" marker-end="url(#d5b-red)"/>
+  <!-- Pair 2: jobs at stake vs antitrust -->
+  <text x="195" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#A85B49" class="serif">100,000+ AI jobs · concentrated at 4 labs</text>
+  <text x="195" y="211" text-anchor="middle" font-size="9.5" fill="#6B6873" class="serif" font-style="italic">labs that pause lose top engineers within 12 months</text>
+  <line x1="70" y1="226" x2="320" y2="226" stroke="#A85B49" stroke-width="9" stroke-linecap="butt" marker-end="url(#fwd-arr)"/>
 
-  <!-- Bottom box: actual outcome -->
-  <rect x="290" y="224" width="320" height="82" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2" rx="6"/>
-  <text x="450" y="246" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#C94B2E">ACTUAL  ·  self-amplifying</text>
-  <text x="450" y="263" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#C94B2E">Safety concern → researcher departs → new frontier lab</text>
-  <text x="450" y="279" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#C94B2E">→ new capital raised → aggregate frontier capability: ↑ increased</text>
-  <text x="450" y="297" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">System converts a self-correcting input into a self-amplifying one.</text>
+  <text x="660" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#5A8270" class="serif">antitrust · slow, narrow scope</text>
+  <text x="660" y="211" text-anchor="middle" font-size="9.5" fill="#6B6873" class="serif" font-style="italic">few cases · multi-year timelines · limited remedies</text>
+  <line x1="640" y1="226" x2="500" y2="226" stroke="#5A8270" stroke-width="3" stroke-linecap="butt" marker-end="url(#bck-arr)"/>
 
+  <!-- Pair 3: $1.4T sunk vs total fines -->
+  <text x="195" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#A85B49" class="serif">$1.4T already committed · can't refund</text>
+  <text x="195" y="291" text-anchor="middle" font-size="9.5" fill="#6B6873" class="serif" font-style="italic">infrastructure deals, GPU contracts, multi-year staffing</text>
+  <line x1="70" y1="306" x2="320" y2="306" stroke="#A85B49" stroke-width="9" stroke-linecap="butt" marker-end="url(#fwd-arr)"/>
 
-  <!-- Examples pill -->
-  <rect x="620" y="116" width="230" height="96" rx="16" fill="#FFFFFF" opacity="0.9"/>
-  <text x="634" y="133" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#C94B2E">Recent examples</text>
-  <text x="634" y="151" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6B85">Anthropic (2021): ex-OpenAI safety researchers</text>
-  <text x="634" y="169" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6B85">SSI (2024): Ilya Sutskever, ~$32B valuation</text>
-  <text x="634" y="187" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6B85">Thinking Machines (2024): Mira Murati</text>
-  <text x="634" y="205" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6B85">Jan Leike joins Anthropic (2024)</text>
+  <text x="660" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#5A8270" class="serif">5–7 yr market verification lag</text>
+  <text x="660" y="291" text-anchor="middle" font-size="9.5" fill="#6B6873" class="serif" font-style="italic">stock prices &amp; layoffs only react after the bet pays or fails</text>
+  <line x1="650" y1="306" x2="500" y2="306" stroke="#5A8270" stroke-width="2.5" stroke-linecap="butt" marker-end="url(#bck-arr)"/>
 
-  <!-- Caption -->
-  <text x="430" y="348" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-004B — The Dissent Paradox: a safety concern raised inside a lab was expected to activate a stabilizing loop (top, dashed). What actually</text>
-  <text x="430" y="361" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">happens is the opposite: each departure produces a new well-capitalized frontier lab, converting a stabilizing input into a self-amplifying one.</text>
-  <text x="430" y="374" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">Ilya Sutskever → SSI ($32B valuation); Mira Murati → Thinking Machines; Jan Leike → Anthropic.</text>
-  <text x="430" y="387" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">The system converts internal criticism into new competitors.</text>
+  <!-- THE STRUCTURE -->
+  <rect x="320" y="110" width="180" height="210" rx="6" fill="#FFFDF8" stroke="#4F627F" stroke-width="2"/>
+  <text x="410" y="200" text-anchor="middle" font-size="14" font-weight="700" fill="#4F627F" class="serif">THE</text>
+  <text x="410" y="218" text-anchor="middle" font-size="14" font-weight="700" fill="#4F627F" class="serif">BUILDOUT</text>
+  <line x1="340" y1="232" x2="480" y2="232" stroke="#DEE3EC" stroke-width="1"/>
+  <text x="410" y="252" text-anchor="middle" font-size="10" fill="#4F627F">chips · data centers</text>
+  <text x="410" y="266" text-anchor="middle" font-size="10" fill="#4F627F">power · payroll</text>
+  <text x="410" y="284" text-anchor="middle" font-size="10" font-style="italic" fill="#6B6873">$1.4T+ in motion</text>
+
+  <!-- ═════════════════════════════════════════════════════════
+       SECTION 2 — RESPONSE CAPACITY (scale comparison)
+       ═════════════════════════════════════════════════════════ -->
+
+  <line x1="40" y1="350" x2="780" y2="350" stroke="#E2DFD6" stroke-width="1"/>
+
+  <text x="410" y="376" text-anchor="middle" font-size="13" font-weight="700" fill="#823F30" letter-spacing="0.06em">IF THE BUILDOUT EVER NEEDED TO SLOW · WHAT'S AVAILABLE TO STOP IT</text>
+
+  <!-- Forward bar: $1.4T (full visible width) -->
+  <text x="80" y="408" font-size="10.5" font-weight="700" fill="#A85B49" letter-spacing="0.05em">MONEY ALREADY COMMITTED</text>
+  <text x="80" y="422" font-size="9.5" fill="#6B6873" font-style="italic">contracts, capex plans, staffing — built into the next several years</text>
+  <rect x="80" y="430" width="660" height="22" rx="3" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.5"/>
+  <text x="92" y="446" font-size="11" font-weight="700" fill="#A85B49" class="serif">$1.4 trillion  ·  cumulative AI commitments through 2030</text>
+
+  <!-- Brake bar: $400K (forced 4px minimum to be visible at all) -->
+  <text x="80" y="478" font-size="10.5" font-weight="700" fill="#5A8270" letter-spacing="0.05em">MONEY THE BRAKES HAVE ACTUALLY COLLECTED</text>
+  <text x="80" y="492" font-size="9.5" fill="#6B6873" font-style="italic">every regulator, court, and watchdog combined — global, all time</text>
+  <rect x="80" y="500" width="4" height="22" rx="1" fill="#5A8270"/>
+  <text x="92" y="516" font-size="11" font-weight="700" fill="#5A8270" class="serif">$400,000  ·  total global AI fines, ever</text>
+  <text x="334" y="516" font-size="9.5" font-style="italic" fill="#9D9A95">— less than one engineer's annual salary</text>
+  <!-- Velocity indicator: the gap is widening, not stable -->
+  <text x="80" y="535" font-size="9.5" font-style="italic" fill="#823F30">↗ commitments grow ~2× per year · brake capacity has not scaled with them — the gap widens annually</text>
+
+  <!-- Ratio annotation -->
+  <text x="740" y="446" text-anchor="end" font-size="9.5" font-style="italic" fill="#823F30" class="serif">3.5 million × 1</text>
+  <text x="740" y="516" text-anchor="end" font-size="9.5" font-style="italic" fill="#9D9A95" class="serif">brake : commitment ratio</text>
+
+  <!-- ═════════════════════════════════════════════════════════
+       BOTTOM CAPTION
+       ═════════════════════════════════════════════════════════ -->
+
+  <line x1="40" y1="555" x2="780" y2="555" stroke="#E2DFD6" stroke-width="1"/>
+
+  <text x="410" y="574" text-anchor="middle" font-size="9.5" font-style="italic" fill="#6B6873">Brakes depend on what they brake: scrutiny needs evidence, antitrust needs market data, verification needs revenue.</text>
+  <text x="410" y="586" text-anchor="middle" font-size="9.5" font-style="italic" fill="#6B6873">Capital deploys faster than oversight can be built — the burden shifts each year, never back.</text>
+
+  <text x="410" y="608" text-anchor="middle" font-size="12" font-weight="700" fill="#A85B49">In a crisis, the ability to slow or stop is what saves you. Misaligned forces remove that ability.</text>
 </svg>

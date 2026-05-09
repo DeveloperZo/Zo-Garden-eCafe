@@ -1,11 +1,11 @@
-<svg viewBox="0 -10 680 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-gap-title viz-gap-desc">
-  <title id="viz-gap-title">Capability rises faster than controllability over time</title>
+<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="viz-gap-title viz-gap-desc">
+  <title id="viz-gap-title">DIA-003 · The capability–controllability gap</title>
   <desc id="viz-gap-desc">Time on horizontal axis 2018 through 2026. A steep red curve shows model capability rising; a shallower green curve shows how much we can control behavior. A shaded wedge between them is labeled the alignment gap. Four milestones on the red curve are marked.</desc>
   <defs>
     <style>
       :root {
-        --bg: #FAFAF8; --text: #1C1C2E; --muted: #6B6B85; --muted2: #9B9BA8; --line: #E4E2DC; --panel: #F7F6F3;
-        --red: #C94B2E; --red-soft: #FDE8E3; --green: #2A7A5F;
+        --bg: #FAFAF8; --text: #1C1C2E; --muted: #6B6873; --muted2: #9D9A95; --line: #E2DFD6; --panel: #F7F6F3;
+        --red: #A85B49; --red-soft: #EDD8CE; --green: #5A8270;
       }
       @media (prefers-color-scheme: dark) {
         :root {
@@ -14,85 +14,89 @@
         }
       }
       text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#6B6B85"] { fill: var(--muted); } [fill="#9B9BA8"] { fill: var(--muted2); }
-      [stroke="#E4E2DC"] { stroke: var(--line); } [fill="#F7F6F3"] { fill: var(--panel); } [stroke="#9B9BA8"] { stroke: var(--muted2); }
-      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); }
-      [fill="#2A7A5F"] { fill: var(--green); } [stroke="#2A7A5F"] { stroke: var(--green); }
+      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#6B6873"] { fill: var(--muted); } [fill="#9D9A95"] { fill: var(--muted2); }
+      [stroke="#E2DFD6"] { stroke: var(--line); } [fill="#F7F6F3"] { fill: var(--panel); } [stroke="#9D9A95"] { stroke: var(--muted2); }
+      [fill="#A85B49"] { fill: var(--red); } [stroke="#A85B49"] { stroke: var(--red); } [fill="#EDD8CE"] { fill: var(--red-soft); }
+      [fill="#5A8270"] { fill: var(--green); } [stroke="#5A8270"] { stroke: var(--green); }
     </style>
-    <marker id="a-axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,2 L9,5 L0,8 Z" fill="#9B9BA8"/></marker>
+    <marker id="a-axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,52 L9,55 L0,58 Z" fill="#9D9A95"/></marker>
   </defs>
-  <rect x="0" y="-10" width="680" height="360" fill="#FAFAF8" rx="8"/>
+  <rect x="0" y="50" width="680" height="400" fill="#F2EEE3" rx="8"/>
+  <!-- ── STANDARD HEADER ── -->
+  <text x="340" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-003 · THE CAPABILITY–CONTROLLABILITY GAP</text>
+  <text x="340" y="48" text-anchor="middle" font-size="12" fill="#6B6873">capability (what AI can do) has risen steeply · controllability (what we can ensure) has not</text>
+
   <!-- Axes -->
-  <line x1="56" y1="32" x2="56" y2="264" stroke="#E4E2DC" stroke-width="1.5" marker-end="url(#a-axis)"/>
-  <line x1="56" y1="264" x2="662" y2="264" stroke="#E4E2DC" stroke-width="1.5" marker-end="url(#a-axis)"/>
+  <line x1="56" y1="82" x2="56" y2="314" stroke="#E2DFD6" stroke-width="1.5" marker-end="url(#a-axis)"/>
+  <line x1="56" y1="314" x2="662" y2="314" stroke="#E2DFD6" stroke-width="1.5" marker-end="url(#a-axis)"/>
   <!-- Year labels -->
-  <text x="90"  y="281" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2018</text>
-  <text x="196" y="281" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2020</text>
-  <text x="302" y="281" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2022</text>
-  <text x="408" y="281" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2024</text>
-  <text x="514" y="281" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2025</text>
-  <text x="620" y="281" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6B85">2026</text>
+  <text x="90"  y="331" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6873">2018</text>
+  <text x="196" y="331" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6873">2020</text>
+  <text x="302" y="331" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6873">2022</text>
+  <text x="408" y="331" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6873">2024</text>
+  <text x="514" y="331" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6873">2025</text>
+  <text x="620" y="331" text-anchor="middle" font-size="11" font-weight="600" fill="#6B6873">2026</text>
   <!-- Y-axis qualitative scale: gridlines + ticks + labels -->
   <!-- "routine" band — where AI oversight/control sits by 2026 -->
-  <line x1="56" y1="200" x2="622" y2="200" stroke="#E4E2DC" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.55"/>
-  <line x1="50" y1="200" x2="56"  y2="200" stroke="#9B9BA8" stroke-width="1.5"/>
-  <text x="47" y="204" text-anchor="end" font-size="8.5" fill="#9B9BA8">routine</text>
+  <line x1="56" y1="250" x2="622" y2="250" stroke="#E2DFD6" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.55"/>
+  <line x1="50" y1="250" x2="56"  y2="250" stroke="#9D9A95" stroke-width="1.5"/>
+  <text x="47" y="254" text-anchor="end" font-size="8.5" fill="#9D9A95">routine</text>
   <!-- "expert" band — approx ChatGPT capability level (2022) -->
-  <line x1="56" y1="150" x2="622" y2="150" stroke="#E4E2DC" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.55"/>
-  <line x1="50" y1="150" x2="56"  y2="150" stroke="#9B9BA8" stroke-width="1.5"/>
-  <text x="47" y="154" text-anchor="end" font-size="8.5" fill="#9B9BA8">expert</text>
+  <line x1="56" y1="200" x2="622" y2="200" stroke="#E2DFD6" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.55"/>
+  <line x1="50" y1="200" x2="56"  y2="200" stroke="#9D9A95" stroke-width="1.5"/>
+  <text x="47" y="204" text-anchor="end" font-size="8.5" fill="#9D9A95">expert</text>
   <!-- "top human" band — approx GPT-4 capability level (2023) -->
-  <line x1="56" y1="100" x2="622" y2="100" stroke="#E4E2DC" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.55"/>
-  <line x1="50" y1="100" x2="56"  y2="100" stroke="#9B9BA8" stroke-width="1.5"/>
-  <text x="47" y="104" text-anchor="end" font-size="8.5" fill="#9B9BA8">top human</text>
+  <line x1="56" y1="150" x2="622" y2="150" stroke="#E2DFD6" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.55"/>
+  <line x1="50" y1="150" x2="56"  y2="150" stroke="#9D9A95" stroke-width="1.5"/>
+  <text x="47" y="154" text-anchor="end" font-size="8.5" fill="#9D9A95">top human</text>
   <!-- "frontier" band — where capability sits by 2025–26 -->
-  <line x1="56" y1="50"  x2="622" y2="50"  stroke="#E4E2DC" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.55"/>
-  <line x1="50" y1="50"  x2="56"  y2="50"  stroke="#9B9BA8" stroke-width="1.5"/>
-  <text x="47" y="54"  text-anchor="end" font-size="8.5" fill="#9B9BA8">frontier</text>
+  <line x1="56" y1="100"  x2="622" y2="100"  stroke="#E2DFD6" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.55"/>
+  <line x1="50" y1="100"  x2="56"  y2="100"  stroke="#9D9A95" stroke-width="1.5"/>
+  <text x="47" y="104"  text-anchor="end" font-size="8.5" fill="#9D9A95">frontier</text>
   <!-- Gap fill wedge (solid warm fill between capability and control curves) -->
-  <path d="M 90,246
-           C 140,231 190,206 250,174
-           C 310,142 370,104 430,78
-           C 480,58 540,48 620,44
-           L 620,172
-           C 540,175 480,179 430,189
-           C 370,202 310,214 250,224
-           C 190,234 140,241 90,246 Z"
-       fill="#FDE8E3" fill-opacity="0.72" stroke="#C94B2E" stroke-opacity="0.22" stroke-width="0.75"/>
+  <path d="M 90,296
+           C 140,281 190,256 250,224
+           C 310,192 370,154 430,128
+           C 480,108 540,98 620,94
+           L 620,222
+           C 540,225 480,229 430,239
+           C 370,252 310,264 250,274
+           C 190,284 140,291 90,296 Z"
+       fill="#EDD8CE" fill-opacity="0.72" stroke="#A85B49" stroke-opacity="0.22" stroke-width="0.75"/>
   <!-- Capability curve (red) -->
-  <path d="M 90,246 C 140,231 190,206 250,174 C 310,142 370,104 430,78 C 480,58 540,48 620,44"
-        stroke="#C94B2E" stroke-width="3" fill="none"/>
+  <path d="M 90,296 C 140,281 190,256 250,224 C 310,192 370,154 430,128 C 480,108 540,98 620,94"
+        stroke="#A85B49" stroke-width="3" fill="none"/>
   <!-- Control curve (green) -->
-  <path d="M 90,246 C 140,241 190,234 250,224 C 310,214 370,202 430,189 C 480,179 540,175 620,172"
-        stroke="#2A7A5F" stroke-width="3" fill="none"/>
+  <path d="M 90,296 C 140,291 190,284 250,274 C 310,264 370,252 430,239 C 480,229 540,225 620,222"
+        stroke="#5A8270" stroke-width="3" fill="none"/>
   <!-- Legend: What AI can do -->
-  <rect x="522" y="62" width="120" height="22" rx="4" fill="#FDE8E3" opacity="0.9" stroke="rgba(201,75,46,0.4)" stroke-width="0.75"/>
-  <text x="582" y="73" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" fill="#C94B2E">What AI can do</text>
+  <rect x="522" y="112" width="120" height="22" rx="4" fill="#EDD8CE" opacity="0.9" stroke="rgba(168,91,73,0.4)" stroke-width="0.75"/>
+  <text x="582" y="123" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" fill="#A85B49">What AI can do</text>
   <!-- Legend: What we can control -->
-  <rect x="491" y="184" width="140" height="22" rx="4" fill="#EDF7F3" opacity="0.9" stroke="rgba(42,122,95,0.4)" stroke-width="0.75"/>
-  <text x="561" y="195" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" fill="#2A7A5F">What we can control</text>
+  <rect x="491" y="234" width="140" height="22" rx="4" fill="#DEE8E1" opacity="0.9" stroke="rgba(90,130,112,0.4)" stroke-width="0.75"/>
+  <text x="561" y="245" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" fill="#5A8270">What we can control</text>
   <!-- THE GAP label -->
-  <text x="456" y="118" font-size="11" font-weight="700" font-style="italic" fill="#C94B2E" opacity="0.55">THE GAP</text>
+  <text x="456" y="168" font-size="11" font-weight="700" font-style="italic" fill="#A85B49" opacity="0.55">THE GAP</text>
   <!-- Milestone: GPT-3 — label above connector & curve; text vertically centered in pill -->
-  <line x1="250" y1="138" x2="250" y2="174" stroke="#6B6B85" stroke-width="1" stroke-opacity="0.55"/>
-  <rect x="210" y="116" width="80" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E4E2DC" stroke-width="0.75"/>
-  <text x="250" y="127" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="600" fill="#6B6B85">GPT-3</text>
-  <circle cx="250" cy="174" r="5" fill="#C94B2E"/>
+  <line x1="250" y1="188" x2="250" y2="224" stroke="#6B6873" stroke-width="1" stroke-opacity="0.55"/>
+  <rect x="210" y="166" width="80" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E2DFD6" stroke-width="0.75"/>
+  <text x="250" y="177" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="600" fill="#6B6873">GPT-3</text>
+  <circle cx="250" cy="224" r="5" fill="#A85B49"/>
   <!-- Milestone: ChatGPT -->
-  <line x1="302" y1="106" x2="302" y2="142" stroke="#6B6B85" stroke-width="1" stroke-opacity="0.55"/>
-  <rect x="255" y="84" width="94" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E4E2DC" stroke-width="0.75"/>
-  <text x="302" y="95" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="600" fill="#6B6B85">ChatGPT</text>
-  <circle cx="302" cy="142" r="5" fill="#C94B2E"/>
+  <line x1="302" y1="156" x2="302" y2="192" stroke="#6B6873" stroke-width="1" stroke-opacity="0.55"/>
+  <rect x="255" y="134" width="94" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E2DFD6" stroke-width="0.75"/>
+  <text x="302" y="145" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="600" fill="#6B6873">ChatGPT</text>
+  <circle cx="302" cy="192" r="5" fill="#A85B49"/>
   <!-- Milestone: GPT-4 / Claude -->
-  <line x1="408" y1="42" x2="408" y2="78" stroke="#6B6B85" stroke-width="1" stroke-opacity="0.55"/>
-  <rect x="330" y="20" width="156" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E4E2DC" stroke-width="0.75"/>
-  <text x="408" y="31" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="600" fill="#6B6B85">GPT-4 / Claude</text>
-  <circle cx="408" cy="78" r="5" fill="#C94B2E"/>
+  <line x1="408" y1="92" x2="408" y2="128" stroke="#6B6873" stroke-width="1" stroke-opacity="0.55"/>
+  <rect x="330" y="70" width="156" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E2DFD6" stroke-width="0.75"/>
+  <text x="408" y="81" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="600" fill="#6B6873">GPT-4 / Claude</text>
+  <circle cx="408" cy="128" r="5" fill="#A85B49"/>
   <!-- Milestone:  Claude 4.7 / ChatGPT 5.5 -->
-  <line x1="530" y1="30" x2="530" y2="48" stroke="#6B6B85" stroke-width="1" stroke-opacity="0.55"/>
-  <rect x="432" y="8" width="196" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E4E2DC" stroke-width="0.75"/>
-  <text x="530" y="19" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="600" fill="#6B6B85">Claude 4.7 / ChatGPT 5.5</text>
-  <circle cx="530" cy="48" r="5" fill="#C94B2E"/>
-  <text x="340" y="304" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-003 — The Capability–Alignment Gap (2018–2026): capability (what models can do) has risen steeply, while our ability to ensure models do what we want in every situation has risen much more slowly.</text>
-  <text x="340" y="320" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">The shaded region is the alignment problem: it doesn't close automatically, and must be actively maintained at effort that scales with capability.</text>
+  <line x1="530" y1="80" x2="530" y2="98" stroke="#6B6873" stroke-width="1" stroke-opacity="0.55"/>
+  <rect x="432" y="58" width="196" height="22" rx="4" fill="#F7F6F3" opacity="0.96" stroke="#E2DFD6" stroke-width="0.75"/>
+  <text x="530" y="69" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="600" fill="#6B6873">Claude 4.7 / ChatGPT 5.5</text>
+  <circle cx="530" cy="98" r="5" fill="#A85B49"/>
+  <text x="340" y="354" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6873">The shaded region is the alignment problem — capability outpaces controllability.</text>
+  <text x="340" y="370" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6873">it doesn't close automatically · effort to close it must scale with capability</text>
 </svg>
