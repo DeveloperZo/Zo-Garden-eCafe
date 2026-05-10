@@ -1,6 +1,6 @@
-# DIA-008: Where AI Governance Operates On The Leverage Scale
+# DIA-008B: Where AI Governance Operates On The Leverage Scale
 ## Snapshot
-- **Diagram file:** `garden/content/ai-governance/part-1/diagrams/DIA-008-leverage-hierarchy.svg`
+- **Diagram file:** `garden/content/ai-governance/part-1/diagrams/DIA-008B-leverage-hierarchy.svg`
 - **Theme:** Leverage mismatch in governance design
 - **Primary audience takeaway:** Most current AI governance interventions sit at weak leverage points, while stronger system-shaping points remain mostly undeployed.
 

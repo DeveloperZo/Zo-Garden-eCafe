@@ -58,21 +58,25 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
       return null
     }
 
+    // Slugs like `ai-governance/part-2/index` end the ancestry chain on the folder node.
+    // With showCurrentPage=false, popping that node removed the whole "Part 2" section from the trail.
+    const isFolderIndexPage = fileData.slug!.endsWith("/index")
+
     const crumbs: CrumbData[] = pathNodes.map((node, idx) => {
       const crumb = formatCrumb(node.displayName, fileData.slug!, simplifySlug(node.slug))
       if (idx === 0) {
         crumb.displayName = options.rootName
       }
 
-      // For last node (current page), set empty path
-      if (idx === pathNodes.length - 1) {
+      const isLast = idx === pathNodes.length - 1
+      if (isLast && !isFolderIndexPage) {
         crumb.path = ""
       }
 
       return crumb
     })
 
-    if (!options.showCurrentPage) {
+    if (!options.showCurrentPage && !isFolderIndexPage) {
       crumbs.pop()
     }
 

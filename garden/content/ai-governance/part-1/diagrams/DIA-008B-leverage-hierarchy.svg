@@ -1,5 +1,5 @@
 <svg viewBox="0 0 860 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d8-t d8-d">
-  <title id="d8-t">DIA-008 — Where AI Governance Operates on the Leverage Scale</title>
+  <title id="d8-t">DIA-008B — Where AI Governance Operates on the Leverage Scale</title>
   <desc id="d8-d">Meadows' 12 leverage points mapped to current AI governance interventions. Points 12–10 (weakest leverage) are at top; points 1–3 (strongest) at bottom. Most governance clusters at the top.</desc>
   <defs>
     <style>
@@ -196,7 +196,7 @@
   <text x="720" y="473" font-family="system-ui" font-size="9" fill="#2A7A5F">change lives here</text>
 
   <!-- Caption -->
-  <text x="430" y="558" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-008. Meadows' 12 leverage points mapped to current AI governance interventions (status May 2026). Most AI governance clusters</text>
+  <text x="430" y="558" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-008B. Meadows' 12 leverage points mapped to current AI governance interventions (status May 2026). Most AI governance clusters</text>
   <text x="430" y="574" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">at points 10–12 (lowest leverage). Structural change requires reaching points 4–1, where almost nothing is deployed.</text>
 
 </svg>

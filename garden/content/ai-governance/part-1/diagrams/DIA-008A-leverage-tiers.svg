@@ -1,0 +1,106 @@
+<svg viewBox="0 0 860 1110" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d8a-t d8a-d">
+  <title id="d8a-t">DIA-008A. Leverage Tiers, Meadows in Four Steps</title>
+  <desc id="d8a-d">The twelve leverage points clustered into four tiers, each card carrying a working precedent or diagnostic tell. Order: low to transformative, weakest to strongest leverage.</desc>
+  <defs>
+    <style>
+      :root {
+        --paper: #F2EEE3; --surface: #FFFFFF; --line: #E2DFD6;
+        --text: #2A2A35; --muted: #6B6873; --muted2: #9D9A95;
+        --slate: #4F627F; --slate-soft: #DEE3EC;
+        --sage: #5A8270; --sage-soft: #DEE8E1;
+        --gold: #A28438; --gold-soft: #F0E5CD;
+        --deeprust: #823F30; --deeprust-soft: #E5C5B8;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #1E2128; --surface: #262A33; --line: #3E3D38;
+          --text: #E8E5DC; --muted: #B8B5AD; --muted2: #908D87;
+          --slate: #94A6C4; --slate-soft: #2A323F;
+          --sage: #92BAA6; --sage-soft: #233029;
+          --gold: #D6B574; --gold-soft: #3B3220;
+          --deeprust: #C77564; --deeprust-soft: #3A211B;
+        }
+      }
+      [fill="#F2EEE3"] { fill: var(--paper); } [fill="#FFFFFF"] { fill: var(--surface); }
+      [stroke="#E2DFD6"] { stroke: var(--line); }
+      [fill="#2A2A35"] { fill: var(--text); } [fill="#6B6873"] { fill: var(--muted); } [fill="#9D9A95"] { fill: var(--muted2); }
+      [fill="#4F627F"] { fill: var(--slate); } [stroke="#4F627F"] { stroke: var(--slate); } [fill="#DEE3EC"] { fill: var(--slate-soft); }
+      [fill="#5A8270"] { fill: var(--sage); } [stroke="#5A8270"] { stroke: var(--sage); } [fill="#DEE8E1"] { fill: var(--sage-soft); }
+      [fill="#A28438"] { fill: var(--gold); } [stroke="#A28438"] { stroke: var(--gold); } [fill="#F0E5CD"] { fill: var(--gold-soft); }
+      [fill="#823F30"] { fill: var(--deeprust); } [stroke="#823F30"] { stroke: var(--deeprust); } [fill="#E5C5B8"] { fill: var(--deeprust-soft); }
+    </style>
+  </defs>
+
+  <rect width="860" height="1110" fill="#F2EEE3" rx="8"/>
+
+  <!-- Standard header -->
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-008A · LEVERAGE TIERS, MEADOWS IN FOUR STEPS</text>
+  <text x="430" y="48" text-anchor="middle" font-size="12" fill="#6B6873">low at the top, transformative at the bottom · each tier with a working precedent or diagnostic tell</text>
+
+  <!-- Card 1: LOW LEVERAGE -->
+  <rect x="20" y="78" width="820" height="224" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="14"/>
+  <rect x="20" y="78" width="6" height="224" fill="#A28438" rx="3" ry="0"/>
+  <rect x="42" y="92" width="140" height="22" rx="11" fill="#F0E5CD" stroke="#A28438" stroke-width="1"/>
+  <text x="54" y="107" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#A28438" letter-spacing="0.1em">LOW LEVERAGE</text>
+  <text x="196" y="108" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6873">points 12–10  ·  parameters, buffers, physical structure</text>
+  <text x="42" y="138" font-family="system-ui,sans-serif" font-size="13.5" font-weight="700" fill="#A28438">Real engineering effort. Rarely changes how the loops behave.</text>
+  <text x="42" y="160" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">Most lab safety announcements live here: content filters, usage policies, threshold updates.</text>
+  <text x="42" y="174" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">The point-12 fix feels like progress; the loop keeps running.</text>
+  <rect x="42" y="196" width="776" height="66" fill="#F0E5CD" stroke="#A28438" stroke-width="1" rx="6" opacity="0.55"/>
+  <text x="56" y="214" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#A28438" letter-spacing="0.1em">DIAGNOSTIC TELL</text>
+  <text x="56" y="234" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">If the announcement does not change who is liable, who audits, or what deployment gates require,</text>
+  <text x="56" y="248" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">it is a parameter tweak. What a lab announces here tells you what tier it is actually operating at.</text>
+  <text x="42" y="284" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" font-weight="600" fill="#A28438">Where most current AI governance effort concentrates.</text>
+
+  <!-- Card 2: MEDIUM LEVERAGE -->
+  <rect x="20" y="320" width="820" height="224" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="14"/>
+  <rect x="20" y="320" width="6" height="224" fill="#5A8270" rx="3" ry="0"/>
+  <rect x="42" y="334" width="142" height="22" rx="11" fill="#DEE8E1" stroke="#5A8270" stroke-width="1"/>
+  <text x="54" y="349" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#5A8270" letter-spacing="0.1em">MEDIUM LEVERAGE</text>
+  <text x="198" y="350" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6873">points 9–7  ·  delays, feedback strength, loop gain</text>
+  <text x="42" y="380" font-family="system-ui,sans-serif" font-size="13.5" font-weight="700" fill="#5A8270">Shortening time between harm and response is the most workable change in this tier.</text>
+  <text x="42" y="402" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">A point-9 intervention closes the gap between cause and consequence.</text>
+  <text x="42" y="416" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">Aviation built one fifty years ago and has been running on it since.</text>
+  <rect x="42" y="438" width="776" height="66" fill="#DEE8E1" stroke="#5A8270" stroke-width="1" rx="6" opacity="0.55"/>
+  <text x="56" y="456" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#5A8270" letter-spacing="0.1em">WORKING PRECEDENT  ·  ASRS, NASA / FAA, since 1976</text>
+  <text x="56" y="476" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">Voluntary, de-identified near-miss reporting backed by limited immunity from FAA sanction.</text>
+  <text x="56" y="490" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">Accelerates the self-correcting loop without requiring anyone to admit fault first.</text>
+  <text x="42" y="526" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" font-weight="600" fill="#5A8270">No AI equivalent exists. Building one would be a point-9 move.</text>
+
+  <!-- Card 3: HIGH LEVERAGE -->
+  <rect x="20" y="562" width="820" height="224" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="14"/>
+  <rect x="20" y="562" width="6" height="224" fill="#4F627F" rx="3" ry="0"/>
+  <rect x="42" y="576" width="140" height="22" rx="11" fill="#DEE3EC" stroke="#4F627F" stroke-width="1"/>
+  <text x="54" y="591" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#4F627F" letter-spacing="0.1em">HIGH LEVERAGE</text>
+  <text x="196" y="592" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6873">points 6–4  ·  information flows, rules, who writes them</text>
+  <text x="42" y="622" font-family="system-ui,sans-serif" font-size="13.5" font-weight="700" fill="#4F627F">Make harm visible, or change what every legal team has to advise.</text>
+  <text x="42" y="644" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">A single product liability ruling holding an AI company responsible for provable harm shifts every</text>
+  <text x="42" y="658" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">product decision in the industry. Point-5 operating through existing structure, no new statute.</text>
+  <rect x="42" y="680" width="776" height="66" fill="#DEE3EC" stroke="#4F627F" stroke-width="1" rx="6" opacity="0.55"/>
+  <text x="56" y="698" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#4F627F" letter-spacing="0.1em">WORKING PRECEDENT  ·  Twin Rivers, Princeton, in-home displays</text>
+  <text x="56" y="718" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">Households shown daily electricity use against a predicted baseline cut consumption ~10% in a month.</text>
+  <text x="56" y="732" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">Meta-analyses since: 4–12% typical, higher with explicit reduction goals. Information moved the stock.</text>
+  <text x="42" y="768" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" font-weight="600" fill="#4F627F">AI equivalent: public capability evaluations and mandatory incident reporting.</text>
+
+  <!-- Card 4: TRANSFORMATIVE -->
+  <rect x="20" y="804" width="820" height="278" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="14"/>
+  <rect x="20" y="804" width="6" height="278" fill="#823F30" rx="3" ry="0"/>
+  <rect x="42" y="818" width="140" height="22" rx="11" fill="#E5C5B8" stroke="#823F30" stroke-width="1"/>
+  <text x="54" y="833" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#823F30" letter-spacing="0.1em">TRANSFORMATIVE</text>
+  <text x="196" y="834" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6873">points 3–1  ·  goals, paradigm, coordination</text>
+  <text x="42" y="864" font-family="system-ui,sans-serif" font-size="13.5" font-weight="700" fill="#823F30">Change the goal the system pursues, and you have moved the whole machine.</text>
+  <text x="42" y="886" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">Also the most resisted, by whoever benefits from the current goal.</text>
+  <text x="42" y="900" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">The leverage is real, the political cost is real, and the windows narrow over time.</text>
+  <rect x="42" y="922" width="776" height="120" fill="#E5C5B8" stroke="#823F30" stroke-width="1" rx="6" opacity="0.55"/>
+  <text x="56" y="940" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#823F30" letter-spacing="0.1em">TWO PRECEDENTS  ·  one logic at different leverage points</text>
+  <rect x="56" y="952" width="3" height="38" fill="#823F30" rx="1.5"/>
+  <text x="64" y="962" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#823F30">Denmark flexicurity (point 3)</text>
+  <text x="64" y="976" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">Shifted goal from 'employment stays stable' to 'workers stay economically viable</text>
+  <text x="64" y="988" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">through transitions.'  ~5% of GDP across active and passive labor-market spending.</text>
+  <rect x="56" y="998" width="3" height="38" fill="#823F30" rx="1.5"/>
+  <text x="64" y="1008" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#823F30">Montreal Protocol (point 1)</text>
+  <text x="64" y="1022" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">Scientists made the threat legible before it was politically convenient, giving</text>
+  <text x="64" y="1034" font-family="system-ui,sans-serif" font-size="10" fill="#2A2A35">actors a graceful way out before the cost of action exceeded the cost of inaction.</text>
+  <text x="42" y="1064" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" font-weight="600" fill="#823F30">That path exists for AI. Building the conditions is the longest-horizon work here.</text>
+
+</svg>

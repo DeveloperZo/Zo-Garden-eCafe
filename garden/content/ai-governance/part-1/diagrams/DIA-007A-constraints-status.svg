@@ -1,114 +1,124 @@
-<svg viewBox="0 0 860 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d8-t d8-d">
-  <title id="d8-t">DIA-007 — Binding Constraints Status Map</title>
-  <desc id="d8-d">Six structural constraints on AI governance, color-coded by current status as of May 2026: amber = bypassed or weakening, blue = forming but incomplete, red = permanently outside governance reach, gray = structurally absent.</desc>
+<svg viewBox="0 0 860 570" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d7a-t d7a-d">
+  <title id="d7a-t">DIA-007A. Binding Constraints, Status Map</title>
+  <desc id="d7a-d">Six structural constraints on AI governance grouped into three patterns: physical rate-limiters being routed around, legal mechanisms awaiting activation, and structural facts outside governance reach. Status as of May 2026.</desc>
   <defs>
     <style>
       :root {
-        --bg: #FAF6EE; --text: #3A3A4A; --muted: #6B6B85;
-        --red: #C94B2E; --red-soft: #FDE8E3; --amber: #C9880A; --amber-soft: #FEF8E8;
-        --blue: #3A5498; --blue-soft: #E3E8F5; --gray-soft: #F7F6F3;
+        --paper: #F2EEE3; --surface: #FFFFFF; --line: #E2DFD6;
+        --text: #2A2A35; --muted: #6B6873; --muted2: #9D9A95;
+        --slate: #4F627F; --slate-soft: #DEE3EC;
+        --rust: #A85B49; --rust-soft: #EDD8CE;
+        --gold: #A28438; --gold-soft: #F0E5CD;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #1B1D23; --text: #D6DEEE; --muted: #C2C9D9;
-          --red: #FF8C73; --red-soft: #4A2A28; --amber: #F2BE5C; --amber-soft: #453A22;
-          --blue: #8EACFF; --blue-soft: #2A3554; --gray-soft: #2A2F3A;
+          --paper: #1E2128; --surface: #262A33; --line: #3E3D38;
+          --text: #E8E5DC; --muted: #B8B5AD; --muted2: #908D87;
+          --slate: #94A6C4; --slate-soft: #2A323F;
+          --rust: #D29183; --rust-soft: #3D2925;
+          --gold: #D6B574; --gold-soft: #3B3220;
         }
       }
-      [fill="#FAF6EE"] { fill: var(--bg); } [fill="#3A3A4A"] { fill: var(--text); } [fill="#6B6B85"] { fill: var(--muted); } [stroke="#6B6B85"] { stroke: var(--muted); }
-      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); }
-      [fill="#C9880A"] { fill: var(--amber); } [stroke="#C9880A"] { stroke: var(--amber); } [fill="#FEF8E8"] { fill: var(--amber-soft); }
-      [fill="#3A5498"] { fill: var(--blue); } [stroke="#3A5498"] { stroke: var(--blue); } [fill="#E3E8F5"] { fill: var(--blue-soft); }
-      [fill="#F7F6F3"] { fill: var(--gray-soft); }
+      [fill="#F2EEE3"] { fill: var(--paper); } [fill="#FFFFFF"] { fill: var(--surface); }
+      [stroke="#E2DFD6"] { stroke: var(--line); }
+      [fill="#2A2A35"] { fill: var(--text); } [fill="#6B6873"] { fill: var(--muted); } [fill="#9D9A95"] { fill: var(--muted2); }
+      [fill="#4F627F"] { fill: var(--slate); } [stroke="#4F627F"] { stroke: var(--slate); } [fill="#DEE3EC"] { fill: var(--slate-soft); }
+      [fill="#A85B49"] { fill: var(--rust); } [stroke="#A85B49"] { stroke: var(--rust); } [fill="#EDD8CE"] { fill: var(--rust-soft); }
+      [fill="#A28438"] { fill: var(--gold); } [stroke="#A28438"] { stroke: var(--gold); } [fill="#F0E5CD"] { fill: var(--gold-soft); }
     </style>
   </defs>
 
-  <rect width="860" height="510" fill="#FAF6EE" rx="8"/>
+  <rect width="860" height="570" fill="#F2EEE3" rx="8"/>
 
-  <!-- Header -->
-  <text x="430" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#3A3A4A">Binding Constraints — Status as of May 2026</text>
-  <text x="430" y="48" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#6B6B85">What each structural constraint was supposed to do — and what it is actually doing</text>
+  <!-- Standard header -->
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-007A · BINDING CONSTRAINTS, STATUS MAP</text>
+  <text x="430" y="48" text-anchor="middle" font-size="12" fill="#6B6873">what each structural constraint was supposed to do · what it is actually doing (May 2026)</text>
 
-  <!-- ══════════════════════════════════════════════ -->
-  <!-- ROW 1                                          -->
-  <!-- ══════════════════════════════════════════════ -->
+  <!-- ── ROW 1: PHYSICAL ── -->
+  <rect x="20" y="78" width="820" height="24" fill="#F0E5CD" rx="4"/>
+  <rect x="20" y="78" width="5" height="24" fill="#A28438" rx="2.5"/>
+  <text x="36" y="94" font-family="system-ui,sans-serif" font-size="10" font-weight="800" fill="#A28438" letter-spacing="0.12em">PHYSICAL</text>
+  <text x="148" y="94" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6873">incidental rate-limiters being systematically routed around</text>
+  <rect x="20" y="106" width="400" height="118" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="10"/>
+  <rect x="20" y="106" width="4" height="118" fill="#A28438" rx="2"/>
+  <g><polygon points="39,121 45,121 41,127 46,127 40,136 43,129 39,129" fill="#A28438" opacity="0.85"/></g>
+  <text x="58" y="133" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2A2A35">Electricity Grid</text>
+  <rect x="344" y="119" width="64" height="20" rx="10" fill="#A28438"/>
+  <text x="376.0" y="133" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#F0E5CD">Bypassed</text>
+  <line x1="32" y1="148" x2="408" y2="148" stroke="#A28438" stroke-width="0.5" opacity="0.3"/>
+  <text x="34" y="164" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">PJM capacity auction fell 6,625 MW short (Dec 2025).</text>
+  <text x="34" y="177" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">Microsoft, Amazon, Meta, Google signed 10+ GW of nuclear</text>
+  <text x="34" y="190" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">PPAs in 18 months. On-site gas turbines proliferating.</text>
+  <text x="34" y="209" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" font-weight="600" fill="#A28438">Concentrates AI capacity in the wealthiest labs. Does not slow them.</text>
 
-  <!-- Card 1: Electricity Grid (amber / bypassed) -->
-  <rect x="20" y="65" width="395" height="118" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5" rx="6"/>
-  <text x="34" y="83" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#C9880A">Electricity Grid</text>
-  <rect x="341" y="73" width="64" height="18" fill="#C9880A" rx="9"/>
-  <text x="373" y="86" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#FEF8E8">Bypassed</text>
-  <line x1="30" y1="93" x2="405" y2="93" stroke="#C9880A" stroke-width="0.5" opacity="0.35"/>
-  <text x="34" y="109" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">PJM capacity auction fell 6,625 MW short (Dec 2025).</text>
-  <text x="34" y="123" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Largest actors circumventing: Microsoft, Amazon, Meta, Google</text>
-  <text x="34" y="137" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">signed 10+ GW of nuclear PPAs in 18 months; on-site gas growing.</text>
-  <text x="34" y="157" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" fill="#C9880A">Concentrates AI capacity in wealthiest labs — does not slow them.</text>
+  <rect x="440" y="106" width="400" height="118" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="10"/>
+  <rect x="440" y="106" width="4" height="118" fill="#A28438" rx="2"/>
+  <g><rect x="455" y="122" width="14" height="12" fill="none" stroke="#A28438" stroke-width="1.5" rx="1"/><rect x="459" y="126" width="6" height="4" fill="#A28438" opacity="0.6"/><line x1="453" y1="125" x2="455" y2="125" stroke="#A28438" stroke-width="1"/><line x1="453" y1="131" x2="455" y2="131" stroke="#A28438" stroke-width="1"/><line x1="469" y1="125" x2="471" y2="125" stroke="#A28438" stroke-width="1"/><line x1="469" y1="131" x2="471" y2="131" stroke="#A28438" stroke-width="1"/></g>
+  <text x="478" y="133" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2A2A35">Chip Supply</text>
+  <rect x="758" y="119" width="70" height="20" rx="10" fill="#A28438"/>
+  <text x="793.0" y="133" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#F0E5CD">Weakening</text>
+  <line x1="452" y1="148" x2="828" y2="148" stroke="#A28438" stroke-width="0.5" opacity="0.3"/>
+  <text x="454" y="164" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">$2.5B smuggling case (Super Micro / Liaw, March 2026).</text>
+  <text x="454" y="177" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">Huawei Ascend ~600K chips in 2026 via domestic 7nm fab.</text>
+  <text x="454" y="190" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">DeepSeek (Jan 2025): algorithmic efficiency routes around.</text>
+  <text x="454" y="209" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" font-weight="600" fill="#A28438">Hardware chokepoint is real. Capability routes around it.</text>
 
-  <!-- Card 2: Chip Supply (amber / weakening) -->
-  <rect x="445" y="65" width="395" height="118" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5" rx="6"/>
-  <text x="459" y="83" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#C9880A">Chip Supply</text>
-  <rect x="761" y="73" width="69" height="18" fill="#C9880A" rx="9"/>
-  <text x="795" y="86" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#FEF8E8">Weakening</text>
-  <line x1="455" y1="93" x2="830" y2="93" stroke="#C9880A" stroke-width="0.5" opacity="0.35"/>
-  <text x="459" y="109" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">$2.5B chip smuggling case (Super Micro/Liaw, March 2026).</text>
-  <text x="459" y="123" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Huawei Ascend: ~600K chips in 2026 via domestic 7nm fab.</text>
-  <text x="459" y="137" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">DeepSeek Jan 2025: algorithmic efficiency routes around compute.</text>
-  <text x="459" y="157" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" fill="#C9880A">Hardware chokepoint real — capability can route around it algorithmically.</text>
+  <!-- ── ROW 2: LEGAL ── -->
+  <rect x="20" y="236" width="820" height="24" fill="#DEE3EC" rx="4"/>
+  <rect x="20" y="236" width="5" height="24" fill="#4F627F" rx="2.5"/>
+  <text x="36" y="252" font-family="system-ui,sans-serif" font-size="10" font-weight="800" fill="#4F627F" letter-spacing="0.12em">LEGAL</text>
+  <text x="148" y="252" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6873">rules with structural logic, waiting on activation</text>
+  <rect x="20" y="264" width="400" height="118" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="10"/>
+  <rect x="20" y="264" width="4" height="118" fill="#4F627F" rx="2"/>
+  <g><line x1="35" y1="292" x2="49" y2="292" stroke="#4F627F" stroke-width="1.5"/><rect x="35" y="281" width="14" height="6" fill="#4F627F" opacity="0.85" transform="rotate(-15 42 284)"/><rect x="41" y="284" width="2" height="9" fill="#4F627F" transform="rotate(-15 42 288)"/></g>
+  <text x="58" y="291" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2A2A35">Product Liability</text>
+  <rect x="348" y="277" width="60" height="20" rx="10" fill="#4F627F"/>
+  <text x="378.0" y="291" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#DEE3EC">Forming</text>
+  <line x1="32" y1="306" x2="408" y2="306" stroke="#4F627F" stroke-width="0.5" opacity="0.3"/>
+  <text x="34" y="322" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">Garcia v. Character.AI settled Jan 2026, no precedent.</text>
+  <text x="34" y="335" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">Seven ChatGPT harm suits in California. Adams wrongful-</text>
+  <text x="34" y="348" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">death proceeds. Total AI fines collected globally: ~$400K.</text>
+  <text x="34" y="367" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" font-weight="600" fill="#4F627F">A single circuit ruling could reshape industry decisions overnight.</text>
 
-  <!-- ══════════════════════════════════════════════ -->
-  <!-- ROW 2                                          -->
-  <!-- ══════════════════════════════════════════════ -->
+  <rect x="440" y="264" width="400" height="118" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="10"/>
+  <rect x="440" y="264" width="4" height="118" fill="#4F627F" rx="2"/>
+  <g><circle cx="454.4" cy="286.5" r="1.5" fill="#4F627F"/><circle cx="454.1" cy="285.3" r="1.5" fill="#4F627F"/><circle cx="454.0" cy="284.0" r="1.5" fill="#4F627F"/><circle cx="454.1" cy="282.7" r="1.5" fill="#4F627F"/><circle cx="454.4" cy="281.5" r="1.5" fill="#4F627F"/><circle cx="462" cy="286" r="9" fill="none" stroke="#4F627F" stroke-width="0.8" opacity="0.4"/></g>
+  <text x="478" y="291" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2A2A35">EU AI Act</text>
+  <rect x="722" y="277" width="106" height="20" rx="10" fill="#4F627F"/>
+  <text x="775.0" y="291" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#DEE3EC">Enforcement gap</text>
+  <line x1="452" y1="306" x2="828" y2="306" stroke="#4F627F" stroke-width="0.5" opacity="0.3"/>
+  <text x="454" y="322" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">Penalties: €35M or 7% of turnover. Applies Aug 2026.</text>
+  <text x="454" y="335" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">Only 8 of 27 member states met authority designation.</text>
+  <text x="454" y="348" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">Technical standards targeting late 2026.</text>
+  <text x="454" y="367" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" font-weight="600" fill="#4F627F">Law exists. Enforcement capacity is not built in most of Europe.</text>
 
-  <!-- Card 3: Product Liability (blue / forming) -->
-  <rect x="20" y="200" width="395" height="118" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5" rx="6"/>
-  <text x="34" y="218" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#3A5498">Product Liability</text>
-  <rect x="349" y="208" width="56" height="18" fill="#3A5498" rx="9"/>
-  <text x="377" y="221" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#E3E8F5">Forming</text>
-  <line x1="30" y1="228" x2="405" y2="228" stroke="#3A5498" stroke-width="0.5" opacity="0.35"/>
-  <text x="34" y="244" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Garcia v. Character.AI settled Jan 2026 — no appellate precedent.</text>
-  <text x="34" y="258" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Seven ChatGPT harm suits in California. Adams wrongful-death suit</text>
-  <text x="34" y="272" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">proceeding. Total AI fines collected globally: ~$400,000.</text>
-  <text x="34" y="292" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" fill="#3A5498">A single circuit ruling could reshape industry product decisions overnight.</text>
+  <!-- ── ROW 3: STRUCTURAL ── -->
+  <rect x="20" y="394" width="820" height="24" fill="#EDD8CE" rx="4"/>
+  <rect x="20" y="394" width="5" height="24" fill="#A85B49" rx="2.5"/>
+  <text x="36" y="410" font-family="system-ui,sans-serif" font-size="10" font-weight="800" fill="#A85B49" letter-spacing="0.12em">STRUCTURAL</text>
+  <text x="148" y="410" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6873">facts that shrink what governance can reach</text>
+  <rect x="20" y="422" width="400" height="118" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="10"/>
+  <rect x="20" y="422" width="4" height="118" fill="#A85B49" rx="2"/>
+  <g><rect x="37" y="443" width="10" height="9" rx="1.5" fill="#A85B49" opacity="0.85"/><path d="M 39 443 L 39 439 a 3 3 0 0 1 6 0" fill="none" stroke="#A85B49" stroke-width="1.5"/></g>
+  <text x="58" y="449" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2A2A35">Open-Weights Diffusion</text>
+  <rect x="242" y="435" width="166" height="20" rx="10" fill="#A85B49"/>
+  <text x="325.0" y="449" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#EDD8CE">Permanently outside reach</text>
+  <line x1="32" y1="464" x2="408" y2="464" stroke="#A85B49" stroke-width="0.5" opacity="0.3"/>
+  <text x="34" y="480" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">DeepSeek-R1, Llama 4, Qwen 3.5 permanently in public</text>
+  <text x="34" y="493" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">domain. Best open weights within 6-12 months of frontier.</text>
+  <text x="34" y="506" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">DeepSeek V4-Pro: 0.2pp of Claude Opus 4.6 on SWE.</text>
+  <text x="34" y="525" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" font-weight="600" fill="#A85B49">Each release permanently narrows what future governance can reach.</text>
 
-  <!-- Card 4: EU AI Act (blue / enforcement gap) -->
-  <rect x="445" y="200" width="395" height="118" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5" rx="6"/>
-  <text x="459" y="218" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#3A5498">EU AI Act</text>
-  <rect x="718" y="208" width="112" height="18" fill="#3A5498" rx="9"/>
-  <text x="774" y="221" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#E3E8F5">Enforcement gap</text>
-  <line x1="455" y1="228" x2="830" y2="228" stroke="#3A5498" stroke-width="0.5" opacity="0.35"/>
-  <text x="459" y="244" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Penalties: €35M or 7% of turnover. Law applies from August 2026.</text>
-  <text x="459" y="258" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Only 8 of 27 member states met the authority designation deadline.</text>
-  <text x="459" y="272" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Technical standards targeting late 2026. August deadline holds.</text>
-  <text x="459" y="292" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" fill="#3A5498">Law exists; enforcement capacity not built in most of Europe.</text>
-
-  <!-- ══════════════════════════════════════════════ -->
-  <!-- ROW 3                                          -->
-  <!-- ══════════════════════════════════════════════ -->
-
-  <!-- Card 5: Open-Weights Diffusion (red / permanently gone) -->
-  <rect x="20" y="335" width="395" height="118" fill="#FDE8E3" stroke="#C94B2E" stroke-width="2" rx="6"/>
-  <text x="34" y="353" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#C94B2E">Open-Weights Diffusion</text>
-  <rect x="291" y="343" width="114" height="18" fill="#C94B2E" rx="9"/>
-  <text x="348" y="356" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#FDE8E3">Permanently gone</text>
-  <line x1="30" y1="363" x2="405" y2="363" stroke="#C94B2E" stroke-width="0.5" opacity="0.35"/>
-  <text x="34" y="379" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">DeepSeek-R1, Llama 4, Qwen 3.5 permanently in public domain.</text>
-  <text x="34" y="393" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Best open models within 6–12 months of frontier. DeepSeek V4-Pro:</text>
-  <text x="34" y="407" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">0.2pp of Claude Opus 4.6 on SWE benchmarks. Cannot be recalled.</text>
-  <text x="34" y="427" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" fill="#C94B2E">Each release permanently narrows what future governance can reach.</text>
-
-  <!-- Card 6: Interpretability (gray / absent ceiling) -->
-  <rect x="445" y="335" width="395" height="118" fill="#F7F6F3" stroke="#6B6B85" stroke-width="1.5" rx="6"/>
-  <text x="459" y="353" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#6B6B85">Interpretability</text>
-  <rect x="727" y="343" width="103" height="18" fill="#6B6B85" rx="9"/>
-  <text x="778" y="356" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#F7F6F3">Absent ceiling</text>
-  <line x1="455" y1="363" x2="830" y2="363" stroke="#6B6B85" stroke-width="0.5" opacity="0.35"/>
-  <text x="459" y="379" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">~25% of Anthropic prompts are mechanistically traceable; 75% opaque.</text>
-  <text x="459" y="393" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">Semantic self-verification shown NP-hard (Young, 2025). Capability</text>
-  <text x="459" y="407" font-family="system-ui,sans-serif" font-size="10" fill="#6B6B85">scales with capital; interpretability with talent. Gap is widening.</text>
-  <text x="459" y="427" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" fill="#6B6B85">Should function as a deployment ceiling — does not in practice.</text>
-
-  <!-- Caption -->
-  <text x="430" y="474" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-007. Six structural constraints on AI governance, color-coded by status as of May 2026: amber (bypassed or weakening), blue (forming, enforcement gap),</text>
-  <text x="430" y="490" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">red (permanently outside governance reach), gray (absent in practice). Each card shows what the constraint is actually doing right now.</text>
+  <rect x="440" y="422" width="400" height="118" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="1" rx="10"/>
+  <rect x="440" y="422" width="4" height="118" fill="#A85B49" rx="2"/>
+  <g><circle cx="460" cy="443" r="6" fill="none" stroke="#A85B49" stroke-width="1.5"/><line x1="464.5" y1="447.5" x2="469" y2="452" stroke="#A85B49" stroke-width="2"/><line x1="457.5" y1="440.5" x2="462.5" y2="445.5" stroke="#A85B49" stroke-width="0.8" opacity="0.5"/></g>
+  <text x="478" y="449" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2A2A35">Interpretability</text>
+  <rect x="728" y="435" width="100" height="20" rx="10" fill="#A85B49"/>
+  <text x="778.0" y="449" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#EDD8CE">Absent ceiling</text>
+  <line x1="452" y1="464" x2="828" y2="464" stroke="#A85B49" stroke-width="0.5" opacity="0.3"/>
+  <text x="454" y="480" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">~25% of Anthropic prompts mechanistically traceable.</text>
+  <text x="454" y="493" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">Semantic self-verification shown NP-hard (Young, 2025).</text>
+  <text x="454" y="506" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6873">Capability scales with capital. Interp scales with talent.</text>
+  <text x="454" y="525" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic" font-weight="600" fill="#A85B49">Should function as a deployment ceiling. Does not in practice.</text>
 
 </svg>
