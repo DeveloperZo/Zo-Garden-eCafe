@@ -4,27 +4,24 @@ tags: [ai, governance, systems-thinking, leverage]
 draft: false
 ---
 
-*Helplessness about AI is the right read. The fix is not optimism. It is reading further.*
+*Frustration about AI is the right read, when the emperors leading the race have no clothes.*
 
-Sam Altman signed the open letter calling AI a civilizational extinction risk. Two years later he stood on a stage and described his company's new model as "talking to a PhD-level expert in any topic," and said the next one would arrive faster. The mission statements speak of curing cancer, of intelligence as an abundance distributed to everyone, of the most important technology of the century.
 
-Then there is the earnings call. Marc Benioff announces he is cutting customer service from nine thousand people to five thousand because, he says, he needs less heads. Satya Nadella tells a developer conference that AI writes thirty percent of Microsoft's code; two weeks later the layoffs land in his home state, concentrated in engineering. The cure-cancer technology becomes, in a quarter, the rationale for cutting headcount. AI summaries arrive in your search results without permission. A press release announces an internal oversight board.
+OpenAI signed the open letter calling AI a civilizational extinction risk, then shipped a model its own CEO described as "talking to a PhD-level expert in any topic," and announced the next one would arrive faster. AI, they say, will fix AI's problems. The mission statements of these companies speak of curing cancer, of intelligence as an abundance distributed to everyone, of the most important technology of the century.
 
-These are the same men who sign the safety frameworks, who appear at the summits, who publish the responsible-development pledges.
+The reality is in the earnings calls. Salesforce announces it is cutting customer service from nine thousand people to five thousand because, the company says, it needs less heads. Microsoft tells a developer conference that thirty percent of its code is now AI-written; two weeks later the layoffs land in its home state, concentrated in engineering. The cure-cancer technology becomes, in a quarter, the rationale for cutting headcount. AI summaries arrive in your search results without permission. A press release announces an internal oversight board.
 
-What they will not name has a name: an unwavering attempt to divorce labor from capital. AI is the lever they are using. The mission statements decorate the move. The earnings calls disclose it. Benioff said the quiet part out loud. He needs less heads.
+These are the same companies that sign the safety frameworks, that appear at the summits, that publish the responsible-development pledges.
 
-You watch them and feel a particular kind of tired. The kind that belongs to people who can read.
+What the actions show is plain: an unwavering attempt to divorce labor from capital. AI is the lever. The mission statements decorate the move. The earnings calls disclose it. The technology pitched as society's salvation is making society more vulnerable, at a pace nothing else has matched.
 
-Look at what that tiredness is doing. It is not denial. It is not despair. It is the muscle that recognizes a contradiction and has nowhere to put it. The contradiction is real. The structure that produces it is real. What you are doing, when you feel that tiredness, is reading the situation correctly.
+You watch them and feel a particular kind of tired. The kind that belongs to people who can read the room. It is the recognition of a contradiction, and the futile attempt to play along.
 
-So the helplessness is honest. The conclusion that follows it is the part to watch.
-
-The companies racing to build civilizational technology have not developed civilizational time. Watch one specific policy. Anthropic published the first version of its Responsible Scaling Policy in autumn 2023, committing to pause development if its own evaluations suggested capability had outrun control. After three revisions, the binding pause was gone. By February 2026, Jared Kaplan was telling *TIME* the company "didn't really feel" the pause commitment made sense with competitors blazing ahead.
+The companies racing to build civilization-changing technology have not developed civilization-changing discipline. Anthropic published the first version of its Responsible Scaling Policy in autumn 2023, committing to pause development if its own evaluations suggested capability had outrun control. After three revisions, the binding pause was gone. By February 2026, Jared Kaplan was telling *TIME* the company "didn't really feel" the pause commitment made sense with competitors blazing ahead.
 
 Less than half a decade. One company, one policy, three revisions, gone.
 
-The pressure Kaplan names is real. The lab is not lying about it. Watch what the structure produces anyway. A self-imposed standard has no anchor outside the actor's own willingness to hold it. Under competitive pressure it drifts toward whatever the weakest competitor will hold. Donella Meadows named this *Drift to Low Performance.* It is not specific to AI. It is what voluntary, unilaterally revisable standards reliably do given enough time and enough other actors.
+The pressure Kaplan names is real. The lab is not lying about it. The system that produced AI has its own behavior and AI labs respond to the behavior just like the rest of us. Knowing that behavior allows us to respond better and anticipate what happens when we choose not to act.
 
 <!--
 DIA-201 — Drift to Low Performance (placeholder, SVG not yet authored)
@@ -44,6 +41,6 @@ Spec:
 
 The announcement that arrived in your feed this morning, the one that felt thin, was not pretending in your imagination. It was pretending out loud.
 
-You do not need to settle the motive question to act on what you can hear now. There is a framework that works without it. It is older than AI and bigger. It asks where in any system a small push produces structural change, and it ranks those places by power. Some of those places can be reached by you alone. Others require people working together. Which of them are within your reach is not a question you can answer until you can see what they look like.
+You do not need to settle the motive question to act. There is a framework that works without it. It is older than AI and bigger: it asks where in any system a small push produces structural change, and ranks those places by power. Some you can reach alone. Others require people working together.
 
 That seeing is what the rest of this is for.

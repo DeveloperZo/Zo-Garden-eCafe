@@ -1,202 +1,163 @@
-<svg viewBox="0 0 860 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d8-t d8-d">
-  <title id="d8-t">DIA-008B — Where AI Governance Operates on the Leverage Scale</title>
-  <desc id="d8-d">Meadows' 12 leverage points mapped to current AI governance interventions. Points 12–10 (weakest leverage) are at top; points 1–3 (strongest) at bottom. Most governance clusters at the top.</desc>
+<svg viewBox="0 0 860 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d8b-t d8b-d">
+  <title id="d8b-t">DIA-008B. Where AI Governance Operates on the Leverage Scale</title>
+  <desc id="d8b-d">Meadows' 12 leverage points mapped to current AI governance interventions. Points 12-10 (weakest leverage) at top; points 1-3 (strongest) at bottom. Color zones match the four tiers: gold (low), sage (medium), slate (high), deep rust (transformative). Most governance clusters at the top.</desc>
   <defs>
     <style>
       :root {
-        --bg: #FAF6EE; --text: #1C1C2E; --muted: #6B6B85; --muted2: #9B9BA8; --line: #D0CCC4;
-        --red: #C94B2E; --red-soft: #FDE8E3; --amber: #C9880A; --amber-soft: #FEF8E8;
-        --blue: #3A5498; --blue-soft: #E3E8F5; --green: #2A7A5F; --green-soft: #EDF7F3; --gray-soft: #F7F6F3;
+        --paper: #F2EEE3; --surface: #FFFFFF; --line: #E2DFD6;
+        --text: #2A2A35; --muted: #6B6873; --muted2: #9D9A95;
+        --slate: #4F627F; --slate-soft: #DEE3EC;
+        --sage: #5A8270; --sage-soft: #DEE8E1;
+        --rust: #A85B49; --rust-soft: #EDD8CE;
+        --gold: #A28438; --gold-soft: #F0E5CD;
+        --deeprust: #823F30; --deeprust-soft: #E5C5B8;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #1B1D23; --text: #E8ECF5; --muted: #C2C9D9; --muted2: #A8B3C7; --line: #404756;
-          --red: #FF8C73; --red-soft: #4A2A28; --amber: #F2BE5C; --amber-soft: #453A22;
-          --blue: #8EACFF; --blue-soft: #2A3554; --green: #63C7A3; --green-soft: #243E36; --gray-soft: #2A2F3A;
+          --paper: #1E2128; --surface: #262A33; --line: #3E3D38;
+          --text: #E8E5DC; --muted: #B8B5AD; --muted2: #908D87;
+          --slate: #94A6C4; --slate-soft: #2A323F;
+          --sage: #92BAA6; --sage-soft: #233029;
+          --rust: #D29183; --rust-soft: #3D2925;
+          --gold: #D6B574; --gold-soft: #3B3220;
+          --deeprust: #C77564; --deeprust-soft: #3A211B;
         }
       }
-      [fill="#FAF6EE"] { fill: var(--bg); } [fill="#1C1C2E"] { fill: var(--text); } [fill="#6B6B85"] { fill: var(--muted); } [fill="#9B9BA8"] { fill: var(--muted2); } [stroke="#9B9BA8"] { stroke: var(--muted2); }
-      [stroke="#D0CCC4"] { stroke: var(--line); }
-      [fill="#C94B2E"] { fill: var(--red); } [stroke="#C94B2E"] { stroke: var(--red); } [fill="#FDE8E3"] { fill: var(--red-soft); }
-      [fill="#C9880A"] { fill: var(--amber); } [stroke="#C9880A"] { stroke: var(--amber); } [fill="#FEF8E8"] { fill: var(--amber-soft); }
-      [fill="#3A5498"] { fill: var(--blue); } [stroke="#3A5498"] { stroke: var(--blue); } [fill="#E3E8F5"] { fill: var(--blue-soft); }
-      [fill="#2A7A5F"] { fill: var(--green); } [stroke="#2A7A5F"] { stroke: var(--green); } [fill="#EDF7F3"] { fill: var(--green-soft); }
-      [fill="#F7F6F3"] { fill: var(--gray-soft); }
+      [fill="#F2EEE3"] { fill: var(--paper); } [fill="#FFFFFF"] { fill: var(--surface); }
+      [stroke="#E2DFD6"] { stroke: var(--line); }
+      [fill="#2A2A35"] { fill: var(--text); } [fill="#6B6873"] { fill: var(--muted); } [fill="#9D9A95"] { fill: var(--muted2); }
+      [stroke="#9D9A95"] { stroke: var(--muted2); }
+      [fill="#4F627F"] { fill: var(--slate); } [stroke="#4F627F"] { stroke: var(--slate); } [fill="#DEE3EC"] { fill: var(--slate-soft); }
+      [fill="#5A8270"] { fill: var(--sage); } [stroke="#5A8270"] { stroke: var(--sage); } [fill="#DEE8E1"] { fill: var(--sage-soft); }
+      [fill="#A85B49"] { fill: var(--rust); } [stroke="#A85B49"] { stroke: var(--rust); } [fill="#EDD8CE"] { fill: var(--rust-soft); }
+      [fill="#A28438"] { fill: var(--gold); } [stroke="#A28438"] { stroke: var(--gold); } [fill="#F0E5CD"] { fill: var(--gold-soft); }
+      [fill="#823F30"] { fill: var(--deeprust); } [stroke="#823F30"] { stroke: var(--deeprust); } [fill="#E5C5B8"] { fill: var(--deeprust-soft); }
     </style>
   </defs>
 
-  <!-- Background -->
-  <rect width="860" height="600" fill="#FAF6EE"/>
+  <rect width="860" height="580" fill="#F2EEE3" rx="8"/>
 
-  <!-- Title -->
-  <text x="430" y="22" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="-0.01em" fill="#1C1C2E">Where AI Governance Actually Operates on the Leverage Scale</text>
-  <text x="430" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9.5" fill="#6B6B85">Weakest leverage at top, strongest at bottom. Most governance clusters where it matters least.</text>
+  <!-- Standard header -->
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-008B · WHERE AI GOVERNANCE OPERATES ON THE LEVERAGE SCALE</text>
+  <text x="430" y="48" text-anchor="middle" font-size="12" fill="#6B6873">weakest leverage at top, strongest at bottom · most governance clusters where it matters least</text>
 
-  <!-- Legend -->
-  <g font-family="system-ui, sans-serif" font-size="9" font-weight="700" letter-spacing="0.05em">
-    <rect x="134" y="47" width="96" height="18" rx="3" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1"/>
-    <text x="182" y="60" text-anchor="middle" fill="#C94B2E">DEPLOYED</text>
-    <rect x="238" y="47" width="88" height="18" rx="3" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-    <text x="282" y="60" text-anchor="middle" fill="#C9880A">FORMING</text>
-    <rect x="334" y="47" width="104" height="18" rx="3" fill="#E3E8F5" stroke="#3A5498" stroke-width="1"/>
-    <text x="386" y="60" text-anchor="middle" fill="#3A5498">STRUCTURAL</text>
-    <rect x="446" y="47" width="82" height="18" rx="3" fill="#F7F6F3" stroke="#9B9BA8" stroke-width="1"/>
-    <text x="487" y="60" text-anchor="middle" fill="#9B9BA8" font-style="italic">ABSENT</text>
-  </g>
-
-  <!-- Zone backgrounds — inverted: Low at top, Transformative at bottom -->
-  <!-- Low (red): rows 1–3, y=70–184 -->
-  <rect x="0" y="70" width="860" height="114" fill="#FDE8E3"/>
-  <!-- Medium (amber): rows 4–6, y=184–298 -->
-  <rect x="0" y="184" width="860" height="114" fill="#FEF8E8"/>
-  <!-- High (blue): rows 7–9, y=298–412 -->
-  <rect x="0" y="298" width="860" height="114" fill="#E3E8F5"/>
-  <!-- Transformative (green): rows 10–12, y=412–526 -->
-  <rect x="0" y="412" width="860" height="114" fill="#EDF7F3"/>
-
-  <!-- Zone labels (rotated) — inverted order -->
-  <text transform="translate(12, 127) rotate(-90)" text-anchor="middle" font-family="system-ui" font-size="7.5" font-weight="800" letter-spacing="0.13em" fill="#C94B2E">LOW</text>
-  <text transform="translate(12, 241) rotate(-90)" text-anchor="middle" font-family="system-ui" font-size="7.5" font-weight="800" letter-spacing="0.13em" fill="#C9880A">MEDIUM</text>
-  <text transform="translate(12, 355) rotate(-90)" text-anchor="middle" font-family="system-ui" font-size="7.5" font-weight="800" letter-spacing="0.13em" fill="#3A5498">HIGH LEVERAGE</text>
-  <text transform="translate(12, 469) rotate(-90)" text-anchor="middle" font-family="system-ui" font-size="7.5" font-weight="800" letter-spacing="0.13em" fill="#2A7A5F">TRANSFORMATIVE</text>
-
-  <!-- Left column divider -->
-  <line x1="196" y1="70" x2="196" y2="526" stroke="#D0CCC4" stroke-width="1"/>
-
-  <!-- Row separators (within zones only) -->
-  <line x1="196" y1="108" x2="700" y2="108" stroke="#EECCC4" stroke-width="0.75"/>
-  <line x1="196" y1="146" x2="700" y2="146" stroke="#EECCC4" stroke-width="0.75"/>
-  <line x1="196" y1="222" x2="700" y2="222" stroke="#E8D8A8" stroke-width="0.75"/>
-  <line x1="196" y1="260" x2="700" y2="260" stroke="#E8D8A8" stroke-width="0.75"/>
-  <line x1="196" y1="336" x2="700" y2="336" stroke="#C8D4EE" stroke-width="0.75"/>
-  <line x1="196" y1="374" x2="700" y2="374" stroke="#C8D4EE" stroke-width="0.75"/>
-  <line x1="196" y1="450" x2="700" y2="450" stroke="#C8E8DC" stroke-width="0.75"/>
-  <line x1="196" y1="488" x2="700" y2="488" stroke="#C8E8DC" stroke-width="0.75"/>
-
-  <!-- ═══ ROW 1 · Point 12 · Constants (y_c=89) ═══ -->
-  <circle cx="44" cy="89" r="11" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
-  <text x="44" y="93" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#C94B2E">12</text>
-  <text x="62" y="85" font-family="system-ui" font-size="9" font-weight="600" fill="#C94B2E">Constants</text>
-  <text x="62" y="96" font-family="system-ui" font-size="8" fill="#6B6B85">numbers &amp; thresholds</text>
-  <rect x="204" y="78" width="108" height="22" rx="3" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1"/>
-  <text x="258" y="93" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C94B2E">Content filters</text>
-  <rect x="320" y="78" width="112" height="22" rx="3" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1"/>
-  <text x="376" y="93" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C94B2E">Policy thresholds</text>
-  <rect x="440" y="78" width="116" height="22" rx="3" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1"/>
-  <text x="498" y="93" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C94B2E">Compute limits</text>
-
-  <!-- ═══ ROW 2 · Point 11 · Buffers (y_c=127) ═══ -->
-  <circle cx="44" cy="127" r="11" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
-  <text x="44" y="131" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#C94B2E">11</text>
-  <text x="62" y="123" font-family="system-ui" font-size="9" font-weight="600" fill="#C94B2E">Buffer sizes</text>
-  <text x="62" y="134" font-family="system-ui" font-size="8" fill="#6B6B85">capacity slack</text>
-  <rect x="204" y="116" width="122" height="22" rx="3" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-  <text x="265" y="131" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">Grid capacity limits</text>
-
-  <!-- ═══ ROW 3 · Point 10 · Stocks & flows (y_c=165) ═══ -->
-  <circle cx="44" cy="165" r="11" fill="#FDE8E3" stroke="#C94B2E" stroke-width="1.5"/>
-  <text x="44" y="169" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#C94B2E">10</text>
-  <text x="62" y="161" font-family="system-ui" font-size="9" font-weight="600" fill="#C94B2E">Stocks &amp; flows</text>
-  <text x="62" y="172" font-family="system-ui" font-size="8" fill="#6B6B85">physical structure</text>
-  <rect x="204" y="154" width="130" height="22" rx="3" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-  <text x="269" y="169" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">Chip supply controls</text>
-
-  <!-- ═══ ROW 4 · Point 9 · Feedback delays (y_c=203) ═══ -->
-  <circle cx="44" cy="203" r="11" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5"/>
-  <text x="44" y="207" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#C9880A">9</text>
-  <text x="62" y="199" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">Feedback delays</text>
-  <text x="62" y="210" font-family="system-ui" font-size="8" fill="#6B6B85">oversight response time</text>
-  <rect x="204" y="192" width="130" height="22" rx="3" fill="#F7F6F3" stroke="#9B9BA8" stroke-width="1"/>
-  <text x="269" y="207" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#9B9BA8" font-style="italic">Near-miss reporting</text>
-
-  <!-- ═══ ROW 5 · Point 8 · Feedback loops (y_c=241) ═══ -->
-  <circle cx="44" cy="241" r="11" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5"/>
-  <text x="44" y="245" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#C9880A">8</text>
-  <text x="62" y="237" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">Feedback loops</text>
-  <text x="62" y="248" font-family="system-ui" font-size="8" fill="#6B6B85">balancing mechanisms</text>
-  <rect x="204" y="230" width="112" height="22" rx="3" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-  <text x="260" y="245" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">AI harm fines</text>
-  <rect x="324" y="230" width="128" height="22" rx="3" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-  <text x="388" y="245" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">Liability insurance</text>
-
-  <!-- ═══ ROW 6 · Point 7 · Feedback gain (y_c=279) ═══ -->
-  <circle cx="44" cy="279" r="11" fill="#FEF8E8" stroke="#C9880A" stroke-width="1.5"/>
-  <text x="44" y="283" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#C9880A">7</text>
-  <text x="62" y="275" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">Feedback gain</text>
-  <text x="62" y="286" font-family="system-ui" font-size="8" fill="#6B6B85">driving loop strength</text>
-  <text x="204" y="283" font-family="system-ui" font-size="9" fill="#9B9BA8" font-style="italic" opacity="0.85">— no governance here: this is where the racing dynamic operates —</text>
-
-  <!-- ═══ ROW 7 · Point 6 · Info flows (y_c=317) ═══ -->
-  <circle cx="44" cy="317" r="11" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5"/>
-  <text x="44" y="321" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#3A5498">6</text>
-  <text x="62" y="313" font-family="system-ui" font-size="9" font-weight="600" fill="#3A5498">Info flows</text>
-  <text x="62" y="324" font-family="system-ui" font-size="8" fill="#6B6B85">who knows what</text>
-  <rect x="204" y="306" width="136" height="22" rx="3" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-  <text x="272" y="321" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">Mandatory disclosure</text>
-  <rect x="348" y="306" width="120" height="22" rx="3" fill="#F7F6F3" stroke="#9B9BA8" stroke-width="1"/>
-  <text x="408" y="321" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#9B9BA8" font-style="italic">Incident reporting</text>
-
-  <!-- ═══ ROW 8 · Point 5 · Rules (y_c=355) ═══ -->
-  <circle cx="44" cy="355" r="11" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5"/>
-  <text x="44" y="359" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#3A5498">5</text>
-  <text x="62" y="351" font-family="system-ui" font-size="9" font-weight="600" fill="#3A5498">Rules</text>
-  <text x="62" y="362" font-family="system-ui" font-size="8" fill="#6B6B85">enforceable constraints</text>
-  <rect x="204" y="344" width="84" height="22" rx="3" fill="#E3E8F5" stroke="#3A5498" stroke-width="1"/>
-  <text x="246" y="359" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#3A5498">EU AI Act</text>
-  <rect x="296" y="344" width="124" height="22" rx="3" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-  <text x="358" y="359" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">Product liability</text>
-
-  <!-- ═══ ROW 9 · Point 4 · Who writes rules (y_c=393) ═══ -->
-  <circle cx="44" cy="393" r="11" fill="#E3E8F5" stroke="#3A5498" stroke-width="1.5"/>
-  <text x="44" y="397" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#3A5498">4</text>
-  <text x="62" y="389" font-family="system-ui" font-size="9" font-weight="600" fill="#3A5498">Who writes rules</text>
-  <text x="62" y="400" font-family="system-ui" font-size="8" fill="#6B6B85">rulemaking authority</text>
-  <rect x="204" y="382" width="102" height="22" rx="3" fill="#FEF8E8" stroke="#C9880A" stroke-width="1"/>
-  <text x="255" y="397" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#C9880A">EU AI Office</text>
-  <rect x="314" y="382" width="120" height="22" rx="3" fill="#F7F6F3" stroke="#9B9BA8" stroke-width="1"/>
-  <text x="374" y="397" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#9B9BA8" font-style="italic">US AI safety mandate</text>
-
-  <!-- ═══ ROW 10 · Point 3 · Subsystem goals (y_c=431) ═══ -->
-  <circle cx="44" cy="431" r="11" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="1.5"/>
-  <text x="44" y="435" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#2A7A5F">3</text>
-  <text x="62" y="427" font-family="system-ui" font-size="9" font-weight="600" fill="#2A7A5F">Subsystem goals</text>
-  <text x="62" y="438" font-family="system-ui" font-size="8" fill="#6B6B85">actor incentives</text>
-  <rect x="204" y="420" width="140" height="22" rx="3" fill="#E3E8F5" stroke="#3A5498" stroke-width="1"/>
-  <text x="274" y="435" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#3A5498">Flexicurity labor model</text>
-
-  <!-- ═══ ROW 11 · Point 2 · System goals (y_c=469) ═══ -->
-  <circle cx="44" cy="469" r="11" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="1.5"/>
-  <text x="44" y="473" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#2A7A5F">2</text>
-  <text x="62" y="465" font-family="system-ui" font-size="9" font-weight="600" fill="#2A7A5F">System goals</text>
-  <text x="62" y="476" font-family="system-ui" font-size="8" fill="#6B6B85">what we optimise for</text>
-  <rect x="204" y="458" width="136" height="22" rx="3" fill="#F7F6F3" stroke="#9B9BA8" stroke-width="1"/>
-  <text x="272" y="473" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#9B9BA8" font-style="italic">Redefine AI's purpose</text>
-
-  <!-- ═══ ROW 12 · Point 1 · Paradigm (y_c=507) ═══ -->
-  <circle cx="44" cy="507" r="11" fill="#EDF7F3" stroke="#2A7A5F" stroke-width="1.5"/>
-  <text x="44" y="511" text-anchor="middle" font-family="system-ui" font-size="9.5" font-weight="700" fill="#2A7A5F">1</text>
-  <text x="62" y="503" font-family="system-ui" font-size="9" font-weight="600" fill="#2A7A5F">Paradigm</text>
-  <text x="62" y="514" font-family="system-ui" font-size="8" fill="#6B6B85">shared worldview</text>
-  <rect x="204" y="496" width="152" height="22" rx="3" fill="#F7F6F3" stroke="#9B9BA8" stroke-width="1"/>
-  <text x="280" y="511" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="600" fill="#9B9BA8" font-style="italic">Montreal Protocol model</text>
-
-  <!-- Right annotation: most governance at TOP (rows 1–3, y=70–184) -->
-  <line x1="706" y1="72" x2="706" y2="182" stroke="#C94B2E" stroke-width="1.5"/>
-  <line x1="706" y1="72" x2="714" y2="72" stroke="#C94B2E" stroke-width="1.5"/>
-  <line x1="706" y1="182" x2="714" y2="182" stroke="#C94B2E" stroke-width="1.5"/>
-  <text x="720" y="118" font-family="system-ui" font-size="9" font-weight="700" fill="#C94B2E">← most AI</text>
-  <text x="720" y="130" font-family="system-ui" font-size="9" fill="#C94B2E">governance</text>
-  <text x="720" y="142" font-family="system-ui" font-size="9" fill="#C94B2E">operates here</text>
-
-  <!-- Right annotation: structural change at BOTTOM (rows 10–12, y=412–526) -->
-  <line x1="706" y1="414" x2="706" y2="524" stroke="#2A7A5F" stroke-width="1.5"/>
-  <line x1="706" y1="414" x2="714" y2="414" stroke="#2A7A5F" stroke-width="1.5"/>
-  <line x1="706" y1="524" x2="714" y2="524" stroke="#2A7A5F" stroke-width="1.5"/>
-  <text x="720" y="461" font-family="system-ui" font-size="9" font-weight="700" fill="#2A7A5F">← structural</text>
-  <text x="720" y="473" font-family="system-ui" font-size="9" fill="#2A7A5F">change lives here</text>
-
-  <!-- Caption -->
-  <text x="430" y="558" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-008B. Meadows' 12 leverage points mapped to current AI governance interventions (status May 2026). Most AI governance clusters</text>
-  <text x="430" y="574" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">at points 10–12 (lowest leverage). Structural change requires reaching points 4–1, where almost nothing is deployed.</text>
+  <rect x="234" y="64" width="76" height="20" rx="4" fill="#EDD8CE" stroke="#A85B49" stroke-width="1"/>
+  <text x="272.0" y="78" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#A85B49" letter-spacing="0.06em">DEPLOYED</text>
+  <rect x="318" y="64" width="76" height="20" rx="4" fill="#F0E5CD" stroke="#A28438" stroke-width="1"/>
+  <text x="356.0" y="78" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#A28438" letter-spacing="0.06em">FORMING</text>
+  <rect x="402" y="64" width="86" height="20" rx="4" fill="#DEE3EC" stroke="#4F627F" stroke-width="1"/>
+  <text x="445.0" y="78" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#4F627F" letter-spacing="0.06em">STRUCTURAL</text>
+  <rect x="496" y="64" width="76" height="20" rx="4" fill="#F2EEE3" stroke="#9D9A95" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="534.0" y="78" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" font-style="italic" fill="#9D9A95" letter-spacing="0.06em">ABSENT</text>
+  <rect x="0" y="94" width="860" height="108" fill="#F0E5CD" opacity="0.4"/>
+  <text transform="translate(14, 148.0) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#A28438" letter-spacing="0.15em">LOW</text>
+  <rect x="0" y="202" width="860" height="108" fill="#DEE8E1" opacity="0.4"/>
+  <text transform="translate(14, 256.0) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#5A8270" letter-spacing="0.15em">MEDIUM</text>
+  <rect x="0" y="310" width="860" height="108" fill="#DEE3EC" opacity="0.4"/>
+  <text transform="translate(14, 364.0) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#4F627F" letter-spacing="0.15em">HIGH</text>
+  <rect x="0" y="418" width="860" height="108" fill="#E5C5B8" opacity="0.4"/>
+  <text transform="translate(14, 472.0) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="800" fill="#823F30" letter-spacing="0.15em">TRANSFORMATIVE</text>
+  <line x1="200" y1="94" x2="200" y2="526" stroke="#E2DFD6" stroke-width="1"/>
+  <circle cx="46" cy="112.0" r="13" fill="#F0E5CD" stroke="#A28438" stroke-width="1.5"/>
+  <text x="46" y="116.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#A28438">12</text>
+  <text x="68" y="110.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#A28438">Constants</text>
+  <text x="68" y="123.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">numbers and thresholds</text>
+  <rect x="208" y="101.0" width="117" height="22" rx="4" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.2"/>
+  <text x="266" y="116.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A85B49">Content filters</text>
+  <rect x="333.0" y="101.0" width="130" height="22" rx="4" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.2"/>
+  <text x="398" y="116.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A85B49">Policy thresholds</text>
+  <rect x="471.2" y="101.0" width="110" height="22" rx="4" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.2"/>
+  <text x="526" y="116.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A85B49">Compute limits</text>
+  <line x1="200" y1="130" x2="700" y2="130" stroke="#A28438" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="46" cy="148.0" r="13" fill="#F0E5CD" stroke="#A28438" stroke-width="1.5"/>
+  <text x="46" y="152.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#A28438">11</text>
+  <text x="68" y="146.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#A28438">Buffer sizes</text>
+  <text x="68" y="159.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">capacity slack</text>
+  <rect x="208" y="137.0" width="150" height="22" rx="4" fill="#F0E5CD" stroke="#A28438" stroke-width="1.2"/>
+  <text x="283" y="152.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A28438">Grid capacity limits</text>
+  <line x1="200" y1="166" x2="700" y2="166" stroke="#A28438" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="46" cy="184.0" r="13" fill="#F0E5CD" stroke="#A28438" stroke-width="1.5"/>
+  <text x="46" y="188.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#A28438">10</text>
+  <text x="68" y="182.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#A28438">Stocks and flows</text>
+  <text x="68" y="195.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">physical structure</text>
+  <rect x="208" y="173.0" width="150" height="22" rx="4" fill="#F0E5CD" stroke="#A28438" stroke-width="1.2"/>
+  <text x="283" y="188.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A28438">Chip supply controls</text>
+  <circle cx="46" cy="220.0" r="13" fill="#DEE8E1" stroke="#5A8270" stroke-width="1.5"/>
+  <text x="46" y="224.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#5A8270">9</text>
+  <text x="68" y="218.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#5A8270">Feedback delays</text>
+  <text x="68" y="231.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">oversight response time</text>
+  <rect x="208" y="209.0" width="143" height="22" rx="4" fill="#F2EEE3" stroke="#9D9A95" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="280" y="224.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" font-style="italic" fill="#9D9A95">Near-miss reporting</text>
+  <line x1="200" y1="238" x2="700" y2="238" stroke="#5A8270" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="46" cy="256.0" r="13" fill="#DEE8E1" stroke="#5A8270" stroke-width="1.5"/>
+  <text x="46" y="260.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#5A8270">8</text>
+  <text x="68" y="254.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#5A8270">Feedback loops</text>
+  <text x="68" y="267.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">balancing mechanisms</text>
+  <rect x="208" y="245.0" width="104" height="22" rx="4" fill="#F0E5CD" stroke="#A28438" stroke-width="1.2"/>
+  <text x="260" y="260.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A28438">AI harm fines</text>
+  <rect x="319.8" y="245.0" width="143" height="22" rx="4" fill="#F0E5CD" stroke="#A28438" stroke-width="1.2"/>
+  <text x="392" y="260.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A28438">Liability insurance</text>
+  <line x1="200" y1="274" x2="700" y2="274" stroke="#5A8270" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="46" cy="292.0" r="13" fill="#DEE8E1" stroke="#5A8270" stroke-width="1.5"/>
+  <text x="46" y="296.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#5A8270">7</text>
+  <text x="68" y="290.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#5A8270">Feedback gain</text>
+  <text x="68" y="303.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">driving loop strength</text>
+  <text x="208" y="296.0" font-family="system-ui,sans-serif" font-size="10" font-style="italic" fill="#9D9A95">— no governance here: this is where the racing dynamic operates —</text>
+  <circle cx="46" cy="328.0" r="13" fill="#DEE3EC" stroke="#4F627F" stroke-width="1.5"/>
+  <text x="46" y="332.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#4F627F">6</text>
+  <text x="68" y="326.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#4F627F">Info flows</text>
+  <text x="68" y="339.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">who knows what</text>
+  <rect x="208" y="317.0" width="150" height="22" rx="4" fill="#F0E5CD" stroke="#A28438" stroke-width="1.2"/>
+  <text x="283" y="332.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A28438">Mandatory disclosure</text>
+  <rect x="366.0" y="317.0" width="137" height="22" rx="4" fill="#F2EEE3" stroke="#9D9A95" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="434" y="332.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" font-style="italic" fill="#9D9A95">Incident reporting</text>
+  <line x1="200" y1="346" x2="700" y2="346" stroke="#4F627F" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="46" cy="364.0" r="13" fill="#DEE3EC" stroke="#4F627F" stroke-width="1.5"/>
+  <text x="46" y="368.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#4F627F">5</text>
+  <text x="68" y="362.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#4F627F">Rules</text>
+  <text x="68" y="375.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">enforceable constraints</text>
+  <rect x="208" y="353.0" width="77" height="22" rx="4" fill="#DEE3EC" stroke="#4F627F" stroke-width="1.2"/>
+  <text x="247" y="368.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#4F627F">EU AI Act</text>
+  <rect x="293.4" y="353.0" width="130" height="22" rx="4" fill="#F0E5CD" stroke="#A28438" stroke-width="1.2"/>
+  <text x="358" y="368.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A28438">Product liability</text>
+  <line x1="200" y1="382" x2="700" y2="382" stroke="#4F627F" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="46" cy="400.0" r="13" fill="#DEE3EC" stroke="#4F627F" stroke-width="1.5"/>
+  <text x="46" y="404.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#4F627F">4</text>
+  <text x="68" y="398.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#4F627F">Who writes rules</text>
+  <text x="68" y="411.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">rulemaking authority</text>
+  <rect x="208" y="389.0" width="97" height="22" rx="4" fill="#F0E5CD" stroke="#A28438" stroke-width="1.2"/>
+  <text x="257" y="404.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#A28438">EU AI Office</text>
+  <rect x="313.2" y="389.0" width="150" height="22" rx="4" fill="#F2EEE3" stroke="#9D9A95" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="388" y="404.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" font-style="italic" fill="#9D9A95">US AI safety mandate</text>
+  <circle cx="46" cy="436.0" r="13" fill="#E5C5B8" stroke="#823F30" stroke-width="1.5"/>
+  <text x="46" y="440.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#823F30">3</text>
+  <text x="68" y="434.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#823F30">Subsystem goals</text>
+  <text x="68" y="447.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">actor incentives</text>
+  <rect x="208" y="425.0" width="170" height="22" rx="4" fill="#DEE3EC" stroke="#4F627F" stroke-width="1.2"/>
+  <text x="293" y="440.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#4F627F">Flexicurity labor model</text>
+  <line x1="200" y1="454" x2="700" y2="454" stroke="#823F30" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="46" cy="472.0" r="13" fill="#E5C5B8" stroke="#823F30" stroke-width="1.5"/>
+  <text x="46" y="476.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#823F30">2</text>
+  <text x="68" y="470.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#823F30">System goals</text>
+  <text x="68" y="483.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">what we optimise for</text>
+  <rect x="208" y="461.0" width="157" height="22" rx="4" fill="#F2EEE3" stroke="#9D9A95" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="286" y="476.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" font-style="italic" fill="#9D9A95">Redefine AI's purpose</text>
+  <line x1="200" y1="490" x2="700" y2="490" stroke="#823F30" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="46" cy="508.0" r="13" fill="#E5C5B8" stroke="#823F30" stroke-width="1.5"/>
+  <text x="46" y="512.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#823F30">1</text>
+  <text x="68" y="506.0" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#823F30">Paradigm</text>
+  <text x="68" y="519.0" font-family="system-ui,sans-serif" font-size="9" fill="#6B6873">shared worldview</text>
+  <rect x="208" y="497.0" width="170" height="22" rx="4" fill="#F2EEE3" stroke="#9D9A95" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="293" y="512.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600" font-style="italic" fill="#9D9A95">Montreal Protocol model</text>
+  <line x1="708" y1="98" x2="708" y2="198" stroke="#A85B49" stroke-width="1.8"/>
+  <line x1="708" y1="98" x2="716" y2="98" stroke="#A85B49" stroke-width="1.8"/>
+  <line x1="708" y1="198" x2="716" y2="198" stroke="#A85B49" stroke-width="1.8"/>
+  <text x="722" y="144.0" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#A85B49">most AI governance</text>
+  <text x="722" y="158.0" font-family="system-ui,sans-serif" font-size="10" fill="#A85B49">operates here</text>
+  <line x1="708" y1="422" x2="708" y2="522" stroke="#823F30" stroke-width="1.8"/>
+  <line x1="708" y1="422" x2="716" y2="422" stroke="#823F30" stroke-width="1.8"/>
+  <line x1="708" y1="522" x2="716" y2="522" stroke="#823F30" stroke-width="1.8"/>
+  <text x="722" y="468.0" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#823F30">structural change</text>
+  <text x="722" y="482.0" font-family="system-ui,sans-serif" font-size="10" fill="#823F30">lives here</text>
 
 </svg>
