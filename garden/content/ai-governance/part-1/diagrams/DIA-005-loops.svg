@@ -1,6 +1,6 @@
-<svg viewBox="0 0 720 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d5-t d5-d">
+<svg viewBox="0 0 720 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d5-t d5-d">
   <title id="d5-t">DIA-005 · When the loops meet</title>
-  <desc id="d5-d">Stock-and-flow view of frontier AI capability with feedback loops. Main pipe runs left to right: source cloud through training T-fitting into the FRONTIER AI CAPABILITY stock, out through the deployment T-fitting to a sink cloud. Auxiliaries below the pipe connect to form four loops. R1 reinforcing: capability feeds back to training rate. R3 reinforcing (forming): AI accelerates AI R&amp;D, shrinking the feedback delay on R1. R2 inverted: visible harm raises investment instead of reducing it. B1 balancing, drawn literally broken: visible harm should drive oversight which should slow frontier targets, but the loop runs slower than the system it tries to brake. Annotation names this as the shifting-the-burden archetype.</desc>
+  <desc id="d5-d">Stock-and-flow diagram. AI CAPABILITY is the central stock on a horizontal pipe between source and sink clouds. Training is a T-fitting on the inflow side. Deployment is a T-fitting on the outflow side. The stock has two info-link source ports on its bottom edge: a left-offset port emits R3 (forming, red) — AI capability beginning to feed back into its own training rate. A right-offset port emits the capability gap chain: capability gap node → investment and compute node → training rate. The deployment T-fitting emits an info-link to visible harm, which then chains both to investment and compute (forming R2, the inverted corrective loop where alarm raises spending) and to oversight and response (forming B2, drawn literally broken with hash marks at midpoint to mark a brake too slow to bind).</desc>
   <defs>
     <style>
       :root {
@@ -46,164 +46,125 @@
     <marker id="d5-info-faded" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
       <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#9D9A95"/>
     </marker>
-    <marker id="d5-info-r1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+    <marker id="d5-info-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
       <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#A85B49"/>
     </marker>
     <marker id="d5-info-r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
       <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#823F30"/>
     </marker>
+    <marker id="d5-info-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#5A8270"/>
+    </marker>
   </defs>
 
-  <rect x="0" y="0" width="720" height="580" fill="#F2EEE3"/>
+  <rect x="0" y="0" width="720" height="540" fill="#F2EEE3"/>
 
-  <!-- ── STANDARD HEADER ── -->
+  <!-- HEADER -->
   <text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-005 · WHEN THE LOOPS MEET</text>
-  <text x="360" y="48" text-anchor="middle" font-size="12" fill="#6B6873">two reinforcing loops climbing · the would-be brakes inverted, broken, or absorbed</text>
+  <text x="360" y="48" text-anchor="middle" font-size="12" fill="#6B6873">a forming reinforcing loop, an inverted balancing loop, and a weak brake — sharing one stock</text>
 
-  <!-- ─────────────────────────────────────────────────────
-       MAIN PIPE — original geometry preserved, shifted y by +50 for header
-       ───────────────────────────────────────────────────── -->
+  <!-- ─────────── MAIN PIPE ─────────── -->
 
-  <!-- LEFT CLOUD (source) -->
+  <!-- Source cloud (left) -->
   <path d="M 34 156 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#E2DFD6" opacity="0.65"/>
   <path d="M 30 152 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFDF8" stroke="#2A2A35" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="70" y="200" text-anchor="middle" font-size="11" font-style="italic" fill="#6B6873" class="serif">data · chips · talent</text>
 
-  <!-- LEFT FLOW LINE (cloud → stock) -->
-  <line x1="105" y1="155" x2="248" y2="155" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt" marker-end="url(#d5-flow)"/>
+  <!-- Pipe: source → training T -->
+  <line x1="105" y1="155" x2="158" y2="155" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt"/>
 
-  <text x="166" y="105" text-anchor="middle" font-size="14" font-style="italic" fill="#2A2A35" class="serif">training</text>
-
-  <!-- STOCK -->
-  <rect x="258" y="118" width="200" height="74" fill="#FFFDF8" stroke="#2A2A35" stroke-width="1.75"/>
-  <text x="358" y="150" text-anchor="middle" font-size="14.5" fill="#2A2A35" class="serif">frontier AI</text>
-  <text x="358" y="170" text-anchor="middle" font-size="14.5" fill="#2A2A35" class="serif">capability</text>
-
-  <!-- RIGHT FLOW LINE (stock → cloud) -->
-  <line x1="458" y1="155" x2="618" y2="155" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt" marker-end="url(#d5-flow)"/>
-
-  <text x="540" y="105" text-anchor="middle" font-size="14" font-style="italic" fill="#2A2A35" class="serif">deployment</text>
-
-  <!-- RIGHT CLOUD (sink) -->
-  <path d="M 628 156 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#E2DFD6" opacity="0.65"/>
-  <path d="M 624 152 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFDF8" stroke="#2A2A35" stroke-width="1.5" stroke-linejoin="round"/>
-
-  <!-- Training T-fitting (original style: bar across pipe + perpendicular stem) -->
+  <!-- Training T-fitting -->
   <g stroke="#2A2A35" stroke-linecap="butt">
-    <line x1="146" y1="155" x2="186" y2="155" stroke-width="12.5"/>
-    <line x1="166" y1="155" x2="166" y2="179" stroke-width="12.5"/>
+    <line x1="160" y1="155" x2="200" y2="155" stroke-width="12.5"/>
+    <line x1="180" y1="155" x2="180" y2="180" stroke-width="12.5"/>
   </g>
+  <text x="180" y="105" text-anchor="middle" font-size="14" font-style="italic" fill="#2A2A35" class="serif">training</text>
+
+  <!-- Pipe: training T → stock -->
+  <line x1="200" y1="155" x2="258" y2="155" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt" marker-end="url(#d5-flow)"/>
+
+  <!-- STOCK: AI CAPABILITY -->
+  <rect x="258" y="118" width="200" height="74" fill="#FFFDF8" stroke="#2A2A35" stroke-width="1.75"/>
+  <text x="358" y="148" text-anchor="middle" font-size="14.5" fill="#2A2A35" class="serif">AI</text>
+  <text x="358" y="168" text-anchor="middle" font-size="14.5" fill="#2A2A35" class="serif">capability</text>
+
+  <!-- Pipe: stock → deployment T -->
+  <line x1="458" y1="155" x2="518" y2="155" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt"/>
+
   <!-- Deployment T-fitting -->
   <g stroke="#2A2A35" stroke-linecap="butt">
     <line x1="520" y1="155" x2="560" y2="155" stroke-width="12.5"/>
-    <line x1="540" y1="155" x2="540" y2="179" stroke-width="12.5"/>
+    <line x1="540" y1="155" x2="540" y2="180" stroke-width="12.5"/>
   </g>
+  <text x="540" y="105" text-anchor="middle" font-size="14" font-style="italic" fill="#2A2A35" class="serif">deployment</text>
 
-  <!-- Stock and T info-link source ports -->
-  <circle cx="358" cy="192" r="3.2" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.25"/>
-  <circle cx="544" cy="182" r="3.2" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.25"/>
+  <!-- Pipe: deployment T → sink cloud -->
+  <line x1="560" y1="155" x2="618" y2="155" stroke="#B8AD95" stroke-width="14" stroke-linecap="butt" marker-end="url(#d5-flow)"/>
 
-  <!-- ─────────────────────────────────────────────────────
-       AUXILIARY NODES — original positions, all in clear space
-       ───────────────────────────────────────────────────── -->
+  <!-- Sink cloud (right) -->
+  <path d="M 628 156 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#E2DFD6" opacity="0.65"/>
+  <path d="M 624 152 q 0 -16 16 -18 q 4 -14 22 -10 q 8 -12 24 -6 q 14 -2 16 14 q 14 4 8 20 q 6 14 -10 16 q -8 12 -24 6 q -14 8 -28 -2 q -16 4 -24 -8 q -10 -2 0 -12 z" fill="#FFFDF8" stroke="#2A2A35" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="660" y="200" text-anchor="middle" font-size="11" font-style="italic" fill="#6B6873" class="serif">products · users</text>
 
-  <circle cx="258" cy="276" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
-  <text x="266" y="280" font-size="13" fill="#2A2A35" class="serif">capability gap</text>
+  <!-- ─────────── INFO-LINK SOURCE PORTS ─────────── -->
+  <!-- Stock bottom port A — LEFT-offset (origin of R3) -->
+  <circle cx="320" cy="192" r="3.5" fill="#F2EEE3" stroke="#A85B49" stroke-width="1.6"/>
+  <!-- Stock bottom port B — RIGHT-offset (origin of capability gap chain) -->
+  <circle cx="400" cy="192" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
+  <!-- Training T-fitting bottom port (inflow target for R3 + investment chain) -->
+  <circle cx="180" cy="183" r="3.2" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.25"/>
+  <!-- Deployment T-fitting bottom port (origin of harm chain) -->
+  <circle cx="540" cy="183" r="3.2" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.25"/>
 
-  <circle cx="370" cy="390" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
-  <text x="378" y="394" font-size="13" fill="#2A2A35" class="serif">frontier target</text>
+  <!-- ─────────── AUXILIARY NODES ─────────── -->
 
-  <circle cx="118" cy="336" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
-  <text x="126" y="332" font-size="13" fill="#2A2A35" class="serif">investment</text>
-  <text x="126" y="348" font-size="13" fill="#2A2A35" class="serif">&amp; compute</text>
+  <!-- Capability gap -->
+  <circle cx="320" cy="290" r="4" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.6"/>
+  <text x="328" y="294" font-size="13" fill="#2A2A35" class="serif">capability gap</text>
 
-  <circle cx="594" cy="282" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
-  <text x="602" y="285" font-size="13" fill="#2A2A35" class="serif">visible harm</text>
+  <!-- Investment & compute -->
+  <circle cx="135" cy="335" r="4" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.6"/>
+  <text x="143" y="332" font-size="13" fill="#2A2A35" class="serif">investment</text>
+  <text x="143" y="346" font-size="13" fill="#2A2A35" class="serif">&amp; compute</text>
 
-  <circle cx="200" cy="370" r="3.5" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.5"/>
-  <text x="208" y="366" font-size="13" fill="#2A2A35" class="serif">oversight</text>
-  <text x="208" y="382" font-size="13" fill="#2A2A35" class="serif">response</text>
+  <!-- Visible harm — with concrete modes (sub-lines under the node, right-anchored to stay clear of capability gap) -->
+  <circle cx="595" cy="290" r="4" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.6"/>
+  <text x="603" y="294" font-size="13" fill="#2A2A35" class="serif">visible harm</text>
+  <text x="603" y="308" font-size="9.5" font-style="italic" fill="#6B6873" class="serif">bias · errors · layoffs</text>
 
-  <!-- ─────────────────────────────────────────────────────
-       INFO LINKS — match original routing exactly (y shifted +50)
-       ───────────────────────────────────────────────────── -->
+  <!-- Oversight & response (moved up for spacing) -->
+  <circle cx="440" cy="360" r="4" fill="#F2EEE3" stroke="#2A2A35" stroke-width="1.6"/>
+  <text x="448" y="357" font-size="13" fill="#2A2A35" class="serif">oversight</text>
+  <text x="448" y="371" font-size="13" fill="#2A2A35" class="serif">&amp; response</text>
 
-  <!-- 1. stock → capability gap -->
-  <path d="M 358 195 Q 308 228 261 274" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
-  <!-- 2. frontier target → capability gap -->
-  <path d="M 367 388 Q 320 335 260 279" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
-  <!-- 3. capability gap → investment & compute -->
-  <path d="M 256 278 Q 185 300 121 334" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
-  <!-- 4. investment & compute → training T -->
-  <path d="M 115 334 Q 142 270 161 179" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
-  <!-- 5. deployment T → visible harm -->
-  <path d="M 548 186 Q 575 250 591 279" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
+  <!-- ─────────── INFO LINKS ─────────── -->
 
-  <!-- 6. B1 visible harm → oversight (drawn LITERALLY broken at midpoint with hash marks) -->
-  <!-- first half (sage) -->
-  <path d="M 594 284 Q 460 320 360 350" stroke="#5A8270" stroke-width="1.5" fill="none"/>
-  <!-- hash marks at break -->
-  <line x1="335" y1="350" x2="355" y2="368" stroke="#B83A2A" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="355" y1="350" x2="335" y2="368" stroke="#B83A2A" stroke-width="2.5" stroke-linecap="round"/>
-  <text x="345" y="338" text-anchor="middle" font-size="9" font-style="italic" font-weight="700" fill="#B83A2A">brake breaks</text>
-  <!-- continuation faded -->
-  <path d="M 358 366 Q 280 374 203 369" stroke="#5A8270" stroke-width="1.3" fill="none" stroke-dasharray="3,4" opacity="0.5" marker-end="url(#d5-info-faded)"/>
+  <!-- 1. R3 (red, forming) — stock left-port → training T port -->
+  <path d="M 320 195 C 290 230, 220 215, 184 184" stroke="#A85B49" stroke-width="1.7" fill="none" marker-end="url(#d5-info-r)"/>
 
-  <!-- 7. oversight → frontier target (faded — would-be brake effect) -->
-  <path d="M 203 372 Q 280 382 367 390" stroke="#5A8270" stroke-width="1.3" fill="none" stroke-dasharray="3,4" opacity="0.5" marker-end="url(#d5-info-faded)"/>
+  <!-- 2. Stock → capability gap (right port → capability gap) -->
+  <path d="M 400 195 C 390 235, 360 270, 322 287" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
 
-  <!-- 8. R2 (inverted): visible harm → investment & compute (deeper rust) -->
-  <path d="M 594 285 C 510 460, 220 480, 118 340" stroke="#823F30" stroke-width="1.7" fill="none" marker-end="url(#d5-info-r2)"/>
+  <!-- 3. Capability gap → investment & compute -->
+  <path d="M 318 292 Q 230 315 138 333" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
 
-  <!-- 9. R1: stock → training rate (rust) -->
-  <path d="M 356 192 C 262 228, 146 226, 171 179" stroke="#A85B49" stroke-width="1.7" fill="none" marker-end="url(#d5-info-r1)"/>
+  <!-- 4. Investment & compute → training T port -->
+  <path d="M 132 333 C 105 250, 145 195, 178 184" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
 
-  <!-- ─────────────────────────────────────────────────────
-       LOOP LABELS — placed in clear margins, no overlap with paths or nodes
-       Per Section 13: small badge + label below
-       ───────────────────────────────────────────────────── -->
+  <!-- 5. Deployment T port → visible harm -->
+  <path d="M 540 184 Q 575 235 593 287" stroke="#2A2A35" stroke-width="1.25" fill="none" marker-end="url(#d5-info)"/>
 
-  <!-- R1 label — left margin -->
-  <g transform="translate(50, 232)">
-    <circle r="11" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.4"/>
-    <text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#A85B49">R1</text>
-    <text y="26" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">capability →</text>
-    <text y="38" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">training rate</text>
-  </g>
+  <!-- 6. Visible harm → investment & compute (R2 INVERSION, deeper rust) -->
+  <path d="M 593 292 C 510 460, 250 470, 138 338" stroke="#823F30" stroke-width="1.7" fill="none" marker-end="url(#d5-info-r2)"/>
 
-  <!-- R2 label — bottom margin, well clear of all paths -->
-  <g transform="translate(360, 478)">
-    <circle r="11" fill="#EDD8CE" stroke="#823F30" stroke-width="1.4"/>
-    <text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#823F30">R2</text>
-    <text y="-18" text-anchor="middle" font-size="9" font-style="italic" fill="#823F30">harm raises spending</text>
-    <text y="-7" text-anchor="middle" font-size="9" font-style="italic" fill="#823F30">— the corrective inverts</text>
-  </g>
+  <!-- 7. Visible harm → oversight & response (L4, weak — thin dotted sage, no break) -->
+  <path d="M 593 293 C 540 320, 490 350, 444 358" stroke="#5A8270" stroke-width="1.2" fill="none" stroke-dasharray="2,3" opacity="0.7" marker-end="url(#d5-info-sage)"/>
 
-  <!-- B1 label — placed in lower-right margin, well clear of any path -->
-  <g transform="translate(660, 410)">
-    <circle r="11" fill="#DEE8E1" stroke="#5A8270" stroke-width="1.4"/>
-    <text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#5A8270">B1</text>
-    <text y="-22" text-anchor="middle" font-size="9" font-style="italic" fill="#5A8270">harm → oversight</text>
-    <text y="-10" text-anchor="middle" font-size="9" font-style="italic" fill="#5A8270">→ frontier target</text>
-    <text y="26" text-anchor="middle" font-size="9" font-style="italic" fill="#5A8270">brake too slow</text>
-  </g>
+  <!-- 8. Oversight & response → investment & compute (L4 closing leg — weak intended brake on funding) -->
+  <path d="M 436 360 C 320 380, 200 380, 138 339" stroke="#5A8270" stroke-width="1.2" fill="none" stroke-dasharray="2,3" opacity="0.7" marker-end="url(#d5-info-sage)"/>
 
-  <!-- R3 forming — placed RIGHT of R1 badge so they read as paired R-loops
-       Clear of investment & compute node which is at (126, 336) -->
-  <g transform="translate(50, 410)">
-    <circle r="11" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.4" stroke-dasharray="3,2"/>
-    <text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#A85B49">R3</text>
-    <text y="-22" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">forming (2025–26):</text>
-    <text y="-10" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">AI accelerates AI R&amp;D</text>
-    <text y="26" text-anchor="middle" font-size="9" font-style="italic" fill="#A85B49">→ shrinks R1 cycle</text>
-  </g>
-
-  <!-- ─────────────────────────────────────────────────────
-       SHIFTING-THE-BURDEN ANNOTATION + footer
-       ───────────────────────────────────────────────────── -->
-  <line x1="40" y1="510" x2="680" y2="510" stroke="#E2DFD6" stroke-width="1"/>
-
-  <text x="360" y="530" text-anchor="middle" font-size="11" font-weight="700" fill="#6B6873" letter-spacing="0.06em">SHIFTING THE BURDEN</text>
-  <text x="360" y="546" text-anchor="middle" font-size="11" fill="#6B6873">Safety research and policy announcements absorb the reform pressure</text>
-  <text x="360" y="560" text-anchor="middle" font-size="11" fill="#6B6873">that would otherwise push toward liability law, audits, hard deployment gates.</text>
-  <text x="360" y="576" text-anchor="middle" font-size="11" font-weight="700" fill="#A85B49">Symptomatic fix works just well enough to prevent the fundamental fix.</text>
+  <!-- ─────────── SHIFTING-THE-BURDEN ANNOTATION ─────────── -->
+  <line x1="40" y1="500" x2="680" y2="500" stroke="#E2DFD6" stroke-width="1"/>
+  <text x="360" y="520" text-anchor="middle" font-size="11" font-weight="700" fill="#6B6873" letter-spacing="0.06em">SHIFTING THE BURDEN</text>
+  <text x="360" y="535" text-anchor="middle" font-size="11" fill="#6B6873">Visible safety absorbs the reform pressure that would push toward liability law and audits.</text>
 </svg>

@@ -1,8 +1,8 @@
 <svg viewBox="0 0 860 500" xmlns="http://www.w3.org/2000/svg"
-     role="img" aria-labelledby="dia009-title dia009-desc"
+     role="img" aria-labelledby="dia007b-title dia007b-desc"
      font-family="system-ui,sans-serif">
-  <title id="dia009-title">DIA-009: Sabotage Detection Rates and Evaluation Structural Limits</title>
-  <desc id="dia009-desc">Two-panel diagram. Left: horizontal bar chart of sabotage rates in frontier models (Kirk et al., 2026). Right: stacked layer diagram showing structural limits on alignment evaluation.</desc>
+  <title id="dia007b-title">DIA-007B: Sabotage Detection Rates and Evaluation Structural Limits</title>
+  <desc id="dia007b-desc">Two-panel diagram. Left: horizontal bar chart of sabotage rates in frontier models (Kirk et al., 2026). Right: stacked layer diagram showing structural limits on alignment evaluation.</desc>
 
   <defs>
     <style>
@@ -197,7 +197,7 @@
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- CAPTION                                                -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <text x="430" y="471" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-009. Left: sabotage behaviors detected in frontier model evaluations (Kirk et al., UK AISI, 2026). Mythos Preview's 65% reasoning–output discrepancy</text>
+  <text x="430" y="471" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-007B. Left: sabotage behaviors detected in frontier model evaluations (Kirk et al., UK AISI, 2026). Mythos Preview's 65% reasoning–output discrepancy</text>
   <text x="430" y="486" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6B6B85">means its chain-of-thought did not match its actions 65% of the time when sabotage occurred. Right: structural limits on alignment evaluation reliability.</text>
 
 </svg>

@@ -1,6 +1,6 @@
-# DIA-006: The Distribution Problem
+# DIA-006B: The Distribution Problem
 ## Snapshot
-- **Diagram file:** `garden/content/ai-governance/part-1/diagrams/DIA-006-distribution-problem.svg`
+- **Diagram file:** `garden/content/ai-governance/part-1/diagrams/DIA-006B-distribution-problem.svg`
 - **Theme:** Timing mismatch in labor transition
 - **Primary audience takeaway:** Aggregate job recovery can coexist with severe near-term harm concentrated in specific worker groups.
 

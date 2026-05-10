@@ -1,0 +1,110 @@
+<svg viewBox="0 0 860 892" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d6b-t d6b-d">
+  <title id="d6b-t">DIA-006A: Industry arguments and structural readings</title>
+  <desc id="d6b-d">Four stacked argument cards in reading order: industry pill, quoted claim, citation line, divider, then structural response. Matches the former tier-card section layout.</desc>
+  <defs>
+    <style>
+      :root {
+        --bg: #FAF6EE;
+        --surface: #FFFFFF;
+        --border-card: #E4E2DC;
+        --pill-bg: #EFECE6;
+        --pill-border: #D5D3CD;
+        --pill-text: #5A5A6A;
+        --quote-bar: #C8C4BC;
+        --text: #3A3A4A;
+        --strong: #252530;
+        --muted: #6B6B85;
+        --line: #D0CCC4;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23;
+          --surface: #242834;
+          --border-card: #404756;
+          --pill-bg: #343A46;
+          --pill-border: #4E5565;
+          --pill-text: #B4BDD0;
+          --quote-bar: #5E6678;
+          --text: #DCE4F0;
+          --strong: #E8ECF5;
+          --muted: #A8B3C7;
+          --line: #404756;
+        }
+      }
+      [fill="#FAF6EE"] { fill: var(--bg); }
+      [fill="#FFFFFF"] { fill: var(--surface); } [stroke="#E4E2DC"] { stroke: var(--border-card); }
+      [fill="#EFECE6"] { fill: var(--pill-bg); } [stroke="#D5D3CD"] { stroke: var(--pill-border); }
+      [fill="#5A5A6A"] { fill: var(--pill-text); }
+      [fill="#C8C4BC"] { fill: var(--quote-bar); }
+      [fill="#3A3A4A"] { fill: var(--text); }
+      [fill="#252530"] { fill: var(--strong); }
+      [fill="#6B6B85"] { fill: var(--muted); }
+      [stroke="#D0CCC4"] { stroke: var(--line); }
+    </style>
+  </defs>
+
+  <rect width="860" height="892" fill="#FAF6EE" rx="8"/>
+
+  <text x="430" y="26" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#3A3A4A">What the Industry Says, and What the Structure Shows</text>
+  <text x="430" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" fill="#6B6B85">Four claims in reading order: quote and sources, then the structural read (not a personality verdict).</text>
+
+  <!-- ═══ Card 1 ═══ -->
+  <rect x="20" y="56" width="820" height="186" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1" rx="12"/>
+  <rect x="36" y="70" width="268" height="22" rx="11" fill="#EFECE6" stroke="#D5D3CD" stroke-width="1"/>
+  <text x="48" y="85" font-family="system-ui,sans-serif" font-size="7.5" font-weight="800" fill="#5A5A6A" letter-spacing="0.1em">PESSIMISTS HAVE ALWAYS BEEN WRONG</text>
+  <rect x="36" y="100" width="3" height="40" rx="1" fill="#C8C4BC"/>
+  <text x="46" y="112" font-family="system-ui,sans-serif" font-size="9" font-style="italic" fill="#3A3A4A">"AI is math, code, computers: built and controlled by people.</text>
+  <text x="46" y="124" font-family="system-ui,sans-serif" font-size="9" font-style="italic" fill="#3A3A4A">A mind of its own that decides to kill us is a superstitious</text>
+  <text x="46" y="136" font-family="system-ui,sans-serif" font-size="9" font-style="italic" fill="#3A3A4A">handwave."</text>
+  <text x="36" y="154" font-family="system-ui,sans-serif" font-size="8" font-style="italic" fill="#6B6B85">Marc Andreessen, a16z, Jun 2023. Also: Altman (MIT Sloan, 2023); Amodei on unilateral slowdown.</text>
+  <line x1="36" y1="166" x2="824" y2="166" stroke="#D0CCC4" stroke-width="1"/>
+  <text x="36" y="182" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#252530">The structural issue isn't the prediction. It's whether the system can catch its own failures.</text>
+  <text x="36" y="198" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">The claim is not "disaster is coming." It is that oversight does not self-correct fast enough to track</text>
+  <text x="36" y="210" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">frontier scale. Signal in-series: AISI renamed; on the order of $10M FY2026 versus one training run.</text>
+  <text x="36" y="222" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">Stated concern, mismatched resources.</text>
+
+  <!-- ═══ Card 2 ═══ -->
+  <rect x="20" y="256" width="820" height="186" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1" rx="12"/>
+  <rect x="36" y="270" width="320" height="22" rx="11" fill="#EFECE6" stroke="#D5D3CD" stroke-width="1"/>
+  <text x="48" y="285" font-family="system-ui,sans-serif" font-size="7.5" font-weight="800" fill="#5A5A6A" letter-spacing="0.1em">AI CREATES MORE JOBS THAN IT DESTROYS</text>
+  <rect x="36" y="300" width="3" height="22" rx="1" fill="#C8C4BC"/>
+  <text x="46" y="312" font-family="system-ui,sans-serif" font-size="9" font-style="italic" fill="#3A3A4A">"AI will create more jobs than it eliminates, just as every</text>
+  <text x="46" y="324" font-family="system-ui,sans-serif" font-size="9" font-style="italic" fill="#3A3A4A">previous technology has."</text>
+  <text x="36" y="342" font-family="system-ui,sans-serif" font-size="8" font-style="italic" fill="#6B6B85">Marc Benioff, Salesforce, 2025. WEF Future of Jobs 2025; Microsoft Work Trend Index 2025.</text>
+  <line x1="36" y1="354" x2="824" y2="354" stroke="#D0CCC4" stroke-width="1"/>
+  <text x="36" y="370" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#252530">The aggregate figure is probably correct, and almost beside the point.</text>
+  <text x="36" y="386" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">This series takes the WEF-style net seriously. The lived problem is distribution and recovery time.</text>
+  <text x="36" y="398" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">For workers in the current transition window, delay is the structural gap policy fills or leaves open.</text>
+  <text x="36" y="410" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">See the labor subsection and DIA-006B for the timing picture.</text>
+
+  <!-- ═══ Card 3 ═══ -->
+  <rect x="20" y="456" width="820" height="186" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1" rx="12"/>
+  <rect x="36" y="470" width="260" height="22" rx="11" fill="#EFECE6" stroke="#D5D3CD" stroke-width="1"/>
+  <text x="48" y="485" font-family="system-ui,sans-serif" font-size="7.5" font-weight="800" fill="#5A5A6A" letter-spacing="0.1em">LABS GENUINELY CARE ABOUT SAFETY</text>
+  <rect x="36" y="500" width="3" height="28" rx="1" fill="#C8C4BC"/>
+  <text x="46" y="512" font-family="system-ui,sans-serif" font-size="9" font-style="italic" fill="#3A3A4A">"The responsible development and maintenance of advanced AI</text>
+  <text x="46" y="524" font-family="system-ui,sans-serif" font-size="9" font-style="italic" fill="#3A3A4A">for the long-term benefit of humanity."</text>
+  <text x="36" y="542" font-family="system-ui,sans-serif" font-size="8" font-style="italic" fill="#6B6B85">Anthropic mission. OpenAI and Anthropic teams; Anthropic RSP revised Feb 2026.</text>
+  <line x1="36" y1="554" x2="824" y2="554" stroke="#D0CCC4" stroke-width="1"/>
+  <text x="36" y="570" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#252530">The safety teams are real. The loop is the problem, not the people.</text>
+  <text x="36" y="586" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">Intent inside a self-amplifying race does not unwind competitive pressure. Part 4: dissent paradox.</text>
+  <text x="36" y="598" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">Petri donated May 2026: evaluations run by a lab on its own models lack independence for credibility.</text>
+  <text x="36" y="610" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">Full cites and footnote in the section text below.</text>
+
+  <!-- ═══ Card 4 ═══ -->
+  <rect x="20" y="656" width="820" height="186" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1" rx="12"/>
+  <rect x="36" y="670" width="248" height="22" rx="11" fill="#EFECE6" stroke="#D5D3CD" stroke-width="1"/>
+  <text x="48" y="685" font-family="system-ui,sans-serif" font-size="7.5" font-weight="800" fill="#5A5A6A" letter-spacing="0.1em">OPEN-SOURCE DEMOCRATIZES AI</text>
+  <rect x="36" y="700" width="3" height="34" rx="1" fill="#C8C4BC"/>
+  <text x="46" y="712" font-family="system-ui,sans-serif" font-size="9" font-style="italic" fill="#3A3A4A">"Concentration of power through proprietary AI is a much</text>
+  <text x="46" y="724" font-family="system-ui,sans-serif" font-size="9" font-style="italic" fill="#3A3A4A">bigger danger than everything else."</text>
+  <text x="36" y="742" font-family="system-ui,sans-serif" font-size="8" font-style="italic" fill="#6B6B85">Yann LeCun, Lex Fridman #416, Mar 2024. Zuckerberg, Meta, Jul 2024; Mistral on sovereignty.</text>
+  <line x1="36" y1="754" x2="824" y2="754" stroke="#D0CCC4" stroke-width="1"/>
+  <text x="36" y="770" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#252530">The access argument is real. The power argument is more complicated.</text>
+  <text x="36" y="786" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">Open weights broaden who can obtain a file; sovereignty worries about a few clouds are serious.</text>
+  <text x="36" y="798" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">Release is irreversible. Who gains still tracks compute, integration, and organizational capacity.</text>
+  <text x="36" y="810" font-family="system-ui,sans-serif" font-size="9" fill="#3A3A4A">Organizations and states often outpace individuals on extraction.</text>
+
+  <text x="430" y="864" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">DIA-006A. Former tier-card layout as a single column: pill, quotation, citation, rule, structural response.</text>
+  <text x="430" y="882" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#6B6B85">The markdown under the figure keeps full quotes, names, and footnotes.</text>
+</svg>

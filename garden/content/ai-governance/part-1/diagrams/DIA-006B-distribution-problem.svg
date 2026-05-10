@@ -1,0 +1,143 @@
+<svg viewBox="0 0 860 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d6a-title d6a-desc">
+  <title id="d6a-title">DIA-006B. The Distribution Problem</title>
+  <desc id="d6a-desc">Left panel: cascade from AI-exposed advanced-economy workforce down to 6.1 million workers at high exposure and low adaptive capacity. Right panel: historical transition recovery timelines (Industrial Revolution 40 years, Internet Era 20–30 years, AI pace unknown) showing why aggregate net job creation does not arrive in time for the at-risk population.</desc>
+
+  <defs>
+    <style>
+      :root {
+        --bg: #FAFAF8; --paper: #F2EEE3; --line: #E2DFD6; --text: #2A2A35; --muted: #6B6873; --muted2: #9D9A95;
+        --rust: #A85B49; --rust-soft: #EDD8CE; --gold: #A28438; --gold-soft: #F0E5CD;
+        --slate: #4F627F; --slate-soft: #DEE3EC; --sage: #5A8270; --sage-soft: #DEE8E1;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23; --paper: #1E2128; --line: #3E3D38; --text: #E8E5DC; --muted: #B8B5AD; --muted2: #908D87;
+          --rust: #D29183; --rust-soft: #3D2925; --gold: #D6B574; --gold-soft: #3B3220;
+          --slate: #94A6C4; --slate-soft: #2A323F; --sage: #92BAA6; --sage-soft: #233029;
+        }
+      }
+      [fill="#F2EEE3"] { fill: var(--paper); } [stroke="#E2DFD6"] { stroke: var(--line); }
+      [fill="#2A2A35"] { fill: var(--text); } [fill="#6B6873"] { fill: var(--muted); } [fill="#9D9A95"] { fill: var(--muted2); } [stroke="#9D9A95"] { stroke: var(--muted2); }
+      [fill="#A85B49"] { fill: var(--rust); } [stroke="#A85B49"] { stroke: var(--rust); } [fill="#EDD8CE"] { fill: var(--rust-soft); }
+      [fill="#A28438"] { fill: var(--gold); } [stroke="#A28438"] { stroke: var(--gold); } [fill="#F0E5CD"] { fill: var(--gold-soft); }
+      [fill="#4F627F"] { fill: var(--slate); } [stroke="#4F627F"] { stroke: var(--slate); } [fill="#DEE3EC"] { fill: var(--slate-soft); }
+      [fill="#5A8270"] { fill: var(--sage); } [stroke="#5A8270"] { stroke: var(--sage); } [fill="#DEE8E1"] { fill: var(--sage-soft); }
+    </style>
+    <marker id="arh-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#A85B49"/>
+    </marker>
+    <marker id="arh-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#9D9A95"/>
+    </marker>
+    <marker id="arh-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#4F627F"/>
+    </marker>
+    <marker id="arh-amber" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#A28438"/>
+    </marker>
+  </defs>
+
+  <!-- Page background -->
+  <rect width="860" height="510" fill="#F2EEE3" rx="8"/>
+
+  <!-- ── STANDARD HEADER ── -->
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-006B · THE DISTRIBUTION PROBLEM</text>
+  <text x="430" y="48" text-anchor="middle" font-size="12" fill="#6B6873">where the 6.1 million come from · why recovery takes longer than displacement</text>
+
+
+  <!-- Panel divider -->
+  <line x1="430" y1="75" x2="430" y2="490" stroke="#E2DFD6" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ===================== LEFT PANEL: Population Cascade ===================== -->
+
+  <text x="215" y="64" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6B6873" letter-spacing="0.6">WHERE THE 6.1 MILLION COME FROM</text>
+
+  <!-- Bar 1: AI-exposed advanced-economy workforce -->
+  <rect x="30" y="78" width="370" height="50" fill="#DEE3EC" stroke="#4F627F" stroke-width="1.5" rx="6"/>
+  <text x="215" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#4F627F">Advanced economy workforce</text>
+  <text x="215" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#4F627F">≈ 60% have meaningful AI exposure  ·  IMF, April 2025</text>
+
+  <!-- Connectors down to split -->
+  <line x1="121" y1="128" x2="121" y2="156" stroke="#9D9A95" stroke-width="1.5" marker-end="url(#arh-gray)"/>
+  <line x1="309" y1="128" x2="309" y2="156" stroke="#9D9A95" stroke-width="1.5" marker-end="url(#arh-gray)"/>
+
+  <!-- Bar 2L: Augmented -->
+  <rect x="30" y="156" width="183" height="50" fill="#DEE8E1" stroke="#5A8270" stroke-width="1.5" rx="6"/>
+  <text x="121" y="178" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#5A8270">≈ Half: Augmented</text>
+  <text x="121" y="195" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#5A8270">AI raises productivity</text>
+
+  <!-- Bar 2R: Substitution risk -->
+  <rect x="217" y="156" width="183" height="50" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.5" rx="6"/>
+  <text x="308" y="178" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#A85B49">≈ Half: Substitution risk</text>
+  <text x="308" y="195" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#A85B49">Tasks automated, roles displaced</text>
+
+  <!-- Trapezoid narrowing from Bar2R down to Bar3 -->
+  <polygon points="217,206 400,206 373,236 243,236" fill="#F0E5CD" stroke="none" opacity="0.55"/>
+  <line x1="217" y1="206" x2="243" y2="236" stroke="#A28438" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="400" y1="206" x2="373" y2="236" stroke="#A28438" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="308" y1="206" x2="308" y2="236" stroke="#A28438" stroke-width="1.5" marker-end="url(#arh-amber)"/>
+
+  <!-- Bar 3: At-risk population -->
+  <rect x="243" y="236" width="130" height="68" fill="#F0E5CD" stroke="#A28438" stroke-width="2" rx="6"/>
+  <text x="308" y="260" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#A28438">6.1 million</text>
+  <text x="308" y="278" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#A28438">US workers</text>
+  <text x="308" y="296" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#6B6873">high exposure</text>
+
+  <!-- Subline -->
+  <text x="215" y="322" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#A28438">4.2% of US workforce  ·  NBER 2026</text>
+
+  <!-- Profile tags: 2x2 grid, w=152, gap=6, centered on panel x=215 -->
+  <rect x="60" y="334" width="152" height="22" fill="#F0E5CD" stroke="#A28438" stroke-width="1" rx="4"/>
+  <text x="136" y="349" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#A28438">Clerical &amp; administrative</text>
+
+  <rect x="218" y="334" width="152" height="22" fill="#F0E5CD" stroke="#A28438" stroke-width="1" rx="4"/>
+  <text x="294" y="349" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#A28438">Predominantly women</text>
+
+  <rect x="60" y="362" width="152" height="22" fill="#F0E5CD" stroke="#A28438" stroke-width="1" rx="4"/>
+  <text x="136" y="377" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#A28438">Smaller metro areas</text>
+
+  <rect x="218" y="362" width="152" height="22" fill="#F0E5CD" stroke="#A28438" stroke-width="1" rx="4"/>
+  <text x="294" y="377" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#A28438">Limited local alternatives</text>
+
+  <!-- Quote -->
+  <text x="215" y="408" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" font-weight="600" fill="#A85B49">"Not a career setback. Closer to permanent."</text>
+
+  <!-- ===================== RIGHT PANEL: Transition Timelines ===================== -->
+  <!-- Scale: x_origin=445, 1 yr = 5.5px → 20yr=555, 40yr=665 -->
+
+  <text x="445" y="64" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6B6873" letter-spacing="0.6">WHY RECOVERY TAKES LONGER THAN DISPLACEMENT</text>
+
+  <!-- Row 1: Industrial Revolution: 40 years = 220px -->
+  <text x="445" y="112" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6B6873">Industrial Revolution</text>
+  <text x="445" y="126" font-family="system-ui,sans-serif" font-size="10" fill="#9D9A95">UK wages stagnated ≈ 40 years despite productivity gains</text>
+  <rect x="445" y="134" width="220" height="32" fill="#EDD8CE" stroke="#A85B49" stroke-width="1.5" rx="4"/>
+  <text x="555" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#A85B49">40 years</text>
+
+  <!-- Row 2: Internet: 20–30 years (~28 yrs) = 154px -->
+  <text x="445" y="200" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#6B6873">Internet Transition</text>
+  <text x="445" y="214" font-family="system-ui,sans-serif" font-size="10" fill="#9D9A95">Employment replacement stabilized over 20–30 years</text>
+  <rect x="445" y="222" width="154" height="32" fill="#F0E5CD" stroke="#A28438" stroke-width="1.5" rx="4"/>
+  <text x="522" y="243" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#A28438">20–30 years</text>
+
+  <!-- Row 3: AI Era: unknown -->
+  <text x="445" y="288" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#4F627F">AI Era (now)</text>
+  <text x="445" y="302" font-family="system-ui,sans-serif" font-size="10" fill="#9D9A95">Displacement is accelerating; transition timeline unknown</text>
+  <rect x="445" y="310" width="50" height="32" fill="#DEE3EC" stroke="#4F627F" stroke-width="1.5" rx="4" stroke-dasharray="5,3"/>
+  <text x="470" y="331" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#4F627F">?</text>
+  <line x1="496" y1="326" x2="712" y2="326" stroke="#4F627F" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arh-blue)"/>
+
+  <!-- X-axis -->
+  <line x1="445" y1="388" x2="680" y2="388" stroke="#E2DFD6" stroke-width="1.5"/>
+  <line x1="445" y1="384" x2="445" y2="394" stroke="#9D9A95" stroke-width="1"/>
+  <text x="445" y="406" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#9D9A95">0</text>
+  <line x1="555" y1="384" x2="555" y2="394" stroke="#9D9A95" stroke-width="1"/>
+  <text x="555" y="406" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#9D9A95">20 yrs</text>
+  <line x1="665" y1="384" x2="665" y2="394" stroke="#9D9A95" stroke-width="1"/>
+  <text x="665" y="406" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#9D9A95">40 yrs</text>
+
+  <!-- Summary callout -->
+  <rect x="445" y="428" width="385" height="56" fill="#DEE3EC" stroke="#4F627F" stroke-width="1" rx="6"/>
+  <text x="637" y="449" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="600" fill="#4F627F">Aggregate recovery happens, eventually.</text>
+  <text x="637" y="465" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" fill="#4F627F">The 6.1M at-risk workers can't wait 20–40 years for it.</text>
+  <text x="637" y="479" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#6B6873">The aggregate number is the wrong unit of measurement.</text>
+</svg>

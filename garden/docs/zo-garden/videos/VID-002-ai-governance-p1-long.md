@@ -678,8 +678,8 @@ narrowed irreversibly on January 20th, 2025.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [21:30–25:30 | WHAT'S ACTUALLY AT STAKE]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[B-ROLL: Cut to DIA-006 — the distribution problem]
-[ON SCREEN: DIA-006 — The Distribution Problem]
+[B-ROLL: Cut to DIA-006A — the distribution problem]
+[ON SCREEN: DIA-006A — The Distribution Problem]
 
 SPEAKER: The loops described so far produce specific effects on real people.
 This section grounds those effects in the best available evidence —

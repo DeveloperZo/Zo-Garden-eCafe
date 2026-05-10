@@ -14,41 +14,39 @@ Can AI companies be trusted to self-govern? The structural answer is: **not reli
 
 These aren't fringe positions. Each one is held by serious, well-resourced people and has real evidence behind it. The structural response isn't a rebuttal. It's a different level of analysis. The industry positions describe *what individuals intend*. The structural response describes *how the loop behaves regardless*.
 
-<div class="tier-grid">
+![](/ai-governance/part-1/diagrams/DIA-006A-industry-arguments.svg)
 
-<div class="tier-card">
-<p><span class="tier-pill">Pessimists have always been wrong</span></p>
+#### Pessimists have always been wrong
+
 <blockquote><p>"AI is math — code — computers, built by people, owned by people, used by people, controlled by people. The idea that it will develop a mind of its own and decide to kill us is a superstitious handwave."</p></blockquote>
+
 <p><em>Marc Andreessen, "Why AI Will Save the World," a16z, Jun 2023. Also: Altman ("the biggest, best, and most important" technology revolution, MIT Sloan, 2023); Amodei (Anthropic, 2024) arguing that unilateral slowdown simply hands the lead to actors with less safety focus.</em></p>
-<hr/>
+
 <p><strong>The structural issue isn't the prediction. It's whether the system can catch its own failures.</strong> The claim here isn't "disaster is coming." It's that the current oversight structure doesn't self-correct fast enough, and that's a falsifiable proposition, not a matter of faith. Watch whether oversight resources grow proportionally to industry scale. As of 2026, the US AI Safety Institute had been renamed the Center for AI Standards and Innovation: Commerce dropped "safety" from the name in June 2025. The renamed body was funded at \$10M for FY2026, less than 10% of a single frontier training run.<sup><a href="index#part1-ref-26a" id="part1-fnref-26a">26a</a></sup> Stated concern, mismatched resources.</p>
-</div>
 
-<div class="tier-card">
-<p><span class="tier-pill">AI creates more jobs than it destroys</span></p>
+#### AI creates more jobs than it destroys
+
 <blockquote><p>"AI will create more jobs than it eliminates, just as every previous technology has."</p></blockquote>
+
 <p><em>Marc Benioff, Salesforce, 2025. Also: WEF Future of Jobs Report 2025 (170M new roles, 92M displaced, net +78M by 2030); Microsoft Work Trend Index 2025 documenting growth in AI-augmented roles.</em></p>
-<hr/>
+
 <p><strong>The aggregate figure is probably correct, and almost beside the point.</strong> This analysis takes the WEF projection seriously. The problem is distribution and recovery time, both detailed in the labor section below. For workers in the current transition window, that delay isn't a consolation. It's the structural gap that policy either fills or doesn't.</p>
-</div>
 
-<div class="tier-card">
-<p><span class="tier-pill">Labs genuinely care about safety</span></p>
+#### Labs genuinely care about safety
+
 <blockquote><p>"The responsible development and maintenance of advanced AI for the long-term benefit of humanity."</p></blockquote>
+
 <p><em>Anthropic mission statement. Also: OpenAI (dedicated alignment, interpretability, and policy teams); Anthropic RSP, previously the industry's gold-standard voluntary safety commitment, until its February 2026 revision.</em></p>
-<hr/>
+
 <p><strong>The safety teams are real. The loop is the problem, not the people.</strong> Good intentions inside a self-amplifying system don't change how the system behaves. Section 4 traced this as the dissent paradox: even safety-focused labs cannot hold the line unilaterally if competitors won't. Anthropic's own May 2026 decision to donate its alignment evaluation tool, Petri, to an independent nonprofit makes the same point structurally: evaluations run by a lab on its own models lack the independence required for credibility.<sup><a href="index#part1-ref-31" id="part1-fnref-31">31</a></sup></p>
-</div>
 
-<div class="tier-card">
-<p><span class="tier-pill">Open-source democratizes AI</span></p>
+#### Open-source democratizes AI
+
 <blockquote><p>"I see the danger of this concentration of power through proprietary AI systems as a much bigger danger than everything else."</p></blockquote>
-<p><em>Yann LeCun, Lex Fridman Podcast #416, Mar 2024. Also: Zuckerberg ("Open source AI is the path forward," Meta, Jul 2024); Mistral AI positioning open weights as democratic and sovereignty-preserving for non-US nations.</em></p>
-<hr/>
-<p><strong>The access argument is real. The power argument is more complicated.</strong> Open-source does broaden access, and the sovereignty framing has genuine merit for countries that don't want to depend on US or Chinese infrastructure. But "democratizing" implies power flowing to individuals. Watch what actually happens when model weights are released: they can't be recalled, and who extracts value depends entirely on who already has the infrastructure to use them. Organizations, states, and well-resourced groups consistently benefit more than individuals do. Accurate about access; considerably less accurate about where power actually flows.</p>
-</div>
 
-</div>
+<p><em>Yann LeCun, Lex Fridman Podcast #416, Mar 2024. Also: Zuckerberg ("Open source AI is the path forward," Meta, Jul 2024); Mistral AI positioning open weights as democratic and sovereignty-preserving for non-US nations.</em></p>
+
+<p><strong>The access argument is real. The power argument is more complicated.</strong> Open-source does broaden access, and the sovereignty framing has genuine merit for countries that don't want to depend on US or Chinese infrastructure. But "democratizing" implies power flowing to individuals. Watch what actually happens when model weights are released: they can't be recalled, and who extracts value depends entirely on who already has the infrastructure to use them. Organizations, states, and well-resourced groups consistently benefit more than individuals do. Accurate about access; considerably less accurate about where power actually flows.</p>
 
 ### The labor displacement picture
 
@@ -62,7 +60,7 @@ What's been measured so far: Challenger, Gray & Christmas tracked 54,836 US job 
 
 The WEF's 2025 Future of Jobs Report projects 92 million jobs displaced and 170 million created by 2030, net positive on paper.<sup><a href="index#part1-ref-23" id="part1-fnref-23">23</a></sup> The catch is distribution. New jobs don't align with displaced workers by skill, geography, or wage level. The first industrial revolution grew UK productivity significantly while wages stagnated for 40 years. The internet transition generated genuine replacement employment, but took 20–30 years to arrive. AI's pace may outrun that window, though how much faster is genuinely contested.
 
-![](/ai-governance/part-1/diagrams/DIA-006-distribution-problem.svg)
+![](/ai-governance/part-1/diagrams/DIA-006B-distribution-problem.svg)
 
 *Part 7 turns to the less certain risk: not the workers displaced now, but what happens if the verification gap between capability and oversight isn't closed before it matters.*
 
