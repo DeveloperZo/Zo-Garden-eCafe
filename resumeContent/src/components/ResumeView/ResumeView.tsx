@@ -4,7 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 import quests from '../../data/quests.data';
 import type { Quest } from '../../data/quests.data';
 import './ResumeView.css';
-import generatePDF from '../../utils/pdfGenerator';
+import { generateResumePdfFromDom } from '../../utils/pdfGenerator';
 
 // Helper function to format dates consistently, avoiding timezone issues
 const formatDate = (date: Date): string => {
@@ -24,45 +24,6 @@ const ResumeView: React.FC = () => {
   // Transform quest data into resume format
   const resumeData = useMemo(() => {
     const careerQuests = quests.filter(isCareerQuest).sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
-
-    // Summary: prefer authored `summary` text from newest roles (avoids duplicating role `description` under each employer)
-    const summaryFromAuthors = careerQuests
-      .map((q) => q.summary?.trim())
-      .filter((text): text is string => Boolean(text))
-      .slice(0, 3);
-    const summaryParagraphs =
-      summaryFromAuthors.length > 0
-        ? summaryFromAuthors
-        : careerQuests.slice(0, 2).map((q) => q.description.trim()).filter(Boolean);
-
-    // Core competencies from tags on career quests (frequency, then name)
-    const tagToCompanies = new Map<string, Set<string>>();
-    const tagFrequency = new Map<string, number>();
-    for (const quest of careerQuests) {
-      const company = quest.company;
-      if (!company) continue;
-      for (const tag of quest.tags ?? []) {
-        const key = tag.trim();
-        if (!key) continue;
-        if (!tagToCompanies.has(key)) {
-          tagToCompanies.set(key, new Set());
-          tagFrequency.set(key, 0);
-        }
-        tagToCompanies.get(key)!.add(company);
-        tagFrequency.set(key, (tagFrequency.get(key) ?? 0) + 1);
-      }
-    }
-    const competencies = Array.from(tagToCompanies.entries())
-      .map(([tag, companies]) => {
-        const list = Array.from(companies).sort((a, b) => a.localeCompare(b));
-        const blurb =
-          list.length > 1
-            ? `Recurring focus across roles at ${list.join(', ')}.`
-            : `Primary focus during tenure at ${list[0]}.`;
-        return { tag, blurb, frequency: tagFrequency.get(tag) ?? 0 };
-      })
-      .sort((a, b) => b.frequency - a.frequency || a.tag.localeCompare(b.tag))
-      .map(({ tag, blurb }) => ({ tag, blurb }));
 
     const experience = careerQuests.map((quest) => ({
       id: quest.id,
@@ -91,67 +52,84 @@ const ResumeView: React.FC = () => {
       ),
     );
 
-    return { experience, education, skills, summaryParagraphs, competencies };
+    return { experience, education, skills };
   }, []);
 
   const handleDownloadPDF = () => {
-    generatePDF(resumeData, 'Professional_Resume.pdf');
+    void generateResumePdfFromDom('Alonzo_Williams_Resume.pdf');
   };
 
   return (
     <div className={`resume-container ${theme}`}>
-<div className="resume-header">
-  <div className="header-content">
-    <h1>Alonzo Williams</h1>
-    <div className="contact-info">
-      awilliams9293@gmail.com<br/>
-      https://www.linkedin.com/in/alonzo-williams-1160a7b0/<br/>
-      Chicago, IL<br/>
-    </div>
-  </div>
-  <button className="download-button" onClick={handleDownloadPDF}>
-    Download PDF
-  </button>
-</div>
-      
+      <div className="resume-header">
+        <div className="header-content">
+          <h1>Alonzo Williams</h1>
+          <div className="contact-info">
+            awilliams9293@gmail.com<br />
+            https://www.linkedin.com/in/alonzo-williams-1160a7b0/<br />
+            Chicago, IL<br />
+          </div>
+        </div>
+        <button type="button" className="download-button" onClick={handleDownloadPDF}>
+          Download PDF
+        </button>
+      </div>
+
       <div className="resume-content">
-        {/* Professional Summary (from quest summaries / descriptions, newest roles first) */}
         <section className="resume-section">
           <h2>Professional Summary</h2>
-            <p className="summary-text">
-              Strategic technology leader with over a decade of experience in software architecture and development. Demonstrated expertise in transforming legacy systems, leading cross-functional teams, and implementing scalable architectures across multiple industries. Consistently delivers solutions through thoughtful architectural decisions and effective team leadership.
-            </p>
-          
+          <p className="summary-text">
+            Strategic technology leader with over a decade of experience in software architecture and
+            development. Demonstrated expertise in transforming legacy systems, leading cross-functional teams,
+            and implementing scalable architectures across multiple industries. Consistently delivers solutions
+            through thoughtful architectural decisions and effective team leadership.
+          </p>
         </section>
-        {/* Core competencies (unique tags on career quests) */}
         <section className="resume-section">
           <h2>Core Competencies</h2>
           <div className="competencies-grid">
-    
-          <div className="competency-item">
-      <h3>Technology Leadership</h3>
-      <p>Skilled at guiding cross-functional development teams through complete project lifecycles while maintaining focus on quality and delivery timelines.</p>
-    </div>
-    
-    <div className="competency-item">
-      <h3>Enterprise Integration</h3>
-      <p>Extensive experience implementing integration solutions across disparate systems, leveraging service-oriented approaches and API design best practices.</p>
-    </div>
-    
-    <div className="competency-item">
-      <h3>Cloud Infrastructure</h3>
-      <p>Proficient with Azure cloud services implementation, focusing on scalable architectures that optimize for both performance and cost.</p>
-    </div>
-    
-    <div className="competency-item">
-      <h3>Development Practices</h3>
-      <p>Strong advocate for engineering excellence through SOLID principles, comprehensive testing strategies, and continuous integration practices.</p>
-    </div>
-    
-    <div className="competency-item">
-      <h3>AI/Technology Modernization</h3>
-      <p>Demonstrated success in leading legacy system transformations. Active AI enthusiast integrating AI into workflows.</p>
-    </div>
+            <div className="competency-item">
+              <h3>Software Architecture</h3>
+              <p>
+                Expert in designing scalable, maintainable architecture patterns that align with business objectives
+                while ensuring technical excellence.
+              </p>
+            </div>
+            <div className="competency-item">
+              <h3>Technology Leadership</h3>
+              <p>
+                Skilled at guiding cross-functional development teams through complete project lifecycles while
+                maintaining focus on quality and delivery timelines.
+              </p>
+            </div>
+            <div className="competency-item">
+              <h3>Enterprise Integration</h3>
+              <p>
+                Extensive experience implementing integration solutions across disparate systems, leveraging
+                service-oriented approaches and API design best practices.
+              </p>
+            </div>
+            <div className="competency-item">
+              <h3>Cloud Infrastructure</h3>
+              <p>
+                Proficient with Azure cloud services implementation, focusing on scalable architectures that optimize
+                for both performance and cost.
+              </p>
+            </div>
+            <div className="competency-item">
+              <h3>Development Practices</h3>
+              <p>
+                Strong advocate for engineering excellence through SOLID principles, comprehensive testing strategies,
+                and continuous integration practices.
+              </p>
+            </div>
+            <div className="competency-item">
+              <h3>AI / Technology Modernization</h3>
+              <p>
+                Demonstrated success in leading legacy system transformations. Active AI enthusiast integrating AI
+                into workflows.
+              </p>
+            </div>
           </div>
         </section>
         {/* Professional Experience */}
