@@ -1,0 +1,91 @@
+<svg viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dia201-title dia201-desc">
+  <title id="dia201-title">DIA-201 · What they say · What they do</title>
+  <desc id="dia201-desc">Two-column comparison. Left column lists aspirational claims AI companies make: cure cancer, intelligence as abundance for everyone, most important technology of the century, long-term human benefit, responsible development. Right column lists operational practices observed in the same companies: engineering layoffs citing AI productivity, customer service cut from nine thousand to five thousand heads, data centers built in vulnerable neighborhoods, experts hired cheap to train their replacements, safety pledges revised under competitive pressure.</desc>
+  <defs>
+    <style>
+      :root {
+        --bg: #FAFAF8; --paper: #F2EEE3; --text: #2A2A35; --muted: #6B6873; --muted2: #9D9A95; --line: #E2DFD6; --panel: #F7F6F3;
+        --red: #A85B49; --red-soft: #EDD8CE; --green: #5A8270; --green-soft: #DEE8E1;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1B1D23; --paper: #1E2128; --text: #E8E5DC; --muted: #B8B5AD; --muted2: #908D87; --line: #3E3D38; --panel: #2A2F3A;
+          --red: #D29183; --red-soft: #3D2925; --green: #92BAA6; --green-soft: #233029;
+        }
+      }
+      text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+      [fill="#FAFAF8"] { fill: var(--bg); } [fill="#F2EEE3"] { fill: var(--paper); }
+      [fill="#2A2A35"] { fill: var(--text); }
+      [fill="#6B6873"] { fill: var(--muted); } [fill="#9D9A95"] { fill: var(--muted2); }
+      [stroke="#E2DFD6"] { stroke: var(--line); } [fill="#F7F6F3"] { fill: var(--panel); }
+      [fill="#A85B49"] { fill: var(--red); } [stroke="#A85B49"] { stroke: var(--red); } [fill="#EDD8CE"] { fill: var(--red-soft); }
+      [fill="#5A8270"] { fill: var(--green); } [stroke="#5A8270"] { stroke: var(--green); } [fill="#DEE8E1"] { fill: var(--green-soft); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="680" height="440" fill="#F2EEE3" rx="8"/>
+
+  <!-- HEADER -->
+  <text x="340" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#A85B49" letter-spacing="0.04em">DIA-201 · WHAT THEY SAY · WHAT THEY DO</text>
+  <text x="340" y="48" text-anchor="middle" font-size="12" fill="#6B6873" font-style="italic">the mission statements decorate; the earnings calls and zoning maps disclose</text>
+
+  <!-- COLUMN HEADERS -->
+  <rect x="50" y="80" width="280" height="28" rx="6" fill="#DEE8E1" opacity="0.9"/>
+  <text x="190" y="98" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="700" fill="#5A8270" letter-spacing="0.06em">WHAT THEY SAY</text>
+
+  <rect x="350" y="80" width="280" height="28" rx="6" fill="#EDD8CE" opacity="0.9"/>
+  <text x="490" y="98" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="700" fill="#A85B49" letter-spacing="0.06em">WHAT THEY DO</text>
+
+  <!-- ROW 1 -->
+  <rect x="50" y="125" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="50" y="125" width="3" height="44" fill="#5A8270"/>
+  <text x="68" y="152" font-size="12" font-style="italic" fill="#6B6873">"cure cancer"</text>
+
+  <rect x="350" y="125" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="627" y="125" width="3" height="44" fill="#A85B49"/>
+  <text x="368" y="146" font-size="11.5" font-weight="600" fill="#2A2A35">engineers laid off</text>
+  <text x="368" y="161" font-size="11" fill="#6B6873">AI productivity cited the same quarter</text>
+
+  <!-- ROW 2 -->
+  <rect x="50" y="183" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="50" y="183" width="3" height="44" fill="#5A8270"/>
+  <text x="68" y="210" font-size="12" font-style="italic" fill="#6B6873">"intelligence as abundance for everyone"</text>
+
+  <rect x="350" y="183" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="627" y="183" width="3" height="44" fill="#A85B49"/>
+  <text x="368" y="204" font-size="11.5" font-weight="600" fill="#2A2A35">customer service cut</text>
+  <text x="368" y="219" font-size="11" fill="#6B6873">9,000 → 5,000 heads, AI cited</text>
+
+  <!-- ROW 3 -->
+  <rect x="50" y="241" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="50" y="241" width="3" height="44" fill="#5A8270"/>
+  <text x="68" y="268" font-size="12" font-style="italic" fill="#6B6873">"most important technology of the century"</text>
+
+  <rect x="350" y="241" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="627" y="241" width="3" height="44" fill="#A85B49"/>
+  <text x="368" y="262" font-size="11.5" font-weight="600" fill="#2A2A35">data centers built</text>
+  <text x="368" y="277" font-size="11" fill="#6B6873">in low-income, low-pushback neighborhoods</text>
+
+  <!-- ROW 4 -->
+  <rect x="50" y="299" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="50" y="299" width="3" height="44" fill="#5A8270"/>
+  <text x="68" y="326" font-size="12" font-style="italic" fill="#6B6873">"long-term human benefit"</text>
+
+  <rect x="350" y="299" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="627" y="299" width="3" height="44" fill="#A85B49"/>
+  <text x="368" y="320" font-size="11.5" font-weight="600" fill="#2A2A35">expert workers hired cheap</text>
+  <text x="368" y="335" font-size="11" fill="#6B6873">to train the systems built to replace them</text>
+
+  <!-- ROW 5 -->
+  <rect x="50" y="357" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="50" y="357" width="3" height="44" fill="#5A8270"/>
+  <text x="68" y="384" font-size="12" font-style="italic" fill="#6B6873">"responsible development"</text>
+
+  <rect x="350" y="357" width="280" height="44" rx="6" fill="#F7F6F3" stroke="#E2DFD6" stroke-width="0.75"/>
+  <rect x="627" y="357" width="3" height="44" fill="#A85B49"/>
+  <text x="368" y="378" font-size="11.5" font-weight="600" fill="#2A2A35">safety pledges revised</text>
+  <text x="368" y="393" font-size="11" fill="#6B6873">under competitive pressure</text>
+
+  <!-- CAPTION -->
+  <text x="340" y="425" text-anchor="middle" font-size="11.5" font-style="italic" font-weight="600" fill="#A85B49">this tech does not operate in a vacuum</text>
+</svg>

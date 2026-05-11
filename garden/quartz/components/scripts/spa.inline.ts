@@ -24,6 +24,10 @@ const isSamePage = (url: URL): boolean => {
   return sameOrigin && samePath
 }
 
+/** CRA résumé app at `/resume/` — must full-load; micromorphing its HTML into Quartz breaks script/bootstrap. */
+const isInteractiveResumeUrl = (url: URL): boolean =>
+  url.pathname === "/resume" || url.pathname.startsWith("/resume/")
+
 const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined => {
   if (!isElement(target)) return
   if (target.attributes.getNamedItem("target")?.value === "_blank") return
@@ -32,7 +36,9 @@ const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined 
   if ("routerIgnore" in a.dataset) return
   const { href } = a
   if (!isLocalUrl(href)) return
-  return { url: new URL(href), scroll: "routerNoscroll" in a.dataset ? false : undefined }
+  const url = new URL(href)
+  if (isInteractiveResumeUrl(url)) return
+  return { url, scroll: "routerNoscroll" in a.dataset ? false : undefined }
 }
 
 function notifyNav(url: FullSlug) {
@@ -132,6 +138,10 @@ async function _navigate(url: URL, isBack: boolean = false) {
 
 async function navigate(url: URL, isBack: boolean = false) {
   if (isNavigating) return
+  if (!isBack && isInteractiveResumeUrl(url)) {
+    window.location.assign(url)
+    return
+  }
   isNavigating = true
   try {
     await _navigate(url, isBack)

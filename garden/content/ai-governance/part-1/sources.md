@@ -1,7 +1,7 @@
 ---
 title: "Part 1 — Sources and references"
 tags: [ai, governance, systems-thinking]
-draft: false
+draft: true
 ---
 
 Superscript numbers in the Part 1 sections point to entries on this page.

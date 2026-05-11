@@ -1,10 +1,10 @@
 ---
-title: "Why You Feel Helpless About AI"
+title: "Frustrated About AI?"
 tags: [ai, governance, systems-thinking, leverage]
 draft: false
 ---
 
-*Frustration about AI is the right read, when the emperors leading the race have no clothes.*
+*Frustration about AI is the right read. The emperors leading the race have no clothes.*
 
 
 OpenAI signed the open letter calling AI a civilizational extinction risk, then shipped a model its own CEO described as "talking to a PhD-level expert in any topic," and announced the next one would arrive faster. AI, they say, will fix AI's problems. The mission statements of these companies speak of curing cancer, of intelligence as an abundance distributed to everyone, of the most important technology of the century.
@@ -13,7 +13,7 @@ The reality is in the earnings calls. Salesforce announces it is cutting custome
 
 These are the same companies that sign the safety frameworks, that appear at the summits, that publish the responsible-development pledges.
 
-What the actions show is plain: an unwavering attempt to divorce labor from capital. AI is the lever. The mission statements decorate the move. The earnings calls disclose it. The technology pitched as society's salvation is making society more vulnerable, at a pace nothing else has matched.
+What the actions show is plain: an unwavering attempt to divorce labor from capital. AI is the lever. The mission statements decorate the move. The earnings calls disclose it. The data centers go up in low-income neighborhoods where political pushback is weakest. The expert workers being destabilized by the technology are hired cheap to label its training data, refining the systems built to replace them. The technology pitched as society's salvation is making society more vulnerable, at a pace nothing else has matched.
 
 You watch them and feel a particular kind of tired. The kind that belongs to people who can read the room. It is the recognition of a contradiction, and the futile attempt to play along.
 
@@ -21,7 +21,7 @@ The companies racing to build civilization-changing technology have not develope
 
 Less than half a decade. One company, one policy, three revisions, gone.
 
-The pressure Kaplan names is real. The lab is not lying about it. The system that produced AI has its own behavior and AI labs respond to the behavior just like the rest of us. Knowing that behavior allows us to respond better and anticipate what happens when we choose not to act.
+The pressure Kaplan names is real. The lab is not lying about it. The system the labs operate inside has its own behavior, and they respond to it like the rest of us do. Knowing that behavior lets you act on it. Not knowing it is how the drift continues.
 
 <!--
 DIA-201 — Drift to Low Performance (placeholder, SVG not yet authored)
@@ -39,7 +39,6 @@ Spec:
 
 ![](/ai-governance/part-2/diagrams/DIA-201-drift-to-low-performance.svg)
 
-The announcement that arrived in your feed this morning, the one that felt thin, was not pretending in your imagination. It was pretending out loud.
 
 You do not need to settle the motive question to act. There is a framework that works without it. It is older than AI and bigger: it asks where in any system a small push produces structural change, and ranks those places by power. Some you can reach alone. Others require people working together.
 

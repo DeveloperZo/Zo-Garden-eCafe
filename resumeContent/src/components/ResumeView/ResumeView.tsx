@@ -2,6 +2,7 @@
 import React, { useMemo } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import quests from '../../data/quests.data';
+import type { Quest } from '../../data/quests.data';
 import './ResumeView.css';
 import generatePDF from '../../utils/pdfGenerator';
 
@@ -12,44 +13,85 @@ const formatDate = (date: Date): string => {
   return `${monthNames[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
 };
 
+const isCareerQuest = (quest: Quest): boolean =>
+  quest.type === 'career' &&
+  Boolean(quest.company) &&
+  quest.company !== 'Personal Project';
+
 const ResumeView: React.FC = () => {
   const { theme } = useTheme()!;
   
   // Transform quest data into resume format
   const resumeData = useMemo(() => {
-    // Extract and organize professional experience
-    const experience = quests
-      .filter(quest => quest.company && quest.company !== 'Personal Project' && quest.type !== 'education' && quest.type !== 'independent')
-      .map(quest => ({
-        company: quest.company,
-        role: quest.workTitle,
-        startDate: quest.startDate,
-        endDate: quest.endDate,
-        accomplishments: quest.accomplishments.map(acc => acc.description),
+    const careerQuests = quests.filter(isCareerQuest).sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
 
-      }))
-      .sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
-    
-    // Extract education information (assuming you have education data)
+    // Summary: prefer authored `summary` text from newest roles (avoids duplicating role `description` under each employer)
+    const summaryFromAuthors = careerQuests
+      .map((q) => q.summary?.trim())
+      .filter((text): text is string => Boolean(text))
+      .slice(0, 3);
+    const summaryParagraphs =
+      summaryFromAuthors.length > 0
+        ? summaryFromAuthors
+        : careerQuests.slice(0, 2).map((q) => q.description.trim()).filter(Boolean);
+
+    // Core competencies from tags on career quests (frequency, then name)
+    const tagToCompanies = new Map<string, Set<string>>();
+    const tagFrequency = new Map<string, number>();
+    for (const quest of careerQuests) {
+      const company = quest.company;
+      if (!company) continue;
+      for (const tag of quest.tags ?? []) {
+        const key = tag.trim();
+        if (!key) continue;
+        if (!tagToCompanies.has(key)) {
+          tagToCompanies.set(key, new Set());
+          tagFrequency.set(key, 0);
+        }
+        tagToCompanies.get(key)!.add(company);
+        tagFrequency.set(key, (tagFrequency.get(key) ?? 0) + 1);
+      }
+    }
+    const competencies = Array.from(tagToCompanies.entries())
+      .map(([tag, companies]) => {
+        const list = Array.from(companies).sort((a, b) => a.localeCompare(b));
+        const blurb =
+          list.length > 1
+            ? `Recurring focus across roles at ${list.join(', ')}.`
+            : `Primary focus during tenure at ${list[0]}.`;
+        return { tag, blurb, frequency: tagFrequency.get(tag) ?? 0 };
+      })
+      .sort((a, b) => b.frequency - a.frequency || a.tag.localeCompare(b.tag))
+      .map(({ tag, blurb }) => ({ tag, blurb }));
+
+    const experience = careerQuests.map((quest) => ({
+      id: quest.id,
+      company: quest.company,
+      role: quest.workTitle,
+      overview: quest.description.trim(),
+      startDate: quest.startDate,
+      endDate: quest.endDate,
+      accomplishments: quest.accomplishments.map((acc) => acc.description),
+    }));
+
     const education = quests
-      .filter(quest => quest.type === 'education')
-      .map(edu => ({
+      .filter((quest) => quest.type === 'education')
+      .map((edu) => ({
         institution: edu.company,
-        degree: edu.accomplishments.map(acc => acc.description)[0],
+        degree: edu.accomplishments.map((acc) => acc.description)[0],
         startDate: edu.startDate,
         endDate: edu.endDate,
-        details: edu.accomplishments.map(acc => acc.description)
+        details: edu.accomplishments.map((acc) => acc.description),
       }))
       .sort((a, b) => b.endDate.getTime() - a.endDate.getTime());
-    
-    // Extract skills from all accomplishments
-    const skills = Array.from(new Set(
-      quests.flatMap(quest => 
-        quest.accomplishments.flatMap(acc => acc.learnings)
-      )
-    ));
-    
-    return { experience, education, skills };
+
+    const skills = Array.from(
+      new Set(
+        quests.flatMap((quest) => quest.accomplishments.flatMap((acc) => acc.learnings)),
+      ),
+    );
+
+    return { experience, education, skills, summaryParagraphs, competencies };
   }, []);
 
   const handleDownloadPDF = () => {
@@ -73,22 +115,20 @@ const ResumeView: React.FC = () => {
 </div>
       
       <div className="resume-content">
-        {/* Professional Summary */}
+        {/* Professional Summary (from quest summaries / descriptions, newest roles first) */}
         <section className="resume-section">
-  <h2>Professional Summary</h2>
-  <p className="summary-text">
-  Strategic technology leader with over a decade of experience in software architecture and development. Demonstrated expertise in transforming legacy systems, leading cross-functional teams, and implementing scalable architectures across multiple industries. Consistently delivers solutions through thoughtful architectural decisions and effective team leadership.
-  </p>
-</section>
-<section className="resume-section">
-  <h2>Core Competencies</h2>
-  <div className="competencies-grid">
-    <div className="competency-item">
-      <h3>Software Architecture</h3>
-      <p>Expert in designing scalable, maintainable architecture patterns that align with business objectives while ensuring technical excellence.</p>
-    </div>
+          <h2>Professional Summary</h2>
+            <p className="summary-text">
+              Strategic technology leader with over a decade of experience in software architecture and development. Demonstrated expertise in transforming legacy systems, leading cross-functional teams, and implementing scalable architectures across multiple industries. Consistently delivers solutions through thoughtful architectural decisions and effective team leadership.
+            </p>
+          
+        </section>
+        {/* Core competencies (unique tags on career quests) */}
+        <section className="resume-section">
+          <h2>Core Competencies</h2>
+          <div className="competencies-grid">
     
-    <div className="competency-item">
+          <div className="competency-item">
       <h3>Technology Leadership</h3>
       <p>Skilled at guiding cross-functional development teams through complete project lifecycles while maintaining focus on quality and delivery timelines.</p>
     </div>
@@ -112,13 +152,13 @@ const ResumeView: React.FC = () => {
       <h3>AI/Technology Modernization</h3>
       <p>Demonstrated success in leading legacy system transformations. Active AI enthusiast integrating AI into workflows.</p>
     </div>
-  </div>
-</section>
+          </div>
+        </section>
         {/* Professional Experience */}
         <section className="resume-section">
           <h2>Professional Experience</h2>
-          {resumeData.experience.map((job, index) => (
-            <div key={index} className="experience-item">
+          {resumeData.experience.map((job) => (
+            <div key={job.id} className="experience-item">
               <div className="job-header">
                 <h3>{job.role}</h3>
                 <div className="company-period">
@@ -131,6 +171,7 @@ const ResumeView: React.FC = () => {
                   </span>
                 </div>
               </div>
+              {job.overview ? <p className="role-overview">{job.overview}</p> : null}
               <ul className="accomplishment-bullets">
                 {job.accomplishments.map((acc, i) => (
                   <li key={i}>{acc}</li>

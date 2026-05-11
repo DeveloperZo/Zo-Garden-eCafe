@@ -1,7 +1,7 @@
 ---
 title: AI governance series
 tags: [ai, governance, systems-thinking]
-draft: false
+draft: true
 ---
 
 Writing on whether AI can self-govern, where leverage actually sits, and what individual action can move.

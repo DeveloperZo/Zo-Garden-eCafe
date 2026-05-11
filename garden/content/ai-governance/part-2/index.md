@@ -1,7 +1,7 @@
 ---
 title: "Part 2: What Can I Do About AI?"
 tags: [ai, governance, systems-thinking, leverage]
-draft: false
+draft: true
 version: "1.0"
 ---
 
@@ -17,7 +17,7 @@ What can you actually do about AI?
 
 ![[00-why-you-feel-helpless]]
 
-![[04-reading-your-leverage]]
+![[01-beneath-the-search-result]]
 
 ---
 

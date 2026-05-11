@@ -35,9 +35,9 @@ const quests: Quest[] = [
   company: 'Progyny',
   workTitle: 'Engineering Manager',
   description:
-    'Managed a team of 5 engineers to plan and deliver platform-critical capabilities for an enterprise fertility/family-building benefits platform serving ~6.47M covered lives.',
+    "Engineering manager for the rebuild of Progyny's fertility/family-building benefits platform (~6.5M covered lives)",
   summary:
-    'Led engineering team responsible for core platform capabilities including identity/auth, content, communications, and benefits configuration. Established strategic technical direction through HIPAA-aware architecture, vendor integration patterns, and AI-assisted development workflows while maintaining compliance and scalability.',
+    'Brought in to lead the team responsible for the parts of the V2 platform that touch every other workstream. Set the HIPAA-aware patterns the rebuild now runs on (FHIR-aligned scopes, BAA-bounded adapter integrations, governed tenant configuration) and operated as a primary planning partner for the broader program, keeping adjacent teams unblocked.',
   type: 'career',
   startDate: new Date('2025-05-01'),
   endDate: new Date(2038, 2, 10), // Ongoing
@@ -46,7 +46,7 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'Managed a team of 5 engineers to plan and deliver platform-critical capabilities (AuthN/AuthZ, content, communications, benefits/eligibility configuration) for an enterprise fertility/family-building benefits platform serving ~6.47M covered lives.',
+        "Built and led a team of 5 across the platform's foundational capabilities (AuthN/AuthZ, content, salesforce integrations, enrollment and eligibility configuration), while maintaining full team utilization through changes in the program.",
       role: 'Engineering Manager',
       learnings: [
         'Learned that managing platform-critical systems requires balancing feature delivery with system reliability',
@@ -55,7 +55,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        'Responsible for identity/auth strategy (FHIR-aligned JWT scopes) and standardized Auth0 via reusable Terraform modules to improve repeatability and auditability.',
+        "Set the new platform's identity/auth strategy on FHIR-aligned JWT scopes and consolidated Auth0 provisioning into reusable Terraform modules, eliminating the most common class of environment drift.",
       role: 'Engineering Manager',
       learnings: [
         'Learned that infrastructure-as-code patterns significantly improve auditability and compliance documentation',
@@ -64,7 +64,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        'Key planning/estimation partner for the new platform: translated ambiguity into epics, dependency maps, and phased delivery plans to support scale and improve utilization.',
+        'Acted as primary planning partner for the new platform rebuild: converted ambiguous program goals into epics, dependency maps, and phased delivery plans spanning across 7 teams, which compressed estimation and gave dependent teams committed milestones for 2 quarters',
       role: 'Engineering Manager',
       learnings: [
         'Learned that breaking ambiguity into structured planning artifacts accelerates team alignment',
@@ -73,7 +73,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        'Led HIPAA-aware vendor evaluations and integration strategy (BAA boundaries, PHI routing rules) using adapter contracts to reduce lock-in and keep channel expansion optional.',
+        'Led HIPAA-aware vendor evaluations and the integration strategy behind them (BAA boundaries, PHI routing rules, adapter contracts), preserving optionality on channel expansion while minimizing implementation costs.',
       role: 'Engineering Manager',
       learnings: [
         'Learned that adapter patterns provide flexibility while maintaining compliance boundaries',
@@ -82,7 +82,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        'Built client implementation/configuration tooling for tenant-specific benefit plans and eligibility rules, converting ambiguous requirements into governed configuration patterns.',
+        'Built configuration tooling that turns tenant-specific benefit plans and eligibility rules into governed config rather than per-client code',
       role: 'Engineering Manager',
       learnings: [
         'Learned that configuration patterns can transform complex business rules into maintainable systems',
@@ -91,7 +91,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        'Accelerated discovery and delivery artifacts using AI-assisted workflows with safe-data guardrails (no-PHI prompts, redaction standards, human verification).',
+        'Introduced AI-assisted workflows into discovery and delivery with no-PHI prompting, redaction standards, and mandatory human verification, ensuring engineers had relevant context in tickets from various artifacts (PRDs, architecture briefs, integration spec drafts)',
       role: 'Engineering Manager',
       learnings: [
         'Learned that AI-assisted workflows require careful guardrails in healthcare contexts',

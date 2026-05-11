@@ -1,0 +1,496 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-id desc-id">
+  <title id="title-id">Alonzo Williams. Career as a System.</title>
+  <desc id="desc-id">A Donella Meadows style stock and flow diagram of Zo Williams' software engineering career. Source clouds feed Deliberate Study, New Domain Exposure, and an AI Leveraged Learning tap into four accumulating stocks (Technical Capability, Problem Solving Toolkit, Network and Reputation, Leadership Influence), with Personal Energy as a finite stock. Loops named R1 Success to the Successful, R2 AI Leverage Compound, B1 Energy Limit, and B2 Limits to Growth (relaxed by R2).</desc>
+
+  <defs>
+    <!-- Flow arrowhead (thick block gray) -->
+    <marker id="flow-head" viewBox="0 0 12 12" refX="6" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#8A8A95"/>
+    </marker>
+    <marker id="flow-head-teal" viewBox="0 0 12 12" refX="6" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2A7A7F"/>
+    </marker>
+
+    <!-- Info link arrowhead (thin) -->
+    <marker id="info-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#4A4A55"/>
+    </marker>
+    <marker id="info-head-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#B5462C"/>
+    </marker>
+    <marker id="info-head-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2A7A5F"/>
+    </marker>
+    <marker id="info-head-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2A7A7F"/>
+    </marker>
+    <marker id="info-head-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#C9880A"/>
+    </marker>
+    <marker id="info-head-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#3A5498"/>
+    </marker>
+
+    <!-- Cloud silhouette pattern -->
+    <symbol id="cloud" viewBox="0 0 100 50" overflow="visible">
+      <path d="M14,38 Q4,38 4,28 Q4,18 16,18 Q18,8 30,8 Q40,2 50,10 Q58,4 68,10 Q82,8 86,20 Q96,20 96,30 Q96,42 84,42 L18,42 Q14,42 14,38 Z"
+            fill="#FFFFFF" stroke="#9B9BA8" stroke-width="1.5"/>
+    </symbol>
+
+    <!-- Open-circle endpoint for info-link origin. Used via <use width=8 height=8 x=cx-4 y=cy-4>. -->
+    <symbol id="info-port" viewBox="0 0 8 8" overflow="visible">
+      <circle cx="4" cy="4" r="3" fill="#FFFFFF" stroke="#4A4A55" stroke-width="1.25"/>
+    </symbol>
+  </defs>
+
+  <!-- Page background (transparent over white) -->
+  <rect x="0" y="0" width="1400" height="900" fill="#FAFAF8"/>
+
+  <!-- ============ TITLE BLOCK ============ -->
+  <text x="700" y="48" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="26" font-weight="700" fill="#2A2A33" letter-spacing="0.5">
+    Alonzo Williams. Career as a System.
+  </text>
+  <text x="700" y="74" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-size="14" fill="#6B6B85">
+    A Meadows style map. Stocks accumulate over fourteen years. The AI leverage tap is the recent loop that relaxes the personal capacity ceiling.
+  </text>
+
+  <!-- ============ LOOP ZONE TINTS (drawn first) ============ -->
+  <!-- R1 zone: Reputation to Capability cycle (top-right band) -->
+  <path d="M 720,150 L 1300,150 L 1300,470 L 720,470 Z" fill="#C9880A" fill-opacity="0.05"/>
+  <!-- R2 zone: AI leverage compound (left-center band) -->
+  <path d="M 90,150 L 530,150 L 530,470 L 90,470 Z" fill="#2A7A7F" fill-opacity="0.05"/>
+  <!-- B1 zone: energy depletion (bottom-right) -->
+  <path d="M 980,500 L 1320,500 L 1320,720 L 980,720 Z" fill="#B5462C" fill-opacity="0.05"/>
+  <!-- B2 zone: limits to growth (bottom-center, behind capability) -->
+  <path d="M 110,500 L 680,500 L 680,720 L 110,720 Z" fill="#3A5498" fill-opacity="0.04"/>
+
+  <!-- ============ MAIN INFLOW PIPE (top horizontal) ============ -->
+  <!-- Pipe runs from left source cloud across the top, splits down into each stock. -->
+  <!-- Pipe Y axis -->
+  <!-- Source cloud (left) -->
+  <use href="#cloud" x="40" y="190" width="100" height="50"/>
+  <text x="90" y="262" text-anchor="middle" font-family="Georgia, serif" font-style="italic"
+        font-size="11" fill="#6B6B85">early curiosity</text>
+  <text x="90" y="277" text-anchor="middle" font-family="Georgia, serif" font-style="italic"
+        font-size="11" fill="#6B6B85">+ formal CS training</text>
+
+  <!-- Main pipe horizontal -->
+  <line x1="140" y1="215" x2="1180" y2="215" stroke="#8A8A95" stroke-width="14" stroke-linecap="butt"/>
+
+  <!-- T-fitting 1: Deliberate Study (at x=260) -->
+  <line x1="260" y1="195" x2="260" y2="235" stroke="#3A3A45" stroke-width="12.5" stroke-linecap="butt"/>
+  <line x1="260" y1="235" x2="260" y2="265" stroke="#3A3A45" stroke-width="12.5" stroke-linecap="butt"/>
+  <circle cx="260" cy="270" r="4" fill="#3A3A45"/>
+  <text x="260" y="178" text-anchor="middle" font-family="Georgia, serif" font-style="italic"
+        font-size="12" font-weight="600" fill="#2A2A33">deliberate study</text>
+  <text x="260" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="10"
+        fill="#6B6B85">Boeing rotation, Manor TDD, SWC estimation</text>
+
+  <!-- T-fitting 2: New Domain Exposure (at x=460) -->
+  <line x1="460" y1="195" x2="460" y2="235" stroke="#3A3A45" stroke-width="12.5"/>
+  <line x1="460" y1="235" x2="460" y2="265" stroke="#3A3A45" stroke-width="12.5"/>
+  <circle cx="460" cy="270" r="4" fill="#3A3A45"/>
+  <text x="460" y="178" text-anchor="middle" font-family="Georgia, serif" font-style="italic"
+        font-size="12" font-weight="600" fill="#2A2A33">new domain exposure</text>
+  <text x="460" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="10"
+        fill="#6B6B85">aerospace, finance, healthcare, legal, fertility</text>
+
+  <!-- T-fitting 3: AI Leveraged Learning (at x=680), WIDER teal accent -->
+  <line x1="680" y1="190" x2="680" y2="240" stroke="#2A7A7F" stroke-width="16" stroke-linecap="butt"/>
+  <line x1="680" y1="240" x2="680" y2="275" stroke="#2A7A7F" stroke-width="16" stroke-linecap="butt"/>
+  <circle cx="680" cy="282" r="5" fill="#2A7A7F"/>
+  <text x="680" y="173" text-anchor="middle" font-family="Georgia, serif" font-style="italic"
+        font-size="13" font-weight="700" fill="#2A7A7F">AI leveraged learning</text>
+  <text x="680" y="298" text-anchor="middle" font-family="Georgia, serif" font-size="10"
+        fill="#2A7A7F" font-weight="600">opened 2022, widened through 2025</text>
+
+  <!-- T-fitting 4: Mentorship Received (at x=900) -->
+  <line x1="900" y1="195" x2="900" y2="235" stroke="#3A3A45" stroke-width="12.5"/>
+  <line x1="900" y1="235" x2="900" y2="265" stroke="#3A3A45" stroke-width="12.5"/>
+  <circle cx="900" cy="270" r="4" fill="#3A3A45"/>
+  <text x="900" y="178" text-anchor="middle" font-family="Georgia, serif" font-style="italic"
+        font-size="12" font-weight="600" fill="#2A2A33">mentorship received</text>
+  <text x="900" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="10"
+        fill="#6B6B85">Manor seniors, SWC mentors, Lendr CTO transitions</text>
+
+  <!-- Pipe terminus on right: feeds into Network &amp; Reputation via downward bend -->
+  <path d="M 1180,215 L 1180,215" stroke="none"/>
+  <line x1="1180" y1="215" x2="1180" y2="370" stroke="#8A8A95" stroke-width="14"/>
+
+  <!-- Downward feeds from pipe into each of the four lower stocks -->
+  <!-- Feed into Technical Capability (x=230) -->
+  <line x1="230" y1="215" x2="230" y2="370" stroke="#8A8A95" stroke-width="14"/>
+  <!-- Feed into Problem-Solving Toolkit (x=540) -->
+  <line x1="540" y1="215" x2="540" y2="370" stroke="#8A8A95" stroke-width="14"/>
+  <!-- Feed into Leadership Influence (x=870) -->
+  <line x1="870" y1="215" x2="870" y2="370" stroke="#8A8A95" stroke-width="14"/>
+
+  <!-- ============ STOCKS (4 in a row) ============ -->
+  <!-- Stock A: Technical Capability -->
+  <rect x="130" y="370" width="200" height="80" rx="3" ry="3"
+        fill="#FFFFFF" stroke="#2A2A33" stroke-width="1.75"/>
+  <text x="230" y="403" text-anchor="middle" font-family="Georgia, serif"
+        font-size="14" font-weight="700" fill="#2A2A33">Technical Capability</text>
+  <text x="230" y="424" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#6B6B85">skill depth across stacks,</text>
+  <text x="230" y="438" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#6B6B85">.NET, React, Java, Flutter, FHIR</text>
+
+  <!-- Stock B: Problem-Solving Toolkit -->
+  <rect x="440" y="370" width="200" height="80" rx="3" ry="3"
+        fill="#FFFFFF" stroke="#2A2A33" stroke-width="1.75"/>
+  <text x="540" y="403" text-anchor="middle" font-family="Georgia, serif"
+        font-size="14" font-weight="700" fill="#2A2A33">Problem-Solving Toolkit</text>
+  <text x="540" y="424" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#6B6B85">reusable patterns: scaffolding,</text>
+  <text x="540" y="438" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#6B6B85">service-repo, IaC, tenant config</text>
+
+  <!-- Stock C: Leadership Influence -->
+  <rect x="770" y="370" width="200" height="80" rx="3" ry="3"
+        fill="#FFFFFF" stroke="#2A2A33" stroke-width="1.75"/>
+  <text x="870" y="403" text-anchor="middle" font-family="Georgia, serif"
+        font-size="14" font-weight="700" fill="#2A2A33">Leadership Influence</text>
+  <text x="870" y="424" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#6B6B85">planning authority, architectural</text>
+  <text x="870" y="438" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#6B6B85">say, mentor reach across teams</text>
+
+  <!-- Stock D: Network & Reputation -->
+  <rect x="1080" y="370" width="200" height="80" rx="3" ry="3"
+        fill="#FFFFFF" stroke="#2A2A33" stroke-width="1.75"/>
+  <text x="1180" y="403" text-anchor="middle" font-family="Georgia, serif"
+        font-size="14" font-weight="700" fill="#2A2A33">Network &amp; Reputation</text>
+  <text x="1180" y="424" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#6B6B85">who calls when something is hard</text>
+  <text x="1180" y="438" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#6B6B85">(Lendr CEO, Progyny, founders)</text>
+
+  <!-- ============ OUTFLOWS from stocks to sink clouds ============ -->
+  <!-- Outflow from Technical Capability: Shipped Systems -->
+  <line x1="230" y1="450" x2="230" y2="540" stroke="#8A8A95" stroke-width="14"
+        marker-end="url(#flow-head)"/>
+  <line x1="210" y1="500" x2="250" y2="500" stroke="#3A3A45" stroke-width="12.5"/>
+  <line x1="230" y1="500" x2="230" y2="525" stroke="#3A3A45" stroke-width="12.5"/>
+  <text x="270" y="498" font-family="Georgia, serif" font-style="italic"
+        font-size="11" font-weight="600" fill="#2A2A33">shipped systems</text>
+  <text x="270" y="513" font-family="Georgia, serif" font-size="10"
+        fill="#6B6B85">350k LOC refactor, V2 platform</text>
+  <use href="#cloud" x="180" y="540" width="100" height="50"/>
+
+  <!-- Outflow from Problem-Solving Toolkit: Pattern Reuse -->
+  <line x1="540" y1="450" x2="540" y2="540" stroke="#8A8A95" stroke-width="14"
+        marker-end="url(#flow-head)"/>
+  <line x1="520" y1="500" x2="560" y2="500" stroke="#3A3A45" stroke-width="12.5"/>
+  <line x1="540" y1="500" x2="540" y2="525" stroke="#3A3A45" stroke-width="12.5"/>
+  <text x="580" y="498" font-family="Georgia, serif" font-style="italic"
+        font-size="11" font-weight="600" fill="#2A2A33">pattern reuse</text>
+  <text x="580" y="513" font-family="Georgia, serif" font-size="10"
+        fill="#6B6B85">scaffolding, Terraform, adapters</text>
+  <use href="#cloud" x="490" y="540" width="100" height="50"/>
+
+  <!-- Outflow from Leadership Influence: Mentorship Given -->
+  <line x1="870" y1="450" x2="870" y2="540" stroke="#8A8A95" stroke-width="14"
+        marker-end="url(#flow-head)"/>
+  <line x1="850" y1="500" x2="890" y2="500" stroke="#3A3A45" stroke-width="12.5"/>
+  <line x1="870" y1="500" x2="870" y2="525" stroke="#3A3A45" stroke-width="12.5"/>
+  <text x="910" y="498" font-family="Georgia, serif" font-style="italic"
+        font-size="11" font-weight="600" fill="#2A2A33">mentorship given</text>
+  <text x="910" y="513" font-family="Georgia, serif" font-size="10"
+        fill="#6B6B85">pair programming, coaching, planning partner</text>
+  <use href="#cloud" x="820" y="540" width="100" height="50"/>
+
+  <!-- ============ PERSONAL ENERGY (finite stock, far right) ============ -->
+  <rect x="1100" y="550" width="180" height="65" rx="3" ry="3"
+        fill="#FFFFFF" stroke="#B5462C" stroke-width="1.75"/>
+  <text x="1190" y="578" text-anchor="middle" font-family="Georgia, serif"
+        font-size="13" font-weight="700" fill="#B5462C">Personal Energy &amp; Time</text>
+  <text x="1190" y="597" text-anchor="middle" font-family="Georgia, serif"
+        font-style="italic" font-size="10" fill="#6B6B85">finite, non-renewing within the day</text>
+
+  <!-- Energy depletion outflow -->
+  <line x1="1190" y1="615" x2="1190" y2="680" stroke="#8A8A95" stroke-width="14"
+        marker-end="url(#flow-head)"/>
+  <line x1="1170" y1="650" x2="1210" y2="650" stroke="#3A3A45" stroke-width="12.5"/>
+  <line x1="1190" y1="650" x2="1190" y2="675" stroke="#3A3A45" stroke-width="12.5"/>
+  <text x="1230" y="648" font-family="Georgia, serif" font-style="italic"
+        font-size="11" fill="#B5462C" font-weight="600">depletion</text>
+  <text x="1230" y="662" font-family="Georgia, serif" font-size="10"
+        fill="#6B6B85">context switching, on-call</text>
+  <use href="#cloud" x="1140" y="685" width="100" height="50"/>
+
+  <!-- ============ INFO LINKS (thin curved arrows with open-circle origins, polarity marks) ============ -->
+
+  <!-- R1: Reputation -> Bigger problems offered (an aux node) -> Capability gain -->
+  <!-- Aux node: "harder problems offered" -->
+  <circle cx="1180" cy="510" r="3.5" fill="#FFFFFF" stroke="#C9880A" stroke-width="1.5"/>
+  <text x="1180" y="525" text-anchor="middle" font-family="Georgia, serif"
+        font-style="italic" font-size="11" fill="#C9880A" font-weight="600">harder problems offered</text>
+
+  <!-- Info: Network &amp; Reputation -> harder problems offered -->
+  <circle cx="1180" cy="450" r="3" fill="#FFFFFF" stroke="#4A4A55" stroke-width="1.25"/>
+  <path d="M 1180,450 Q 1180,478 1180,506" stroke="#C9880A" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-amber)"/>
+  <circle cx="1192" cy="478" r="8" fill="#FAFAF8"/>
+  <text x="1192" y="482" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#C9880A" font-weight="700">+</text>
+
+  <!-- Info: harder problems offered -> Technical Capability (curve back across the top) -->
+  <path d="M 1180,514 Q 700,650 230,470" stroke="#C9880A" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-amber)" stroke-dasharray="0"/>
+  <circle cx="700" cy="595" r="8" fill="#FAFAF8"/>
+  <text x="700" y="599" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#C9880A" font-weight="700">+</text>
+
+  <!-- Info: Technical Capability -> Network &amp; Reputation (forward, completes R1) -->
+  <circle cx="330" cy="395" r="3" fill="#FFFFFF" stroke="#4A4A55" stroke-width="1.25"/>
+  <path d="M 330,395 Q 720,330 1080,395" stroke="#C9880A" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-amber)"/>
+  <circle cx="710" cy="345" r="8" fill="#FAFAF8"/>
+  <text x="710" y="349" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#C9880A" font-weight="700">+</text>
+  <text x="900" y="338" text-anchor="middle" font-family="Georgia, serif"
+        font-style="italic" font-size="10" fill="#C9880A">delay: reputation lags capability</text>
+
+  <!-- R1 loop badge -->
+  <g transform="translate(1260,310)">
+    <circle cx="0" cy="0" r="22" fill="#FFF8EC" stroke="#C9880A" stroke-width="2"/>
+    <path d="M -10,0 A 10,10 0 1 1 10,0" stroke="#C9880A" stroke-width="2" fill="none"
+          marker-end="url(#info-head-amber)"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Georgia, serif"
+          font-size="14" font-weight="700" fill="#C9880A">R1</text>
+  </g>
+  <text x="1260" y="350" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" font-weight="600" fill="#C9880A">Success to the Successful</text>
+
+  <!-- R2: AI Leverage Compound -->
+  <!-- Aux node: "time freed for pattern investment" -->
+  <circle cx="430" cy="510" r="3.5" fill="#FFFFFF" stroke="#2A7A7F" stroke-width="1.5"/>
+  <text x="380" y="514" text-anchor="end" font-family="Georgia, serif"
+        font-style="italic" font-size="11" fill="#2A7A7F" font-weight="600">time freed</text>
+
+  <!-- Info: AI tap -> Problem-Solving Toolkit (also feeds capability) -->
+  <circle cx="680" cy="298" r="3" fill="#FFFFFF" stroke="#2A7A7F" stroke-width="1.25"/>
+  <path d="M 680,298 Q 600,340 540,370" stroke="#2A7A7F" stroke-width="1.5" fill="none"
+        marker-end="url(#info-head-teal)"/>
+  <circle cx="600" cy="342" r="8" fill="#FAFAF8"/>
+  <text x="600" y="346" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#2A7A7F" font-weight="700">+</text>
+
+  <!-- Info: AI tap -> Technical Capability -->
+  <path d="M 680,298 Q 460,335 332,378" stroke="#2A7A7F" stroke-width="1.5" fill="none"
+        marker-end="url(#info-head-teal)"/>
+
+  <!-- Info: Problem-Solving Toolkit -> time freed -->
+  <circle cx="500" cy="450" r="3" fill="#FFFFFF" stroke="#2A7A7F" stroke-width="1.25"/>
+  <path d="M 500,450 Q 460,485 432,506" stroke="#2A7A7F" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-teal)"/>
+  <circle cx="460" cy="486" r="8" fill="#FAFAF8"/>
+  <text x="460" y="490" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#2A7A7F" font-weight="700">+</text>
+
+  <!-- Info: time freed -> AI tap rate (closes R2) -->
+  <path d="M 426,506 Q 360,420 600,275 Q 640,265 670,278" stroke="#2A7A7F" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-teal)"/>
+  <circle cx="408" cy="400" r="8" fill="#FAFAF8"/>
+  <text x="408" y="404" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#2A7A7F" font-weight="700">+</text>
+
+  <!-- R2 loop badge -->
+  <g transform="translate(310,260)">
+    <circle cx="0" cy="0" r="22" fill="#E6F4F4" stroke="#2A7A7F" stroke-width="2"/>
+    <path d="M -10,0 A 10,10 0 1 1 10,0" stroke="#2A7A7F" stroke-width="2" fill="none"
+          marker-end="url(#info-head-teal)"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Georgia, serif"
+          font-size="14" font-weight="700" fill="#2A7A7F">R2</text>
+  </g>
+  <text x="310" y="300" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" font-weight="600" fill="#2A7A7F">AI Leverage Compound</text>
+
+  <!-- B1: Workload -> Output -> Energy depletion -> reduced effective capacity -->
+  <!-- Info: Leadership Influence -> Personal Energy (workload pull, minus) -->
+  <circle cx="970" cy="430" r="3" fill="#FFFFFF" stroke="#B5462C" stroke-width="1.25"/>
+  <path d="M 970,430 Q 1060,470 1100,580" stroke="#B5462C" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-red)"/>
+  <circle cx="1080" cy="510" r="8" fill="#FAFAF8"/>
+  <text x="1080" y="514" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#B5462C" font-weight="700">-</text>
+
+  <!-- Info: Personal Energy -> Leadership Influence rate (balancing return, plus to throttle) -->
+  <circle cx="1100" cy="580" r="3" fill="#FFFFFF" stroke="#B5462C" stroke-width="1.25"/>
+  <path d="M 1100,580 Q 1000,560 970,455" stroke="#B5462C" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-red)"/>
+  <circle cx="1010" cy="520" r="8" fill="#FAFAF8"/>
+  <text x="1010" y="524" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#B5462C" font-weight="700">+</text>
+
+  <!-- B1 loop badge -->
+  <g transform="translate(1010,680)">
+    <circle cx="0" cy="0" r="22" fill="#FCEEE9" stroke="#B5462C" stroke-width="2"/>
+    <path d="M 10,0 A 10,10 0 1 0 -10,0" stroke="#B5462C" stroke-width="2" fill="none"
+          marker-end="url(#info-head-red)"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Georgia, serif"
+          font-size="14" font-weight="700" fill="#B5462C">B1</text>
+  </g>
+  <text x="1010" y="720" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" font-weight="600" fill="#B5462C">Energy Limit</text>
+
+  <!-- B2: Limits to Growth, problem complexity vs personal capacity ceiling -->
+  <!-- Aux node: "problem complexity" -->
+  <circle cx="170" cy="640" r="3.5" fill="#FFFFFF" stroke="#3A5498" stroke-width="1.5"/>
+  <text x="170" y="660" text-anchor="middle" font-family="Georgia, serif"
+        font-style="italic" font-size="11" fill="#3A5498" font-weight="600">problem complexity</text>
+  <text x="170" y="675" text-anchor="middle" font-family="Georgia, serif"
+        font-size="10" fill="#6B6B85">offered by R1</text>
+
+  <!-- Aux node: "personal capacity ceiling" -->
+  <circle cx="500" cy="640" r="3.5" fill="#FFFFFF" stroke="#3A5498" stroke-width="1.5"/>
+  <text x="500" y="660" text-anchor="middle" font-family="Georgia, serif"
+        font-style="italic" font-size="11" fill="#3A5498" font-weight="600">personal capacity ceiling</text>
+  <text x="500" y="675" text-anchor="middle" font-family="Georgia, serif"
+        font-size="10" fill="#6B6B85">without leverage, growth stalls</text>
+
+  <!-- harder problems offered -> problem complexity (link from R1) -->
+  <path d="M 1170,514 Q 600,720 178,640" stroke="#3A5498" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-blue)" opacity="0.6"/>
+  <circle cx="600" cy="694" r="8" fill="#FAFAF8"/>
+  <text x="600" y="698" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#3A5498" font-weight="700">+</text>
+
+  <!-- problem complexity -> personal capacity ceiling -->
+  <path d="M 178,640 Q 335,605 492,640" stroke="#3A5498" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-blue)"/>
+  <circle cx="335" cy="619" r="8" fill="#FAFAF8"/>
+  <text x="335" y="623" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#3A5498" font-weight="700">+</text>
+
+  <!-- personal capacity ceiling -> Technical Capability gain (NEGATIVE) -->
+  <path d="M 500,632 Q 360,520 232,452" stroke="#3A5498" stroke-width="1.25" fill="none"
+        marker-end="url(#info-head-blue)"/>
+  <circle cx="360" cy="540" r="8" fill="#FAFAF8"/>
+  <text x="360" y="544" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" fill="#3A5498" font-weight="700">-</text>
+
+  <!-- BROKEN-LOOP indicator: R2 (AI leverage) relaxes the ceiling. Draw a break on the personal-capacity-ceiling -> capability arc. -->
+  <line x1="350" y1="538" x2="370" y2="558" stroke="#B5462C" stroke-width="2.5"/>
+  <line x1="370" y1="538" x2="350" y2="558" stroke="#B5462C" stroke-width="2.5"/>
+  <text x="395" y="525" font-family="Georgia, serif" font-style="italic"
+        font-size="10" fill="#B5462C" font-weight="600">relaxed by R2</text>
+
+  <!-- B2 loop badge -->
+  <g transform="translate(170,720)">
+    <circle cx="0" cy="0" r="22" fill="#EEF2FB" stroke="#3A5498" stroke-width="2"/>
+    <path d="M 10,0 A 10,10 0 1 0 -10,0" stroke="#3A5498" stroke-width="2" fill="none"
+          marker-end="url(#info-head-blue)"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Georgia, serif"
+          font-size="14" font-weight="700" fill="#3A5498">B2</text>
+  </g>
+  <text x="170" y="760" text-anchor="middle" font-family="Georgia, serif"
+        font-size="11" font-weight="600" fill="#3A5498">Limits to Growth</text>
+
+  <!-- ============ TIMELINE STRIP (bottom band, lightweight) ============ -->
+  <line x1="90" y1="810" x2="1310" y2="810" stroke="#9B9BA8" stroke-width="1.25"/>
+  <!-- Endpoint-aligned ticks, 8 milestones across 2012..2025 -->
+  <!-- start=90, end=1310, N=8, gap=1220/7=174.29 -->
+  <!-- 0:2012 Boeing, 1:2016 Manor, 2:2017 SWC, 3:2018 Lendr, 4:2020 Productive Edge, 5:2022 AI thread + hedge fund, 6:2024 Inspire11 + legal patent, 7:2025 Progyny -->
+  <g font-family="Georgia, serif" font-size="10" fill="#6B6B85" text-anchor="middle">
+    <!-- tick 0 -->
+    <line x1="90" y1="803" x2="90" y2="817" stroke="#9B9BA8" stroke-width="1.5"/>
+    <text x="90" y="832" font-weight="700" fill="#2A2A33">2012</text>
+    <text x="90" y="846">Boeing ITCFP</text>
+    <text x="90" y="858">rotational program</text>
+
+    <!-- tick 1 -->
+    <line x1="264.29" y1="803" x2="264.29" y2="817" stroke="#9B9BA8" stroke-width="1.5"/>
+    <text x="264.29" y="832" font-weight="700" fill="#2A2A33">2016</text>
+    <text x="264.29" y="846">Manor Resources</text>
+    <text x="264.29" y="858">mentorship + TDD</text>
+
+    <!-- tick 2 -->
+    <line x1="438.57" y1="803" x2="438.57" y2="817" stroke="#9B9BA8" stroke-width="1.5"/>
+    <text x="438.57" y="832" font-weight="700" fill="#2A2A33">2017</text>
+    <text x="438.57" y="846">SWC Technology</text>
+    <text x="438.57" y="858">estimation discipline</text>
+
+    <!-- tick 3 -->
+    <line x1="612.86" y1="803" x2="612.86" y2="817" stroke="#9B9BA8" stroke-width="1.5"/>
+    <text x="612.86" y="832" font-weight="700" fill="#2A2A33">2018</text>
+    <text x="612.86" y="846">Lendr lead / interim director</text>
+    <text x="612.86" y="858">350k LOC refactor, KPI ownership</text>
+
+    <!-- tick 4 -->
+    <line x1="787.14" y1="803" x2="787.14" y2="817" stroke="#9B9BA8" stroke-width="1.5"/>
+    <text x="787.14" y="832" font-weight="700" fill="#2A2A33">2020</text>
+    <text x="787.14" y="846">Productive Edge architect</text>
+    <text x="787.14" y="858">legacy modernization, SaaS</text>
+
+    <!-- tick 5 -->
+    <line x1="961.43" y1="803" x2="961.43" y2="817" stroke="#9B9BA8" stroke-width="1.5"/>
+    <text x="961.43" y="832" font-weight="700" fill="#2A7A7F">2022</text>
+    <text x="961.43" y="846" fill="#2A7A7F">AI thread opens</text>
+    <text x="961.43" y="858">+ hedge fund consult</text>
+
+    <!-- tick 6 -->
+    <line x1="1135.71" y1="803" x2="1135.71" y2="817" stroke="#9B9BA8" stroke-width="1.5"/>
+    <text x="1135.71" y="832" font-weight="700" fill="#2A2A33">2024</text>
+    <text x="1135.71" y="846">Inspire11 senior architect</text>
+    <text x="1135.71" y="858">+ legal patent SPA</text>
+
+    <!-- tick 7 -->
+    <line x1="1310" y1="803" x2="1310" y2="817" stroke="#9B9BA8" stroke-width="1.5"/>
+    <text x="1310" y="832" font-weight="700" fill="#C9880A">2025</text>
+    <text x="1310" y="846" fill="#C9880A">Progyny eng manager</text>
+    <text x="1310" y="858">V2 platform, 6.5M lives</text>
+  </g>
+
+  <!-- ============ LEGEND (lower-left, no bordered box) ============ -->
+  <g font-family="Georgia, serif" font-size="10" fill="#6B6B85">
+    <text x="90" y="755" font-weight="700" fill="#2A2A33" font-size="11">Legend</text>
+
+    <!-- Stock -->
+    <rect x="90" y="765" width="22" height="10" fill="#FFFFFF" stroke="#2A2A33" stroke-width="1.5"/>
+    <text x="120" y="774">stock (accumulation)</text>
+
+    <!-- Flow -->
+    <line x1="90" y1="784" x2="112" y2="784" stroke="#8A8A95" stroke-width="6"/>
+    <text x="120" y="787">flow (rate of change)</text>
+
+    <!-- T-fitting -->
+    <line x1="98" y1="794" x2="104" y2="794" stroke="#3A3A45" stroke-width="6"/>
+    <line x1="101" y1="794" x2="101" y2="798" stroke="#3A3A45" stroke-width="6"/>
+    <text x="120" y="797">valve (rate control)</text>
+  </g>
+
+  <g font-family="Georgia, serif" font-size="10" fill="#6B6B85">
+    <!-- Info link -->
+    <path d="M 280,765 Q 290,762 300,765" stroke="#4A4A55" stroke-width="1.25" fill="none"
+          marker-end="url(#info-head)"/>
+    <circle cx="280" cy="765" r="3" fill="#FFFFFF" stroke="#4A4A55" stroke-width="1.25"/>
+    <text x="310" y="769">info link (causal influence)</text>
+
+    <!-- Polarity -->
+    <circle cx="289" cy="783" r="6" fill="#FAFAF8" stroke="none"/>
+    <text x="289" y="787" text-anchor="middle" font-size="10" font-weight="700" fill="#2A2A33">+</text>
+    <text x="310" y="787">polarity (+ same direction, - opposing)</text>
+
+    <!-- Cloud -->
+    <use href="#cloud" x="276" y="788" width="28" height="14"/>
+    <text x="310" y="800">cloud (system boundary, source or sink)</text>
+  </g>
+
+  <g font-family="Georgia, serif" font-size="10" fill="#6B6B85">
+    <text x="540" y="748" font-weight="700" fill="#2A2A33" font-size="11">Reading the loops</text>
+    <text x="540" y="762"><tspan font-weight="700" fill="#C9880A">R1 Success to the Successful.</tspan> Reputation begets harder problems, which build capability, which builds reputation.</text>
+    <text x="540" y="775"><tspan font-weight="700" fill="#2A7A7F">R2 AI Leverage Compound.</tspan> AI freed time funds more pattern investment, widening the AI tap further.</text>
+    <text x="540" y="788"><tspan font-weight="700" fill="#B5462C">B1 Energy Limit.</tspan> Influence pulls workload; energy depletion throttles effective capacity.</text>
+    <text x="540" y="801"><tspan font-weight="700" fill="#3A5498">B2 Limits to Growth.</tspan> Without leverage, problem complexity outpaces capacity. R2 is the loop that relaxes this ceiling.</text>
+  </g>
+
+  <!-- Caption (visible inside SVG per project rule) -->
+  <text x="700" y="884" text-anchor="middle" font-family="Georgia, serif" font-style="italic"
+        font-size="11" fill="#6B6B85">
+    Figure: the recent era widens the AI tap (R2), which relaxes the personal capacity ceiling (B2), letting R1 keep compounding without saturating B1.
+  </text>
+</svg>
