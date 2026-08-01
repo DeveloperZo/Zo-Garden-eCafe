@@ -11,6 +11,8 @@ draft: false
 
 The twelve leverage points from Meadows' *Thinking in Systems*, applied to AI governance. Ranked from weakest (#12) to most powerful (#1). Full treatment in [[ai-governance/part-2/index|Part 2: What Can I Do About AI?]]
 
+![](/ai-governance/part-1/diagrams/DIA-008A-leverage-tiers.svg)
+
 ---
 
 ## Low leverage — parameters, buffers, structure (#12–10)
@@ -50,6 +52,12 @@ The twelve leverage points from Meadows' *Thinking in Systems*, applied to AI go
 **#2 Mindset / Paradigm** — The deep assumptions nobody questions because nobody sees them. "Efficiency gains are inherently good" and "the race to AGI is inevitable" are paradigm-level claims that function as facts in the current system. They're choices. Paradigms shift through accumulated evidence and visible counterexample — not through argument alone.
 
 **#1 The Coordination Problem** — At civilizational scale, leverage means building the conditions for coordination between actors with misaligned incentives. The Montreal Protocol worked because scientists made the threat legible before it was politically convenient, and gave actors a face-saving exit. Those three conditions — legible shared threat, manageable actor set, face-saving exit — don't yet exist for AI. They can be built.
+
+---
+
+## Where AI governance currently operates
+
+![](/ai-governance/part-1/diagrams/DIA-008B-leverage-hierarchy.svg)
 
 ---
 
