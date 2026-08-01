@@ -1,7 +1,7 @@
 ---
 title: "Part 1 — Can AI Self-Govern?"
 tags: [ai, governance, systems-thinking]
-draft: true
+draft: false
 version: "1.0"
 ---
 
