@@ -24,3 +24,12 @@ Per the information-presentation skill voice rules: do not use em dashes in gene
 Diagrams in this project carry their DIA-NNN label and caption inside the SVG file itself (as a text element rendered at the bottom of the artwork). Do NOT add a separate caption line in the markdown after the image embed.
 
 When auditing a section, do not flag a "missing DIA-NNN caption" just because the markdown only has `![](...path.svg)` with nothing after it. Instead, if caption verification is required, open the SVG and check that the label is rendered inside.
+
+## Project context
+
+Durable project context lives in `docs/context/`, in version control, so
+that it travels between machines. Read `docs/context/README.md` at the
+start of work on this repo.
+
+Do not record durable project context in desktop-local memory. It does
+not travel.
