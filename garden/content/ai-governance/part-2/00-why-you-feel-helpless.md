@@ -9,7 +9,7 @@ draft: false
 
 OpenAI signed the open letter calling AI a civilizational extinction risk, then shipped a model its own CEO described as "talking to a PhD-level expert in any topic," and announced the next one would arrive faster. AI, they say, will fix AI's problems. The mission statements of these companies speak of curing cancer, of intelligence as an abundance distributed to everyone, of the most important technology of the century.
 
-The reality is in the earnings calls. Salesforce announces it is cutting customer service from nine thousand people to five thousand because, the company says, it needs less heads. Microsoft tells a developer conference that thirty percent of its code is now AI-written; two weeks later the layoffs land in its home state, concentrated in engineering. The cure-cancer technology becomes, in a quarter, the rationale for cutting headcount. AI summaries arrive in your search results without permission. A press release announces an internal oversight board.
+The reality is in the earnings calls. Salesforce announces it is cutting customer service from nine thousand people to five thousand because, the company says, it needs less heads. Microsoft tells a developer conference that thirty percent of its code is now AI-written; two weeks later the layoffs land in its home state, concentrated in engineering. Amazon opens 2026 by cutting sixteen thousand corporate jobs and naming AI in the announcement. The cure-cancer technology becomes, in a quarter, the rationale for cutting headcount. AI summaries arrive in your search results without permission. A press release announces an internal oversight board.
 
 These are the same companies that sign the safety frameworks, that appear at the summits, that publish the responsible-development pledges.
 
@@ -19,7 +19,7 @@ You watch them and feel a particular kind of tired. The kind that belongs to peo
 
 The companies racing to build civilization-changing technology have not developed civilization-changing discipline. Anthropic published the first version of its Responsible Scaling Policy in autumn 2023, committing to pause development if its own evaluations suggested capability had outrun control. After three revisions, the binding pause was gone. By February 2026, Jared Kaplan was telling *TIME* the company "didn't really feel" the pause commitment made sense with competitors blazing ahead.
 
-Less than half a decade. One company, one policy, three revisions, gone.
+Less than half a decade. One company, one policy, three revisions, gone. A fourth revision arrived in April 2026. The pause stayed gone.
 
 The pressure Kaplan names is real. The lab is not lying about it. The system the labs operate inside has its own behavior, and they respond to it like the rest of us do. Knowing that behavior lets you act on it. Not knowing it is how the drift continues.
 
