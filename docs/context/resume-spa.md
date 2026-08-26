@@ -80,15 +80,37 @@ should be empty.
 
 ## Length band
 
-Accomplishment descriptions run 18 to 39 words, averaging 25. Learnings
-run about the same. Bullet counts scale with tenure and recency, from 3
-on the oldest roles to 8 on the current one. When adding an entry, match
-that band: a bullet that needs 50 words is usually two bullets or one
-bullet plus a learning.
+Accomplishment descriptions run roughly 15 to 41 words. Bullet counts
+scale with tenure and recency, from 3 on the oldest roles to 8 on the
+current one. Do not tighten the spread: uniform length is one of the
+things that made an earlier version read as machine-written.
 
-Avoid closing every bullet with a "which meant X" judgment clause. It
-reads well once per entry and mechanical by the third. Where the learning
-already carries the insight, the bullet should stop at the fact.
+## Voice
+
+Plain and calm, in the register of Donella Meadows in *Thinking in
+Systems*. Ordinary words, concrete nouns, patient explanation instead of
+compression. First person is normal here and does most of the work.
+
+Three habits to avoid, all of which this file has had and had removed:
+
+- **The epigram.** "A phased plan is a credibility instrument." Every
+  learning was once built to that shape, and twenty consecutive aphorisms
+  is what manufactured prose looks like. Say the thing plainly instead:
+  "I put the changes that would move the KPIs in the first phase on
+  purpose."
+- **The trailing judgment clause.** "which meant X", "so that Y". Reads
+  well once per entry and mechanical by the third. Where a bullet used a
+  contrast clause to imply a prior state, state the prior state as its
+  own sentence: "instead of a console per signal" became "Before that,
+  each signal had its own console."
+- **The colon followed by a rhythmic list of three or four.** Budget one
+  across all the summaries.
+
+Summaries must not restate their own bullets. The summary renders
+directly above the accomplishments list on the quest detail page, so
+verbatim overlap is visible. The summary carries context the bullets do
+not: why the engagement existed, what constrained it, what it felt like
+to be in.
 
 Learnings across quests 1 through 7 and 11 are drafted, not dictated.
 They were derived from what the prior entries already claimed, not from
