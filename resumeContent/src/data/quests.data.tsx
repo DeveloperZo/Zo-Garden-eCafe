@@ -49,7 +49,7 @@ const quests: Quest[] = [
         "Built and led the team of 5 that owns the platform's foundational capabilities: authentication and authorization, content, Salesforce integrations, and enrollment and eligibility configuration. Program scope changed repeatedly and the team stayed fully utilized through it.",
       role: 'Engineering Manager',
       learnings: [
-        "When the scope changed I could move people onto different work without anyone having to learn a new part of the system first. That is what owning capabilities rather than features bought us, and it is why the team stayed fully utilized.",
+        "Learned that a team owning capabilities instead of features can absorb a scope change without re-onboarding anybody",
       ],
     },
     {
@@ -57,7 +57,7 @@ const quests: Quest[] = [
         "Acted as primary planning partner for the rebuild, turning ambiguous program goals into epics, dependency maps and phased delivery plans across 7 teams. Teams that depended on the rebuild got committed milestones two quarters out.",
       role: 'Engineering Manager',
       learnings: [
-        "The other teams kept asking for dates. What they needed was a commitment solid enough to build their own plans on, and I could only make one two quarters out because the dependency map showed me what it rested on.",
+        "Learned that dependent teams need a commitment they can plan against more than they need a date",
       ],
     },
     {
@@ -65,7 +65,7 @@ const quests: Quest[] = [
         "Owned vendor evaluation under HIPAA and the integration strategy behind it, drawing the BAA boundaries, the PHI routing rules, and the adapter contracts. The contracts kept each vendor swappable and left room to add channels.",
       role: 'Engineering Manager',
       learnings: [
-        "I drew the adapter boundary before I looked at any vendors. If I had done it the other way around, the shortlist would have set the boundary, and we would have been living with whichever shape the winning vendor happened to have.",
+        "Learned to draw the adapter boundary before looking at vendors, or the shortlist draws it for you",
       ],
     },
     {
@@ -73,7 +73,7 @@ const quests: Quest[] = [
         "Set the API and data contracts every other team integrates against: eligibility, benefits, member profiles, claims, and patient-reported outcomes. Each one settled data ownership, identifiers, persistence, authentication and failure behavior before anyone started building.",
       role: 'Engineering Manager',
       learnings: [
-        "Teams will settle the payload and stop there. Two systems can agree on every field and still break in production because they never agreed on what a timeout means, so I made failure behavior part of every contract.",
+        "Learned that teams settle the payload and skip the failure behavior, which is where the integration defects come from",
       ],
     },
     {
@@ -81,15 +81,15 @@ const quests: Quest[] = [
         "Designed and published the delivery and operations model for the program. Each team had been running the SDLC stages as its own process, and the model replaced them with one documented path from delivery into operations.",
       role: 'Engineering Manager',
       learnings: [
-        "I went in expecting to write documentation and found that every seam between stages was there because two groups had never settled who owned it. Writing the path down only worked after that got decided.",
+        "Learned that disconnected SDLC stages are an ownership problem before they are a documentation problem",
       ],
     },
     {
       description:
-        "Consolidated production and non-production onto a single operator view, with dashboards bringing service health, traffic, error rates and latency together. Before that, each signal had its own console.",
+        "Consolidated production and non-production onto a single operator view, bringing service health, traffic, error rates and latency together instead of one console per signal.",
       role: 'Engineering Manager',
       learnings: [
-        "The test I used for every signal was whether it would change what the on-call engineer did next. Plenty of things we could have graphed did not pass, and leaving them off is what kept the dashboard worth opening during an incident.",
+        "Learned to keep a signal off the dashboard unless it changes what the on-call engineer does next",
       ],
     },
     {
@@ -97,8 +97,8 @@ const quests: Quest[] = [
         "Set how AI enters the delivery workflow and built the tooling for it. A governed repository carries work from requirement through analysis, scope and verification. A VS Code extension and CLI keep every generated change traceable and review-gated.",
       role: 'Engineering Manager',
       learnings: [
-        "Reviewing generated code is hard when you have to work out what it was supposed to do first. Keeping the requirement, the analysis and the scope attached to the work meant a reviewer could check the change against them instead of reconstructing the intent from the diff.",
-        "Reading a diff next to the specification that produced it takes far less time than reading the diff on its own. That gap is what makes it possible to keep up with this much generated work.",
+        "Learned that generated code is only reviewable when the requirement and scope stay attached to it",
+        "Learned that reviewing a diff against its specification is far faster than reviewing the diff alone",
       ],
     },
     {
@@ -106,7 +106,7 @@ const quests: Quest[] = [
         "Stayed in the code by choice, writing authentication test automation and service APIs, and reviewing pull requests and deployment changes.",
       role: 'Engineering Manager',
       learnings: [
-        "Pull request review kept missing things that showed up the moment I started reading deployment changes too. What a service does and how it is configured to run are two different questions, and the second one held most of the surprises.",
+        "Learned that deployment changes hide the surprises pull request review misses",
       ],
     },
   ],
@@ -133,8 +133,8 @@ const quests: Quest[] = [
         "Set UI architecture across 5 teams while working as the full stack architect on one of them. That team built against the same patterns I was writing for the other four.",
       role: 'Software Architect',
       learnings: [
-        "I learned more about which standards were wrong by noticing how teams solved problems when no one was looking than I ever did reading pull requests. If people were quietly working around a pattern, the pattern was the problem.",
-        "The same concern does not look the same in a UI as it does in a backend service. We got further agreeing on the principle and letting each side implement it their own way than we did trying to standardize the implementation.",
+        "Learned that friction against a pattern shows up in how teams solve problems when nobody is watching",
+        "Learned that consistent design principles matter more than standardizing on specific implementations",
       ],
     },
     {
@@ -142,7 +142,7 @@ const quests: Quest[] = [
         "Built the shared UI component library with the design teams and landed it late in the project. Adopting it meant reworking what had already been built, and the consistency it bought back was worth that.",
       role: 'Software Architect',
       learnings: [
-        "We built the shared component library late in the project. It cost us rework on screens that had already shipped, and that bill was still smaller than the drift we would have kept accumulating.",
+        "Learned that component libraries still deliver value even when implemented late in project",
       ],
     },
     {
@@ -162,7 +162,7 @@ const quests: Quest[] = [
         "Reworked communication across teams and inside them until every team knew the strategic direction behind its work, not only its next ticket. Velocity improved once that was true.",
       role: 'Senior Consultant',
       learnings: [
-        "Teams that understood where the work was going put it in order themselves. Teams that had only tickets escalated every decision about what came next, and that waiting, not any missing process, was where the time went.",
+        "Learned that maximizing team velocity requires teams to appropriately understand the strategic direction and implementation goal",
       ],
     },
   ],
@@ -190,16 +190,16 @@ const quests: Quest[] = [
         'Led full stack modernization of a claims application under HIPAA, cutting over from the legacy system without interrupting the business running on it.',
       role: 'Software Architect',
       learnings: [
-        "The business had to keep running, so I designed for that from the start instead of treating it as something in the way. We cut over without ever freezing the legacy system.",
-        "Once the compliance requirements lived in the reusable patterns, each new project inherited them instead of working them out again from scratch.",
+        "Learned to make decisions WITH constraints instead of against constraints",
+        "Learned that compliance requirements should be considered in reusable patterns",
       ],
     },
     {
       description:
-        "Converted monolithic client systems to a multi-tenant SaaS model, with their EHR integrations live the whole time. Where tenants differed, the difference went into configuration. No client got a fork of its own.",
+        "Converted monolithic client systems to a multi-tenant SaaS model with EHR integrations live throughout, holding tenant differences in configuration so no client got a fork.",
       role: 'Software Architect',
       learnings: [
-        "What kept tenant differences in configuration was that we could not fork. The EHR integrations had to stay live for every client, and I doubt the model would have held without that constraint pushing on it.",
+        "Learned that tenant differences stay in configuration only while forking is impossible",
       ],
     },
     {
@@ -207,7 +207,7 @@ const quests: Quest[] = [
         "Carried project scope, budget and client expectations alongside the technical implementation. The person who defended the estimate and the person who defended the architecture were the same person.",
       role: 'Senior Consultant',
       learnings: [
-        "Arguments I framed in the numbers the client already tracked got decided. The ones I framed in our numbers got put off until later.",
+        "Learned to ground stories in facts and data that the client cares about",
       ],
     },
     {
@@ -215,7 +215,7 @@ const quests: Quest[] = [
         "Delivered across .NET C#, Java Spring Boot, React, Angular, Flutter and UWP. Some of those stacks were new to me when I took architecture responsibility for them.",
       role: 'Software Architect',
       learnings: [
-        "Taking architecture responsibility for a stack I had not worked in was mostly a hunt for its idioms. The structural decisions carried over from what I already knew. The conventions did not, and a team stops listening to you quickly once you get those wrong.",
+        "Learned to be proficient in architecting for a language I was not well-versed in",
       ],
     },
     {
@@ -223,15 +223,15 @@ const quests: Quest[] = [
         "Earned FreedomPay certification and integrated secure payment processing into client systems. The identity provider integrations underneath it were built from the ground up.",
       role: 'Software Architect',
       learnings: [
-        "Building the identity provider integration from the ground up showed me how much an SDK usually decides on your behalf. The token lifecycle was ours to work out, and that turned out to be the part that mattered.",
+        "Learned how to build IdP integrations from the ground up",
       ],
     },
     {
       description:
-        "Built standardized project scaffolding for new engagements to start from. Before it existed, a new project began as a copy of whatever the team had built last.",
+        "Built standardized project scaffolding so new engagements stopped starting as a copy of whatever the team built last.",
       role: 'Software Architect',
       learnings: [
-        "Publishing the templates did nothing. They spread later, once teams had worked with me long enough to trust that someone would keep them current.",
+        "Learned that project templates work easier when teams build working relationships",
       ],
     },
     {
@@ -239,7 +239,7 @@ const quests: Quest[] = [
         "Diagnosed kiosk hardware faults from logs and device telemetry, without sending anyone to the site.",
       role: 'Senior Consultant',
       learnings: [
-        "What I could diagnose from my desk was decided months earlier by whoever chose what the kiosks would log. I could find exactly the faults someone had thought to record, and no others.",
+        "Learned that remote diagnosis only reaches the faults someone thought to log months earlier",
       ],
     },
   ],
@@ -264,10 +264,10 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Migrated the applications from .NET to .NET Core on day one. Performance improved right away. The platform question was closed before it could become a standing debate.",
+        "Migrated the applications from .NET to .NET Core on day one, improving performance immediately and settling the platform question before it became a standing debate.",
       role: 'Team Lead',
       learnings: [
-        "A new lead gets to make exactly one decision without having to win it first. I spent mine on moving to .NET Core, and after that every argument we had was about how to design the application rather than about what it ran on.",
+        "Learned that a new lead gets one decision without having to win it first, and spent mine on the runtime",
       ],
     },
     {
@@ -275,8 +275,8 @@ const quests: Quest[] = [
         "Refactored a 350,000-line business application onto service and repository boundaries. Sprint velocity had gone negative before that work and recovered after it.",
       role: 'Team Lead',
       learnings: [
-        "The team was not slow. Velocity had gone negative because a single change had to be made in four places at once, and no amount of extra effort was going to fix that.",
-        "A refactor that size only became manageable once people could read code for what it was trying to do, not just for whether it was correct. Pair programming was where that got taught.",
+        "Learned that negative velocity is a structure problem, not an effort problem",
+        "Learned how to read code for intent and clarity very effectively",
       ],
     },
     {
@@ -284,7 +284,7 @@ const quests: Quest[] = [
         "Worked between engineering and the executive team through the leadership changes, translating in both directions. Neither side stalled waiting on the other.",
       role: 'Interim Director of Engineering',
       learnings: [
-        "Executives asked what the state of the system was, but what they needed was what would be true by a given date. Reporting it that way is what kept a technical concern from sounding like an excuse.",
+        "Learned how to communicate to leaders what outcomes to expect from the technical department",
       ],
     },
     {
@@ -292,23 +292,23 @@ const quests: Quest[] = [
         "Ran engineering as interim director and hit the target KPIs for the period. Handed the incoming CTO a function that was still delivering.",
       role: 'Interim Director of Engineering',
       learnings: [
-        "I handed the incoming CTO the KPIs in an afternoon. Explaining why a year of decisions had gone the way they had took the rest of his onboarding, and that was the part that mattered.",
+        "Learned that handing over the KPIs takes an afternoon and handing over the reasoning takes the rest of the onboarding",
       ],
     },
     {
       description:
-        "Established a structured UAT process that put business stakeholders in front of features before release. Whether a feature was right got argued while it could still be changed.",
+        "Established a structured UAT process that put business stakeholders in front of features before release, while they could still be changed.",
       role: 'Team Lead',
       learnings: [
-        "Nothing changed what we built as much as sitting with the actual users did. What the business told us they needed and what the users told us were not the same list.",
+        "Learned the importance of talking directly to end users",
       ],
     },
     {
       description:
-        "Built regulatory requirements into the development process. Compliance had been audited after the fact until then, and retrofitting it onto finished work was producing its own defects.",
+        "Built regulatory requirements into the development process instead of auditing for them afterward, cutting the defects that came from retrofitting compliance onto finished work.",
       role: 'Team Lead',
       learnings: [
-        "Building the regulatory requirements in as we went cost a fraction of what it cost to add them to finished work. In a regulated business you do not really get to find out late.",
+        "Learned that building regulatory requirements in costs a fraction of retrofitting them onto finished work",
       ],
     },
     {
@@ -316,7 +316,7 @@ const quests: Quest[] = [
         "Represented engineering to investors and the CEO through the executive transition, and defended the technical plan to both.",
       role: 'Interim Director of Engineering',
       learnings: [
-        "Investors believed the plan because I named the uncertain parts as uncertain rather than promising them.",
+        "Learned that credibility with investors rests on what you decline to promise",
       ],
     }
   ],
@@ -341,10 +341,10 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Modernized WinForms desktop applications with Kendo UI. WinForms was never built for the interfaces people expected by then, and most of the work was fitting one onto the other.",
+        "Modernized WinForms desktop applications with Kendo UI, fitting current interface expectations onto a framework never built for them.",
       role: 'Senior Consultant',
       learnings: [
-        "WinForms set the real limits on that work, not the designs. I got in the habit of finding the impossible requests early and saying so, which kept the design conversation grounded in what could actually be built.",
+        "I learned how to balance modern UI expectations with legacy application constraints",
       ],
     },
     {
@@ -352,7 +352,7 @@ const quests: Quest[] = [
         'Held project estimates within a 10 percent margin across the engagement.',
       role: 'Senior Consultant',
       learnings: [
-        "My estimates were accurate in proportion to how well I understood the requirement, and not because of any technique. The ones that missed were the ones where I had not yet found the thing nobody thought to mention.",
+        "Learned that estimate accuracy tracks how well I understood the requirement, not the technique",
       ],
     },
     {
@@ -360,7 +360,7 @@ const quests: Quest[] = [
         "Built and refined the automation scripts the delivery schedule ran on. Tracked progress closely and raised problems while they were still cheap to fix.",
       role: 'Senior Consultant',
       learnings: [
-        "Raising a problem early costs you credibility you have not built up yet. Raising it late costs the schedule. I would rather pay the first one.",
+        "Learned that raising a problem early costs credibility and raising it late costs the schedule",
       ],
     },
   ],
@@ -394,7 +394,7 @@ const quests: Quest[] = [
         "Raised test coverage with AutoFixture and Moq. The release cadence became predictable enough to commit to.",
       role: 'Developer',
       learnings: [
-        "The cost of setting up test data had been quietly deciding which cases got written, and AutoFixture removing that did more for coverage than adding tests would have.",
+        "Learned that well-designed test fixtures do more for coverage than more tests do",
       ],
     },
     {
@@ -402,7 +402,7 @@ const quests: Quest[] = [
         "Grew under close mentorship from senior developers. Most of the teaching happened in code review.",
       role: 'Developer',
       learnings: [
-        "Code review taught me things no documentation ever did, because the lesson came attached to a decision I had already made and gotten wrong. I never got that from studying on my own.",
+        "Learned that code review teaches what self-directed study cannot, because it arrives attached to a mistake I already made",
       ],
     },
   ],
@@ -430,7 +430,7 @@ const quests: Quest[] = [
         "Rotated through multiple IT functions on the selective IT Career Foundation Program, and saw the same enterprise systems from inside each business unit that depended on them.",
       role: 'ITCFP Participant',
       learnings: [
-        "Every business unit I rotated through had a different relationship with the same enterprise systems. One team could not have shown me that.",
+        "Learned how technology choices affect different business units in distinct ways",
       ],
     },
     {
@@ -438,7 +438,7 @@ const quests: Quest[] = [
         "Built and deployed C# MVC applications that automated critical financial operations, and met the validation and audit requirements those systems carried.",
       role: 'Developer',
       learnings: [
-        "At that scale the expensive part of software is not writing it. Stability and auditability were what the financial systems actually demanded, and the feature itself was usually the cheap part.",
+        "Learned that enterprise scale moves the cost from writing software to maintaining it",
       ],
     },
     {
@@ -458,62 +458,54 @@ const quests: Quest[] = [
   company: 'Personal Project',
   workTitle: 'Independent Projects',
   description:
-    'A co-op Unity 6 shooter on an engine-free simulation layer, and the Quartz 4 monorepo that builds and serves this resume.',
+    'Game development in Unity and a static publishing pipeline, both run as single-author codebases with written milestones.',
   summary:
-    "Gatekeeper Bastion is a co-op Unity 6 shooter. Zo Garden eCafe is the Quartz 4 monorepo this page is served from, and it carries the two-part systems analysis of AI governance I wrote and illustrated. Both are single-author codebases, which means every rule in them is one I chose to write down and then had to build something to enforce.",
+    "In my personal projects I run the same discipline I use professionally. Milestones get written with kill criteria before anything is built, verification is automated, and decisions get logged. What I have gotten out of it is mostly what the process catches early rather than what eventually ships.",
   type: 'hobby',
   startDate: new Date('2026-05-04'),
   endDate: new Date(2038, 2, 10), // Ongoing
   roles: ['Game Developer', 'Web Developer', 'Technical Writer'],
-  tags: ['Unity 6', 'C#', 'Game Development', 'React', 'TypeScript', 'Quartz 4', 'Cloudflare Pages', 'Systems Thinking', 'Personal Project'],
+  tags: ['Unity', 'C#', 'Game Development', 'React', 'TypeScript', 'Static Site Generation', 'Technical Writing', 'Personal Project'],
   externalLink: 'https://github.com/DeveloperZo/Zo-Garden-eCafe',
   accomplishments: [
     {
       description:
-        "Built Gatekeeper Bastion, a co-op Unity 6 shooter, on an engine-free simulation layer of 70 C# files and 9,200 lines that runs headless. Holding that boundary meant writing a JSON reader by hand, because JsonUtility could not cross it.",
+        "Ran self-directed projects against a written milestone contract, setting kill criteria before building and capping how much unbuilt planning could accumulate.",
       role: 'Game Developer',
       learnings: [
-        "Vector3 and Mathf are allowed in that layer. I wrote down what banning them outright would have cost, mostly so I would not talk myself into re-arguing the question six weeks later.",
+        "Learned that cancelling a milestone is cheaper evidence than finishing one",
       ],
     },
     {
       description:
-        "Audited the front end, found it non-functional, and replaced it. Deleted three editor tools that rewrote scenes at import time, 1,422 lines in all, and moved stations, rigs and controllers to authored prefabs.",
+        "Kept simulation logic in an engine-independent layer so it could be tested without the engine running, and wrote serialization by hand to hold that boundary.",
       role: 'Game Developer',
       learnings: [
-        "I could read the diff on a prefab I had authored. The diff on a scene that a tool had rewritten at import time was mostly noise wrapped around the one line that had actually changed, so I deleted the tools.",
+        "Learned that a boundary only holds when something automated enforces it",
       ],
     },
     {
       description:
-        "Ran the project against a written milestone contract: 85 closed, 6 cancelled, 2 deferred, with 943 test cases across 131 test files behind them. A cap of 10 queued and 3 active kept planning from running ahead of the build.",
+        "Replaced a generated front end with authored assets after auditing it as non-functional and finding generated output impossible to review.",
       role: 'Game Developer',
       learnings: [
-        "Six of the milestones got cancelled, and I count that as the contract working. One of them ended a planned history rewrite once I found that its premises already held, which is a much cheaper way to learn that than building the thing.",
+        "Learned that a diff on generated output is mostly noise wrapped around the one line that changed",
       ],
     },
     {
       description:
-        "Split a single save document into per-character and per-world records, making co-op ownership explicit. Retired the version-migration ladder built for the old format.",
-      role: 'Game Developer',
-      learnings: [
-        'Key-addressed reads instead of positional ones let a new field ship without a version bump, as long as its absent value is also its correct default.',
-      ],
-    },
-    {
-      description:
-        "Built the Quartz 4 monorepo this resume is served from. An emitter runs the React build during the static site build and mounts the result at /resume, so a single Cloudflare Pages deploy publishes both.",
+        "Built the publishing pipeline this resume is served from, wiring an application build into a static site build so a single deploy publishes both.",
       role: 'Web Developer',
       learnings: [
-        "The static site generator runs the React build, so there is one deploy and one build order. Two pipelines would have left two different answers to the question of what is currently live.",
+        "Learned to let one pipeline own the build order rather than run two and reconcile them",
       ],
     },
     {
       description:
-        "Wrote and illustrated a two-part systems analysis of AI governance: 8 sections, a 12 leverage-point action guide across 4 tiers, and 15 hand-authored SVG diagrams. Went back over the claims afterward and dated them.",
+        "Wrote and illustrated a long-form systems analysis of AI governance, then went back and dated its claims.",
       role: 'Technical Writer',
       learnings: [
-        "A claim about AI governance with no date on it goes on reading as current long after it stops being true. Putting dates on mine is what makes the piece something I can keep up rather than something I throw away.",
+        "Learned that undated claims about a fast-moving field read as current long after they stop being true",
       ],
     },
   ],
@@ -561,28 +553,28 @@ const quests: Quest[] = [
       description: "Reviewed the software suite against SOLID principles by sampling across the codebase. The structural problems that turned up were the ones surfacing as KPI misses.",
       role: "Technical Consultant",
       learnings: [
-        "I sampled the codebase rather than reading all of it, because the same patterns kept turning up. A slice told me what a full read would have, and the engagement had a fixed end date."
+        "Learned that sampling code can effectively reveal patterns that apply to the broader codebase"
       ]
     },
     {
       description: "Produced a recommendations deck that tied each structural finding to the business KPI it was holding down.",
       role: "Technical Consultant",
       learnings: [
-        "Call something technical debt and an executive team will nod at it. Show them the same problem as a ceiling on a number they already report, and they will fund the fix."
+        "Learned that a finding framed as a KPI ceiling gets funded where the same finding framed as technical debt only gets acknowledged"
       ]
     },
     {
       description: "Presented the findings to the executive leadership team. The remediation steps were written so they could act without a technical translator in the room.",
       role: "Technical Consultant",
       learnings: [
-        "The referral is what got me trusted before the first meeting, and that did more for how the hard findings landed than the analysis behind them did."
+        "Discovered my reputation for technical excellence created trust that facilitated difficult conversations"
       ]
     },
     {
       description: "Sequenced the remediation into phases. The changes that would move the KPIs came first, and the longer architectural work followed them.",
       role: "Technical Consultant",
       learnings: [
-        "I put the changes that would move the KPIs in the first phase on purpose. The longer architectural work was going to take a while, and the early results are what bought it the room to happen."
+        "Learned to front-load the changes that move KPIs so the longer architectural work has room to run"
       ]
     }
   ]
@@ -607,35 +599,35 @@ const quests: Quest[] = [
       description: "Established technical direction and built the search workflow the product sells. It takes a DNA or protein sequence and returns the US patents that disclose it, grouped by family, with the disclosure documents attached.",
       role: "Technical Consultant",
       learnings: [
-        "We grouped results by family rather than listing them patent by patent, and that changed what the tool was good for. The same result set reads as noise one way and as an answer the other."
+        "Learned that grouping results by patent family changed what the tool was good for"
       ]
     },
     {
       description: "Built the React single-page application and the C# Azure Functions API behind it, both deployed through Azure Static Web Apps and Pipelines. A Python pipeline ingests the corpus the search runs against.",
       role: "Full Stack Developer",
       learnings: [
-        "A CI job that inherits the deployment variable group will pass its tests against production configuration and tell you nothing. Isolating the test environment from the deploy variables was the fix."
+        "Learned that a CI job inheriting the deploy variable group tests against production configuration and proves nothing"
       ]
     },
     {
       description: "Designed the entitlement and quota layer to resolve the subscription plan on the server and never from a client header. Soft quotas shipped on purpose: exact counting was designed, recorded, and deferred until there were paying customers.",
       role: "Technical Consultant",
       learnings: [
-        "We shipped soft quotas and wrote the exact counting design down in the same document anyway. Writing down the thing you are choosing not to build yet is what keeps it a decision instead of something you simply left out."
+        "Learned that writing down the design you are not building is what keeps deferring it a decision"
       ]
     },
     {
       description: "Reversed an in-flight migration to a managed identity provider when its cost outran the benefit, and restored the previous authentication stack from source control. Documented the intermediate state as a deliberate one.",
       role: "Technical Consultant",
       learnings: [
-        "We backed out of the migration and ended up somewhere in between, so I wrote down why we were there and what it would take to move on. Left undocumented, that same in-between state would have been debt nobody had agreed to carry."
+        "Learned that an undocumented intermediate state is debt nobody agreed to carry"
       ]
     },
     {
       description: "Consolidated two separate repositories and a scattered document set into one monorepo carrying 182 milestone records. Until then the decision history and the code it described lived in different places.",
       role: "Technical Consultant",
       learnings: [
-        "The records drifted until we moved them next to the code, which made updating them cheap enough that people bothered."
+        "Learned that decision records only stay accurate while they are cheap to update"
       ]
     }
   ]

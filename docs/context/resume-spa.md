@@ -87,35 +87,46 @@ things that made an earlier version read as machine-written.
 
 ## Voice
 
-Plain and calm, in the register of Donella Meadows in *Thinking in
-Systems*. Ordinary words, concrete nouns, patient explanation instead of
-compression. First person is normal here and does most of the work.
+**Zo's voice, taken from the entries themselves, not from a style
+imposed on them.** Read the existing entries before writing new ones.
 
-Three habits to avoid, all of which this file has had and had removed:
+Learnings are one line. They open with a verb of acquisition ("Learned
+that", "Learned how to", "Learned to", "Discovered", "Found"), carry no
+terminal period, and do not run to a second sentence. Plain business
+vocabulary. Occasionally blunt about a gap: "Learned to be proficient in
+architecting for a language I was not well-versed in." Occasionally
+emphatic: "Learned to make decisions WITH constraints instead of against
+constraints."
 
-- **The epigram.** "A phased plan is a credibility instrument." Every
-  learning was once built to that shape, and twenty consecutive aphorisms
-  is what manufactured prose looks like. Say the thing plainly instead:
-  "I put the changes that would move the KPIs in the first phase on
-  purpose."
+Accomplishment descriptions are one sentence, past tense, verb first.
+Two sentences only when the second carries a fact the first cannot hold.
+
+What this is not: narrative. No scene-setting, no "I went in expecting X
+and found Y", no anecdote structure. Two earlier passes on this file got
+that wrong in opposite directions, first with compressed epigrams and
+then with conversational storytelling. Both were a register imposed from
+outside. The entries already had one.
+
+Three habits that produced the epigram problem and should stay gone:
+
+- **The aphorism.** "A phased plan is a credibility instrument." Twenty
+  consecutive of those is what manufactured prose looks like.
 - **The trailing judgment clause.** "which meant X", "so that Y". Reads
-  well once per entry and mechanical by the third. Where a bullet used a
-  contrast clause to imply a prior state, state the prior state as its
-  own sentence: "instead of a console per signal" became "Before that,
-  each signal had its own console."
-- **The colon followed by a rhythmic list of three or four.** Budget one
-  across all the summaries.
+  well once per entry, mechanical by the third.
+- **The colon followed by a rhythmic list of three or four.** At most one
+  across all summaries.
 
 Summaries must not restate their own bullets. The summary renders
-directly above the accomplishments list on the quest detail page, so
-verbatim overlap is visible. The summary carries context the bullets do
-not: why the engagement existed, what constrained it, what it felt like
-to be in.
+directly above the accomplishments list, so overlap is visible.
 
-Learnings across quests 1 through 7 and 11 are drafted, not dictated.
-They were derived from what the prior entries already claimed, not from
-outside evidence, so they are first-person statements that Zo should
-check. Quests 8 and 12 have learnings grounded in repo evidence.
+## The side-projects entry stays general
+
+Quest 8 deliberately names no project, no repository, no line count and
+no milestone count. Zo's call, 2026-08-26: the specifics do not matter to
+a reader, the process and what it taught do. Technologies stay because
+they are skills. Do not "improve" this entry by restoring the evidence,
+and note that the underlying repositories are private anyway, so nobody
+outside could check them.
 
 ## Independent consulting entries
 
