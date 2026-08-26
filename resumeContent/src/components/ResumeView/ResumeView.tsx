@@ -13,17 +13,20 @@ const formatDate = (date: Date): string => {
   return `${monthNames[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
 };
 
-const isCareerQuest = (quest: Quest): boolean =>
-  quest.type === 'career' &&
+// Paid engagements, whether salaried or independent. Both belong under Experience.
+const isExperienceQuest = (quest: Quest): boolean =>
+  (quest.type === 'career' || quest.type === 'independent') &&
   Boolean(quest.company) &&
   quest.company !== 'Personal Project';
+
+const isProjectQuest = (quest: Quest): boolean => quest.type === 'hobby';
 
 const ResumeView: React.FC = () => {
   const { theme } = useTheme()!;
   
   // Transform quest data into resume format
   const resumeData = useMemo(() => {
-    const careerQuests = quests.filter(isCareerQuest).sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
+    const careerQuests = quests.filter(isExperienceQuest).sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
 
     const experience = careerQuests.map((quest) => ({
       id: quest.id,
@@ -52,7 +55,20 @@ const ResumeView: React.FC = () => {
       ),
     );
 
-    return { experience, education, skills };
+    const projects = quests
+      .filter(isProjectQuest)
+      .sort((a, b) => b.startDate.getTime() - a.startDate.getTime())
+      .map((quest) => ({
+        id: quest.id,
+        name: quest.titles.sleek,
+        overview: quest.description.trim(),
+        startDate: quest.startDate,
+        endDate: quest.endDate,
+        link: quest.externalLink,
+        accomplishments: quest.accomplishments.map((acc) => acc.description),
+      }));
+
+    return { experience, education, projects, skills };
   }, []);
 
   const handleDownloadPDF = () => {
@@ -142,9 +158,10 @@ const ResumeView: React.FC = () => {
                 <div className="company-period">
                   <span className="company-name">{job.company}</span>
                   <span className="job-period">
-                    {formatDate(job.startDate)} – 
-                    {job.endDate.getFullYear() >= 2030 
-                      ? ' Present' 
+                    {formatDate(job.startDate)}
+                    {' – '}
+                    {job.endDate.getFullYear() >= 2030
+                      ? 'Present'
                       : formatDate(job.endDate)}
                   </span>
                 </div>
@@ -159,6 +176,44 @@ const ResumeView: React.FC = () => {
           ))}
         </section>
         
+        {/* Projects */}
+        {resumeData.projects.length > 0 && (
+          <section className="resume-section">
+            <h2>Projects</h2>
+            {resumeData.projects.map((project) => (
+              <div key={project.id} className="experience-item">
+                <div className="job-header">
+                  <h3>{project.name}</h3>
+                  <div className="company-period">
+                    <span className="company-name">
+                      {project.link ? (
+                        <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
+                          {project.link.replace(/^https?:\/\//, '')}
+                        </a>
+                      ) : (
+                        'Personal Project'
+                      )}
+                    </span>
+                    <span className="job-period">
+                      {formatDate(project.startDate)}
+                      {' – '}
+                      {project.endDate.getFullYear() >= 2030
+                        ? 'Present'
+                        : formatDate(project.endDate)}
+                    </span>
+                  </div>
+                </div>
+                {project.overview ? <p className="role-overview">{project.overview}</p> : null}
+                <ul className="accomplishment-bullets">
+                  {project.accomplishments.map((acc, i) => (
+                    <li key={i}>{acc}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </section>
+        )}
+
         {/* Education Section */}
         {resumeData.education && resumeData.education.length > 0 && (
           <section className="resume-section">

@@ -4,7 +4,7 @@ import quests from '../../data/quests.data';
 import { useTheme } from '../../context/ThemeContext';
 import './QuestDetail.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faBriefcase, faCalendarAlt, faTrophy, faLightbulb, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faBriefcase, faCalendarAlt, faTrophy, faLightbulb, faArrowRight, faLink } from '@fortawesome/free-solid-svg-icons';
 
 // This component can be used in two ways:
 // 1. With an ID prop directly (when used in a component)
@@ -78,6 +78,10 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
     return result || 'Less than a month';
   };
 
+  const learnings = quest.accomplishments
+    .flatMap((acc) => acc.learnings)
+    .filter((learning, index, self) => learning && self.indexOf(learning) === index); // Remove duplicates
+
   return (
     <div className="quest-detail" data-type={quest.type || 'main'}>
       {(
@@ -110,6 +114,20 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
             {' '}({calculateDuration()})
           </span>
         </div>
+
+        {quest.externalLink && (
+          <div className="metadata-item">
+            <FontAwesomeIcon icon={faLink} className="metadata-icon" />
+            <a
+              className="quest-external-link"
+              href={quest.externalLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {theme === 'work' ? 'Repository' : 'Open the Codex'}
+            </a>
+          </div>
+        )}
       </div>
 
       <div className="quest-description">
@@ -146,25 +164,24 @@ const QuestDetail: React.FC<QuestDetailProps> = ({ id: propId }) => {
         </ul>
       </div>
 
-      <div className="quest-section">
-        <h3>
-          <span className="section-icon">
-            <FontAwesomeIcon icon={faLightbulb} />
-          </span>
-          {theme === 'work' ? 'Skills & Insights' : 'Rewards'}
-        </h3>
+      {learnings.length > 0 && (
+        <div className="quest-section">
+          <h3>
+            <span className="section-icon">
+              <FontAwesomeIcon icon={faLightbulb} />
+            </span>
+            {theme === 'work' ? 'Skills & Insights' : 'Rewards'}
+          </h3>
 
-        <ul className="learnings-list">
-          {quest.accomplishments
-            .flatMap((acc) => acc.learnings)
-            .filter((learning, index, self) => learning && self.indexOf(learning) === index) // Remove duplicates
-            .map((learning, index) => (
+          <ul className="learnings-list">
+            {learnings.map((learning, index) => (
               <li key={index} className="learning-item">
                 {learning}
               </li>
             ))}
-        </ul>
-      </div>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

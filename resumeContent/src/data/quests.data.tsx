@@ -35,67 +35,78 @@ const quests: Quest[] = [
   company: 'Progyny',
   workTitle: 'Engineering Manager',
   description:
-    "Engineering manager for the rebuild of Progyny's fertility/family-building benefits platform (~6.5M covered lives)",
+    "Greenfield rebuild of a fertility and family-building benefits platform covering roughly 6.5M lives.",
   summary:
-    'Brought in to lead the team responsible for the parts of the V2 platform that touch every other workstream. Set the HIPAA-aware patterns the rebuild now runs on (FHIR-aligned scopes, BAA-bounded adapter integrations, governed tenant configuration) and operated as a primary planning partner for the broader program, keeping adjacent teams unblocked.',
+    'Led the platform-services function through a greenfield rebuild: the team that builds those services, the contracts every other system integrates against, the delivery standards seven teams work to, and the release-readiness evidence a go/no-go decision rests on. Set the operating model the program ships against, then stayed close enough to the implementation to keep those standards enforceable rather than aspirational.',
   type: 'career',
   startDate: new Date('2025-05-01'),
   endDate: new Date(2038, 2, 10), // Ongoing
   roles: ['Engineering Manager'],
-  tags: ['Engineering Management', 'Healthcare', 'HIPAA', 'Identity/Auth', 'Platform Architecture', 'AI-Assisted Development'],
+  tags: ['Engineering Management', 'Healthcare', 'HIPAA', 'Platform Architecture', 'API Contracts', 'Developer Tooling', 'Observability', 'AI-Assisted Development'],
   accomplishments: [
     {
       description:
-        "Built and led a team of 5 across the platform's foundational capabilities (AuthN/AuthZ, content, salesforce integrations, enrollment and eligibility configuration), while maintaining full team utilization through changes in the program.",
+        "Built and led the team of 5 owning the platform's foundational capabilities: authentication and authorization, content, Salesforce integrations, and enrollment and eligibility configuration. Held full utilization through repeated changes in program scope.",
       role: 'Engineering Manager',
       learnings: [
-        'Learned that managing platform-critical systems requires balancing feature delivery with system reliability',
-        'Discovered that clear capability boundaries help teams maintain focus and reduce cross-team dependencies'
+        'Utilization survives a scope change only when a team owns capabilities rather than features. Capability ownership let work be reassigned without re-onboarding anybody.',
       ],
     },
     {
       description:
-        "Set the new platform's identity/auth strategy on FHIR-aligned JWT scopes and consolidated Auth0 provisioning into reusable Terraform modules, eliminating the most common class of environment drift.",
+        'Acted as primary planning partner for the rebuild, converting ambiguous program goals into epics, dependency maps and phased delivery plans across 7 teams. Dependent teams got committed milestones two quarters out.',
       role: 'Engineering Manager',
       learnings: [
-        'Learned that infrastructure-as-code patterns significantly improve auditability and compliance documentation',
-        'Discovered that FHIR-aligned scopes provide better interoperability in healthcare ecosystems'
+        'Dependent teams do not need a date, they need a commitment they can plan against. The dependency map is what made a two-quarter commitment defensible rather than optimistic.',
       ],
     },
     {
       description:
-        'Acted as primary planning partner for the new platform rebuild: converted ambiguous program goals into epics, dependency maps, and phased delivery plans spanning across 7 teams, which compressed estimation and gave dependent teams committed milestones for 2 quarters',
+        'Owned HIPAA-aware vendor evaluation and the integration strategy behind it: BAA boundaries, PHI routing rules, and adapter contracts that kept each vendor swappable and channel expansion open.',
       role: 'Engineering Manager',
       learnings: [
-        'Learned that breaking ambiguity into structured planning artifacts accelerates team alignment',
-        'Discovered that dependency mapping early prevents costly rework and improves resource utilization'
+        'A vendor evaluation is an architecture decision wearing procurement clothes. Drawing the adapter boundary before the shortlist is what kept the shortlist from drawing it instead.',
       ],
     },
     {
       description:
-        'Led HIPAA-aware vendor evaluations and the integration strategy behind them (BAA boundaries, PHI routing rules, adapter contracts), preserving optionality on channel expansion while minimizing implementation costs.',
+        'Set the cross-system API and data contracts every other team integrates against: eligibility, benefits, member profiles, claims, and patient-reported outcomes. Each fixed data ownership, identifiers, persistence, authentication and failure behavior before build.',
       role: 'Engineering Manager',
       learnings: [
-        'Learned that adapter patterns provide flexibility while maintaining compliance boundaries',
-        'Discovered that BAA boundaries and PHI routing rules must be designed into architecture from the start'
+        'Failure behavior is the half of a contract teams skip. Two systems agreeing on a payload and disagreeing on what a timeout means is still an integration defect.',
       ],
     },
     {
       description:
-        'Built configuration tooling that turns tenant-specific benefit plans and eligibility rules into governed config rather than per-client code',
+        'Designed and published the end-to-end delivery and operations model for the program, replacing SDLC stages each team ran as its own process with one documented path from delivery into operations.',
       role: 'Engineering Manager',
       learnings: [
-        'Learned that configuration patterns can transform complex business rules into maintainable systems',
-        'Discovered that governed configuration reduces implementation time while maintaining flexibility'
+        'Disconnected stages are an ownership problem before they are a documentation problem. Each seam existed because two groups had never agreed on who held it.',
       ],
     },
     {
       description:
-        'Introduced AI-assisted workflows into discovery and delivery with no-PHI prompting, redaction standards, and mandatory human verification, ensuring engineers had relevant context in tickets from various artifacts (PRDs, architecture briefs, integration spec drafts)',
+        'Consolidated production and non-production onto one operator view, designing the dashboards that bring service health, traffic, error rates and latency together instead of a console per signal.',
       role: 'Engineering Manager',
       learnings: [
-        'Learned that AI-assisted workflows require careful guardrails in healthcare contexts',
-        'Discovered that structured redaction standards enable AI productivity while maintaining HIPAA compliance'
+        'A dashboard nobody opens mid-incident is documentation. The signals that earned a place were the ones that changed what the on-call engineer did next.',
+      ],
+    },
+    {
+      description:
+        'Set how AI enters the delivery workflow and shipped the tooling for it: a governed repository carrying work from requirement through analysis, scope and verification, and a VS Code extension and CLI keeping every generated change traceable and review-gated.',
+      role: 'Engineering Manager',
+      learnings: [
+        'A generated change is only as reviewable as its inputs. Keeping requirement, analysis and scope attached to the work turned review into a check rather than a re-derivation.',
+        'Traceability is what makes supervision affordable. Reviewing a diff against the specification that produced it is a shorter task than reviewing the diff alone.',
+      ],
+    },
+    {
+      description:
+        'Stayed in the code deliberately, implementing authentication test automation and service APIs and reviewing pull requests and deployment changes.',
+      role: 'Engineering Manager',
+      learnings: [
+        'Reviewing deployment changes caught what pull request review did not. The gap between what a service does and how it is configured to run is where the surprises were.',
       ],
     },
   ],
@@ -108,66 +119,50 @@ const quests: Quest[] = [
   },
   company: 'Inspire11',
   workTitle: 'Senior Software Architect',
-  description: 'Led architectural strategy across multiple teams to improve code consistency and efficiency.',
+  description: 'Five product delivery teams under one UI architecture, with full stack architecture on one of them.',
   summary:
-    'Elevated architectural practices across multiple teams by implementing design consistency, bridging communication gaps, and establishing efficient development workflows. Cultivated technical leadership through deliberate mentorship while strategically aligning technology decisions with business objectives.',
+    'Set UI architecture for five delivery teams while carrying full stack architecture on one of them, which kept the standards accountable to a real delivery load rather than to review alone. Most of the work was making architecture legible to the people implementing it: a shared component library, Figma handoffs that produced buildable stories, and mentoring aimed at the engineers who would defend the patterns once the engagement ended.',
   type: 'career',
   startDate: new Date('2024-05-01'),
-  endDate: new Date('2025-05-17'), 
+  endDate: new Date('2025-05-17'),
   roles: ['Senior Consultant', 'Software Architect'],
   tags: ['Architecture', 'Leadership', 'UI Design', 'Cross-Team Collaboration'],
   accomplishments: [
     {
       description:
-        'Led and refined UI architectural strategy across 5 teams.',
+        'Set UI architecture across 5 teams while acting as full stack architect for one, so the patterns were written by someone carrying delivery load under them.',
       role: 'Software Architect',
       learnings: [
-        'Learned architectural effectiveness requires balancing team autonomy with system-wide consistency',
-        'Learned that friction against architecture patterns emerge when watching how disparate teams naturally solve problems'
+        'Friction against a pattern shows up in how teams solve problems when nobody is watching. Watching that, rather than reading pull requests, is what identified which standards were wrong.',
+        'Cross-cutting concerns do not present the same way in UI and backend systems. Agreeing on the principle and letting each side pick its own implementation held better than standardizing the implementation.',
       ],
     },
     {
       description:
-        'Operated as full stack architect for one team and UI architect for 5 teams.',
+        'Built the shared UI component library with the design teams, landing it late in the project on the judgment that recovered consistency was worth the rework it cost.',
       role: 'Software Architect',
       learnings: [
-        'Found that specialized depth and broad oversight can be balanced through effective delegation',
-        'Recognized that cross-cutting concerns often manifest differently in UI versus backend systems',
-        'Determined that consistent design principles matter more than standardizing on specific implementations'
+        'A component library introduced late still pays. The cost is rework on what already shipped, and that was smaller than the drift it stopped.',
       ],
     },
     {
       description:
-        'Improved cross-team and intra-team communication to align development with management expectations.',
+        'Translated Figma design files into technical directives and user stories, so what reached the teams was buildable work rather than a design file and an interpretation problem.',
       role: 'Senior Consultant',
       learnings: [],
     },
     {
       description:
-        'Collaborated with design teams to implement global UI components, ensuring consistency.',
-      role: 'Software Architect',
-      learnings: [
-        'Learned that component libraries still deliver value even when implemented late in project'
-      ],
-    },
-    {
-      description:
-        'Translated Figma designs into technical directives and user stories, streamlining development.',
+        'Mentored senior developers through pair programming and standing coaching sessions, aimed at the people who would carry the architecture once I was no longer in the room.',
       role: 'Senior Consultant',
       learnings: [],
     },
     {
       description:
-        'Mentored senior developers via pair programming and coaching sessions to enhance team capabilities.',
-      role: 'Senior Consultant',
-      learnings: [],
-    },
-    {
-      description:
-        'Optimized workflows, increasing overall team velocity.',
+        'Reworked cross-team and intra-team communication so teams understood the strategic direction behind the work rather than only the next ticket. Velocity moved because sequencing decisions stopped escalating, not because process got tighter.',
       role: 'Senior Consultant',
       learnings: [
-        'Learned that maximizing team velocity requires teams to appropriately understand the strategic direction and implementation goal'
+        'Velocity is a comprehension problem more often than a process one. Teams that understood the goal sequenced their own work; teams holding only tickets escalated every ordering decision.',
       ],
     },
   ],
@@ -181,9 +176,9 @@ const quests: Quest[] = [
   company: 'Productive Edge',
   workTitle: 'Software Architect',
   description:
-    'Transformed legacy systems into modern applications while leading diverse technology teams.',
-  summary: 
-    'Modernized legacy healthcare systems while maintaining critical business continuity. Designed scalable cloud architectures, integrated secure payment solutions, and architected conversions to a multi-tenant SaaS model',
+    'Legacy healthcare modernization for consulting clients, with each old system kept running while its replacement was built.',
+  summary:
+    'Four years of client modernization work in healthcare, where the standing constraint was that the legacy system had to keep running while its replacement was built. Carried scope, budget and client expectations alongside the architecture, across .NET C#, Java Spring Boot, React, Angular, Flutter and UWP, and converted monolithic client systems to a multi-tenant SaaS model without dropping their EHR integrations.',
   type: 'career',
   startDate: new Date('2020-02-01'),
   endDate: new Date('2024-05-31'),
@@ -192,76 +187,59 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'Transformed legacy healthcare systems into modern applications while maintaining business continuity.',
+        'Led full stack modernization of a claims application under HIPAA, cutting over from the legacy system without interrupting the business running on it.',
       role: 'Software Architect',
       learnings: [
-        'Found that legacy modernization requires balancing business continuity with technical evolution',
-        'Learned to make decisions WITH constraints instead of against constraints'
+        'Constraints are the design input, not the obstacle. Deciding with them rather than against them is what kept the cutover from needing a freeze.',
+        'Compliance requirements belong in the reusable patterns, not in each implementation. Written once, they stopped being rediscovered per project.',
       ],
     },
     {
       description:
-        'Managed project scope, budget and expectations with clients in addition to technical implementation',
+        'Converted monolithic client systems to a multi-tenant SaaS model while keeping their EHR integrations live, handling tenant variation through configuration rather than per-client forks.',
+      role: 'Software Architect',
+      learnings: [
+        'Tenant variation is a configuration problem right until someone ships a fork. The live EHR integrations were the constraint that made forking impossible, which is what kept the model honest.',
+      ],
+    },
+    {
+      description:
+        'Carried project scope, budget and client expectations alongside the technical implementation, which meant the estimate and the architecture were argued by the same person.',
       role: 'Senior Consultant',
       learnings: [
-        'Learned to be proficient in architecting for a language I was not well-versed in',
-        'Learned to ground stories in facts and data that the client cares about'
+        'Ground the argument in the numbers the client already tracks. Framed in their metrics it gets decided; framed in ours it gets deferred.',
       ],
     },
     {
       description:
-        'Delivered full-stack solutions across multiple technology stacks including .NET C#, Java Spring Boot, React, Angular, Flutter, and UWP.',
-      role: 'Software Architect',
-      learnings: [],
-    },
-    {
-      description:
-        'Gained FreedomPay certification for client system and integrated secure payment solutions into client projects.',
+        'Delivered across .NET C#, Java Spring Boot, React, Angular, Flutter and UWP, taking architecture responsibility on stacks I had not previously worked in.',
       role: 'Software Architect',
       learnings: [
-        'Learned how to build IdP integrations from the ground up'
+        "Architecting in an unfamiliar language is mostly about finding its idioms fast. The structural decisions transfer, the conventions do not, and getting those wrong is what costs a team's trust.",
       ],
     },
     {
       description:
-        'Led full stack modernization of application for claims while maintaining HIPAA compliance.',
+        'Earned FreedomPay certification and integrated secure payment processing into client systems, building the identity provider integrations underneath from the ground up.',
       role: 'Software Architect',
       learnings: [
-        'Learned that healthcare data practices impact technical decisions and constraints',
-        'Learned that compliance requirements should be considered in reusable patterns'
+        'Building an identity provider integration from scratch shows what the SDK was hiding. The token lifecycle decisions were ours to make, and they were the ones that mattered.',
       ],
     },
     {
       description:
-        'Remotely debugged kiosk hardware issues, significantly improving client support.',
+        'Built standardized project scaffolding so a new engagement started from a known shape rather than from whichever project the team last copied.',
+      role: 'Software Architect',
+      learnings: [
+        'Scaffolding gets adopted on trust before merit. The templates spread once teams had a working relationship with the person maintaining them, not when they were first published.',
+      ],
+    },
+    {
+      description:
+        'Diagnosed kiosk hardware faults remotely, working from logs and device telemetry instead of dispatching someone to the site.',
       role: 'Senior Consultant',
       learnings: [
-        'Learned that hardware debugging requires different troubleshooting approaches than software issues',
-        'Discovered that remote diagnostics can effectively resolve hardware problems when proper logging is in place'
-      ],
-    },
-    {
-      description:
-        'Created standardized project scaffolding templates to accelerate project initiation.',
-      role: 'Software Architect',
-      learnings: [
-        'Learned that project templates work easier when teams build working relationships',
-        'Learned that standardization must balance consistency with flexibility for project-specific needs'
-      ],
-    },
-    {
-      description:
-        'Fostered team cohesion through transparent leadership and client-focused decision processes.',
-      role: 'Senior Consultant',
-      learnings: [],
-    },
-    {
-      description:
-        'Transitioned monolithic systems to multi-tenant SaaS models while maintaining EHR connections.',
-      role: 'Software Architect',
-      learnings: [
-        'Learned that multi-tenant architectures can be effectively handled through configuration',
-        'Discovered that maintaining EHR integrations during architectural transitions requires careful API design'
+        'Remote hardware diagnosis is a logging decision made months earlier. What could be diagnosed was exactly what someone had thought to record.',
       ],
     },
   ],
@@ -275,9 +253,9 @@ const quests: Quest[] = [
   company: 'Lendr',
   workTitle: 'Team Lead / Interim Director of Engineering',
   description:
-    'Co-led technical implementations and maintained clear communication during leadership transitions.',
-  summary: 
-    'Led critical platform migrations and major refactoring efforts that transformed application performance while providing technical leadership during organizational transitions. Established effective feedback mechanisms with stakeholders and represented technical concerns to executive leadership.',
+    'A 350,000-line lending platform, refactored onto service boundaries and carried through an executive transition.',
+  summary:
+    'Joined as team lead and left as interim director, covering the gap through an executive transition. The technical work was a runtime migration on day one and a 350,000-line refactor onto service and repository boundaries that pulled sprint velocity back out of negative. The leadership work was keeping engineering legible to investors, a CEO and an incoming CTO while all three were changing.',
   type: 'career',
   startDate: new Date('2018-10-01'),
   endDate: new Date('2020-02-01'),
@@ -286,69 +264,60 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'Upgraded applications from .NET to .NET Core on day one, immediately improving performance and establishing technical direction.',
+        'Migrated the applications from .NET to .NET Core on day one. Performance improved immediately, and the migration settled the platform question before it could become a standing debate.',
       role: 'Team Lead',
       learnings: [
-        'Learned how to read code for intent and clarity very effectively',
-        'Learned how to effectively leverage pair programming with other team members'
+        'Arriving with a decision already made is a one-time privilege. Spending it on the platform choice meant every later argument was about application design rather than about runtime.',
       ],
     },
     {
       description:
-        'Refactored a complex business application with 350k+ lines of code, implementing service-repository patterns that reversed negative sprint velocity.',
+        'Refactored a 350,000-line business application onto service and repository boundaries, reversing a sprint velocity that had gone negative.',
       role: 'Team Lead',
       learnings: [
-        'Learned how to perform every function of and be involved in most decisions for the SDLC',
-        'Learned how to build a culture of technical excellence for a small team'
+        'Negative velocity is a structure problem, not an effort problem. The team was not slow; every change was touching four places at once.',
+        'Reading code for intent rather than for correctness is the skill that made a refactor that size tractable. Pair programming was where it got taught.',
       ],
     },
     {
       description:
-        'Co-led technical implementations during leadership transitions, maintaining continuity between development and executive leadership.',
+        'Held the line between engineering and the executive team through leadership changes, translating in both directions so neither side stalled waiting on the other.',
       role: 'Interim Director of Engineering',
       learnings: [
-        'Learned that technical leadership requires communication as much as technical proficiency',
-        'Learned how to communicate to leaders what outcomes to expect from the technical department'
+        'Executives want to know what will be true by a date, not what the system currently is. Reporting in those terms is what kept technical concerns from reading as excuses.',
       ],
     },
     {
       description:
-        'Achieved target KPIs as interim director, while onboarding incoming CTO and managing team.',
+        'Ran engineering as interim director, hit the target KPIs for the period, and onboarded the incoming CTO into a function that was still delivering rather than one in recovery.',
       role: 'Interim Director of Engineering',
       learnings: [
-        'Learned that maintaining performance metrics during transitions requires clear communication and delegation',
-        'Discovered that effective onboarding of new leadership benefits from structured knowledge transfer'
+        'Handing over a function is easier than handing over its context. The KPIs transferred in an afternoon; the reasoning behind a year of decisions took the rest of the onboarding.',
       ],
     },
     {
       description:
-        'Established a structured UAT process aligning business stakeholders with development priorities, improving feature quality.',
+        'Established a structured UAT process that put business stakeholders in front of features before release, moving the argument about whether a feature was right to before it shipped.',
       role: 'Team Lead',
       learnings: [
-        'Learned the importance of talking directly to end users',
-        'Learned that educating our business on technical practices positively impacted velocity'
+        'Talking to end users directly changed what got built more than any process did. The business account of what users needed and the users own account were not the same document.',
       ],
     },
     {
       description:
-        'Collaborated with senior architects to implement product-wide strategy and enforce technical standards.',
-      role: 'Team Lead',
-      learnings: [],
-    },
-    {
-      description:
-        'Aligned technical initiatives with regulatory requirements to reduce defects and prepare for new features.',
+        'Built regulatory requirements into the development process rather than auditing for them afterward, cutting the class of defect that came from retrofitting compliance onto finished work.',
       role: 'Team Lead',
       learnings: [
-        'Learned that regulatory compliance should be built into development processes rather than added as an afterthought',
-        'Discovered that early consideration of regulatory requirements prevents costly refactoring later'
+        'Compliance retrofitted is a refactor with a deadline attached. Designing for it costs a fraction of what discovering it later does, and a regulated domain does not let you discover it later.',
       ],
     },
     {
       description:
-        'Represented technical leadership to investors and the CEO during executive transitions, providing strategic guidance.',
+        'Represented engineering to investors and the CEO through the executive transition, defending the technical plan to an audience with no reason to take it on faith.',
       role: 'Interim Director of Engineering',
-      learnings: [],
+      learnings: [
+        'Technical credibility in that room rests on what you decline to promise. The plan was believed because the uncertain parts were named as uncertain.',
+      ],
     }
   ],
 },
@@ -361,9 +330,9 @@ const quests: Quest[] = [
   company: 'SWC Technology Partners',
   workTitle: 'Senior Consultant',
   description:
-    'Enhanced desktop applications and maintained project delivery while developing professional estimation skills.',
-  summary: 
-    'Focused on desktop application enhancement and workflow automation while developing strong project estimation and delivery skills. I applied UX improvements to legacy systems and created reliable automation tools.',
+    'Legacy WinForms systems for consulting clients, delivered solo with estimates inside a 10 percent margin.',
+  summary:
+    'A year of solo delivery on legacy desktop systems, where the work was fitting current interface expectations onto a framework never designed for them and keeping the estimates honest while doing it. Held project estimates within a 10 percent margin across the engagement, which is where the habit of hunting for the unmentioned requirement first came from.',
   type: 'career',
   startDate: new Date('2017-10-01'),
   endDate: new Date('2018-10-01'),
@@ -372,32 +341,26 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'Enhanced desktop applications using WinForms and Kendo UI to improve user experience.',
+        'Modernized WinForms desktop applications with Kendo UI, fitting current interface expectations onto a framework that was not built for them.',
       role: 'Senior Consultant',
-      learnings: ['I learned how to balance modern UI expectations with legacy application constraints'
+      learnings: [
+        'Legacy interface work is bounded by what the framework permits, not by what the design asks for. Identifying the impossible requests early is what kept the design conversation honest.',
       ],
     },
     {
       description:
-        'Developed and refined scripts under mentorship, ensuring timely and accurate project delivery.',
+        'Held project estimates within a 10 percent margin across the engagement.',
       role: 'Senior Consultant',
       learnings: [
+        'Estimate accuracy tracked requirement comprehension, not estimation technique. The estimates that missed were the ones where I had not yet found the thing nobody thought to mention.',
       ],
     },
     {
       description:
-        'Maintained project estimation accuracy within a 10% margin while optimizing delivery.',
+        'Built and refined the automation scripts the delivery schedule depended on, and tracked progress closely enough to surface problems while they were still cheap to fix.',
       role: 'Senior Consultant',
       learnings: [
-        'Learned that accurate estimation correlates with thorough requirement understanding'
-      ],
-    },
-    {
-      description:
-        'Proactively monitored progress and applied problem-solving strategies to enhance system functionality.',
-      role: 'Senior Consultant',
-      learnings: [
-        'Learned that proactive issue identification is more valuable than reactive problem solving'
+        'Raising a problem early spends credibility you have not yet earned; raising it late spends the schedule. Early is the cost worth paying.',
       ],
     },
   ],
@@ -411,9 +374,9 @@ const quests: Quest[] = [
   company: 'Manor Resources',
   workTitle: 'Developer',
   description:
-    'Developed components for financial applications while enhancing my technical skills through mentorship and test-driven development.',
-  summary: 
-    'Built key features for financial systems while improving code quality through comprehensive testing strategies. I benefited from structured mentorship that accelerated my professional growth.',
+    'Core features and test coverage on a car loan application, built under senior mentorship.',
+  summary:
+    'Built core features for a car loan application and raised its test coverage enough that releases stopped being a question of nerve. The mentorship was the point of the year: close review from senior developers on work that was already written, which is a different teacher than any amount of self-directed study.',
   type: 'career',
   startDate: new Date('2016-08-01'),
   endDate: new Date('2017-09-01'),
@@ -422,26 +385,24 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'Developed key components for a car loan application, directly enhancing functionality and user experience.',
+        'Built core feature components for a car loan application.',
       role: 'Developer',
       learnings: [],
     },
     {
       description:
-        'Strengthened technical proficiency through close mentorship from senior developers.',
+        'Raised test coverage using AutoFixture and Moq, which is what made the release cadence predictable enough to commit to.',
       role: 'Developer',
       learnings: [
-        'Learned that mentorship accelerates technical growth beyond self-directed learning',
-        'Learned that code review feedback provides contextual learning opportunities'
+        'Good fixtures do more for coverage than more tests do. AutoFixture removed the setup cost that had been quietly deciding which cases got written and which did not.',
       ],
     },
     {
       description:
-        'Increased test coverage using AutoFixture and Moq, leading to more reliable and timely releases.',
+        'Grew under close mentorship from senior developers, with code review as the main teaching surface.',
       role: 'Developer',
       learnings: [
-        'Learned that test-driven approaches improve both code design and defect prevention',
-        'Learned that well-designed test fixtures improve both coverage metrics and test readability'
+        'Code review teaches what documentation cannot, because it arrives attached to a decision already made and gotten wrong. Self-directed study never produced that.',
       ],
     },
   ],
@@ -455,9 +416,9 @@ const quests: Quest[] = [
   company: 'The Boeing Company',
   workTitle: 'ITCFP Participant / Developer',
   description:
-    'Rotated through diverse IT roles as part of a selective program, gaining broad exposure while developing enterprise applications for critical operations.',
-  summary: 
-    'Participated in the selective IT Career Foundation Program (ITCFP), rotating through multiple technical domains to build cross-functional expertise. I developed mission-critical financial applications while improving development processes across teams.',
+    'A selective IT rotation program, then enterprise development on critical financial operations systems.',
+  summary:
+    'Four years on the selective IT Career Foundation Program, rotating through multiple technical domains before settling into development. Built C# MVC applications that automated critical financial operations, and saw the same enterprise systems from inside each of the business units that depended on them, which is a view a single team never offers.',
   type: 'career',
   startDate: new Date('2012-06-01'),
   endDate: new Date('2016-08-01'),
@@ -466,126 +427,96 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'Rotated through diverse IT roles, gaining broad exposure across multiple technical domains.',
+        'Rotated through multiple IT functions on the selective IT Career Foundation Program, seeing the same enterprise systems from the perspective of each business unit that depended on them.',
       role: 'ITCFP Participant',
       learnings: [
-        'Learned how technology choices affect different business units in distinct ways',
-        'Learned to appreciate the interconnected nature of enterprise systems'
+        'The same technology choice lands differently in every business unit that inherits it. Seeing that from inside several of them is not something one team can show you.',
       ],
     },
     {
       description:
-        'Developed and deployed C# MVC applications to automate critical financial operations.',
+        'Built and deployed C# MVC applications automating critical financial operations, under the validation and audit requirements those systems carry.',
       role: 'Developer',
       learnings: [
-        'Learned that enterprise-scale applications require additional focus on stability and maintenance',
-        'Learned that financial systems require extensive validation and audit capabilities'
+        'Enterprise scale moves the cost from writing software to maintaining it. Stability and auditability were the requirements; the feature was the cheap part.',
       ],
     },
     {
       description:
-        'Enhanced SDLC practices, leading to improved code quality and more efficient project management.',
+        'Improved SDLC practices across the teams the rotation passed through, raising code quality and tightening project management.',
       role: 'Developer',
-      learnings: [
-        'Learned that financial systems require extensive validation and audit capabilities'
-      ],
+      learnings: [],
     },
   ],
 },
 {
   id: 8,
   titles: {
-    retro: "The Game Developer's Path",
-    sleek: 'Game Developer (Personal Projects)',
+    retro: 'The Solo Forge',
+    sleek: 'Independent Projects',
   },
-  workTitle: 'Game Developer (Personal Projects)',
+  company: 'Personal Project',
+  workTitle: 'Independent Projects',
   description:
-    'Applied software engineering principles to game development through self-directed learning in Unity.',
-  summary: 
-    'In my personal projects, I\'ve explored game development as both a creative outlet and a way to apply software architecture principles in a different domain. This has expanded my technical versatility while providing insights into performance optimization and interactive system design.',
+    'A co-op Unity 6 shooter on an engine-free simulation layer, and the Quartz 4 monorepo that builds and serves this resume.',
+  summary:
+    "Self-directed work where the constraints are chosen rather than inherited, which is most of the point of it. Gatekeeper Bastion is a co-op Unity 6 shooter run against a written milestone contract that cancels ideas as readily as it closes them. Zo Garden eCafe is the Quartz 4 monorepo this page is served from, along with the two-part systems analysis of AI governance published in it. Both are single-author codebases, so every architectural rule in them is one nobody else was going to enforce.",
   type: 'hobby',
-  startDate: new Date('2012-06-01'),
+  startDate: new Date('2026-05-04'),
   endDate: new Date(2038, 2, 10), // Ongoing
-  roles: ['Game Developer (Personal Projects)'],
-  tags: ['Game Development', 'Unity', 'C#', 'Personal Project'],
+  roles: ['Game Developer', 'Web Developer', 'Technical Writer'],
+  tags: ['Unity 6', 'C#', 'Game Development', 'React', 'TypeScript', 'Quartz 4', 'Cloudflare Pages', 'Systems Thinking', 'Personal Project'],
+  externalLink: 'https://github.com/DeveloperZo/Zo-Garden-eCafe',
   accomplishments: [
     {
       description:
-        'Taught myself Unity game development, focusing on C# programming and game mechanics.',
-      role: 'Game Developer (Personal Projects)',
+        "Built Gatekeeper Bastion, a co-op Unity 6 shooter, on an engine-free simulation layer of 70 C# files and 9,200 lines that runs headless. The boundary cost a hand-written JSON reader, since JsonUtility could not cross it.",
+      role: 'Game Developer',
       learnings: [
-        'Learned that game development requires different performance optimization approaches than business applications',
-        'Learned that creative coding reveals different architectural patterns than enterprise development',
-        'Discovered that game mechanics design balances technical implementation with user enjoyment'
+        'A boundary held by convention decays quietly. That layer stayed clean for months on discipline alone, then drifted the first time a new enemy wanted a frame counter.',
+      ],
+    },
+    {
+      description:
+        'Audited the front end as non-functional and replaced it: deleted three editor tools that rewrote scenes at import time, 1,422 lines, and moved stations, rigs and controllers to authored prefabs.',
+      role: 'Game Developer',
+      learnings: [
+        'A generated scene is unreviewable. The diff on an authored prefab reads; the diff on a scene a tool rewrote is noise wrapped around the one line that changed.',
+      ],
+    },
+    {
+      description:
+        'Ran the project against a written milestone contract: 85 closed, 6 cancelled, 2 deferred, backed by 943 test cases across 131 test files, with a cap of 10 queued and 3 active to stop planning outrunning the build.',
+      role: 'Game Developer',
+      learnings: [
+        'Cancelling a milestone is cheaper evidence than finishing one. Of the six cancelled, one killed a full history rewrite after its premises turned out to already hold.',
+      ],
+    },
+    {
+      description:
+        'Split a single save document into per-character and per-world records to make co-op ownership explicit, then retired the version-migration ladder built for the old format.',
+      role: 'Game Developer',
+      learnings: [
+        'Key-addressed reads instead of positional ones let a new field ship without a version bump, as long as its absent value is also its correct default.',
+      ],
+    },
+    {
+      description:
+        'Built the Quartz 4 monorepo this resume is served from, including the emitter that runs the React build during the static site build and mounts it at /resume, so one Cloudflare Pages deploy publishes both.',
+      role: 'Web Developer',
+      learnings: [
+        'A static site generator and a single-page app can share one deploy if the generator owns the build order. Two pipelines would have meant two sources of truth about what is live.',
+      ],
+    },
+    {
+      description:
+        'Wrote and illustrated a two-part systems analysis of AI governance: 8 sections, a 12 leverage-point action guide across 4 tiers, and 15 hand-authored SVG diagrams, then a dated currency pass over the claims.',
+      role: 'Technical Writer',
+      learnings: [
+        'Undated claims about a fast-moving field read as current forever. Dating them is what makes the piece maintainable instead of disposable.',
       ],
     },
   ],
-},
-{
-  id: 9,
-  titles: {
-    retro: 'Mastering the AI Frontier',
-    sleek: 'AI Enthusiast (Hybrid)',
-  },
-  workTitle: 'AI Enthusiast (Hybrid)',
-  description:
-    'Explored AI tools and applications to enhance development workflows and create innovative solutions.',
-  summary: 
-    'Leveraged AI tools to accelerate development and broaden my technical capabilities, building applications like this resume site with minimal code. By experimenting with various AI models and APIs, I\'ve developed practical expertise in applying these technologies to solve real-world problems.',
-  type: 'hobby',
-  startDate: new Date('2022-11-01'),
-  endDate: new Date(2038, 2, 10), // Ongoing
-  roles: ['AI Enthusiast (Hybrid)'],
-  tags: ['AI', 'Machine Learning', 'ChatGPT', 'Python', 'Productivity'],
-  accomplishments:
-  [
-      {
-        description:
-          'Built a dynamic resume website using ChatGPT/Claude/Cursor with minimal code.',
-        role: 'AI Enthusiast (Hybrid)',
-        learnings: [
-          'Simple, clear prompts produce better code results',
-          'Spent more time reviewing code and minimal time writing actual code'
-        ],
-      },
-      {
-        description:
-          'Experimented with AI models using Oogabooga and Hugging Face, deepening practical ML expertise.',
-        role: 'AI Enthusiast (Hybrid)',
-        learnings: [
-          'Running AI locally works differently than using cloud services',
-          'Expplored the hugging face ecosystem for AI models and tools'
-        ],
-      },
-      {
-        description:
-          'Enhanced Python skills and utilized Jupyter notebooks for data analysis and model interaction.',
-        role: 'AI Enthusiast (Hybrid)',
-        learnings: [
-          'Started learning with HuggingFace Agent course',
-          'Created personalized AI assistants using Replit, Discord bots, and Cursor',
-          'Learned that Jupyter notebooks provide effective environments for iterative AI model experimentation'
-        ],
-      },
-      {
-        description:
-          'Integrated OpenAI APIs and Playground, applying AI tools to streamline development workflows.',
-        role: 'AI Enthusiast (Hybrid)',
-        learnings: [
-          'API integration requires different skills than using web interfaces',
-          'Careful prompt design saves money when using paid AI services'
-        ],
-      },
-      {
-        description:
-          'Leveraged AI tools (ChatGPT, Udio, Claude, MidJourney) in both professional and personal projects.',
-        role: 'AI Enthusiast (Hybrid)',
-        learnings: [
-          'Each AI tool has its own strengths for different tasks',
-          'Matching the right AI tool to each project improves results'
-        ],
-      },
-    ]
 },
 {
   id: 10,
@@ -614,48 +545,44 @@ const quests: Quest[] = [
   id: 11,
   titles: {
     retro: "The Portfolio Advisor's Quest",
-    sleek: "Independent Technical Consultant for Hedge Fund Company"
+    sleek: "Technical Consultant for a Hedge Fund Company"
   },
-  company: "Independent Consulting",
-  workTitle: "Technical Strategy Consultant",
-  description: "Performed comprehensive analysis of company's software suite and provided strategic recommendations to improve KPIs.",
-  summary: "Hired directly by the CEO of Lendr to diagnose technical challenges affecting key performance indicators at one of his other companies. Conducted code review using SOLID principles to identify structural issues and created a strategic roadmap for technical improvement that aligned with business objectives.",
+  company: "Independent Consulting, Enterprise Architect",
+  workTitle: "Technical Consultant",
+  description: "Diagnostic review of a hedge fund company's software suite, tying structural findings to the KPIs they were suppressing.",
+  summary: "Hired directly by the CEO of Lendr to diagnose why technical problems at another of his companies were showing up in their KPIs. Reviewed the codebase against SOLID principles by sampling rather than exhaustively, then delivered a phased remediation roadmap in which every finding was attached to the business metric it was holding down.",
   type: "independent",
   startDate: new Date("2022-03-01"),
   endDate: new Date("2022-06-30"),
-  roles: ["Technical Strategy Consultant"],
+  roles: ["Technical Consultant"],
   tags: ["Code Analysis", "Technical Strategy", "Executive Advisory", "Performance Optimization"],
   accomplishments: [
     {
-      description: "Analyzed existing software architecture against SOLID principles, identifying systemic issues impacting performance.",
-      role: "Technical Strategy Consultant",
+      description: "Reviewed the software suite against SOLID principles, sampling across the codebase to find the structural issues that were surfacing as KPI misses.",
+      role: "Technical Consultant",
       learnings: [
-        "Learned how to effectively communicate technical debt concepts to executive leadership",
-        "Discovered my reputation for technical excellence created trust that facilitated difficult conversations"
+        "Sampling beats exhaustive review on a fixed engagement. The patterns repeat, so a slice tells you what a full read would have, at a fraction of the time."
       ]
     },
     {
-      description: "Created comprehensive strategic recommendations deck that connected technical issues to business KPIs.",
-      role: "Technical Strategy Consultant",
+      description: "Produced a recommendations deck that tied each structural finding to the business KPI it was suppressing, so the technical argument arrived already translated.",
+      role: "Technical Consultant",
       learnings: [
-        "Developed heuristics for predicting how technical architecture impacts business outcomes",
-        "Learned that sampling code can effectively reveal patterns that apply to the broader codebase"
+        "A finding presented as technical debt gets acknowledged. The same finding presented as a ceiling on a metric the executive team already reports gets funded."
       ]
     },
     {
-      description: "Presented findings to executive leadership team with actionable remediation steps.",
-      role: "Technical Strategy Consultant",
+      description: "Presented the findings to the executive leadership team with remediation steps they could act on without a technical translator in the room.",
+      role: "Technical Consultant",
       learnings: [
-        "Found that executives value clear connections between technical recommendations and business outcomes",
-        "Learned the importance of presenting technical strategies in business-value terms"
+        "Being trusted before the first meeting is what made the hard findings hearable. The referral did more for their reception than the analysis did."
       ]
     },
     {
-      description: "Developed a phased implementation plan that balanced immediate improvements with long-term architectural goals.",
-      role: "Technical Strategy Consultant",
+      description: "Sequenced the remediation into phases, front-loading the changes that would move the KPIs so the longer architectural work had visible results behind it.",
+      role: "Technical Consultant",
       learnings: [
-        "Refined my ability to prioritize technical improvements based on business impact",
-        "Learned that effective technical strategy considers both immediate wins and sustainable architecture"
+        "A phased plan is a credibility instrument. The early phases exist to buy permission for the later ones."
       ]
     }
   ]
@@ -663,47 +590,52 @@ const quests: Quest[] = [
 {
   id: 12,
   titles: {
-    retro: "The Legal Patent Expedition",
-    sleek: "Technical Director Consultant for Legal Patent Startup"
+    retro: "The Patent Sequence Expedition",
+    sleek: "Technical Consultant for a Biotech Patent Intelligence Startup"
   },
-  company: "Independent Consulting",
-  workTitle: "Technical Director Consultant",
-  description: "Established technical direction and built complete SPA solution for a startup in the legal patent space.",
-  summary: "Engaged by founders to establish technical direction for their application. Managed the complete software development lifecycle while building a highly customizable SPA, including infrastructure and DevOps processes. Successfully translated stakeholder vision into functional requirements and technical implementation.",
+  company: "Independent Consulting, Director",
+  workTitle: "Technical Consultant",
+  description: "Biotech patent-intelligence product: sequence search across US patent disclosures, with subscription billing and tiered access around it.",
+  summary: "Engaged by the founders to establish technical direction, then stayed to build it. The product answers one repeated question for biotech IP professionals: given this DNA or protein sequence, who has filed on it, where, and when, and can I get the disclosure documents. That meant a React single-page app, a C# Azure Functions API, a Python ingestion pipeline for the patent corpus, and an entitlement layer that decides what each subscription tier is allowed to run. The engagement has covered both the architecture decisions and the code that implements them.",
   type: "independent",
   startDate: new Date("2024-03-01"),
-  endDate: new Date("2024-07-28"),
-  roles: ["Technical Director Consultant", "Full Stack Developer"],
-  tags: ["SPA Development", "Legal", "Technical Leadership", "Full Stack", "DevOps"],
+  endDate: new Date(2038, 2, 10), // Ongoing
+  roles: ["Technical Consultant", "Full Stack Developer"],
+  tags: ["Patent Intelligence", "Biotech", "Azure Functions", "React", "TypeScript", "C#", "PostgreSQL", "Python", "Technical Leadership", "DevOps"],
   accomplishments: [
     {
-      description: "Established complete technical direction for the product and guided founders through key technology decisions.",
-      role: "Technical Director Consultant",
+      description: "Established technical direction and built the search workflow the product sells: a DNA or protein sequence returns the US patents that disclose it, grouped by family, with disclosure documents attached.",
+      role: "Technical Consultant",
       learnings: [
-        "Discovered my ability to anticipate product needs before stakeholders had fully articulated them",
-        "Learned that early architecture decisions have amplified impact on product trajectory"
+        "Grouping results by patent family rather than by patent changed what the tool was for. The same result set read as noise ungrouped and as an answer grouped."
       ]
     },
     {
-      description: "Translated stakeholder vision into functional requirements and developed a fully working, highly customizable SPA.",
+      description: "Built the React single-page application and the C# Azure Functions API behind it, deployed through Azure Static Web Apps and Pipelines, with a Python pipeline ingesting the corpus the search runs against.",
       role: "Full Stack Developer",
       learnings: [
-        "Refined techniques for converting abstract business goals into concrete functional requirements",
-        "Learned how to balance investing in customization capabilities and maintenance complexity"
+        "A CI job that inherits the deployment variable group will pass its tests against production configuration and tell you nothing. Isolating the test environment from the deploy variables was the fix."
       ]
     },
     {
-      description: "Managed complete SDLC including DevOps infrastructure from initial planning through deployment.",
-      role: "Technical Director Consultant",
+      description: "Designed the entitlement and quota layer to resolve the subscription plan server-side rather than trust a client header, and shipped soft quotas deliberately: exact counting was designed, recorded, and deferred until there were paying customers.",
+      role: "Technical Consultant",
       learnings: [
-        "Learned that infrastructure decisions should anticipate scaling needs without over-engineering"
+        "Writing down the design you are not building is what makes deferring it a decision rather than an omission. The deferred version was recorded in the same document that specified the shipped one."
       ]
     },
     {
-      description: "Created architecture that optimized for both initial delivery timeline and future product evolution.",
-      role: "Technical Director Consultant",
+      description: "Reversed an in-flight migration to a managed identity provider and restored the previous authentication stack from source control when its cost outran the benefit, then documented the intermediate state as deliberate.",
+      role: "Technical Consultant",
       learnings: [
-        "Refined techniques for balancing technical ideals with practical delivery constraints"
+        "An intermediate state that is written down is a plan. The same state undocumented is technical debt nobody agreed to take on."
+      ]
+    },
+    {
+      description: "Consolidated two separate repositories and a scattered document set into one monorepo carrying 182 milestone records, so the product's decision history and its code stopped living in different places.",
+      role: "Technical Consultant",
+      learnings: [
+        "Decision records only stay accurate while they are cheap to update. Moving them next to the code was what stopped them drifting."
       ]
     }
   ]

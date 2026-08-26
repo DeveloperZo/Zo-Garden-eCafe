@@ -143,7 +143,8 @@ const Accomplishments: React.FC = () => {
     // Helper to check if current selection is education/personal growth
     const isEducationOrPersonal = () => {
       if (viewMode === 'role') {
-        return selectedRole === 'Student' || selectedRole === 'AI Enthusiast (Hybrid)';
+        const roleType = quests.find(q => q.accomplishments.some(a => a.role === selectedRole))?.type;
+        return roleType === 'education' || roleType === 'hobby';
       } else {
         return selectedCompany === 'California State University Fullerton' || selectedCompany === 'Personal Project';
       }
@@ -156,8 +157,8 @@ const Accomplishments: React.FC = () => {
             return `As a Student, I've completed ${filteredAccomplishments.length} 
             training quests on my path to graduation.`;
           } else {
-            return `As an AI Enthusiast, I've completed ${filteredAccomplishments.length} 
-            personal projects exploring AI and machine learning.`;
+            return `On my own projects as a ${selectedRole}, I've completed ${filteredAccomplishments.length} 
+            self-directed quests, where the constraints were mine to set.`;
           }
         } else {
           return `My adventures in ${selectedCompany} have led me through 
@@ -182,8 +183,8 @@ const Accomplishments: React.FC = () => {
             return `As a Student, I've completed ${filteredAccomplishments.length} 
             key academic milestones in pursuit of my degree.`;
           } else {
-            return `As an AI Enthusiast, I've completed ${filteredAccomplishments.length} 
-            personal projects exploring AI and machine learning.`;
+            return `On my own projects as a ${selectedRole}, I've shipped ${filteredAccomplishments.length} 
+            distinct pieces of work, each scoped and constrained by me rather than by a client roadmap.`;
           }
         } else {
           return `During my time at ${selectedCompany}, I've completed ${filteredAccomplishments.length} 
@@ -239,7 +240,7 @@ const Accomplishments: React.FC = () => {
         case 'independent':
           return 'Independent Consulting';
         case 'hobby':
-          return 'Personal Growth';
+          return 'Personal Projects';
         case 'education':
           return 'Education';
         default:
@@ -330,7 +331,7 @@ const Accomplishments: React.FC = () => {
           </div>
         )}
 
-        {/* Personal Growth */}
+        {/* Personal Projects */}
         {getFilteredItems.hobby.length > 0 && (
           <div className="filter-section hobby">
             <h4>{getSectionLabel('hobby')}</h4>

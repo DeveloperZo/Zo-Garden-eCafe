@@ -176,3 +176,12 @@
     line-height: 1.5;
     color: #555;
   }
+  .project-link {
+    color: #8b0000;
+    text-decoration: none;
+    font-style: normal;
+  }
+
+  .project-link:hover {
+    text-decoration: underline;
+  }

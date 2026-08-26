@@ -387,3 +387,12 @@ ul.learnings li::before {
     text-align: center;
   }
 }
+.quest-external-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.quest-external-link:hover {
+  text-decoration: underline;
+}

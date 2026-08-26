@@ -9,9 +9,8 @@ const CareerTimeline: React.FC = () => {
   const navigate = useNavigate();
   const { theme } = useTheme()!;
   
-  // Filter and sort quests - only showing main quests in chronological order
+  // Sort quests in chronological order. Side projects sit inline with roles.
   const sortedQuests = [...quests]
-    .filter(quest => quest.type !== 'hobby')
     .sort((a, b) => b.startDate.getTime() - a.startDate.getTime()); // Chronological order
 
   const handleQuestClick = (id: number) => {
@@ -211,6 +210,8 @@ const getRetroDescription = (description: string, role: string) => {
 
   const prefix = rolePrefixes[role] || 'Ventured forth to ';
   const cleanDesc = description.replace(/^Led |Transformed |Co-led |Enhanced |Developed |Rotated /, '');
+  // Only prefix when a leading verb was removed; otherwise the two clauses collide.
+  if (cleanDesc === description) return description;
   return prefix + cleanDesc.charAt(0).toLowerCase() + cleanDesc.slice(1);
 };
 
