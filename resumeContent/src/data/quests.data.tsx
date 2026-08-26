@@ -46,7 +46,7 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Built and led the team of 5 that owns the platform's foundational capabilities: authentication and authorization, content, Salesforce integrations, and enrollment and eligibility configuration. Program scope changed repeatedly and the team stayed fully utilized through it.",
+        "Built and led a team of 5 across the platform's foundational capabilities: authentication and authorization, content, Salesforce integrations, and enrollment and eligibility configuration. Program scope changed repeatedly and the team stayed fully utilized through it.",
       role: 'Engineering Manager',
       learnings: [
         "Learned that a team owning capabilities instead of features can absorb a scope change without re-onboarding anybody",
@@ -70,7 +70,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Set the API and data contracts every other team integrates against: eligibility, benefits, member profiles, claims, and patient-reported outcomes. Each one settled data ownership, identifiers, persistence, authentication and failure behavior before anyone started building.",
+        "Set cross-system API and data contracts for eligibility, benefits, member profiles, claims, and patient-reported outcomes. Each one settled data ownership, identifiers, persistence, authentication and failure behavior before anyone started building.",
       role: 'Engineering Manager',
       learnings: [
         "Learned that teams settle the payload and skip the failure behavior, which is where the integration defects come from",
@@ -78,7 +78,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Designed and published the delivery and operations model for the program. Each team had been running the SDLC stages as its own process, and the model replaced them with one documented path from delivery into operations.",
+        "Designed and published an end-to-end delivery and operations model for the program. Each team had been running the SDLC stages as its own process, and one documented path replaced them.",
       role: 'Engineering Manager',
       learnings: [
         "Learned that disconnected SDLC stages are an ownership problem before they are a documentation problem",
@@ -139,7 +139,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Built the shared UI component library with the design teams and landed it late in the project. Adopting it meant reworking what had already been built, and the consistency it bought back was worth that.",
+        "Built a shared UI component library with the design teams and landed it late in the project. Adopting it meant reworking what had already shipped, and the consistency it bought back was worth that.",
       role: 'Software Architect',
       learnings: [
         "Learned that component libraries still deliver value even when implemented late in project",
@@ -264,7 +264,7 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Migrated the applications from .NET to .NET Core on day one, improving performance immediately and settling the platform question before it became a standing debate.",
+        "Migrated applications from .NET to .NET Core on day one, improving performance immediately and settling the platform question before it became a standing debate.",
       role: 'Team Lead',
       learnings: [
         "Learned that a new lead gets one decision without having to win it first, and spent mine on the runtime",
@@ -357,7 +357,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Built and refined the automation scripts the delivery schedule ran on. Tracked progress closely and raised problems while they were still cheap to fix.",
+        "Built and refined automation scripts the delivery schedule ran on. Tracked progress closely and raised problems while they were still cheap to fix.",
       role: 'Senior Consultant',
       learnings: [
         "Learned that raising a problem early costs credibility and raising it late costs the schedule",
@@ -470,7 +470,7 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Ran self-directed projects against a written milestone contract, setting kill criteria before building and capping how much unbuilt planning could accumulate.",
+        "Planned self-directed work in written milestones, and cancelled the ones that stopped being worth building.",
       role: 'Game Developer',
       learnings: [
         "Learned that cancelling a milestone is cheaper evidence than finishing one",
@@ -486,7 +486,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Replaced a generated front end with authored assets after auditing it as non-functional and finding generated output impossible to review.",
+        "Audited a generated front end as non-functional and rebuilt it by hand, after finding generated output impossible to review in a diff.",
       role: 'Game Developer',
       learnings: [
         "Learned that a diff on generated output is mostly noise wrapped around the one line that changed",
@@ -550,7 +550,7 @@ const quests: Quest[] = [
   tags: ["Code Analysis", "Technical Strategy", "Executive Advisory", "Performance Optimization"],
   accomplishments: [
     {
-      description: "Reviewed the software suite against SOLID principles by sampling across the codebase. The structural problems that turned up were the ones surfacing as KPI misses.",
+      description: "Reviewed the client's software suite against SOLID principles by sampling across the codebase. The structural problems that turned up were the ones surfacing as KPI misses.",
       role: "Technical Consultant",
       learnings: [
         "Learned that sampling code can effectively reveal patterns that apply to the broader codebase"
@@ -603,14 +603,14 @@ const quests: Quest[] = [
       ]
     },
     {
-      description: "Built the React single-page application and the C# Azure Functions API behind it, both deployed through Azure Static Web Apps and Pipelines. A Python pipeline ingests the corpus the search runs against.",
+      description: "Built a React single-page application and the C# Azure Functions API behind it, both deployed through Azure Static Web Apps and Pipelines. A Python pipeline ingests the corpus the search runs against.",
       role: "Full Stack Developer",
       learnings: [
         "Learned that a CI job inheriting the deploy variable group tests against production configuration and proves nothing"
       ]
     },
     {
-      description: "Designed the entitlement and quota layer to resolve the subscription plan on the server and never from a client header. Soft quotas shipped on purpose: exact counting was designed, recorded, and deferred until there were paying customers.",
+      description: "Designed an entitlement and quota layer that resolves the subscription plan on the server and never from a client header. Soft quotas shipped on purpose: exact counting was designed, recorded, and deferred until there were paying customers.",
       role: "Technical Consultant",
       learnings: [
         "Learned that writing down the design you are not building is what keeps deferring it a decision"

@@ -101,6 +101,19 @@ constraints."
 Accomplishment descriptions are one sentence, past tense, verb first.
 Two sentences only when the second carries a fact the first cannot hold.
 
+Use an indefinite article on first mention. "Built and led a team of 5",
+not "the team of 5". "Built a shared UI component library", not "the
+shared UI component library". A reader meeting something for the first
+time has no referent for "the". Use "the" only when a possessive, a
+relative clause or an earlier bullet has already fixed what is meant, as
+in "the client's software suite" or "the publishing pipeline this resume
+is served from".
+
+No internal vocabulary. Terms from a project's own method, "kill
+criteria" being the one that got through, mean nothing to a reader and
+read as jargon. Say the plain version: "cancelled the ones that stopped
+being worth building".
+
 What this is not: narrative. No scene-setting, no "I went in expecting X
 and found Y", no anecdote structure. Two earlier passes on this file got
 that wrong in opposite directions, first with compressed epigrams and
@@ -120,6 +133,10 @@ Summaries must not restate their own bullets. The summary renders
 directly above the accomplishments list, so overlap is visible.
 
 ## The side-projects entry stays general
+
+The Projects section labels its link "GitHub" rather than printing the
+URL. The raw URL named the project the entry is written to keep general,
+and read badly jammed against the date. See `ResumeView.tsx`.
 
 Quest 8 deliberately names no project, no repository, no line count and
 no milestone count. Zo's call, 2026-08-26: the specifics do not matter to
