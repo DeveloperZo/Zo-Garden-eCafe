@@ -35,7 +35,7 @@ const quests: Quest[] = [
   company: 'Progyny',
   workTitle: 'Engineering Manager',
   description:
-    "Led the platform services team through a ground-up rebuild of a fertility and family-building benefits platform serving roughly 6.5M members.",
+    "Led platform services team through rebuild of platform serving 6.5M members",
   summary:
     "I led the platform-services function through a greenfield rebuild: the team, the contracts other systems build against, the standards the delivery teams work to, and the evidence behind a go or no-go. An operating model is easy to write badly from a distance, so I kept writing code and reviewing deployments the whole way through.",
   type: 'career',
@@ -119,7 +119,7 @@ const quests: Quest[] = [
   },
   company: 'Inspire11',
   workTitle: 'Senior Software Architect',
-  description: "Set UI architecture across five product delivery teams and carried full stack architecture on one of them.",
+  description: "Set UI architecture for five delivery teams and full stack architecture for one",
   summary:
     "Set the UI architecture for five delivery teams and did full stack architecture on one of them, so the patterns had to hold up under a delivery load I was carrying myself. Most of the job was making the architecture something the people implementing it could actually follow. A pattern nobody can apply without asking me is not a pattern yet.",
   type: 'career',
@@ -176,7 +176,7 @@ const quests: Quest[] = [
   company: 'Productive Edge',
   workTitle: 'Software Architect',
   description:
-    "Modernized legacy healthcare systems for consulting clients, keeping each one running while its replacement was built.",
+    "Modernized legacy healthcare systems for clients while keeping each one running",
   summary:
     "Four years of modernization work for healthcare clients. The old system had to keep running while its replacement was built, and that shaped most of the decisions. I carried scope and budget with the client alongside the architecture, which is a different job from either one on its own.",
   type: 'career',
@@ -253,7 +253,7 @@ const quests: Quest[] = [
   company: 'Lendr',
   workTitle: 'Team Lead / Interim Director of Engineering',
   description:
-    "Refactored a 350,000-line lending platform onto service boundaries, then ran engineering through the executive transition that followed.",
+    "Refactored entire lending platform prior to leading engineering through executive transition",
   summary:
     "Joined as team lead and left as interim director, covering the gap while the executive team changed over. The technical half was a runtime migration and a large refactor. The other half was explaining engineering to investors and a CEO who had every reason to be skeptical, then handing over a function that was still delivering.",
   type: 'career',
@@ -330,7 +330,7 @@ const quests: Quest[] = [
   company: 'SWC Technology Partners',
   workTitle: 'Senior Consultant',
   description:
-    "Delivered legacy WinForms modernization solo for consulting clients, holding estimates inside a 10 percent margin.",
+    "Delivered legacy WinForms modernization solo, holding estimates inside 10 percent",
   summary:
     "A year of solo delivery on legacy desktop systems. It was the first engagement where I owned the estimate as well as the build, and the two turned out to be the same skill.",
   type: 'career',
@@ -374,7 +374,7 @@ const quests: Quest[] = [
   company: 'Manor Resources',
   workTitle: 'Developer',
   description:
-    "Built features and test coverage for a car loan application under close mentorship from senior developers.",
+    "Built features and test coverage for car loan application under senior mentorship",
   summary:
     "A year of feature work on a car loan application, early on. The mentorship was the point of it. Senior developers read what I wrote closely, and I have not had a year since where I learned that fast.",
   type: 'career',
@@ -416,7 +416,7 @@ const quests: Quest[] = [
   company: 'The Boeing Company',
   workTitle: 'ITCFP Participant / Developer',
   description:
-    "Rotated through IT functions on a selective development program, then built C# applications automating critical financial operations.",
+    "Rotated through IT functions on selective program, then built C# applications for financial operations",
   summary:
     "Four years on the IT Career Foundation Program, a selective rotation through several IT functions before I settled into development work on financial operations systems.",
   type: 'career',
@@ -458,7 +458,7 @@ const quests: Quest[] = [
   company: 'Personal Project',
   workTitle: 'Independent Projects',
   description:
-    "Built game and web projects independently, run as single-author codebases with written milestones and automated verification.",
+    "Built game and web projects solo against written milestones and automated verification",
   summary:
     "In my personal projects I run the same discipline I use professionally. Milestones get written with kill criteria before anything is built, verification is automated, and decisions get logged. What I have gotten out of it is mostly what the process catches early rather than what eventually ships.",
   type: 'hobby',
@@ -541,7 +541,7 @@ const quests: Quest[] = [
   },
   company: "Independent Consulting, Enterprise Architect",
   workTitle: "Technical Consultant",
-  description: "Reviewed a hedge fund company's software suite against SOLID principles and tied each finding to the KPI it was holding down.",
+  description: "Reviewed hedge fund software suite against SOLID, tying findings to suppressed KPIs",
   summary: "The CEO of Lendr hired me directly to look at another of his companies, where technical problems were showing up in the KPIs. I had four months and no prior context, so the whole engagement came down to what could be learned from a sample rather than a full read.",
   type: "independent",
   startDate: new Date("2022-03-01"),
@@ -587,7 +587,7 @@ const quests: Quest[] = [
   },
   company: "Independent Consulting, Director",
   workTitle: "Technical Consultant",
-  description: "Set technical direction and built a patent intelligence product for biotech IP work, covering sequence search, subscription billing and tiered access.",
+  description: "Set technical direction and built patent intelligence product for biotech IP work",
   summary: "The founders brought me in to set technical direction, and I stayed to build it. The product answers one question that biotech IP professionals ask over and over: given this sequence, who has filed on it, where, and when. Everything else in the product exists to make that answer trustworthy enough to pay for.",
   type: "independent",
   startDate: new Date("2024-03-01"),

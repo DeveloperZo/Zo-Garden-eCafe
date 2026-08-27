@@ -65,14 +65,22 @@ stays Engineering Manager, which is the actual title.
 blurb on the timeline. It is the line that says what the person was
 responsible for in that role.
 
-**Write it as a sentence, verb first.** Not a noun phrase. An earlier
-pass produced project labels like "Greenfield rebuild of a fertility and
-family-building benefits platform covering roughly 6.5M lives", which
-reads as a caption rather than a job entry. The current form is "Led the
-platform services team through a ground-up rebuild of a fertility and
-family-building benefits platform serving roughly 6.5M members."
+**Verb first, telegraphic, about 11 words.** Drop articles. Drop
+qualifiers. Name the scope and the number and stop.
 
-Roughly 15 to 25 words. Name the scope and the size.
+    Led platform services team through rebuild of platform serving 6.5M members
+    Refactored entire lending platform prior to leading engineering through executive transition
+
+Two failures to avoid, both of which this file has had. A noun phrase
+reads as a caption, not a job entry: "Greenfield rebuild of a fertility
+and family-building benefits platform covering roughly 6.5M lives." A
+full grammatical sentence with every article and qualifier intact is
+merely wordy: "Led the platform services team through a ground-up rebuild
+of a fertility and family-building benefits platform serving roughly 6.5M
+members."
+
+Note this register is specific to `description`. Accomplishment bullets
+keep their articles, where "a team of 5" reads better than "team of 5".
 
 Do not restate the title and company as a label, which is a different
 failure and the one that produced the caption style in the first place.
