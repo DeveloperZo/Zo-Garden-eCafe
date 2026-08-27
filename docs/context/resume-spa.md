@@ -59,24 +59,27 @@ Quest 1 is written at director altitude on purpose: bullets lead with the
 decision and name who else it bound, not with the artifact. The title
 stays Engineering Manager, which is the actual title.
 
-## The description field is a scope line, not a tagline
+## The description field is a role overview
 
-`description` renders under the job header in ResumeView, where the role
-title, company and dates are already on screen, and as the card blurb on
-the timeline. It must add what the header cannot: what was built and at
-what size. It must not restate the role or name the company.
+`description` renders under the job header in ResumeView and as the card
+blurb on the timeline. It is the line that says what the person was
+responsible for in that role.
 
-Wrong: "Engineering manager on the greenfield rebuild of Progyny's
-fertility and family-building benefits platform". The first four words
-and the company name are already directly above it.
+**Write it as a sentence, verb first.** Not a noun phrase. An earlier
+pass produced project labels like "Greenfield rebuild of a fertility and
+family-building benefits platform covering roughly 6.5M lives", which
+reads as a caption rather than a job entry. The current form is "Led the
+platform services team through a ground-up rebuild of a fertility and
+family-building benefits platform serving roughly 6.5M members."
 
-Right: "Greenfield rebuild of a fertility and family-building benefits
-platform covering roughly 6.5M lives."
+Roughly 15 to 25 words. Name the scope and the size.
 
-Noun phrases work best, run 13 to 21 words, and have the side benefit of
-never triggering the retro rewrite described under Traps. Check a new one
-by intersecting its words against the role title and company: the overlap
-should be empty.
+Do not restate the title and company as a label, which is a different
+failure and the one that produced the caption style in the first place.
+"Engineering manager on the greenfield rebuild of Progyny's..." repeats
+both lines directly above it. A verb that happens to echo the title is
+fine when it is doing work in a sentence: "Led the platform services
+team" under an Engineering Manager heading reads normally.
 
 ## Length band
 
@@ -171,7 +174,11 @@ quests of different types gets bucketed by whichever quest appears first
 in the array. Give each quest distinct role names unless the shared
 bucket is what you want.
 
-`getRetroDescription` in CareerTimeline rewrites descriptions for the
-retro theme and mangles any that begin with Led, Transformed, Co-led,
-Enhanced, Developed or Rotated. Descriptions starting with anything else
-pass through untouched. Write new descriptions accordingly.
+`getRetroDescription` and `getSleekDescription` used to rewrite
+descriptions per theme and were removed on 2026-08-26. The retro one
+prepended a role-flavored prefix ending in "to " and expected a bare verb
+phrase after it, which mangled any description beginning with Led,
+Transformed, Co-led, Enhanced, Developed or Rotated, and could never work
+against a full sentence. Descriptions now render as authored in both
+themes. Retro character comes from the quest titles, the pixel icons and
+the labels. Do not reintroduce a per-theme rewrite of authored prose.

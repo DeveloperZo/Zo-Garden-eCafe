@@ -127,9 +127,8 @@ const CareerTimeline: React.FC = () => {
           const isPresent = quest.endDate.getFullYear() >= 2030;
           
           // Create more concise descriptions based on theme
-          const conciseDescription = theme === 'play' 
-            ? getRetroDescription(quest.description, quest.roles[0])
-            : getSleekDescription(quest.description, quest.roles[0]);
+          // Descriptions are authored as role overviews and render as written in both themes.
+          const conciseDescription = quest.description;
           
           return (
             <div 
@@ -194,31 +193,6 @@ const CareerTimeline: React.FC = () => {
       </div>
     </div>
   );
-};
-
-// Helper function to create retro-style descriptions
-const getRetroDescription = (description: string, role: string) => {
-  // Role-based retro descriptions
-  const rolePrefixes: Record<string, string> = {
-    'Software Architect': 'Wielded the Architect\'s Staff to ',
-    'Senior Consultant': 'Embarked on a quest to ',
-    'Team Lead': 'Led a party of developers to ',
-    'Interim Director of Engineering': 'Commanded the Engineering Guild to ',
-    'Developer': 'Crafted code spells to ',
-    'ITCFP Participant': 'Trained across multiple disciplines to '
-  };
-
-  const prefix = rolePrefixes[role] || 'Ventured forth to ';
-  const cleanDesc = description.replace(/^Led |Transformed |Co-led |Enhanced |Developed |Rotated /, '');
-  // Only prefix when a leading verb was removed; otherwise the two clauses collide.
-  if (cleanDesc === description) return description;
-  return prefix + cleanDesc.charAt(0).toLowerCase() + cleanDesc.slice(1);
-};
-
-// Helper function to create sleek professional descriptions
-const getSleekDescription = (description: string, role: string) => {
-  // For sleek mode, we'll keep it professional but more concise
-  return description.replace(/\.$/, '');
 };
 
 // Calculate total years of experience
