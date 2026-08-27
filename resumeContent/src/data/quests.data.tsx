@@ -46,13 +46,13 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Built and led a team of 5 across the platform's foundational capabilities: authentication and authorization, content, Salesforce integrations, and enrollment and eligibility configuration. Program scope changed repeatedly and the team stayed fully utilized through it.",
+        "Built and led a team of 5 owning the platform's shared services: identity, content, CRM integration and eligibility configuration. Held full utilization through repeated changes in program scope.",
       role: 'Engineering Manager',
       learnings: [
         "Learned that a team owning capabilities instead of features can absorb a scope change without re-onboarding anybody",
       ],
     },
-    {
+{
       description:
         "Acted as primary planning partner for the rebuild, turning ambiguous program goals into epics, dependency maps and phased delivery plans across 7 teams. Teams that depended on the rebuild got committed milestones two quarters out.",
       role: 'Engineering Manager',
@@ -60,7 +60,15 @@ const quests: Quest[] = [
         "Learned that dependent teams need a commitment they can plan against more than they need a date",
       ],
     },
-    {
+{
+      description:
+        "Set the cross-system API and data contracts spanning five business domains, each settling data ownership, identifiers, persistence, authentication and failure behavior before build.",
+      role: 'Engineering Manager',
+      learnings: [
+        "Learned that teams settle the payload and skip the failure behavior, which is where the integration defects come from",
+      ],
+    },
+{
       description:
         "Owned vendor evaluation under HIPAA and the integration strategy behind it, drawing the BAA boundaries, the PHI routing rules, and the adapter contracts. The contracts kept each vendor swappable and left room to add channels.",
       role: 'Engineering Manager',
@@ -68,15 +76,7 @@ const quests: Quest[] = [
         "Learned to draw the adapter boundary before looking at vendors, or the shortlist draws it for you",
       ],
     },
-    {
-      description:
-        "Set cross-system API and data contracts for eligibility, benefits, member profiles, claims, and patient-reported outcomes. Each one settled data ownership, identifiers, persistence, authentication and failure behavior before anyone started building.",
-      role: 'Engineering Manager',
-      learnings: [
-        "Learned that teams settle the payload and skip the failure behavior, which is where the integration defects come from",
-      ],
-    },
-    {
+{
       description:
         "Designed and published an end-to-end delivery and operations model for the program. Each team had been running the SDLC stages as its own process, and one documented path replaced them.",
       role: 'Engineering Manager',
@@ -84,7 +84,16 @@ const quests: Quest[] = [
         "Learned that disconnected SDLC stages are an ownership problem before they are a documentation problem",
       ],
     },
-    {
+{
+      description:
+        "Set how AI enters the delivery workflow and shipped the tooling behind it: a governed work repository, plus a VS Code extension and CLI keeping every generated change traceable and review-gated.",
+      role: 'Engineering Manager',
+      learnings: [
+        "Learned that generated code is only reviewable when the requirement and scope stay attached to it",
+        "Learned that reviewing a diff against its specification is far faster than reviewing the diff alone",
+      ],
+    },
+{
       description:
         "Consolidated production and non-production onto a single operator view, bringing service health, traffic, error rates and latency together instead of one console per signal.",
       role: 'Engineering Manager',
@@ -92,16 +101,7 @@ const quests: Quest[] = [
         "Learned to keep a signal off the dashboard unless it changes what the on-call engineer does next",
       ],
     },
-    {
-      description:
-        "Set how AI enters the delivery workflow and built the tooling for it. A governed repository carries work from requirement through analysis, scope and verification. A VS Code extension and CLI keep every generated change traceable and review-gated.",
-      role: 'Engineering Manager',
-      learnings: [
-        "Learned that generated code is only reviewable when the requirement and scope stay attached to it",
-        "Learned that reviewing a diff against its specification is far faster than reviewing the diff alone",
-      ],
-    },
-    {
+{
       description:
         "Stayed in the code by choice, writing authentication test automation and service APIs, and reviewing pull requests and deployment changes.",
       role: 'Engineering Manager',
@@ -109,7 +109,7 @@ const quests: Quest[] = [
         "Learned that deployment changes hide the surprises pull request review misses",
       ],
     },
-  ],
+],
 },
 {
   id: 2,
@@ -130,7 +130,7 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Set UI architecture across 5 teams while working as the full stack architect on one of them. That team built against the same patterns I was writing for the other four.",
+        "Set UI architecture across 5 delivery teams while working as full stack architect on one, building against the same patterns I set for the other four.",
       role: 'Software Architect',
       learnings: [
         "Learned that friction against a pattern shows up in how teams solve problems when nobody is watching",
@@ -264,38 +264,30 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Migrated applications from .NET to .NET Core on day one, improving performance immediately and settling the platform question before it became a standing debate.",
-      role: 'Team Lead',
-      learnings: [
-        "Learned that a new lead gets one decision without having to win it first, and spent mine on the runtime",
-      ],
-    },
-    {
-      description:
-        "Refactored a 350,000-line business application onto service and repository boundaries. Sprint velocity had gone negative before that work and recovered after it.",
+        "Refactored a 350,000-line business application onto service and repository boundaries, reversing a sprint velocity that had gone negative.",
       role: 'Team Lead',
       learnings: [
         "Learned that negative velocity is a structure problem, not an effort problem",
         "Learned how to read code for intent and clarity very effectively",
       ],
     },
-    {
+{
       description:
-        "Worked between engineering and the executive team through the leadership changes, translating in both directions. Neither side stalled waiting on the other.",
-      role: 'Interim Director of Engineering',
-      learnings: [
-        "Learned how to communicate to leaders what outcomes to expect from the technical department",
-      ],
-    },
-    {
-      description:
-        "Ran engineering as interim director and hit the target KPIs for the period. Handed the incoming CTO a function that was still delivering.",
+        "Ran engineering as interim director, hit every target KPI for the period, and handed the incoming CTO a function that was still delivering.",
       role: 'Interim Director of Engineering',
       learnings: [
         "Learned that handing over the KPIs takes an afternoon and handing over the reasoning takes the rest of the onboarding",
       ],
     },
-    {
+{
+      description:
+        "Migrated applications from .NET to .NET Core on day one, improving performance immediately and settling the platform question before it became a standing debate.",
+      role: 'Team Lead',
+      learnings: [
+        "Learned that a new lead gets one decision without having to win it first, and spent mine on the runtime",
+      ],
+    },
+{
       description:
         "Established a structured UAT process that put business stakeholders in front of features before release, while they could still be changed.",
       role: 'Team Lead',
@@ -303,7 +295,7 @@ const quests: Quest[] = [
         "Learned the importance of talking directly to end users",
       ],
     },
-    {
+{
       description:
         "Built regulatory requirements into the development process instead of auditing for them afterward, cutting the defects that came from retrofitting compliance onto finished work.",
       role: 'Team Lead',
@@ -311,7 +303,15 @@ const quests: Quest[] = [
         "Learned that building regulatory requirements in costs a fraction of retrofitting them onto finished work",
       ],
     },
-    {
+{
+      description:
+        "Worked between engineering and the executive team through the leadership changes, translating in both directions. Neither side stalled waiting on the other.",
+      role: 'Interim Director of Engineering',
+      learnings: [
+        "Learned how to communicate to leaders what outcomes to expect from the technical department",
+      ],
+    },
+{
       description:
         "Represented engineering to investors and the CEO through the executive transition, and defended the technical plan to both.",
       role: 'Interim Director of Engineering',
@@ -319,7 +319,7 @@ const quests: Quest[] = [
         "Learned that credibility with investors rests on what you decline to promise",
       ],
     }
-  ],
+],
 },
 {
   id: 5,
@@ -341,21 +341,21 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Modernized WinForms desktop applications with Kendo UI, fitting current interface expectations onto a framework never built for them.",
-      role: 'Senior Consultant',
-      learnings: [
-        "I learned how to balance modern UI expectations with legacy application constraints",
-      ],
-    },
-    {
-      description:
         'Held project estimates within a 10 percent margin across the engagement.',
       role: 'Senior Consultant',
       learnings: [
         "Learned that estimate accuracy tracks how well I understood the requirement, not the technique",
       ],
     },
-    {
+{
+      description:
+        "Modernized WinForms desktop applications with Kendo UI, fitting current interface expectations onto a framework never built for them.",
+      role: 'Senior Consultant',
+      learnings: [
+        "I learned how to balance modern UI expectations with legacy application constraints",
+      ],
+    },
+{
       description:
         "Built and refined automation scripts the delivery schedule ran on. Tracked progress closely and raised problems while they were still cheap to fix.",
       role: 'Senior Consultant',
@@ -363,7 +363,7 @@ const quests: Quest[] = [
         "Learned that raising a problem early costs credibility and raising it late costs the schedule",
       ],
     },
-  ],
+],
 },
 {
   id: 6,
@@ -596,7 +596,7 @@ const quests: Quest[] = [
   tags: ["Patent Intelligence", "Biotech", "Azure Functions", "React", "TypeScript", "C#", "PostgreSQL", "Python", "Technical Leadership", "DevOps"],
   accomplishments: [
     {
-      description: "Established technical direction and built the search workflow the product sells. It takes a DNA or protein sequence and returns the US patents that disclose it, grouped by family, with the disclosure documents attached.",
+      description: "Established technical direction and built the search workflow the product sells: a sequence in, the US patents disclosing it out, grouped by family with documents attached.",
       role: "Technical Consultant",
       learnings: [
         "Learned that grouping results by patent family changed what the tool was good for"
