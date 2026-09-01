@@ -30,86 +30,58 @@ const quests: Quest[] = [
   id: 1,
   titles: {
     retro: 'The Platform Manager',
-    sleek: 'Engineering Manager at Progyny',
+    sleek: 'Manager, Experience Platform at Progyny',
   },
   company: 'Progyny',
-  workTitle: 'Engineering Manager',
+  workTitle: 'Manager, Experience Platform',
   description:
-    "Led platform services team through rebuild of platform serving 6.5M members",
+    "Built a team of 5 to deliver a rebuild of a platform that covers 6.5M lives",
   summary:
-    "I led the platform-services function through a greenfield rebuild: the team, the contracts other systems build against, the standards the delivery teams work to, and the evidence behind a go or no-go. An operating model is easy to write badly from a distance, so I kept writing code and reviewing deployments the whole way through.",
+    "I managed a team of 5 through a greenfield healthcare rebuild covering 6.5M lives. The rest of the product needed the function as a real dependency, not as a workstream that finished last.",
   type: 'career',
   startDate: new Date('2025-05-01'),
   endDate: new Date(2038, 2, 10), // Ongoing
-  roles: ['Engineering Manager'],
-  tags: ['Engineering Management', 'Healthcare', 'HIPAA', 'Platform Architecture', 'API Contracts', 'Developer Tooling', 'Observability', 'AI-Assisted Development'],
+  roles: ['Manager, Experience Platform'],
+  tags: ['Engineering Management', 'Healthcare', 'Platform Architecture', 'API Contracts', 'Developer Tooling', 'AI-Assisted Development', 'FHIR'],
   accomplishments: [
     {
       description:
-        "Built and led a team of 5 owning the platform's shared services: identity, content, CRM integration and eligibility configuration. Held full utilization through repeated changes in program scope.",
-      role: 'Engineering Manager',
-      learnings: [
-        "Learned that a team owning capabilities instead of features can absorb a scope change without re-onboarding anybody",
-      ],
-    },
-{
-      description:
-        "Acted as primary planning partner for the rebuild, turning ambiguous program goals into epics, dependency maps and phased delivery plans across 7 teams. Teams that depended on the rebuild got committed milestones two quarters out.",
-      role: 'Engineering Manager',
-      learnings: [
-        "Learned that dependent teams need a commitment they can plan against more than they need a date",
-      ],
-    },
-{
-      description:
-        "Set the cross-system API and data contracts spanning five business domains, each settling data ownership, identifiers, persistence, authentication and failure behavior before build.",
-      role: 'Engineering Manager',
+        "Managed a team of 5 on a healthcare initiative covering 6.5M lives and set the API and data contracts 7 other teams implemented against, including data ownership and failure behavior.",
+      role: 'Manager, Experience Platform',
       learnings: [
         "Learned that teams settle the payload and skip the failure behavior, which is where the integration defects come from",
       ],
     },
-{
+    {
       description:
-        "Owned vendor evaluation under HIPAA and the integration strategy behind it, drawing the BAA boundaries, the PHI routing rules, and the adapter contracts. The contracts kept each vendor swappable and left room to add channels.",
-      role: 'Engineering Manager',
-      learnings: [
-        "Learned to draw the adapter boundary before looking at vendors, or the shortlist draws it for you",
-      ],
-    },
-{
-      description:
-        "Designed and published an end-to-end delivery and operations model for the program. Each team had been running the SDLC stages as its own process, and one documented path replaced them.",
-      role: 'Engineering Manager',
+        "Established processes for how the platform services team delivered and operated, from accepted work through production support, across major and minor releases.",
+      role: 'Manager, Experience Platform',
       learnings: [
         "Learned that disconnected SDLC stages are an ownership problem before they are a documentation problem",
       ],
     },
-{
+    {
       description:
-        "Set how AI enters the delivery workflow and shipped the tooling behind it: a governed work repository, plus a VS Code extension and CLI keeping every generated change traceable and review-gated.",
-      role: 'Engineering Manager',
+        "Created a shared delivery workbench the team used to plan and execute over 80% of the work across 3 quarters, keeping analysis and implementation evidence in one place.",
+      role: 'Manager, Experience Platform',
+      learnings: [],
+    },
+    {
+      description:
+        "Created a VS Code extension and CLI that kept AI-generated changes behind a specification and a human approval, used by 10 developers.",
+      role: 'Manager, Experience Platform',
       learnings: [
         "Learned that generated code is only reviewable when the requirement and scope stay attached to it",
         "Learned that reviewing a diff against its specification is far faster than reviewing the diff alone",
       ],
     },
-{
+    {
       description:
-        "Consolidated production and non-production onto a single operator view, bringing service health, traffic, error rates and latency together instead of one console per signal.",
-      role: 'Engineering Manager',
-      learnings: [
-        "Learned to keep a signal off the dashboard unless it changes what the on-call engineer does next",
-      ],
+        "Mentored and trained developers on leveraging AI-assisted work to enhance the SDLC.",
+      role: 'Manager, Experience Platform',
+      learnings: [],
     },
-{
-      description:
-        "Stayed in the code by choice, writing authentication test automation and service APIs, and reviewing pull requests and deployment changes.",
-      role: 'Engineering Manager',
-      learnings: [
-        "Learned that deployment changes hide the surprises pull request review misses",
-      ],
-    },
-],
+  ],
 },
 {
   id: 2,
@@ -121,7 +93,7 @@ const quests: Quest[] = [
   workTitle: 'Senior Software Architect',
   description: "Set UI architecture for five delivery teams and full stack architecture for one",
   summary:
-    "Set the UI architecture for five delivery teams and did full stack architecture on one of them, so the patterns had to hold up under a delivery load I was carrying myself. Most of the job was making the architecture something the people implementing it could actually follow. A pattern nobody can apply without asking me is not a pattern yet.",
+    "I set UI architecture across the delivery program and carried full stack work on one team. The architecture had to survive a delivery load I was on the hook for myself.",
   type: 'career',
   startDate: new Date('2024-05-01'),
   endDate: new Date('2025-05-17'),
@@ -130,40 +102,35 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Set UI architecture across 5 delivery teams while working as full stack architect on one, building against the same patterns I set for the other four.",
+        "Developed UI architecture for 5 delivery teams while carrying full stack architecture responsibility.",
       role: 'Software Architect',
       learnings: [
         "Learned that friction against a pattern shows up in how teams solve problems when nobody is watching",
-        "Learned that consistent design principles matter more than standardizing on specific implementations",
       ],
     },
     {
       description:
-        "Built a shared UI component library with the design teams and landed it late in the project. Adopting it meant reworking what had already shipped, and the consistency it bought back was worth that.",
+        "Built a shared UI component library of 20+ components with the design teams and landed it late in the project.",
       role: 'Software Architect',
-      learnings: [
-        "Learned that component libraries still deliver value even when implemented late in project",
-      ],
+      learnings: [],
     },
     {
       description:
-        "Turned Figma design files into technical directives and user stories the teams could build from directly.",
+        "Turned Figma designs into multiple technical directives and user stories the teams built from directly.",
       role: 'Senior Consultant',
       learnings: [],
     },
     {
       description:
-        "Mentored senior developers through pair programming and standing coaching sessions. They were the ones who would carry the architecture once I was no longer in the room.",
+        "Mentored 10+ senior developers on the architecture and on how the teams delivered against it.",
       role: 'Senior Consultant',
       learnings: [],
     },
     {
       description:
-        "Reworked communication across teams and inside them until every team knew the strategic direction behind its work, not only its next ticket. Velocity improved once that was true.",
+        "Maintained clear communication across Program Leadership over 6 months to reduce gaps and delays in delivery.",
       role: 'Senior Consultant',
-      learnings: [
-        "Learned that maximizing team velocity requires teams to appropriately understand the strategic direction and implementation goal",
-      ],
+      learnings: [],
     },
   ],
 },
@@ -178,7 +145,7 @@ const quests: Quest[] = [
   description:
     "Modernized legacy healthcare systems for clients while keeping each one running",
   summary:
-    "Four years of modernization work for healthcare clients. The old system had to keep running while its replacement was built, and that shaped most of the decisions. I carried scope and budget with the client alongside the architecture, which is a different job from either one on its own.",
+    "Four years of modernization work for healthcare clients. The old system had to keep running while its replacement was built, and that shaped most of the decisions. I carried scope and budget with the client alongside the architecture.",
   type: 'career',
   startDate: new Date('2020-02-01'),
   endDate: new Date('2024-05-31'),
@@ -187,7 +154,7 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'Led full stack modernization of a claims application under HIPAA, cutting over from the legacy system without interrupting the business running on it.',
+        "Led full stack modernization of a claims application under HIPAA, cutting over from the legacy system without interrupting the business running on it, covering [Placeholder] lives.",
       role: 'Software Architect',
       learnings: [
         "Learned to make decisions WITH constraints instead of against constraints",
@@ -196,15 +163,13 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Converted monolithic client systems to a multi-tenant SaaS model with EHR integrations live throughout, holding tenant differences in configuration so no client got a fork.",
+        "Converted over a dozen monolithic client systems to various modern configurations.",
       role: 'Software Architect',
-      learnings: [
-        "Learned that tenant differences stay in configuration only while forking is impossible",
-      ],
+      learnings: [],
     },
     {
       description:
-        "Carried project scope, budget and client expectations alongside the technical implementation. The person who defended the estimate and the person who defended the architecture were the same person.",
+        "Reviewed and approved project scope and budget while managing client expectations alongside the technical implementation.",
       role: 'Senior Consultant',
       learnings: [
         "Learned to ground stories in facts and data that the client cares about",
@@ -212,7 +177,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Delivered across .NET C#, Java Spring Boot, React, Angular, Flutter and UWP. Some of those stacks were new to me when I took architecture responsibility for them.",
+        "Took architecture responsibility across multiple stacks, including ones I had not shipped in before.",
       role: 'Software Architect',
       learnings: [
         "Learned to be proficient in architecting for a language I was not well-versed in",
@@ -220,7 +185,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Earned FreedomPay certification and integrated secure payment processing into client systems. The identity provider integrations underneath it were built from the ground up.",
+        "Earned a payment-processor certification and integrated secure payments into client systems, building the identity-provider integrations underneath from scratch.",
       role: 'Software Architect',
       learnings: [
         "Learned how to build IdP integrations from the ground up",
@@ -228,7 +193,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Built standardized project scaffolding so new engagements stopped starting as a copy of whatever the team built last.",
+        "Built standardized project scaffolding so new engagements started from a shared baseline.",
       role: 'Software Architect',
       learnings: [
         "Learned that project templates work easier when teams build working relationships",
@@ -255,7 +220,7 @@ const quests: Quest[] = [
   description:
     "Refactored entire lending platform prior to leading engineering through executive transition",
   summary:
-    "Joined as team lead and left as interim director, covering the gap while the executive team changed over. The technical half was a runtime migration and a large refactor. The other half was explaining engineering to investors and a CEO who had every reason to be skeptical, then handing over a function that was still delivering.",
+    "Joined as team lead and covered the gap while the executive team changed over. The technical half was a runtime migration and a large refactor. The other half was representing engineering to investors and the CEO, then handing the function to the incoming CTO.",
   type: 'career',
   startDate: new Date('2018-10-01'),
   endDate: new Date('2020-02-01'),
@@ -264,62 +229,54 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Refactored a 350,000-line business application onto service and repository boundaries, reversing a sprint velocity that had gone negative.",
+        "Refactored a 350k line business application onto service and repository boundaries reversing a negative sprint velocity.",
       role: 'Team Lead',
       learnings: [
         "Learned that negative velocity is a structure problem, not an effort problem",
         "Learned how to read code for intent and clarity very effectively",
       ],
     },
-{
+    {
       description:
-        "Ran engineering as interim director, hit every target KPI for the period, and handed the incoming CTO a function that was still delivering.",
+        "Ran engineering as interim director, interviewed and transitioned the incoming CTO.",
       role: 'Interim Director of Engineering',
       learnings: [
         "Learned that handing over the KPIs takes an afternoon and handing over the reasoning takes the rest of the onboarding",
       ],
     },
-{
+    {
       description:
-        "Migrated applications from .NET to .NET Core on day one, improving performance immediately and settling the platform question before it became a standing debate.",
+        "Migrated applications from .NET to .NET Core on day one and executed multiple production deployments in month one",
       role: 'Team Lead',
       learnings: [
         "Learned that a new lead gets one decision without having to win it first, and spent mine on the runtime",
       ],
     },
-{
+    {
       description:
-        "Established a structured UAT process that put business stakeholders in front of features before release, while they could still be changed.",
+        "Established a structured UAT process that put business stakeholders in front of features before release.",
       role: 'Team Lead',
       learnings: [
         "Learned the importance of talking directly to end users",
       ],
     },
-{
+    {
       description:
-        "Built regulatory requirements into the development process instead of auditing for them afterward, cutting the defects that came from retrofitting compliance onto finished work.",
+        "Built regulatory requirements into the development process instead of auditing for them afterward.",
       role: 'Team Lead',
       learnings: [
         "Learned that building regulatory requirements in costs a fraction of retrofitting them onto finished work",
       ],
     },
-{
+    {
       description:
-        "Worked between engineering and the executive team through the leadership changes, translating in both directions. Neither side stalled waiting on the other.",
-      role: 'Interim Director of Engineering',
-      learnings: [
-        "Learned how to communicate to leaders what outcomes to expect from the technical department",
-      ],
-    },
-{
-      description:
-        "Represented engineering to investors and the CEO through the executive transition, and defended the technical plan to both.",
+        "Represented engineering to investors and the CEO through the executive transition.",
       role: 'Interim Director of Engineering',
       learnings: [
         "Learned that credibility with investors rests on what you decline to promise",
       ],
-    }
-],
+    },
+  ],
 },
 {
   id: 5,
@@ -332,7 +289,7 @@ const quests: Quest[] = [
   description:
     "Delivered legacy WinForms modernization solo, holding estimates inside 10 percent",
   summary:
-    "A year of solo delivery on legacy desktop systems. It was the first engagement where I owned the estimate as well as the build, and the two turned out to be the same skill.",
+    "A year of solo delivery on legacy desktop systems. It was the first engagement where I owned the estimate as well as the build.",
   type: 'career',
   startDate: new Date('2017-10-01'),
   endDate: new Date('2018-10-01'),
@@ -341,7 +298,7 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'Held project estimates within a 10 percent margin across the engagement.',
+        "Held project estimates within a 10 percent margin across the engagement.",
       role: 'Senior Consultant',
       learnings: [
         "Learned that estimate accuracy tracks how well I understood the requirement, not the technique",
@@ -349,7 +306,7 @@ const quests: Quest[] = [
     },
 {
       description:
-        "Modernized WinForms desktop applications with Kendo UI, fitting current interface expectations onto a framework never built for them.",
+        "Modernized WinForms desktop applications with Kendo UI, fitting current interfaces onto a framework not built for them.",
       role: 'Senior Consultant',
       learnings: [
         "I learned how to balance modern UI expectations with legacy application constraints",
@@ -357,7 +314,7 @@ const quests: Quest[] = [
     },
 {
       description:
-        "Built and refined automation scripts the delivery schedule ran on. Tracked progress closely and raised problems while they were still cheap to fix.",
+        "Built and refined automation scripts the delivery schedule ran on and raised problems early.",
       role: 'Senior Consultant',
       learnings: [
         "Learned that raising a problem early costs credibility and raising it late costs the schedule",
@@ -376,7 +333,7 @@ const quests: Quest[] = [
   description:
     "Built features and test coverage for car loan application under senior mentorship",
   summary:
-    "A year of feature work on a car loan application, early on. The mentorship was the point of it. Senior developers read what I wrote closely, and I have not had a year since where I learned that fast.",
+    "A year of feature work on a car loan application, early on. Senior developers read what I wrote closely, and most of the teaching happened in code review.",
   type: 'career',
   startDate: new Date('2016-08-01'),
   endDate: new Date('2017-09-01'),
@@ -385,13 +342,13 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        'Built core feature components for a car loan application.',
+        "Built core feature components for a car loan application under senior mentorship.",
       role: 'Developer',
       learnings: [],
     },
     {
       description:
-        "Raised test coverage with AutoFixture and Moq. The release cadence became predictable enough to commit to.",
+        "Raised test coverage with AutoFixture and Moq.",
       role: 'Developer',
       learnings: [
         "Learned that well-designed test fixtures do more for coverage than more tests do",
@@ -399,7 +356,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Grew under close mentorship from senior developers. Most of the teaching happened in code review.",
+        "Worked under senior-developer mentorship delivered in code review.",
       role: 'Developer',
       learnings: [
         "Learned that code review teaches what self-directed study cannot, because it arrives attached to a mistake I already made",
@@ -427,7 +384,7 @@ const quests: Quest[] = [
   accomplishments: [
     {
       description:
-        "Rotated through multiple IT functions on the selective IT Career Foundation Program, and saw the same enterprise systems from inside each business unit that depended on them.",
+        "Rotated through multiple IT functions on the selective IT Career Foundation Program, then built C# applications for financial operations.",
       role: 'ITCFP Participant',
       learnings: [
         "Learned how technology choices affect different business units in distinct ways",
@@ -435,7 +392,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Built and deployed C# MVC applications that automated critical financial operations, and met the validation and audit requirements those systems carried.",
+        "Built and deployed C# MVC applications that automated financial operations and met the validation and audit requirements those systems carried.",
       role: 'Developer',
       learnings: [
         "Learned that enterprise scale moves the cost from writing software to maintaining it",
@@ -443,7 +400,7 @@ const quests: Quest[] = [
     },
     {
       description:
-        "Improved SDLC practices on each team the rotation passed through, raising code quality and tightening how projects were run.",
+        "Improved SDLC practices on each team the rotation passed through.",
       role: 'Developer',
       learnings: [],
     },
@@ -458,54 +415,37 @@ const quests: Quest[] = [
   company: 'Personal Project',
   workTitle: 'Independent Projects',
   description:
-    "Built game and web projects solo against written milestones and automated verification",
+    "Directed AI through two functional Unity games",
   summary:
-    "In my personal projects I run the same discipline I use professionally. Milestones get written with kill criteria before anything is built, verification is automated, and decisions get logged. What I have gotten out of it is mostly what the process catches early rather than what eventually ships.",
+    "Solo direction of two Unity games.",
   type: 'hobby',
-  startDate: new Date('2026-05-04'),
+  startDate: new Date('2025-04-29'),
   endDate: new Date(2038, 2, 10), // Ongoing
-  roles: ['Game Developer', 'Web Developer', 'Technical Writer'],
-  tags: ['Unity', 'C#', 'Game Development', 'React', 'TypeScript', 'Static Site Generation', 'Technical Writing', 'Personal Project'],
-  externalLink: 'https://github.com/DeveloperZo/Zo-Garden-eCafe',
+  roles: ['Game Developer'],
+  tags: ['Unity', 'C#', 'Game Development', 'Software Architecture', 'AI-Assisted Development', 'Personal Project'],
   accomplishments: [
     {
       description:
-        "Planned self-directed work in written milestones, and cancelled the ones that stopped being worth building.",
+        "Checked in nearly 500 commits across two Unity games: a playable tactical puzzle I stopped after a market analysis, and a wave-defense FPS still in progress.",
       role: 'Game Developer',
       learnings: [
-        "Learned that cancelling a milestone is cheaper evidence than finishing one",
+        "Learned that writing the market analysis was the decision, not a document that preceded one",
       ],
     },
     {
       description:
-        "Kept simulation logic in an engine-independent layer so it could be tested without the engine running, and wrote serialization by hand to hold that boundary.",
+        "Specified the architecture and put the constraints in the build, so AI-written code failed automatically when it crossed a boundary.",
       role: 'Game Developer',
       learnings: [
-        "Learned that a boundary only holds when something automated enforces it",
+        "Learned that a rule a person has to remember to run documents violations rather than preventing them",
       ],
     },
     {
       description:
-        "Audited a generated front end as non-functional and rebuilt it by hand, after finding generated output impossible to review in a diff.",
+        "Used AI to write the implementation of over 600 C# files I reviewed and gated through play test or audit findings.",
       role: 'Game Developer',
       learnings: [
-        "Learned that a diff on generated output is mostly noise wrapped around the one line that changed",
-      ],
-    },
-    {
-      description:
-        "Built the publishing pipeline this resume is served from, wiring an application build into a static site build so a single deploy publishes both.",
-      role: 'Web Developer',
-      learnings: [
-        "Learned to let one pipeline own the build order rather than run two and reconcile them",
-      ],
-    },
-    {
-      description:
-        "Wrote and illustrated a long-form systems analysis of AI governance, then went back and dated its claims.",
-      role: 'Technical Writer',
-      learnings: [
-        "Learned that undated claims about a fast-moving field read as current long after they stop being true",
+        "Learned to write the failure back into the next session's rules",
       ],
     },
   ],
@@ -537,44 +477,30 @@ const quests: Quest[] = [
   id: 11,
   titles: {
     retro: "The Portfolio Advisor's Quest",
-    sleek: "Technical Consultant for a Hedge Fund Company"
+    sleek: "Principal Technologist for a Hedge Fund Company"
   },
   company: "Independent Consulting, Enterprise Architect",
-  workTitle: "Technical Consultant",
-  description: "Reviewed hedge fund software suite against SOLID, tying findings to suppressed KPIs",
+  workTitle: "Principal Technologist",
+  description: "Assessed a hedge fund software suite over a four-month engagement",
   summary: "The CEO of Lendr hired me directly to look at another of his companies, where technical problems were showing up in the KPIs. I had four months and no prior context, so the whole engagement came down to what could be learned from a sample rather than a full read.",
   type: "independent",
   startDate: new Date("2022-03-01"),
   endDate: new Date("2022-06-30"),
-  roles: ["Technical Consultant"],
+  roles: ["Principal Technologist"],
   tags: ["Code Analysis", "Technical Strategy", "Executive Advisory", "Performance Optimization"],
   accomplishments: [
     {
-      description: "Reviewed the client's software suite against SOLID principles by sampling across the codebase. The structural problems that turned up were the ones surfacing as KPI misses.",
-      role: "Technical Consultant",
+      description: "Sampled the hedge fund software suite against SOLID and tied each structural finding to a KPI miss.",
+      role: "Principal Technologist",
       learnings: [
         "Learned that sampling code can effectively reveal patterns that apply to the broader codebase"
       ]
     },
     {
-      description: "Produced a recommendations deck that tied each structural finding to the business KPI it was holding down.",
-      role: "Technical Consultant",
+      description: "Delivered a recommendations deck to the executive team with phased remediation, KPI-moving changes first.",
+      role: "Principal Technologist",
       learnings: [
         "Learned that a finding framed as a KPI ceiling gets funded where the same finding framed as technical debt only gets acknowledged"
-      ]
-    },
-    {
-      description: "Presented the findings to the executive leadership team. The remediation steps were written so they could act without a technical translator in the room.",
-      role: "Technical Consultant",
-      learnings: [
-        "Discovered my reputation for technical excellence created trust that facilitated difficult conversations"
-      ]
-    },
-    {
-      description: "Sequenced the remediation into phases. The changes that would move the KPIs came first, and the longer architectural work followed them.",
-      role: "Technical Consultant",
-      learnings: [
-        "Learned to front-load the changes that move KPIs so the longer architectural work has room to run"
       ]
     }
   ]
@@ -583,52 +509,43 @@ const quests: Quest[] = [
   id: 12,
   titles: {
     retro: "The Patent Sequence Expedition",
-    sleek: "Technical Consultant for a Biotech Patent Intelligence Startup"
+    sleek: "Principal Technologist for a Biotech Patent Intelligence Startup"
   },
-  company: "Independent Consulting, Director",
-  workTitle: "Technical Consultant",
-  description: "Set technical direction and built patent intelligence product for biotech IP work",
-  summary: "The founders brought me in to set technical direction, and I stayed to build it. The product answers one question that biotech IP professionals ask over and over: given this sequence, who has filed on it, where, and when. Everything else in the product exists to make that answer trustworthy enough to pay for.",
+  company: "Independent Consulting, Principal Technologist",
+  workTitle: "Principal Technologist",
+  description: "Built the product full stack and advised founders on technical direction",
+  summary: "The founders brought me in for direction. I stayed and built the application.",
   type: "independent",
   startDate: new Date("2024-03-01"),
   endDate: new Date(2038, 2, 10), // Ongoing
-  roles: ["Technical Consultant", "Full Stack Developer"],
-  tags: ["Patent Intelligence", "Biotech", "Azure Functions", "React", "TypeScript", "C#", "PostgreSQL", "Python", "Technical Leadership", "DevOps"],
+  roles: ["Principal Technologist"],
+  tags: ["Patent Intelligence", "Biotech", "Azure Functions", "React", "TypeScript", "C#", "Technical Leadership"],
   accomplishments: [
     {
-      description: "Established technical direction and built the search workflow the product sells: a sequence in, the US patents disclosing it out, grouped by family with documents attached.",
-      role: "Technical Consultant",
-      learnings: [
-        "Learned that grouping results by patent family changed what the tool was good for"
-      ]
-    },
-    {
-      description: "Built a React single-page application and the C# Azure Functions API behind it, both deployed through Azure Static Web Apps and Pipelines. A Python pipeline ingests the corpus the search runs against.",
-      role: "Full Stack Developer",
-      learnings: [
-        "Learned that a CI job inheriting the deploy variable group tests against production configuration and proves nothing"
-      ]
-    },
-    {
-      description: "Designed an entitlement and quota layer that resolves the subscription plan on the server and never from a client header. Soft quotas shipped on purpose: exact counting was designed, recorded, and deferred until there were paying customers.",
-      role: "Technical Consultant",
-      learnings: [
-        "Learned that writing down the design you are not building is what keeps deferring it a decision"
-      ]
-    },
-    {
-      description: "Reversed an in-flight migration to a managed identity provider when its cost outran the benefit, and restored the previous authentication stack from source control. Documented the intermediate state as a deliberate one.",
-      role: "Technical Consultant",
+      description: "Advised the founders on technical direction, including stopping an identity-provider migration and restoring the prior stack from source control.",
+      role: "Principal Technologist",
       learnings: [
         "Learned that an undocumented intermediate state is debt nobody agreed to carry"
       ]
     },
     {
-      description: "Consolidated two separate repositories and a scattered document set into one monorepo carrying 182 milestone records. Until then the decision history and the code it described lived in different places.",
-      role: "Technical Consultant",
+      description: "Built sequence search, patent-family navigation, and document retrieval across the API and the UI.",
+      role: "Principal Technologist",
       learnings: [
-        "Learned that decision records only stay accurate while they are cheap to update"
+        "Learned that grouping results by patent family changed what the tool was good for"
       ]
+    },
+    {
+      description: "Built sign-in and enforced plan limits on the server.",
+      role: "Principal Technologist",
+      learnings: [
+        "Learned that a CI job inheriting the deploy variable group tests against production configuration and proves nothing"
+      ]
+    },
+    {
+      description: "Built saved searches and the trial and paid-plan screens used to demo the product.",
+      role: "Principal Technologist",
+      learnings: []
     }
   ]
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import quests from '../../data/quests.data';
+import { coreCompetencies, professionalSummary } from '../../data/profile.data';
 import './CareerTimeline.css';
 
 const CareerTimeline: React.FC = () => {
@@ -55,64 +56,43 @@ const CareerTimeline: React.FC = () => {
         <h2>{theme === 'play' ? 'Alonzo\'s Adventure Scroll' : 'Professional Summary'}</h2>
         
         <div className="summary-content">
-          {theme === 'play' ? (
-            <>
-              <div className="pixel-avatar"></div>
-              <p className="summary-text">
-              Level 10+ Software Architect with special abilities in strategic leadership and system modernization. Has completed over 50 quests across multiple guilds, mastering skills in architecture, cloud systems, and team leadership. Ready for the next epic adventure!
-              </p>
-              <div className="summary-stats-container">
-                <div className="stat-item">
-                  <span className="stat-icon exp-icon"></span>
-                  <span className="stat-value">{calculateTotalExperience(sortedQuests)}</span>
-                  <span className="stat-label">EXP</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-icon quest-icon"></span>
-                  <span className="stat-value">
-                    {sortedQuests.reduce((sum, quest) => sum + quest.accomplishments.length, 0)}
-                  </span>
-                  <span className="stat-label">QUESTS</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-icon skill-icon"></span>
-                  <span className="stat-value">
-                    {new Set(sortedQuests.flatMap(quest => 
-                      quest.accomplishments.flatMap(acc => acc.learnings)
-                    )).size}
-                  </span>
-                  <span className="stat-label">SKILLS</span>
-                </div>
+          {theme === 'play' && <div className="pixel-avatar"></div>}
+          <p className="summary-text">{professionalSummary}</p>
+          {theme === 'play' && (
+            <div className="summary-stats-container">
+              <div className="stat-item">
+                <span className="stat-icon exp-icon"></span>
+                <span className="stat-value">{calculateTotalExperience(sortedQuests)}</span>
+                <span className="stat-label">EXP</span>
               </div>
-            </>
-          ) : (
-            <>
-  <p className="summary-text">
-    Strategic technology leader with over a decade of experience in software architecture and development. Demonstrated expertise in transforming legacy systems, leading cross-functional teams, and implementing scalable architectures across multiple industries. Consistently delivers solutions through thoughtful architectural decisions and effective team leadership.
-  </p>
-              
-              <div className="competencies">
-                <h3>Core Competencies</h3>
-                <ul className="competency-list">
-                <li>
-        <strong>Technical Leadership:</strong> Proven ability to lead technical implementations during organizational transitions, providing continuity between development teams and executive leadership while mentoring senior developers.
-      </li>
-      <li>
-        <strong>Financial & Healthcare Solutions:</strong> Specialized experience delivering enterprise applications for financial lending platforms and healthcare systems, ensuring regulatory compliance and maintaining critical integrations.
-      </li>
-      <li>
-        <strong>Cloud Infrastructure Design:</strong> Advanced knowledge of Azure services with ability to define and manage cloud infrastructures from initial planning through implementation and ongoing support.
-      </li>
-      <li>
-        <strong>Multi-stack Development:</strong> Versatile technical proficiency across multiple technology stacks including .NET, Java Spring Boot, React, Angular, Flutter, and various other frameworks and languages.
-      </li>
-      <li>
-        <strong>AI Implementation:</strong> Practical experience leveraging AI tools and integrations to enhance workflows, automate processes, and improve productivity across both professional and personal projects.
-      </li>
-                </ul>
+              <div className="stat-item">
+                <span className="stat-icon quest-icon"></span>
+                <span className="stat-value">
+                  {sortedQuests.reduce((sum, quest) => sum + quest.accomplishments.length, 0)}
+                </span>
+                <span className="stat-label">QUESTS</span>
               </div>
-            </>
+              <div className="stat-item">
+                <span className="stat-icon skill-icon"></span>
+                <span className="stat-value">
+                  {new Set(sortedQuests.flatMap(quest =>
+                    quest.accomplishments.flatMap(acc => acc.learnings)
+                  )).size}
+                </span>
+                <span className="stat-label">SKILLS</span>
+              </div>
+            </div>
           )}
+          <div className="competencies">
+            <h3>Core Competencies</h3>
+            <ul className="competency-list">
+              {coreCompetencies.map((competency) => (
+                <li key={competency.title}>
+                  <strong>{competency.title}:</strong> {competency.body}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       

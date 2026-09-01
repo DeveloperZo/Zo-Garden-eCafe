@@ -238,7 +238,7 @@ const Accomplishments: React.FC = () => {
         case 'career':
           return viewMode === 'role' ? 'Career Roles' : 'Career Companies';
         case 'independent':
-          return 'Independent Consulting';
+          return 'Principal Technologist';
         case 'hobby':
           return 'Personal Projects';
         case 'education':

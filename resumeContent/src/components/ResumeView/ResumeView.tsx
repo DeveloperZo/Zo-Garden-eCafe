@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import quests from '../../data/quests.data';
 import type { Quest } from '../../data/quests.data';
+import { coreCompetencies, professionalSummary } from '../../data/profile.data';
 import './ResumeView.css';
 import { generateResumePdfFromDom } from '../../utils/pdfGenerator';
 
@@ -13,11 +14,12 @@ const formatDate = (date: Date): string => {
   return `${monthNames[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
 };
 
-// Paid engagements, whether salaried or independent. Both belong under Experience.
 const isExperienceQuest = (quest: Quest): boolean =>
-  (quest.type === 'career' || quest.type === 'independent') &&
+  quest.type === 'career' &&
   Boolean(quest.company) &&
   quest.company !== 'Personal Project';
+
+const isConsultingQuest = (quest: Quest): boolean => quest.type === 'independent';
 
 const isProjectQuest = (quest: Quest): boolean => quest.type === 'hobby';
 
@@ -26,9 +28,7 @@ const ResumeView: React.FC = () => {
   
   // Transform quest data into resume format
   const resumeData = useMemo(() => {
-    const careerQuests = quests.filter(isExperienceQuest).sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
-
-    const experience = careerQuests.map((quest) => ({
+    const toResumeEntry = (quest: Quest) => ({
       id: quest.id,
       company: quest.company,
       role: quest.workTitle,
@@ -36,6 +36,26 @@ const ResumeView: React.FC = () => {
       startDate: quest.startDate,
       endDate: quest.endDate,
       accomplishments: quest.accomplishments.map((acc) => acc.description),
+    });
+
+    const byStartDesc = (a: Quest, b: Quest) => b.startDate.getTime() - a.startDate.getTime();
+
+    const consultingTitle = (quest: Quest) => {
+      const prefix = 'Independent Consulting, ';
+      const company = quest.company ?? '';
+      return company.startsWith(prefix)
+        ? company.slice(prefix.length)
+        : quest.workTitle;
+    };
+
+    const experience = quests.filter(isExperienceQuest).sort(byStartDesc).map(toResumeEntry);
+    const consulting = quests
+      .filter((quest) => isConsultingQuest(quest) && quest.id !== 11)
+      .sort(byStartDesc)
+      .map((quest) => ({
+      ...toResumeEntry(quest),
+      role: consultingTitle(quest),
+      company: 'Independent Consulting',
     }));
 
     const education = quests
@@ -68,7 +88,7 @@ const ResumeView: React.FC = () => {
         accomplishments: quest.accomplishments.map((acc) => acc.description),
       }));
 
-    return { experience, education, projects, skills };
+    return { experience, consulting, education, projects, skills };
   }, []);
 
   const handleDownloadPDF = () => {
@@ -94,58 +114,17 @@ const ResumeView: React.FC = () => {
       <div className="resume-content">
         <section className="resume-section">
           <h2>Professional Summary</h2>
-          <p className="summary-text">
-            Strategic technology leader with over a decade of experience in software architecture and
-            development. Demonstrated expertise in transforming legacy systems, leading cross-functional teams,
-            and implementing scalable architectures across multiple industries. Consistently delivers solutions
-            through thoughtful architectural decisions and effective team leadership.
-          </p>
+          <p className="summary-text">{professionalSummary}</p>
         </section>
         <section className="resume-section">
           <h2>Core Competencies</h2>
           <div className="competencies-grid">
-            <div className="competency-item">
-              <h3>Software Architecture</h3>
-              <p>
-                Expert in designing scalable, maintainable architecture patterns that align with business objectives
-                while ensuring technical excellence.
-              </p>
-            </div>
-            <div className="competency-item">
-              <h3>Technology Leadership</h3>
-              <p>
-                Skilled at guiding cross-functional development teams through complete project lifecycles while
-                maintaining focus on quality and delivery timelines.
-              </p>
-            </div>
-            <div className="competency-item">
-              <h3>Enterprise Integration</h3>
-              <p>
-                Extensive experience implementing integration solutions across disparate systems, leveraging
-                service-oriented approaches and API design best practices.
-              </p>
-            </div>
-            <div className="competency-item">
-              <h3>Cloud Infrastructure</h3>
-              <p>
-                Proficient with Azure cloud services implementation, focusing on scalable architectures that optimize
-                for both performance and cost.
-              </p>
-            </div>
-            <div className="competency-item">
-              <h3>Development Practices</h3>
-              <p>
-                Strong advocate for engineering excellence through SOLID principles, comprehensive testing strategies,
-                and continuous integration practices.
-              </p>
-            </div>
-            <div className="competency-item">
-              <h3>AI / Technology Modernization</h3>
-              <p>
-                Demonstrated success in leading legacy system transformations. Active AI enthusiast integrating AI
-                into workflows.
-              </p>
-            </div>
+            {coreCompetencies.map((competency) => (
+              <div className="competency-item" key={competency.title}>
+                <h3>{competency.title}</h3>
+                <p>{competency.body}</p>
+              </div>
+            ))}
           </div>
         </section>
         {/* Professional Experience */}
@@ -175,6 +154,35 @@ const ResumeView: React.FC = () => {
             </div>
           ))}
         </section>
+
+        {resumeData.consulting.length > 0 && (
+          <section className="resume-section">
+            <h2>Principal Technologist</h2>
+            {resumeData.consulting.map((job) => (
+              <div key={job.id} className="experience-item">
+                <div className="job-header">
+                  <h3>{job.role}</h3>
+                  <div className="company-period">
+                    <span className="company-name">{job.company}</span>
+                    <span className="job-period">
+                      {formatDate(job.startDate)}
+                      {' – '}
+                      {job.endDate.getFullYear() >= 2030
+                        ? 'Present'
+                        : formatDate(job.endDate)}
+                    </span>
+                  </div>
+                </div>
+                {job.overview ? <p className="role-overview">{job.overview}</p> : null}
+                <ul className="accomplishment-bullets">
+                  {job.accomplishments.map((acc, i) => (
+                    <li key={i}>{acc}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </section>
+        )}
         
         {/* Projects */}
         {resumeData.projects.length > 0 && (
